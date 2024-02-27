@@ -32,7 +32,7 @@ class AuthCubit extends Cubit<AuthState> {
       });
       emit(SignUpSuccess());
     } on ServerFailure catch (e) {
-      SignUpFailure(errorMessage: e.failure.errorMessage);
+      emit(SignUpFailure(errorMessage: e.failure.errorMessage));
     }
   }
 
@@ -45,7 +45,7 @@ class AuthCubit extends Cubit<AuthState> {
       });
       emit(SignInSuccess());
     } on ServerFailure catch (e) {
-      SignInFailure(errorMessage: e.failure.errorMessage);
+      emit(SignInFailure(errorMessage: e.failure.errorMessage));
     }
   }
 }

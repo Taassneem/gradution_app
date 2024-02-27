@@ -68,7 +68,7 @@ class OnBoardingViewBody extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  index != 0
+                  index != 3
                       ? TextButton(
                           onPressed: () {
                             getIt.get<CacheHelper>().saveData(
@@ -129,11 +129,13 @@ class OnBoardingViewBody extends StatelessWidget {
                             )
                           : TextButton(
                               onPressed: () {
+                                getIt.get<CacheHelper>().saveData(
+                                    key: 'OnBoardingVisited', value: true);
                                 GoRouter.of(context)
                                     .pushReplacement(AppRouter.signInView);
                               },
                               child: const Text(
-                                'Continue',
+                                'Next',
                                 style: TextStyle(fontSize: 20),
                               )),
                     ),

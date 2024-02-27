@@ -26,4 +26,7 @@ class AppString{
   static String child  ='Child';
   static String parent  ='Parent';
   static String next  ='Next';
+  static String camera  ='Camera';
+  static String quiz  ='Quiz';
+  static String task  ='Task';
 }

@@ -3,7 +3,6 @@ import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_string.dart';
 
-
 class OnBoardingModel {
   final String image;
   final String imageBack;
@@ -45,7 +44,7 @@ class OnBoardingModel {
       imageBack: AppAssets.backOn3,
     ),
     OnBoardingModel(
-      image: AppAssets.onboard3,
+      image: AppAssets.onboard4,
       title: AppString.onBoardingTitleFour,
       subTitle: AppString.onBoardingSubTitleFour,
       color: AppColor.blueOn,

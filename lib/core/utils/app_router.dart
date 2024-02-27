@@ -7,6 +7,7 @@ import 'package:gradution_app/features/auth/presentation/views/sign_up_view.dart
 import 'package:gradution_app/features/auth/presentation/views/verify_code_view.dart';
 import 'package:gradution_app/features/choose/views/choose_view.dart';
 import 'package:gradution_app/features/home/presentation/views/home_view.dart';
+import 'package:gradution_app/features/home/presentation/views/quiz_view.dart';
 import 'package:gradution_app/features/splash/presentation/views/splash_view.dart';
 
 import '../../features/Onboarding/presentation/views/on_boarding_view.dart';
@@ -21,6 +22,7 @@ class AppRouter {
   static const String passwordChanged = '/passwordChanged';
   static const String onBoardingView = '/onBoardingView';
   static const String chooseView = '/chooseView';
+  static const String quizView = '/quizView';
   static final router = GoRouter(routes: [
     GoRoute(
       path: '/',
@@ -61,6 +63,10 @@ class AppRouter {
     GoRoute(
       path: chooseView,
       builder: (context, state) => const ChooseView(),
+    ),
+    GoRoute(
+      path: quizView,
+      builder: (context, state) => const QuizView(),
     ),
   ]);
 }

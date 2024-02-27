@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/features/home/presentation/views/widgets/home_view_body.dart';
 
 class HomeView extends StatelessWidget {
@@ -6,8 +7,15 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: HomeViewBody(),
+    return Scaffold(
+      appBar: AppBar(
+        leading: const SizedBox.shrink(),
+        actions: [
+          IconButton(
+              onPressed: () {}, icon: Image.asset(AppAssets.model, width: 60))
+        ],
+      ),
+      body: const HomeViewBody(),
     );
   }
 }

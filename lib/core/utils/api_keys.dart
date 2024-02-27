@@ -1,5 +1,5 @@
 class EndPoint {
-  static const String baseUrl = 'http://7599-197-54-181-203.ngrok-free.app/';
+  static const String baseUrl = 'https://4da5-156-210-150-229.ngrok-free.app/';
   static const String signUp = 'auth/';
   static const String login = 'auth/login';
   static const String reset = 'auth/forget';
