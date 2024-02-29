@@ -23,6 +23,7 @@ class AppAssets {
   static const String task = '${basePath}task.png';
   static const String animals = '${basePath}animals.png';
   static const String apple = '${basePath}apple.png';
+  static const String guava = '${basePath}guava.png';
   static const String banana = '${basePath}banana.png';
   static const String cheese = '${basePath}cheese.png';
   static const String chicken = '${basePath}chicken.png';
@@ -32,7 +33,7 @@ class AppAssets {
   static const String error = '${basePath}error.png';
   static const String fish = '${basePath}fish.png';
   static const String foodAndDrink = '${basePath}foodAndDrink.png';
-  static const String guava = '${basePath}guava.png';
+  static const String foodAndDrinkBack = '${basePath}quiz_background.png';
   static const String juice = '${basePath}juice.png';
   static const String meat = '${basePath}meat.png';
   static const String milk = '${basePath}milk.png';
@@ -45,4 +46,10 @@ class AppAssets {
   static const String tea = '${basePath}tea.png';
   static const String tomato = '${basePath}tomato.png';
   static const String water = '${basePath}water.png';
+  static const String burger = '${basePath}burger.png';
+  static const String cake = '${basePath}cake.png';
+  static const String friuts = '${basePath}friuts.png';
+  static const String pizza = '${basePath}pizza.png';
+  static const String blur = '${basePath}blur.png';
+  static const String finalFoodQuiz = '${basePath}finalFoodQuiz.png';
 }

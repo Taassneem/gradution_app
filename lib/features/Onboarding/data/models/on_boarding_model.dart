@@ -16,7 +16,6 @@ class OnBoardingModel {
     required this.title,
     required this.subTitle,
     required this.color,
-    // required this.gradinte,
   });
   static List<OnBoardingModel> onBoardingView = [
     OnBoardingModel(
@@ -24,7 +23,6 @@ class OnBoardingModel {
       title: AppString.onBoardingTitleOne,
       subTitle: AppString.onBoardingSubTitleOne,
       color: AppColor.purple,
-      // gradinte: Colors.blue,
       imageBack: AppAssets.backOn1,
     ),
     OnBoardingModel(
@@ -32,7 +30,6 @@ class OnBoardingModel {
       title: AppString.onBoardingTitleTwo,
       subTitle: AppString.onBoardingSubTitleTwo,
       color: AppColor.pink,
-      // gradinte: Colors.lightGreen,
       imageBack: AppAssets.backOn2,
     ),
     OnBoardingModel(
@@ -40,7 +37,6 @@ class OnBoardingModel {
       title: AppString.onBoardingTitleThree,
       subTitle: AppString.onBoardingSubTitleThree,
       color: AppColor.babyBlue,
-      // gradinte: Colors.orange,
       imageBack: AppAssets.backOn3,
     ),
     OnBoardingModel(
@@ -48,7 +44,6 @@ class OnBoardingModel {
       title: AppString.onBoardingTitleFour,
       subTitle: AppString.onBoardingSubTitleFour,
       color: AppColor.blueOn,
-      // gradinte: Colors.purple,
       imageBack: AppAssets.backOn4,
     ),
   ];

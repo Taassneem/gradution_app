@@ -10,11 +10,9 @@ class DioConsumer extends ApiConsumer {
   DioConsumer({required this.dio}) {
     dio.options.baseUrl = EndPoint.baseUrl;
     dio.interceptors.add(LogInterceptor(
-      request: true,
-      error: true,
-    ));
+        request: true, error: true, requestBody: true, responseBody: true));
   }
-  
+
   @override
   Future post(String path,
       {dynamic data,

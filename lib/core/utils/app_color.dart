@@ -13,4 +13,7 @@ class AppColor {
   static const brown = Color(0xffEC973C);
   static const bgOn1 = Color(0xffC6D0E7);
   static const lightGrey = Color(0xffBABABA);
+  static const error = Color(0xffFF8889);
+  static const errorMessage = Color(0xffED1F2A);
+  static const right = Color(0xffAFDE7E);
 }

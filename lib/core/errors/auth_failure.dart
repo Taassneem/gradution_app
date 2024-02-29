@@ -6,7 +6,7 @@ class FailureModel {
 
   FailureModel({required this.errorMessage});
   factory FailureModel.fromJson(Map<String, dynamic> json) {
-    return FailureModel(errorMessage: json[ApiKey.message]);
+    return FailureModel(errorMessage: json['errors'][0][ApiKey.message]);
   }
 }
 
