@@ -4,9 +4,9 @@ import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/database/cache/cache_helper.dart';
 import 'package:gradution_app/core/func/custom_toast.dart';
 import 'package:gradution_app/core/utils/servive_locator.dart';
+import 'package:gradution_app/generated/l10n.dart';
 import '../../../../../core/utils/app_color.dart';
 import '../../../../../core/utils/app_router.dart';
-import '../../../../../core/utils/app_string.dart';
 import '../../manager/auth_cubit/auth_cubit.dart';
 import 'custom_elevated_button.dart';
 import 'custom_text_button.dart';
@@ -57,7 +57,7 @@ class SignInForm extends StatelessWidget {
                           obscureText: true,
                         ),
                         CustomTextButton(
-                            text: '${AppString.forgetPass} ?',
+                            text: '${S.of(context).forgetPass} ?',
                             onPressed: () {
                               GoRouter.of(context)
                                   .push(AppRouter.forgetPassView);

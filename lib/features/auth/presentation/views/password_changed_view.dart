@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
-import 'package:gradution_app/core/utils/app_string.dart';
 import 'package:gradution_app/features/auth/presentation/views/widgets/custom_elevated_button.dart';
+import 'package:gradution_app/generated/l10n.dart';
 
 import '../../../../core/utils/app_assets.dart';
 
@@ -29,7 +29,7 @@ class PasswordChanged extends StatelessWidget {
               SizedBox(
                 width: 200,
                 child: Text(
-                  AppString.changeSuccessfully,
+                  S.of(context).changeSuccessfully,
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.titleSmall,
                 ),

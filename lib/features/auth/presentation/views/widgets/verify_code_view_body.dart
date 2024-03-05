@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
+import 'package:gradution_app/generated/l10n.dart';
 
 import '../../../../../core/utils/app_assets.dart';
-import '../../../../../core/utils/app_string.dart';
 import '../change_email_text_button.dart';
 import 'custom_elevated_button.dart';
 import 'custom_welcome_text.dart';
@@ -27,8 +27,8 @@ class VerifyCodeViewBody extends StatelessWidget {
         child: Column(children: [
           const SizedBox(height: 40),
           CustomWelcomeText(
-              welcome: AppString.verification,
-              welcomeSubTitle: AppString.verificationSubTitle),
+              welcome: S.of(context).verification,
+              welcomeSubTitle: S.of(context).verificationSubTitle),
           const SizedBox(height: 40),
           const VerificationOTP(),
           const SizedBox(height: 40),

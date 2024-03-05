@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
-import 'package:gradution_app/core/utils/app_string.dart';
+import 'package:gradution_app/generated/l10n.dart';
 
 import 'item_field.dart';
 
@@ -36,7 +36,7 @@ class HomeViewBody extends StatelessWidget {
                 children: [
                   ItemField(
                     color: AppColor.purple,
-                    fieldName: AppString.camera,
+                    fieldName: S.of(context).camera,
                     image: AppAssets.camera,
                   ),
                   const SizedBox(width: 20),
@@ -47,14 +47,14 @@ class HomeViewBody extends StatelessWidget {
                           GoRouter.of(context).push(AppRouter.quizView);
                         },
                         color: AppColor.babyBlue,
-                        fieldName: AppString.quiz,
+                        fieldName: S.of(context).quiz,
                         image: AppAssets.quiz,
                         height: 170,
                       ),
                       const SizedBox(height: 16),
                       ItemField(
                         color: AppColor.pink,
-                        fieldName: AppString.task,
+                        fieldName: S.of(context).task,
                         image: AppAssets.task,
                         height: 180,
                       )

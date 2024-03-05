@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
-import 'package:gradution_app/core/utils/app_string.dart';
 import 'package:gradution_app/features/auth/presentation/manager/auth_cubit/auth_cubit.dart';
+import 'package:gradution_app/generated/l10n.dart';
 import 'widgets/custom_welcome_text.dart';
 import 'widgets/sign_in_form.dart';
 
@@ -26,8 +26,8 @@ class SignInView extends StatelessWidget {
                 child: Column(children: [
                   const SizedBox(height: 64),
                   CustomWelcomeText(
-                      welcome: AppString.signInWelcome,
-                      welcomeSubTitle: AppString.signInSubTitle),
+                      welcome: S.of(context).signInWelcome,
+                      welcomeSubTitle: S.of(context).signInSubTitle),
                   const SizedBox(height: 40),
                   const SignInForm()
                 ]),

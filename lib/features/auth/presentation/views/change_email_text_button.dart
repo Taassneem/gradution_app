@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/generated/l10n.dart';
 
-import '../../../../core/utils/app_string.dart';
 
 class ChangeEmailTextButton extends StatelessWidget {
   const ChangeEmailTextButton({
@@ -15,7 +15,7 @@ class ChangeEmailTextButton extends StatelessWidget {
           GoRouter.of(context).pop();
         },
         child: Text(
-          AppString.changeEmail,
+          S.of(context).changeEmail,
           style: Theme.of(context)
               .textTheme
               .titleSmall!

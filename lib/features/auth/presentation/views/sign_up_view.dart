@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/features/auth/presentation/manager/auth_cubit/auth_cubit.dart';
+import 'package:gradution_app/generated/l10n.dart';
 import '../../../../core/utils/app_assets.dart';
-import '../../../../core/utils/app_string.dart';
 import 'widgets/custom_welcome_text.dart';
 import 'widgets/sign_up_form.dart';
 
@@ -31,8 +31,8 @@ class SignUpView extends StatelessWidget {
                           child: Column(children: [
                         const SizedBox(height: 16),
                         CustomWelcomeText(
-                            welcome: AppString.welcome,
-                            welcomeSubTitle: AppString.createAcc),
+                            welcome: S.of(context).welcome,
+                            welcomeSubTitle: S.of(context).createAcc),
                         const SizedBox(height: 24),
                         const SignUpForm()
                       ]))))

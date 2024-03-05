@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
-import 'package:gradution_app/core/utils/app_string.dart';
 import 'package:gradution_app/core/utils/widgets/custom_back_app_bar.dart';
+import 'package:gradution_app/generated/l10n.dart';
 
 import 'choosen_type.dart';
 
@@ -27,13 +27,13 @@ class ChooseViewBody extends StatelessWidget {
                 Column(
                   children: [
                     Text(
-                      AppString.choose,
+                      S.of(context).choose,
                       style: text.titleMedium
                     ),
                     const SizedBox(height: 24),
                     ChoosenType(
                       image: AppAssets.child,
-                      type: AppString.child,
+                      type: S.of(context).child,
                       onTap: () {
                         GoRouter.of(context)
                             .pushReplacement(AppRouter.homeView);
@@ -41,7 +41,7 @@ class ChooseViewBody extends StatelessWidget {
                     ),
                     ChoosenType(
                       image: AppAssets.parent,
-                      type: AppString.parent,
+                      type: S.of(context).parent,
                     ),
                   ],
                 ),

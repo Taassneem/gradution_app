@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
+import 'package:intl/intl.dart';
 
 class QuizItemField extends StatelessWidget {
   const QuizItemField({
@@ -18,7 +19,10 @@ class QuizItemField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 16, left: paddingLeft),
+      padding: EdgeInsets.only(
+          bottom: 16,
+          left: isArabic() ? 0 : paddingLeft,
+          right: isArabic() ? paddingLeft : 0),
       child: GestureDetector(
         onTap: onTap,
         child: SizedBox(
@@ -43,11 +47,13 @@ class QuizItemField extends StatelessWidget {
                 bottom: -3,
                 left: left,
                 child: Container(
-                    padding: const EdgeInsets.all(5),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
                     decoration: BoxDecoration(
                         color: AppColor.babyBlue,
                         borderRadius: BorderRadius.circular(20)),
-                    child: Text(title)),
+                    child: Text(title,
+                        style: Theme.of(context).textTheme.titleSmall)),
               ),
             ],
           ),
@@ -55,4 +61,8 @@ class QuizItemField extends StatelessWidget {
       ),
     );
   }
+}
+
+bool isArabic() {
+  return Intl.getCurrentLocale() == 'ar';
 }

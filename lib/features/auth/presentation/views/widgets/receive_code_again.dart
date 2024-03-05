@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_app/generated/l10n.dart';
 
-import '../../../../../core/utils/app_string.dart';
 
 class ReciveCodeAgain extends StatelessWidget {
   const ReciveCodeAgain({
@@ -12,12 +12,12 @@ class ReciveCodeAgain extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(AppString.receiveCodeAgain,
+        Text(S.of(context).receiveCodeAgain,
             style: Theme.of(context).textTheme.titleSmall),
         GestureDetector(
           onTap: () {},
           child: Text(
-            AppString.resend,
+            S.of(context).resend,
             style: Theme.of(context)
                 .textTheme
                 .titleSmall!

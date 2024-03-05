@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_app/features/auth/presentation/manager/auth_cubit/auth_cubit.dart';
+import 'package:gradution_app/generated/l10n.dart';
 import '../../../../core/utils/app_assets.dart';
 import '../../../../core/utils/app_color.dart';
-import '../../../../core/utils/app_string.dart';
 import 'widgets/custom_welcome_text.dart';
 import 'widgets/forget_pass_form.dart';
 
@@ -31,8 +31,8 @@ class ForgetPasswordView extends StatelessWidget {
                       child: Column(children: [
                         const SizedBox(height: 40),
                         CustomWelcomeText(
-                            welcome: AppString.forgetPass,
-                            welcomeSubTitle: AppString.forgetPassSubTitle),
+                            welcome: S.of(context).forgetPass,
+                            welcomeSubTitle: S.of(context).forgetPassSubTitle),
                         const SizedBox(height: 40),
                         const ForgetPasswordForm()
                       ])))
