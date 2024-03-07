@@ -1,0 +1,94 @@
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/utils/app_assets.dart';
+import 'package:gradution_app/core/utils/app_router.dart';
+import 'package:gradution_app/features/quiz/numbers/views/widget/name_speaker.dart';
+import 'package:gradution_app/features/quiz/numbers/views/widget/number_error_widget.dart';
+import 'package:gradution_app/features/quiz/numbers/views/widget/number_success_widget.dart';
+import 'package:gradution_app/generated/l10n.dart';
+import 'package:intl/intl.dart';
+
+import 'number_answer_image.dart';
+
+class NumberQuizOneViewBody extends StatelessWidget {
+  const NumberQuizOneViewBody({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(28.0),
+      child: Column(
+        children: [
+          NameSpeaker(isWhite: true, onPressed: () {}),
+          const SizedBox(height: 32),
+          Container(
+            width: MediaQuery.sizeOf(context).width,
+            height: 90,
+            decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(100)),
+            child: Center(
+              child: Text(S.of(context).sum,
+                  style: Theme.of(context).textTheme.headlineLarge),
+            ),
+          ),
+          SizedBox(height: MediaQuery.sizeOf(context).height * 0.08),
+          ImageAnswerNumber(
+              number: AppAssets.twelve,
+              isWhite: true,
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return const NumberErrorWidget();
+                  },
+                );
+              }),
+          ImageAnswerNumber(
+              number: AppAssets.eleven,
+              isWhite: true,
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return NumberSuccessWidget(
+                      onPressed: () {
+                        GoRouter.of(context).push(AppRouter.numberQuizViewTwo);
+                      },
+                    );
+                  },
+                );
+              }),
+          ImageAnswerNumber(
+              number: AppAssets.ten,
+              isWhite: true,
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return const NumberErrorWidget();
+                  },
+                );
+              })
+        ],
+      ),
+    );
+  }
+}
+
+bool isArabic() {
+  return Intl.getCurrentLocale() == 'ar';
+}
+
+        // Container(
+        //   decoration: const BoxDecoration(shape: BoxShape.rectangle),
+        // ),
+        // Center(
+        //   child: Transform.rotate(
+        //     angle: 45 * 3.141592653 / 180,
+        //     child: Container(
+        //       width: 100,
+        //       height: 100,
+        //       color: Colors.blue,
+        //     ),
+        //   ),
+        // )

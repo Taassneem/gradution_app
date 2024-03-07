@@ -3,11 +3,11 @@ import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/quiz/foodAndDrink/views/widgets/middle_food_right_message.dart';
+import 'package:gradution_app/features/quiz/numbers/views/widget/name_speaker.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
 import 'widgets/food_quiz_view_body_text.dart';
 import 'widgets/middle_food_error_widget.dart';
-import '../../presentation/views/widgets/name_speaker.dart';
 
 class FoodQuizViewOne extends StatelessWidget {
   const FoodQuizViewOne({super.key});

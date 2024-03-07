@@ -17,7 +17,9 @@ class NumberErrorWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              color: AppColor.error,
+              decoration: BoxDecoration(
+                  color: AppColor.error,
+                  borderRadius: BorderRadius.circular(10)),
               height: 200,
               width: MediaQuery.sizeOf(context).width,
               child: Image.asset(AppAssets.numberError),

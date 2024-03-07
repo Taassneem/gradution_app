@@ -79,7 +79,7 @@ class AppAssets {
   static const String six = '${basePath}6.png';
   static const String six2 = '${basePath}6_2.png';
   static const String seven = '${basePath}7.png';
-  static const String nine = '${basePath}3.png';
+  static const String nine = '${basePath}9.png';
   static const String ten = '${basePath}10.png';
   static const String eleven = '${basePath}11.png';
   static const String twelve = '${basePath}12.png';
