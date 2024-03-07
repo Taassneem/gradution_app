@@ -112,5 +112,8 @@
     "ten": "Ten",
     "five": "Five",
     "turtle": "Turtle",
-    "sum": "6 + 5 ="
+    "sum": "6 + 5 =",
+    "sub": "15 - 6 =",
+    "four":"4 - f _  _ r",
+    "multi":"2 * 7="
 }

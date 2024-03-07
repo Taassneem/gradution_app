@@ -1060,10 +1060,10 @@ class S {
     );
   }
 
-  /// `Which of them means number seven?`
+  /// `Which of them means number Seven?`
   String get meaningOfSeven {
     return Intl.message(
-      'Which of them means number seven?',
+      'Which of them means number Seven?',
       name: 'meaningOfSeven',
       desc: '',
       args: [],
@@ -1120,50 +1120,50 @@ class S {
     );
   }
 
-  /// `six`
+  /// `Six`
   String get six {
     return Intl.message(
-      'six',
+      'Six',
       name: 'six',
       desc: '',
       args: [],
     );
   }
 
-  /// `seven`
+  /// `Seven`
   String get seven {
     return Intl.message(
-      'seven',
+      'Seven',
       name: 'seven',
       desc: '',
       args: [],
     );
   }
 
-  /// `nine`
+  /// `Nine`
   String get nine {
     return Intl.message(
-      'nine',
+      'Nine',
       name: 'nine',
       desc: '',
       args: [],
     );
   }
 
-  /// `ten`
+  /// `Ten`
   String get ten {
     return Intl.message(
-      'ten',
+      'Ten',
       name: 'ten',
       desc: '',
       args: [],
     );
   }
 
-  /// `five`
+  /// `Five`
   String get five {
     return Intl.message(
-      'five',
+      'Five',
       name: 'five',
       desc: '',
       args: [],
@@ -1185,6 +1185,36 @@ class S {
     return Intl.message(
       '6 + 5 =',
       name: 'sum',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `15 - 6 =`
+  String get sub {
+    return Intl.message(
+      '15 - 6 =',
+      name: 'sub',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `4 - f _  _ r`
+  String get four {
+    return Intl.message(
+      '4 - f _  _ r',
+      name: 'four',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `2 * 7=`
+  String get multi {
+    return Intl.message(
+      '2 * 7=',
+      name: 'multi',
       desc: '',
       args: [],
     );

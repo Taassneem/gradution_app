@@ -70,6 +70,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgetPass": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
         "forgetPassSubTitle": MessageLookupByLibrary.simpleMessage(
             "أدخل عنوان البريد الإلكتروني المرتبط بحسابك"),
+        "four": MessageLookupByLibrary.simpleMessage("4 - f _  _ r"),
         "fox": MessageLookupByLibrary.simpleMessage("الثعلب"),
         "grapes": MessageLookupByLibrary.simpleMessage("العنب"),
         "hand": MessageLookupByLibrary.simpleMessage("اليد"),
@@ -83,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "meat": MessageLookupByLibrary.simpleMessage("اللحم"),
         "milk": MessageLookupByLibrary.simpleMessage("الحليب"),
         "monkey": MessageLookupByLibrary.simpleMessage("القرد"),
+        "multi": MessageLookupByLibrary.simpleMessage("2 * 7="),
         "nameOfNumber":
             MessageLookupByLibrary.simpleMessage("ما اسم هذا الرقم؟"),
         "newPass":
@@ -132,8 +134,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "snow": MessageLookupByLibrary.simpleMessage("ثلج"),
         "star": MessageLookupByLibrary.simpleMessage("النجمة"),
         "strawberry": MessageLookupByLibrary.simpleMessage("الفراولة"),
+        "sub": MessageLookupByLibrary.simpleMessage("15 - 6 ="),
         "success": MessageLookupByLibrary.simpleMessage("نجاح"),
-        "sum": MessageLookupByLibrary.simpleMessage(" = 6 + 5"),
+        "sum": MessageLookupByLibrary.simpleMessage("6 + 5 ="),
         "sunny": MessageLookupByLibrary.simpleMessage("مشمس"),
         "task": MessageLookupByLibrary.simpleMessage("مهمة"),
         "tea": MessageLookupByLibrary.simpleMessage("الشاي"),

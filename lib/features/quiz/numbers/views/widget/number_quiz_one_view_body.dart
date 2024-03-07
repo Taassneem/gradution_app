@@ -9,6 +9,7 @@ import 'package:gradution_app/generated/l10n.dart';
 import 'package:intl/intl.dart';
 
 import 'number_answer_image.dart';
+import 'number_question_circular.dart';
 
 class NumberQuizOneViewBody extends StatelessWidget {
   const NumberQuizOneViewBody({super.key});
@@ -21,16 +22,7 @@ class NumberQuizOneViewBody extends StatelessWidget {
         children: [
           NameSpeaker(isWhite: true, onPressed: () {}),
           const SizedBox(height: 32),
-          Container(
-            width: MediaQuery.sizeOf(context).width,
-            height: 90,
-            decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(100)),
-            child: Center(
-              child: Text(S.of(context).sum,
-                  style: Theme.of(context).textTheme.headlineLarge),
-            ),
-          ),
+          NumberQuestionCircular(question: S.of(context).sum,),
           SizedBox(height: MediaQuery.sizeOf(context).height * 0.08),
           ImageAnswerNumber(
               number: AppAssets.twelve,
@@ -75,20 +67,9 @@ class NumberQuizOneViewBody extends StatelessWidget {
   }
 }
 
+
 bool isArabic() {
   return Intl.getCurrentLocale() == 'ar';
 }
 
-        // Container(
-        //   decoration: const BoxDecoration(shape: BoxShape.rectangle),
-        // ),
-        // Center(
-        //   child: Transform.rotate(
-        //     angle: 45 * 3.141592653 / 180,
-        //     child: Container(
-        //       width: 100,
-        //       height: 100,
-        //       color: Colors.blue,
-        //     ),
-        //   ),
-        // )
+        

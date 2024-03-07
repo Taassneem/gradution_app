@@ -18,7 +18,7 @@ class ImageAnswerNumber extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: CircleAvatar(
-          radius: 55,
+          radius: 50,
           backgroundColor: isWhite ? Colors.white : AppColor.babyBlue,
           child: Image.asset(number),
         ),

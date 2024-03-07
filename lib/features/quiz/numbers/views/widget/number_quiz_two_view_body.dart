@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
-import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/quiz/numbers/views/widget/name_speaker.dart';
 import 'package:gradution_app/generated/l10n.dart';
@@ -9,6 +8,7 @@ import 'package:intl/intl.dart';
 
 import 'number_answer_image.dart';
 import 'number_error_widget.dart';
+import 'number_question.dart';
 import 'number_success_widget.dart';
 
 class NumberQuizTwoViewBody extends StatelessWidget {
@@ -27,22 +27,15 @@ class NumberQuizTwoViewBody extends StatelessWidget {
           children: [
             NameSpeaker(onPressed: () {}),
             const SizedBox(height: 32),
-            Container(
-              width: MediaQuery.sizeOf(context).width,
-              height: 90,
-              decoration: BoxDecoration(
-                  color: AppColor.babyBlue,
-                  borderRadius: BorderRadius.circular(10)),
-              child: Center(
-                child: Text(S.of(context).meaningOfSeven,
-                    style: Theme.of(context).textTheme.titleMedium),
-              ),
+            NumberQuestion(
+              question: S.of(context).meaningOfSeven,
             ),
             SizedBox(height: MediaQuery.sizeOf(context).height * 0.08),
             Row(
               children: [
                 ImageAnswerNumber(
                     number: AppAssets.six,
+                    isWhite: true,
                     onTap: () {
                       showDialog(
                         context: context,
@@ -53,6 +46,7 @@ class NumberQuizTwoViewBody extends StatelessWidget {
                     }),
                 ImageAnswerNumber(
                     number: AppAssets.seven,
+                    isWhite: true,
                     onTap: () {
                       showDialog(
                         context: context,
@@ -60,7 +54,7 @@ class NumberQuizTwoViewBody extends StatelessWidget {
                           return NumberSuccessWidget(
                             onPressed: () {
                               GoRouter.of(context)
-                                  .push(AppRouter.numberQuizViewFive);
+                                  .push(AppRouter.numberQuizViewThree);
                             },
                           );
                         },
@@ -68,6 +62,7 @@ class NumberQuizTwoViewBody extends StatelessWidget {
                     }),
                 ImageAnswerNumber(
                     number: AppAssets.nine,
+                    isWhite: true,
                     onTap: () {
                       showDialog(
                         context: context,

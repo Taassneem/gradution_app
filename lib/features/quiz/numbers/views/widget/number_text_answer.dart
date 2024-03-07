@@ -4,11 +4,11 @@ import 'package:gradution_app/core/utils/app_color.dart';
 class TextAnswerNumber extends StatelessWidget {
   const TextAnswerNumber({
     super.key,
-    required this.number,
+    this.number = 'Not a number',
     this.onTap,
     this.question = false,
     this.answerImage = false,
-    this.image = '',
+    this.image = 'assets/images/Error.jpg',
   });
   final String number;
   final Function()? onTap;
