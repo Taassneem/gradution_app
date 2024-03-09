@@ -8,9 +8,10 @@ import 'package:gradution_app/generated/l10n.dart';
 class QuizFinalCongrats extends StatelessWidget {
   const QuizFinalCongrats({
     super.key,
-    required this.image,
+    required this.image, required this.quiz,
   });
   final String image;
+  final String quiz;
   @override
   Widget build(BuildContext context) {
     S s = S.of(context);
@@ -40,7 +41,7 @@ class QuizFinalCongrats extends StatelessWidget {
                     style: Theme.of(context).textTheme.titleLarge),
                 const SizedBox(height: 10),
                 Text(
-                  s.congratulationsSubTitle,
+                  quiz,
                   style: Theme.of(context)
                       .textTheme
                       .titleMedium!

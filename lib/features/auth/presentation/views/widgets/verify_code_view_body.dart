@@ -4,7 +4,7 @@ import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
 import '../../../../../core/utils/app_assets.dart';
-import '../change_email_text_button.dart';
+import 'change_email_text_button.dart';
 import 'custom_elevated_button.dart';
 import 'custom_welcome_text.dart';
 import 'receive_code_again.dart';
@@ -35,7 +35,7 @@ class VerifyCodeViewBody extends StatelessWidget {
           const ReciveCodeAgain(),
           const SizedBox(height: 24),
           CustomElevatedButton(
-            text: 'Confirm',
+            text: S.of(context).confirm,
             onPressed: () {
               GoRouter.of(context).push(AppRouter.newPassView);
             },

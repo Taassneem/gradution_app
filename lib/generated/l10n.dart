@@ -140,6 +140,26 @@ class S {
     );
   }
 
+  /// `Skip`
+  String get skip {
+    return Intl.message(
+      'Skip',
+      name: 'skip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get next {
+    return Intl.message(
+      'Next',
+      name: 'next',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Welcome back !`
   String get signInWelcome {
     return Intl.message(
@@ -170,11 +190,141 @@ class S {
     );
   }
 
+  /// `E-mail`
+  String get mail {
+    return Intl.message(
+      'E-mail',
+      name: 'mail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your email address`
+  String get mailHelpText {
+    return Intl.message(
+      'Enter your email address',
+      name: 'mailHelpText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your password`
+  String get passwordHelpText {
+    return Intl.message(
+      'Enter your password',
+      name: 'passwordHelpText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get login {
+    return Intl.message(
+      'Login',
+      name: 'login',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Create Account`
   String get createAcc {
     return Intl.message(
       'Create Account',
       name: 'createAcc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Signed Up Successfully`
+  String get signedUpSuccessfully {
+    return Intl.message(
+      'Signed Up Successfully',
+      name: 'signedUpSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full Name`
+  String get fullName {
+    return Intl.message(
+      'Full Name',
+      name: 'fullName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your name`
+  String get nameHelpText {
+    return Intl.message(
+      'Enter your name',
+      name: 'nameHelpText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get confirmPassword {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirmPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Both password must match`
+  String get mustBeBoth {
+    return Intl.message(
+      'Both password must match',
+      name: 'mustBeBoth',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `8+cahracters,1capital letter`
+  String get passwordValidate {
+    return Intl.message(
+      '8+cahracters,1capital letter',
+      name: 'passwordValidate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send Verification Code`
+  String get sendVerificationCode {
+    return Intl.message(
+      'Send Verification Code',
+      name: 'sendVerificationCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign UP`
+  String get signUP {
+    return Intl.message(
+      'Sign UP',
+      name: 'signUP',
       desc: '',
       args: [],
     );
@@ -215,6 +365,36 @@ class S {
     return Intl.message(
       'Please enter 4-digit code sent to you at email address',
       name: 'verificationSubTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get confirm {
+    return Intl.message(
+      'Confirm',
+      name: 'confirm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset Password`
+  String get resetPassword {
+    return Intl.message(
+      'Reset Password',
+      name: 'resetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Back to login`
+  String get backToLogin {
+    return Intl.message(
+      'Back to login',
+      name: 'backToLogin',
       desc: '',
       args: [],
     );
@@ -305,16 +485,6 @@ class S {
     return Intl.message(
       'Parent',
       name: 'parent',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Next`
-  String get next {
-    return Intl.message(
-      'Next',
-      name: 'next',
       desc: '',
       args: [],
     );
@@ -481,10 +651,40 @@ class S {
   }
 
   /// `You Are finished Food And Drink Quiz`
-  String get congratulationsSubTitle {
+  String get congratulationsFood {
     return Intl.message(
       'You Are finished Food And Drink Quiz',
-      name: 'congratulationsSubTitle',
+      name: 'congratulationsFood',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You Are finished  Animals Quiz `
+  String get congratulationsAnimal {
+    return Intl.message(
+      'You Are finished  Animals Quiz ',
+      name: 'congratulationsAnimal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You Are finished Numbers Quiz `
+  String get congratulationsNumber {
+    return Intl.message(
+      'You Are finished Numbers Quiz ',
+      name: 'congratulationsNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You Are finished Other Things Quiz `
+  String get congratulationsThings {
+    return Intl.message(
+      'You Are finished Other Things Quiz ',
+      name: 'congratulationsThings',
       desc: '',
       args: [],
     );

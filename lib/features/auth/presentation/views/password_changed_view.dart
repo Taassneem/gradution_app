@@ -36,7 +36,7 @@ class PasswordChanged extends StatelessWidget {
               ),
               const SizedBox(height: 32),
               CustomElevatedButton(
-                text: 'Back to login',
+                text: S.of(context).backToLogin,
                 onPressed: () {
                   GoRouter.of(context).pushReplacement(AppRouter.signInView);
                 },

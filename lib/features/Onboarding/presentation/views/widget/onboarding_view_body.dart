@@ -5,6 +5,7 @@ import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/core/utils/servive_locator.dart';
 import 'package:gradution_app/features/Onboarding/data/models/on_boarding_model.dart';
+import 'package:gradution_app/generated/l10n.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../../core/database/cache/cache_helper.dart';
@@ -77,7 +78,7 @@ class OnBoardingViewBody extends StatelessWidget {
                                 .pushReplacement(AppRouter.signInView);
                           },
                           child: Text(
-                            'Skip',
+                            S.of(context).skip,
                             style: GoogleFonts.montserrat(
                               fontSize: 18,
                               color: AppColor.grey,
@@ -134,9 +135,9 @@ class OnBoardingViewBody extends StatelessWidget {
                                 GoRouter.of(context)
                                     .pushReplacement(AppRouter.signInView);
                               },
-                              child: const Text(
-                                'Next',
-                                style: TextStyle(fontSize: 20),
+                              child: Text(
+                                S.of(context).next,
+                                style: const TextStyle(fontSize: 20),
                               )),
                     ),
                   ),

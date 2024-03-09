@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/database/cache/cache_helper.dart';
 import 'package:gradution_app/core/func/custom_toast.dart';
 import 'package:gradution_app/core/utils/servive_locator.dart';
+import 'package:gradution_app/generated/l10n.dart';
 
 import '../../../../../core/utils/app_router.dart';
 import '../../manager/auth_cubit/auth_cubit.dart';
@@ -18,11 +19,11 @@ class SignUpForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AuthCubit authCubit = BlocProvider.of<AuthCubit>(context);
-
+    S s = S.of(context);
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is SignUpSuccess) {
-          showToast('Signed Up Successfully');
+          showToast(s.signedUpSuccessfully);
           GoRouter.of(context).pushReplacement(AppRouter.chooseView);
         } else if (state is SignUpFailure) {
           showToast(state.errorMessage);
@@ -43,27 +44,28 @@ class SignUpForm extends StatelessWidget {
                         const SizedBox(height: 30),
                         // const CustomFullName(),
                         TextWithTextField(
-                          textFieldName: 'Full Name',
-                          hintText: 'Enter your name',
+                          textFieldName: s.fullName,
+                          hintText: s.nameHelpText,
                           controller: authCubit.signUpName,
+                          icon: Icons.person_outline,
                         ),
                         const SizedBox(height: 16),
                         TextWithTextField(
-                            textFieldName: 'Email Address',
-                            hintText: 'Enter your email address',
+                            textFieldName: s.mail,
+                            hintText: s.mailHelpText,
                             controller: authCubit.signUpEmail,
                             icon: Icons.mail_outline),
                         const SizedBox(height: 16),
                         TextWithTextField(
-                          textFieldName: 'Password',
-                          hintText: '8+cahracters,1capital letter ',
+                          textFieldName: s.password,
+                          hintText: s.passwordValidate,
                           controller: authCubit.signUpPassword,
                           obscureText: true,
                         ),
                         const SizedBox(height: 16),
                         TextWithTextField(
-                          textFieldName: 'Confirm Password',
-                          hintText: 'Confirm Password ',
+                          textFieldName: s.confirmPassword,
+                          hintText: s.mustBeBoth,
                           controller: authCubit.confirmPassword,
                           obscureText: true,
                         ),
@@ -71,7 +73,7 @@ class SignUpForm extends StatelessWidget {
                         state is SignUpLoading
                             ? const Center(child: CircularProgressIndicator())
                             : CustomElevatedButton(
-                                text: 'Sign UP',
+                                text: s.signUP,
                                 onPressed: () {
                                   if (authCubit.signUnKey.currentState!
                                       .validate()) {

@@ -48,7 +48,7 @@ class ThingsQuizNineView extends StatelessWidget {
             },
           );
         },
-        answerFour: AppAssets.teethBreach,
+        answerFour: AppAssets.teethBrush,
         onTapFour: () {
           showDialog(
             context: context,

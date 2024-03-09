@@ -20,11 +20,11 @@ class SignInForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AuthCubit authCubit = BlocProvider.of<AuthCubit>(context);
-
+    S s = S.of(context);
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is SignInSuccess) {
-          showToast('success');
+          showToast(s.success);
           GoRouter.of(context).pushReplacement(AppRouter.chooseView);
         } else if (state is SignInFailure) {
           showToast(state.errorMessage);
@@ -45,14 +45,14 @@ class SignInForm extends StatelessWidget {
                       children: [
                         const SizedBox(height: 30),
                         TextWithTextField(
-                            textFieldName: 'E-mail',
-                            hintText: 'Enter your email address',
+                            textFieldName: s.mail,
+                            hintText: s.mailHelpText,
                             controller: authCubit.signInEmail,
                             icon: Icons.mail_outline),
                         const SizedBox(height: 24),
                         TextWithTextField(
-                          textFieldName: 'Password',
-                          hintText: 'Enter your password',
+                          textFieldName: s.password,
+                          hintText: s.passwordHelpText,
                           controller: authCubit.signInPassword,
                           obscureText: true,
                         ),
@@ -64,7 +64,7 @@ class SignInForm extends StatelessWidget {
                             }),
                         const SizedBox(height: 32),
                         CustomElevatedButton(
-                            text: 'Login',
+                            text: s.login,
                             onPressed: () {
                               if (authCubit.signInKey.currentState!
                                   .validate()) {
@@ -79,7 +79,7 @@ class SignInForm extends StatelessWidget {
                               onPressed: () {
                                 GoRouter.of(context).push(AppRouter.signUpView);
                               },
-                              child: Text('Create An Account',
+                              child: Text(s.createAcc,
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleSmall!

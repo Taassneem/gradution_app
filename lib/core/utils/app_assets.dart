@@ -120,7 +120,7 @@ class AppAssets {
   static const String socks = '${basePath}socks.png';
   static const String sunny = '${basePath}sunny.png';
   static const String swim = '${basePath}swim.png';
-  static const String teethBreach = '${basePath}teethBreach.png';
+  static const String teethBrush = '${basePath}teethBrush.png';
   static const String thingsCongrats = '${basePath}thingsCongrats.png';
   static const String thingsError = '${basePath}thingsError.png';
   static const String thingsSuccess = '${basePath}thingsSuccess.png';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gradution_app/features/quiz/numbers/views/hexagon_shape.dart';
+import 'package:gradution_app/features/quiz/numbers/views/widget/hexagon_shape.dart';
 
 
 import 'name_speaker.dart';

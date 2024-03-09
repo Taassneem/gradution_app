@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/generated/l10n.dart';
 
 import '../../../../../core/utils/app_router.dart';
 import '../../manager/auth_cubit/auth_cubit.dart';
@@ -15,7 +16,7 @@ class ForgetPasswordForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AuthCubit authCubit = BlocProvider.of<AuthCubit>(context);
-
+    S s = S.of(context);
     return Container(
         width: 311,
         height: 300,
@@ -29,13 +30,13 @@ class ForgetPasswordForm extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: 30),
-                    const TextWithTextField(
-                        textFieldName: 'E-mail',
-                        hintText: 'Enter your email ',
+                    TextWithTextField(
+                        textFieldName: s.mail,
+                        hintText: s.mailHelpText,
                         icon: Icons.mail_outline),
                     const SizedBox(height: 35),
                     CustomElevatedButton(
-                        text: 'Send verification code ',
+                        text: s.sendVerificationCode,
                         onPressed: () {
                           if (authCubit.forgetKey.currentState!.validate()) {
                             GoRouter.of(context).push(AppRouter.verifyCodeView);

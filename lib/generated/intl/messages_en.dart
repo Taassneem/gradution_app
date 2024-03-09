@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "animals": MessageLookupByLibrary.simpleMessage("Animals"),
         "appName": MessageLookupByLibrary.simpleMessage("Autism children"),
         "back": MessageLookupByLibrary.simpleMessage("Back"),
+        "backToLogin": MessageLookupByLibrary.simpleMessage("Back to login"),
         "bear": MessageLookupByLibrary.simpleMessage("Bear"),
         "bed": MessageLookupByLibrary.simpleMessage("Bed"),
         "cake": MessageLookupByLibrary.simpleMessage("Cake"),
@@ -43,10 +44,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "circle": MessageLookupByLibrary.simpleMessage("Circle"),
         "cloudy": MessageLookupByLibrary.simpleMessage("Cloudy"),
         "coffee": MessageLookupByLibrary.simpleMessage("Coffee"),
+        "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+        "confirmPassword":
+            MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "congratulations":
             MessageLookupByLibrary.simpleMessage("Congratulations!"),
-        "congratulationsSubTitle": MessageLookupByLibrary.simpleMessage(
+        "congratulationsAnimal": MessageLookupByLibrary.simpleMessage(
+            "You Are finished  Animals Quiz "),
+        "congratulationsFood": MessageLookupByLibrary.simpleMessage(
             "You Are finished Food And Drink Quiz"),
+        "congratulationsNumber": MessageLookupByLibrary.simpleMessage(
+            "You Are finished Numbers Quiz "),
+        "congratulationsThings": MessageLookupByLibrary.simpleMessage(
+            "You Are finished Other Things Quiz "),
         "continue1": MessageLookupByLibrary.simpleMessage("Continue"),
         "corn": MessageLookupByLibrary.simpleMessage("Corn"),
         "correct": MessageLookupByLibrary.simpleMessage(
@@ -72,6 +82,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Enter the email address associated with your account"),
         "four": MessageLookupByLibrary.simpleMessage("4 - f _  _ r"),
         "fox": MessageLookupByLibrary.simpleMessage("Fox"),
+        "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "grapes": MessageLookupByLibrary.simpleMessage("Grapes"),
         "hand": MessageLookupByLibrary.simpleMessage("Hand"),
         "howManyAnimalsInPicture": MessageLookupByLibrary.simpleMessage(
@@ -79,12 +90,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "juice": MessageLookupByLibrary.simpleMessage("Juice"),
         "lemure": MessageLookupByLibrary.simpleMessage("Lemure"),
         "lion": MessageLookupByLibrary.simpleMessage("Lion"),
+        "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "mail": MessageLookupByLibrary.simpleMessage("E-mail"),
+        "mailHelpText":
+            MessageLookupByLibrary.simpleMessage("Enter your email address"),
         "meaningOfSeven": MessageLookupByLibrary.simpleMessage(
             "Which of them means number Seven?"),
         "meat": MessageLookupByLibrary.simpleMessage("Meat"),
         "milk": MessageLookupByLibrary.simpleMessage("Milk"),
         "monkey": MessageLookupByLibrary.simpleMessage("Monkey"),
         "multi": MessageLookupByLibrary.simpleMessage("2 * 7="),
+        "mustBeBoth":
+            MessageLookupByLibrary.simpleMessage("Both password must match"),
+        "nameHelpText": MessageLookupByLibrary.simpleMessage("Enter your name"),
         "nameOfNumber": MessageLookupByLibrary.simpleMessage(
             "What is the name of this number?"),
         "newPass": MessageLookupByLibrary.simpleMessage("Create new password"),
@@ -114,6 +132,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "otherThings": MessageLookupByLibrary.simpleMessage("Other Things"),
         "pants": MessageLookupByLibrary.simpleMessage("Pants"),
         "parent": MessageLookupByLibrary.simpleMessage("Parent"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "passwordHelpText":
+            MessageLookupByLibrary.simpleMessage("Enter your password"),
+        "passwordValidate": MessageLookupByLibrary.simpleMessage(
+            "8+cahracters,1capital letter"),
         "pepper": MessageLookupByLibrary.simpleMessage("Pepper"),
         "potato": MessageLookupByLibrary.simpleMessage("Potato"),
         "pumpkin": MessageLookupByLibrary.simpleMessage("Pumpkin"),
@@ -122,13 +145,20 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Didn’t receive code?"),
         "rectangle": MessageLookupByLibrary.simpleMessage("Rectangle"),
         "resend": MessageLookupByLibrary.simpleMessage("Resend"),
+        "resetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
         "sad": MessageLookupByLibrary.simpleMessage("Sad"),
         "salmon": MessageLookupByLibrary.simpleMessage("Salmon"),
+        "sendVerificationCode":
+            MessageLookupByLibrary.simpleMessage("Send Verification Code"),
         "seven": MessageLookupByLibrary.simpleMessage("Seven"),
         "signInSubTitle":
             MessageLookupByLibrary.simpleMessage("Login to your account"),
         "signInWelcome": MessageLookupByLibrary.simpleMessage("Welcome back !"),
+        "signUP": MessageLookupByLibrary.simpleMessage("Sign UP"),
+        "signedUpSuccessfully":
+            MessageLookupByLibrary.simpleMessage("Signed Up Successfully"),
         "six": MessageLookupByLibrary.simpleMessage("Six"),
+        "skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "snake": MessageLookupByLibrary.simpleMessage("Snake"),
         "snow": MessageLookupByLibrary.simpleMessage("Snow"),
         "star": MessageLookupByLibrary.simpleMessage("Star"),
