@@ -78,6 +78,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "five": MessageLookupByLibrary.simpleMessage("خمسة"),
         "foodAndDrink": MessageLookupByLibrary.simpleMessage("الطعام والشراب"),
         "forgetPass": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
+        "forgetPassQ":
+            MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور ؟"),
         "forgetPassSubTitle": MessageLookupByLibrary.simpleMessage(
             "أدخل عنوان البريد الإلكتروني المرتبط بحسابك"),
         "four": MessageLookupByLibrary.simpleMessage("4 - f _  _ r"),

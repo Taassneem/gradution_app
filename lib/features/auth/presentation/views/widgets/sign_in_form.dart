@@ -23,11 +23,11 @@ class SignInForm extends StatelessWidget {
     S s = S.of(context);
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
-        if (state is SignInSuccess) {
+        if (state is SignInFailure) {
+          showToast(state.errorMessage);
+        } else if (state is SignInSuccess) {
           showToast(s.success);
           GoRouter.of(context).pushReplacement(AppRouter.chooseView);
-        } else if (state is SignInFailure) {
-          showToast(state.errorMessage);
         }
       },
       builder: (context, state) {
@@ -57,7 +57,7 @@ class SignInForm extends StatelessWidget {
                           obscureText: true,
                         ),
                         CustomTextButton(
-                            text: '${S.of(context).forgetPass} ?',
+                            text: S.of(context).forgetPassQ,
                             onPressed: () {
                               GoRouter.of(context)
                                   .push(AppRouter.forgetPassView);
@@ -69,9 +69,9 @@ class SignInForm extends StatelessWidget {
                               if (authCubit.signInKey.currentState!
                                   .validate()) {
                                 authCubit.signIn();
-                                getIt
-                                    .get<CacheHelper>()
-                                    .saveData(key: 'SignedIn', value: true);
+                                // getIt
+                                //     .get<CacheHelper>()
+                                //     .saveData(key: 'SignedIn', value: true);
                               }
                             }),
                         Center(

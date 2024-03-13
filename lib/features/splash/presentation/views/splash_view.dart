@@ -19,14 +19,13 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
   void initState() {
     bool onBoardingVisited =
         getIt.get<CacheHelper>().getData(key: 'OnBoardingVisited') ?? false;
-    bool signedIn = getIt.get<CacheHelper>().getData(key: 'SignedIn') ?? false;
-    bool signedOut = getIt.get<CacheHelper>().getData(key: 'SignedUp') ?? false;
+    // bool signedIn = getIt.get<CacheHelper>().getData(key: 'SignedIn') ?? false;
+    // bool signedOut = getIt.get<CacheHelper>().getData(key: 'SignedUp') ?? false;
     if (onBoardingVisited == true) {
-      if (signedIn == true || signedOut == true) {
-        navigate(path: AppRouter.homeView);
-      } else {
-        navigate(path: AppRouter.signInView);
-      }
+      // if (signedIn == true || signedOut == true) {
+      //   navigate(path: AppRouter.homeView);
+      // } else {
+      navigate(path: AppRouter.signInView);
     } else {
       navigate(path: AppRouter.onBoardingView);
     }

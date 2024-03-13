@@ -30,6 +30,7 @@
     "confirm": "تأكيد",
     "resetPassword": "إعادة تعيين كلمة المرور",
     "backToLogin": "العودة لتسجيل الدخول",
+    "forgetPassQ": "نسيت كلمة المرور ؟",
     "forgetPass": "نسيت كلمة المرور",
     "forgetPassSubTitle": "أدخل عنوان البريد الإلكتروني المرتبط بحسابك",
     "verification": "تَحَقّق",

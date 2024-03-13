@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_app/core/errors/auth_failure.dart';
@@ -43,6 +45,7 @@ class AuthCubit extends Cubit<AuthState> {
         ApiKey.email: signInEmail.text,
         ApiKey.password: signInPassword.text
       });
+      log(response);
       emit(SignInSuccess());
     } on ServerFailure catch (e) {
       emit(SignInFailure(errorMessage: e.failure.errorMessage));

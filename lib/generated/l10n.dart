@@ -330,10 +330,20 @@ class S {
     );
   }
 
-  /// `Forget password`
+  /// `Forget password ?`
+  String get forgetPassQ {
+    return Intl.message(
+      'Forget password ?',
+      name: 'forgetPassQ',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forget password `
   String get forgetPass {
     return Intl.message(
-      'Forget password',
+      'Forget password ',
       name: 'forgetPass',
       desc: '',
       args: [],
