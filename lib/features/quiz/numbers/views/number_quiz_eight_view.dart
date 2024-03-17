@@ -17,7 +17,7 @@ class NumberQuizEightView extends StatelessWidget {
       backgroundColor: AppColor.babyBlue,
       body: SafeArea(
           child: NumberQuizHexagonShape(
-            question: S.of(context).sub,
+        question: S.of(context).sub,
         numberOne: '21',
         onTapOne: () {
           showDialog(

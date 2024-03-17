@@ -8,7 +8,8 @@ class TextWithTextField extends StatelessWidget {
     required this.hintText,
     this.icon,
     this.obscureText = false,
-    this.isDense, this.controller,
+    this.isDense,
+    this.controller,
   });
   final String textFieldName;
   final String hintText;

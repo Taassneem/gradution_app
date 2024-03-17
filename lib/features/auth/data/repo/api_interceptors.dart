@@ -1,5 +1,3 @@
 import 'package:dio/dio.dart';
 
-class ApiInterceptors extends Interceptor{
-
-}
+class ApiInterceptors extends Interceptor {}

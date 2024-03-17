@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class AnimalQuestion extends StatelessWidget {
   const AnimalQuestion({
-    super.key, required this.question,
+    super.key,
+    required this.question,
   });
   final String question;
   @override

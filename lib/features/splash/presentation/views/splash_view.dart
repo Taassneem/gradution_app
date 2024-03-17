@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:gradution_app/core/database/cache/cache_helper.dart';
-import 'package:gradution_app/core/utils/app_router.dart';
-import 'package:gradution_app/core/utils/servive_locator.dart';
+import 'package:gradution_app/core/utils/widgets/choose_lang.dart';
 import 'widget/splash_view_body.dart';
 
 class SplashView extends StatefulWidget {
@@ -17,20 +14,9 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
   late Animation<Offset> slideController;
   @override
   void initState() {
-    bool onBoardingVisited =
-        getIt.get<CacheHelper>().getData(key: 'OnBoardingVisited') ?? false;
-    // bool signedIn = getIt.get<CacheHelper>().getData(key: 'SignedIn') ?? false;
-    // bool signedOut = getIt.get<CacheHelper>().getData(key: 'SignedUp') ?? false;
-    if (onBoardingVisited == true) {
-      // if (signedIn == true || signedOut == true) {
-      //   navigate(path: AppRouter.homeView);
-      // } else {
-      navigate(path: AppRouter.signInView);
-    } else {
-      navigate(path: AppRouter.onBoardingView);
-    }
     super.initState();
     slidingAnimation();
+    navigate();
   }
 
   @override
@@ -60,13 +46,18 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
     animationController.forward();
   }
 
-  void navigate({required String path}) {
+  void navigate() {
     Future.delayed(
       const Duration(
         seconds: 6,
       ),
       () {
-        GoRouter.of(context).pushReplacement(path);
+        showDialog(
+          context: context,
+          builder: (context) {
+            return const ChooseLanguage();
+          },
+        );
       },
     );
   }

@@ -1,5 +1,3 @@
-// ignore_for_file: depend_on_referenced_packages
-
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,16 +19,15 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => AuthCubit(DioConsumer(dio: Dio())),
         ),
-        BlocProvider(
-          create: (context) => GlobalCubit()
+        BlocProvider(create: (context) => GlobalCubit()
             // ..getThemeData()
             ..getLang(),
-        ),
+            ),
       ],
       child: BlocBuilder<GlobalCubit, GlobalState>(
         builder: (context, state) {
           return MaterialApp.router(
-            locale: Locale(BlocProvider.of<GlobalCubit>(context).langCode, ''),
+            locale: Locale(BlocProvider.of<GlobalCubit>(context).langCode,),
             localizationsDelegates: const [
               S.delegate,
               GlobalMaterialLocalizations.delegate,

@@ -8,7 +8,8 @@ import 'package:gradution_app/generated/l10n.dart';
 class QuizFinalCongrats extends StatelessWidget {
   const QuizFinalCongrats({
     super.key,
-    required this.image, required this.quiz,
+    required this.image,
+    required this.quiz,
   });
   final String image;
   final String quiz;

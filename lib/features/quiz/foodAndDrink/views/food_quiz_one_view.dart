@@ -13,7 +13,8 @@ class FoodQuizViewOne extends StatelessWidget {
   const FoodQuizViewOne({super.key});
 
   @override
-  Widget build(BuildContext context) {S s = S.of(context);
+  Widget build(BuildContext context) {
+    S s = S.of(context);
     return Scaffold(
       appBar: AppBar(
         leading: const NameSpeaker(),

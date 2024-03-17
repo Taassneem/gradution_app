@@ -8,7 +8,7 @@ class NumberQuizFinalView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: QuizFinalCongrats(
         image: AppAssets.numberCongrats,
         quiz: S.of(context).congratulationsNumber,

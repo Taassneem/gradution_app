@@ -30,7 +30,6 @@ class AnimalQuizThreeView extends StatelessWidget {
           showDialog(
             context: context,
             builder: (BuildContext context) {
-              
               return MiddleAnimalRight(
                 onPressed: () {
                   GoRouter.of(context).push(AppRouter.animalQuizViewFour);

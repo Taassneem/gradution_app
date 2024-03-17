@@ -19,8 +19,7 @@ class ImageAnswer extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
         ),
-        child: Center(
-            child: Image.asset(image)),
+        child: Center(child: Image.asset(image)),
       ),
     );
   }

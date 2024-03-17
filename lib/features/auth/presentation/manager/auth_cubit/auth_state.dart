@@ -26,3 +26,12 @@ final class SignInFailure extends AuthState {
   SignInFailure({required this.errorMessage});
 }
 
+final class GetUserLoading extends AuthState {}
+
+final class GetUserSuccess extends AuthState {}
+
+final class GetUserFailure extends AuthState {
+  final String errorMessage;
+
+  GetUserFailure({required this.errorMessage});
+}

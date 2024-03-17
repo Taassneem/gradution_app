@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
+import 'package:gradution_app/core/utils/widgets/choose_lang.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
 import 'item_field.dart';
@@ -53,6 +54,14 @@ class HomeViewBody extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       ItemField(
+                        onTap: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) {
+                              return const ChooseLanguage();
+                            },
+                          );
+                        },
                         color: AppColor.pink,
                         fieldName: S.of(context).task,
                         image: AppAssets.task,

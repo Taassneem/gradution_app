@@ -10,7 +10,6 @@ class MiddleAnimalRight extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Card(
-        color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -51,21 +50,21 @@ class MiddleAnimalRight extends StatelessWidget {
   }
 }
 // GestureDetector(
-          //   onTap: onPressed,
-          //   child: Container(
-          //     padding: EdgeInsets.zero,
-          //     height: 50,
-          //     width: 180,
-          //     decoration: const BoxDecoration(
-          //         image: DecorationImage(image: AssetImage(AppAssets.right))),
-          //     child: Center(
-          //       child: Text(
-          //         AppString.next,
-          //         style: Theme.of(context)
-          //             .textTheme
-          //             .titleSmall!
-          //             .copyWith(color: Colors.white),
-          //       ),
-          //     ),
-          //   ),
-          // )
+//   onTap: onPressed,
+//   child: Container(
+//     padding: EdgeInsets.zero,
+//     height: 50,
+//     width: 180,
+//     decoration: const BoxDecoration(
+//         image: DecorationImage(image: AssetImage(AppAssets.right))),
+//     child: Center(
+//       child: Text(
+//         AppString.next,
+//         style: Theme.of(context)
+//             .textTheme
+//             .titleSmall!
+//             .copyWith(color: Colors.white),
+//       ),
+//     ),
+//   ),
+// )

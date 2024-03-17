@@ -5,7 +5,8 @@ import 'package:intl/intl.dart';
 class NameSpeaker extends StatelessWidget {
   const NameSpeaker({
     super.key,
-    this.isWhite = false, this.onPressed,
+    this.isWhite = false,
+    this.onPressed,
   });
   final bool isWhite;
   final void Function()? onPressed;

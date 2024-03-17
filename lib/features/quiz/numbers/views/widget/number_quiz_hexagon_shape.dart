@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_app/features/quiz/numbers/views/widget/hexagon_shape.dart';
 
-
 import 'name_speaker.dart';
 import 'number_question_circular.dart';
 
@@ -21,7 +20,8 @@ class NumberQuizHexagonShape extends StatelessWidget {
     this.onTapFive,
     this.onTapSix,
     this.isOneNumberFive = false,
-    this.isOneNumberSix = false, required this.question,
+    this.isOneNumberSix = false,
+    required this.question,
   });
   final String question;
   final String numberOne;

@@ -43,7 +43,8 @@ class ThingsQuizFourView extends StatelessWidget {
               builder: (BuildContext context) {
                 return MiddleThingsRight(
                   onPressed: () {
-                    GoRouter.of(context).push(AppRouter.otherThingsQuizViewFive);
+                    GoRouter.of(context)
+                        .push(AppRouter.otherThingsQuizViewFive);
                   },
                 );
               },

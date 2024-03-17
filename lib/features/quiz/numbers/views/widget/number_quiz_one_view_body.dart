@@ -22,7 +22,9 @@ class NumberQuizOneViewBody extends StatelessWidget {
         children: [
           NameSpeaker(isWhite: true, onPressed: () {}),
           const SizedBox(height: 32),
-          NumberQuestionCircular(question: S.of(context).sum,),
+          NumberQuestionCircular(
+            question: S.of(context).sum,
+          ),
           SizedBox(height: MediaQuery.sizeOf(context).height * 0.08),
           ImageAnswerNumber(
               number: AppAssets.twelve,
@@ -67,9 +69,6 @@ class NumberQuizOneViewBody extends StatelessWidget {
   }
 }
 
-
 bool isArabic() {
   return Intl.getCurrentLocale() == 'ar';
 }
-
-        

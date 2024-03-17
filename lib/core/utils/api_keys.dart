@@ -4,7 +4,7 @@ class EndPoint {
   static const String login = 'auth/login';
   static const String reset = 'auth/forget';
   static const String forget = 'auth/reset';
-  static String confirm(token) {
+  static  String confirm(token) {
     return 'auth/confirm/$token';
   }
 }

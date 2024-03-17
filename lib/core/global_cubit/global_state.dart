@@ -11,6 +11,10 @@ final class GlobalInitial extends GlobalState {}
 
 final class ChangeLanguageLoading extends GlobalState {}
 
+final class ChangeLanguageArabic extends GlobalState {}
+
+final class ChangeLanguageEnglish extends GlobalState {}
+
 final class ChangeLanguageSuccess extends GlobalState {}
 
 final class ChangeTheme extends GlobalState {}

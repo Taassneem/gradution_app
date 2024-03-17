@@ -49,8 +49,8 @@ class AppString {
   static String correct = 'Congratulations! The Answer is Correct';
   static String congratulations = 'Congratulations!';
   static String congratulationsSubTitle =
-      'You Are finished Food And Drink Quiz '; 
-      // Words
+      'You Are finished Food And Drink Quiz ';
+  // Words
   static String theShip = 'The Ship';
   static String pants = 'Pants';
   static String circle = 'Circle';

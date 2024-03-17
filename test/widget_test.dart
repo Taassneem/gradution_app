@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:gradution_app/app/gradution_app.dart';
+import 'package:gradution_app/core/app/gradution_app.dart';
 
 
 void main() {

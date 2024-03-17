@@ -8,7 +8,7 @@ class FoodQuizFinalView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: QuizFinalCongrats(
         image: AppAssets.finalFoodQuiz,
         quiz: S.of(context).congratulationsFood,

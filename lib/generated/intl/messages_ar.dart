@@ -115,6 +115,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "nine": MessageLookupByLibrary.simpleMessage("تسعة"),
         "numbers": MessageLookupByLibrary.simpleMessage("الأرقام"),
         "office": MessageLookupByLibrary.simpleMessage("المكتب"),
+        "ok": MessageLookupByLibrary.simpleMessage("حسنا"),
         "onBoardingSubTitleFour":
             MessageLookupByLibrary.simpleMessage("لاكتشاف هذا العالم"),
         "onBoardingSubTitleOne": MessageLookupByLibrary.simpleMessage(

@@ -10,7 +10,6 @@ class MiddleAnimalError extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Card(
-        color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(

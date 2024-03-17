@@ -129,6 +129,7 @@ class AppAssets {
   static const String watch = '${basePath}watch.png';
   static const String window = '${basePath}window.png';
   static const String arabic = '${basePath}arabic.png';
+  static const String translate = '${basePath}translate.png';
   // static const String cat = '${basePath}cat.svg';
   // static const String cateBird = '${basePath}cateBird.svg';
   // static const String cuteCat = '${basePath}cuteCat.svg';

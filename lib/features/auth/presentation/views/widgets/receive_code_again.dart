@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
-
 class ReciveCodeAgain extends StatelessWidget {
   const ReciveCodeAgain({
     super.key,
