@@ -6,6 +6,7 @@ import 'package:gradution_app/core/utils/api_keys.dart';
 import 'package:gradution_app/core/utils/servive_locator.dart';
 import 'package:gradution_app/features/auth/data/models/sign_in_model/sign_in_model.dart';
 import 'package:gradution_app/features/auth/data/models/sign_up_model/sign_up_model.dart';
+import 'package:gradution_app/features/auth/data/models/user_data_model/user_data_model.dart';
 import 'package:gradution_app/features/auth/data/repo/api_consumer.dart';
 
 part 'auth_state.dart';
@@ -27,6 +28,7 @@ class AuthCubit extends Cubit<AuthState> {
   TextEditingController signInPassword = TextEditingController();
   SignUpModel? register;
   SignInModel? user;
+  UserDataModel? data;
   signUp() async {
     try {
       emit(SignUpLoading());
@@ -34,12 +36,10 @@ class AuthCubit extends Cubit<AuthState> {
         ApiKey.userName: signUpName.text,
         ApiKey.email: signUpEmail.text,
         ApiKey.password: signUpPassword.text,
-        ApiKey.confirmpassword: confirmPassword.text
+        ApiKey.confirmPassword: confirmPassword.text
       });
       register = SignUpModel.fromJson(response);
-      getIt
-          .get<CacheHelper>()
-          .saveData(key: 'id', value: register!.savedUser!.id);
+      getIt.get<CacheHelper>().saveData(key: 'token', value: register!.token);
       emit(SignUpSuccess());
     } on ServerFailure catch (e) {
       emit(SignUpFailure(errorMessage: e.failure.errorMessage));
@@ -63,14 +63,19 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  // getUserData() async {
-  //   try {
-  //     emit(GetUserLoading());
-  //     final response = await api.get(
-  //         EndPoint.confirm(getIt.get<CacheHelper>().getData(key: 'token')));
-  //     emit(GetUserSuccess());
-  //   } on ServerFailure catch (e) {
-  //     emit(GetUserFailure(errorMessage: e.failure.errorMessage));
-  //   }
-  // }
+  getUserData() async {
+    try {
+      emit(GetUserLoading());
+      final response = await api.get(
+          EndPoint.confirm(getIt.get<CacheHelper>().getData(key: 'token')),
+          data: {
+            ApiKey.email: signInEmail.text,
+            ApiKey.password: signInPassword.text
+          });
+      data = UserDataModel.fromJson(response);
+      emit(GetUserSuccess(user: data!));
+    } on ServerFailure catch (e) {
+      emit(GetUserFailure(errorMessage: e.failure.errorMessage));
+    }
+  }
 }

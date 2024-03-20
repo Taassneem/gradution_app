@@ -24,7 +24,7 @@ class SignUpForm extends StatelessWidget {
       listener: (context, state) {
         if (state is SignUpSuccess) {
           showToast(s.signedUpSuccessfully);
-          GoRouter.of(context).pushReplacement(AppRouter.chooseView);
+          GoRouter.of(context).pushReplacement(AppRouter.signInView);
         } else if (state is SignUpFailure) {
           showToast(state.errorMessage);
         }

@@ -27,6 +27,7 @@ class SignInForm extends StatelessWidget {
           showToast(state.errorMessage);
         } else if (state is SignInSuccess) {
           showToast(s.success);
+          authCubit.getUserData();
           GoRouter.of(context).pushReplacement(AppRouter.chooseView);
         }
       },
@@ -77,7 +78,7 @@ class SignInForm extends StatelessWidget {
                         Center(
                           child: TextButton(
                               onPressed: () {
-                                GoRouter.of(context).push(AppRouter.signUpView);
+                                GoRouter.of(context).pushReplacement(AppRouter.signUpView);
                               },
                               child: Text(s.createAcc,
                                   style: Theme.of(context)

@@ -1,9 +1,13 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
-import 'package:gradution_app/core/utils/widgets/choose_lang.dart';
+import 'package:gradution_app/features/camera/presentation/manager/camera_cubit/camera_cubit.dart';
+import 'package:gradution_app/features/camera/presentation/views/camera_view.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
 import 'item_field.dart';
@@ -35,10 +39,29 @@ class HomeViewBody extends StatelessWidget {
             child: IntrinsicHeight(
               child: Row(
                 children: [
-                  ItemField(
-                    color: AppColor.purple,
-                    fieldName: S.of(context).camera,
-                    image: AppAssets.camera,
+                  BlocConsumer<CameraCubit, CameraState>(
+                    listener: (context, state) {
+                      if (state is CameraSuccess) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const CameraView(),
+                            ));
+                      } else if (state is CameraFailure) {
+                        log(state.errorMessage);
+                      }
+                    },
+                    builder: (context, state) {
+                      return ItemField(
+                        onTap: () {
+                          BlocProvider.of<CameraCubit>(context)
+                              .pickImageWithCamera();
+                        },
+                        color: AppColor.purple,
+                        fieldName: S.of(context).camera,
+                        image: AppAssets.camera,
+                      );
+                    },
                   ),
                   const SizedBox(width: 20),
                   Column(
@@ -54,14 +77,7 @@ class HomeViewBody extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       ItemField(
-                        onTap: () {
-                          showDialog(
-                            context: context,
-                            builder: (context) {
-                              return const ChooseLanguage();
-                            },
-                          );
-                        },
+                        onTap: () {},
                         color: AppColor.pink,
                         fieldName: S.of(context).task,
                         image: AppAssets.task,

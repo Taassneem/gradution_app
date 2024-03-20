@@ -28,7 +28,11 @@ final class SignInFailure extends AuthState {
 
 final class GetUserLoading extends AuthState {}
 
-final class GetUserSuccess extends AuthState {}
+final class GetUserSuccess extends AuthState {
+  final UserDataModel user;
+
+  GetUserSuccess({required this.user});
+}
 
 final class GetUserFailure extends AuthState {
   final String errorMessage;

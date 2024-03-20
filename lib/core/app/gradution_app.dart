@@ -6,6 +6,7 @@ import 'package:gradution_app/core/global_cubit/global_cubit.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/auth/data/repo/dio_consumer.dart';
 import 'package:gradution_app/features/auth/presentation/manager/auth_cubit/auth_cubit.dart';
+import 'package:gradution_app/features/camera/presentation/manager/camera_cubit/camera_cubit.dart';
 import 'package:gradution_app/generated/l10n.dart';
 import 'package:gradution_app/theme/theme.dart';
 
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => AuthCubit(DioConsumer(dio: Dio())),
+        ),
+        BlocProvider(
+          create: (context) => CameraCubit(),
         ),
         BlocProvider(create: (context) => GlobalCubit()
             // ..getThemeData()

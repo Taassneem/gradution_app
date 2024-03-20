@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
+import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/home/presentation/views/widgets/home_view_body.dart';
 
 class HomeView extends StatelessWidget {
@@ -11,7 +13,10 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         actions: [
           IconButton(
-              onPressed: () {}, icon: Image.asset(AppAssets.model, width: 60))
+              onPressed: () {
+                GoRouter.of(context).push(AppRouter.profileView);
+              },
+              icon: Image.asset(AppAssets.model, width: 60))
         ],
       ),
       body: const HomeViewBody(),
