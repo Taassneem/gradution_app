@@ -1,13 +1,8 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
-import 'package:gradution_app/features/camera/presentation/manager/camera_cubit/camera_cubit.dart';
-import 'package:gradution_app/features/camera/presentation/views/camera_view.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
 import 'item_field.dart';
@@ -39,30 +34,27 @@ class HomeViewBody extends StatelessWidget {
             child: IntrinsicHeight(
               child: Row(
                 children: [
-                  BlocConsumer<CameraCubit, CameraState>(
-                    listener: (context, state) {
-                      if (state is CameraSuccess) {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const CameraView(),
-                            ));
-                      } else if (state is CameraFailure) {
-                        log(state.errorMessage);
-                      }
+                  // BlocConsumer<CameraCubit, CameraState>(
+                  //   listener: (context, state) {
+                  //     if (state is CameraSuccess) {
+                  //       GoRouter.of(context).push(AppRouter.cameraView);
+                  //     } else if (state is CameraFailure) {
+                  //       log(state.errorMessage);
+                  //     }
+                  //   },
+                  //   builder: (context, state) {
+                  ItemField(
+                    onTap: () {
+                      GoRouter.of(context).push(AppRouter.cameraView);
+                      // BlocProvider.of<CameraCubit>(context)
+                      //     .pickImageWithCamera();
                     },
-                    builder: (context, state) {
-                      return ItemField(
-                        onTap: () {
-                          BlocProvider.of<CameraCubit>(context)
-                              .pickImageWithCamera();
-                        },
-                        color: AppColor.purple,
-                        fieldName: S.of(context).camera,
-                        image: AppAssets.camera,
-                      );
-                    },
+                    color: AppColor.purple,
+                    fieldName: S.of(context).camera,
+                    image: AppAssets.robotWithCamera,
                   ),
+                  //   },
+                  // ),
                   const SizedBox(width: 20),
                   Column(
                     children: [

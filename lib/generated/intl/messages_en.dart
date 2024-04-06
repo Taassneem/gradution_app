@@ -112,6 +112,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Your new password must be different from previous used password"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "nine": MessageLookupByLibrary.simpleMessage("Nine"),
+        "noInformationFound":
+            MessageLookupByLibrary.simpleMessage("No information found"),
         "numbers": MessageLookupByLibrary.simpleMessage("Numbers"),
         "office": MessageLookupByLibrary.simpleMessage("Office"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
@@ -151,6 +153,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "resetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
         "sad": MessageLookupByLibrary.simpleMessage("Sad"),
         "salmon": MessageLookupByLibrary.simpleMessage("Salmon"),
+        "send": MessageLookupByLibrary.simpleMessage("Send"),
         "sendVerificationCode":
             MessageLookupByLibrary.simpleMessage("Send Verification Code"),
         "seven": MessageLookupByLibrary.simpleMessage("Seven"),
@@ -170,6 +173,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "success": MessageLookupByLibrary.simpleMessage("Success"),
         "sum": MessageLookupByLibrary.simpleMessage("6 + 5 ="),
         "sunny": MessageLookupByLibrary.simpleMessage("Sunny"),
+        "takePhoto": MessageLookupByLibrary.simpleMessage("Take Photo"),
         "task": MessageLookupByLibrary.simpleMessage("Task"),
         "tea": MessageLookupByLibrary.simpleMessage("Tea"),
         "ten": MessageLookupByLibrary.simpleMessage("Ten"),
@@ -189,12 +193,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "triangle": MessageLookupByLibrary.simpleMessage("Triangle"),
         "tryAgain": MessageLookupByLibrary.simpleMessage("Try Again"),
         "turtle": MessageLookupByLibrary.simpleMessage("Turtle"),
+        "uploadPhoto": MessageLookupByLibrary.simpleMessage("Upload Photo"),
         "verification": MessageLookupByLibrary.simpleMessage("Verification"),
         "verificationSubTitle": MessageLookupByLibrary.simpleMessage(
             "Please enter 4-digit code sent to you at email address"),
         "watch": MessageLookupByLibrary.simpleMessage("Watch"),
         "water": MessageLookupByLibrary.simpleMessage("Water"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome !"),
+        "whatCanIDoForYou":
+            MessageLookupByLibrary.simpleMessage("What can I do for you?"),
         "window": MessageLookupByLibrary.simpleMessage("Window"),
         "windy": MessageLookupByLibrary.simpleMessage("Windy")
       };

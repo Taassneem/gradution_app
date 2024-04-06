@@ -7,6 +7,10 @@ import 'package:gradution_app/features/auth/presentation/views/profile_view.dart
 import 'package:gradution_app/features/auth/presentation/views/sign_in_view.dart';
 import 'package:gradution_app/features/auth/presentation/views/sign_up_view.dart';
 import 'package:gradution_app/features/auth/presentation/views/verify_code_view.dart';
+import 'package:gradution_app/features/camera/presentation/views/camera_view.dart';
+import 'package:gradution_app/features/camera/presentation/views/image_view.dart';
+import 'package:gradution_app/features/camera/presentation/views/photo_information_view.dart';
+import 'package:gradution_app/features/camera/presentation/views/upload_photo_view.dart';
 import 'package:gradution_app/features/choose/views/choose_view.dart';
 import 'package:gradution_app/features/home/presentation/views/home_view.dart';
 import 'package:gradution_app/features/quiz/animals/views/animal_quiz_eight_view.dart';
@@ -65,6 +69,10 @@ class AppRouter {
   static const String onBoardingView = '/onBoardingView';
   static const String chooseView = '/chooseView';
   static const String quizView = '/quizView';
+  static const String cameraView = '/cameraView';
+  static const String imageView = '/imageView';
+  static const String photoInforamtion = '/photoInforamtion';
+  static const String uploadPhotoView = '/uploadPhotoView';
   static const String foodQuizViewOne = '/foodQuizViewOne';
   static const String foodQuizViewTwo = '/foodQuizViewTwo';
   static const String foodQuizViewThree = '/foodQuizViewThree';
@@ -120,8 +128,7 @@ class AppRouter {
         path: verifyCodeView,
         builder: (context, state) => const VerifyCodeView()),
     GoRoute(
-        path: profileView,
-        builder: (context, state) => const ProfileView()),
+        path: profileView, builder: (context, state) => const ProfileView()),
     GoRoute(
         path: passwordChanged,
         builder: (context, state) => const PasswordChanged()),
@@ -130,6 +137,14 @@ class AppRouter {
         path: onBoardingView, builder: (context, state) => OnBoardingView()),
     GoRoute(path: chooseView, builder: (context, state) => const ChooseView()),
     GoRoute(path: quizView, builder: (context, state) => const QuizView()),
+    GoRoute(path: cameraView, builder: (context, state) => const CameraView()),
+    GoRoute(
+        path: uploadPhotoView,
+        builder: (context, state) => const UploadPhotoView()),
+    GoRoute(path: imageView, builder: (context, state) => const ImageView()),
+    GoRoute(
+        path: photoInforamtion,
+        builder: (context, state) => const PhotoInformationView()),
     GoRoute(
         path: foodQuizViewOne,
         builder: (context, state) => const FoodQuizViewOne()),

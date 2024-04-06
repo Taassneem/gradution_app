@@ -22,6 +22,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+
       controller: widget.controller,
       obscureText: (widget.obscureText && obscureText),
       validator: (value) {
@@ -30,6 +31,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         }
         return null;
       },
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       cursorColor: AppColor.lightGrey,
       decoration: InputDecoration(
           enabledBorder: outlineInputBorder(),

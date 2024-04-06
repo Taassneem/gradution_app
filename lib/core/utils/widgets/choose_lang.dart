@@ -68,6 +68,9 @@ class ChooseLanguage extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(
                               vertical: 15, horizontal: 50)),
                       onPressed: () {
+                        getIt
+                            .get<CacheHelper>()
+                            .saveData(key: 'languageChossed', value: true);
                         bool onBoardingVisited = getIt
                                 .get<CacheHelper>()
                                 .getData(key: 'OnBoardingVisited') ??

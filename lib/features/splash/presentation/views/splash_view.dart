@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/database/cache/cache_helper.dart';
+import 'package:gradution_app/core/utils/app_router.dart';
+import 'package:gradution_app/core/utils/servive_locator.dart';
 import 'package:gradution_app/core/utils/widgets/choose_lang.dart';
 import 'widget/splash_view_body.dart';
 
@@ -52,12 +56,18 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
         seconds: 6,
       ),
       () {
-        showDialog(
-          context: context,
-          builder: (context) {
-            return const ChooseLanguage();
-          },
-        );
+        bool languageChoosed =
+            getIt.get<CacheHelper>().getData(key: 'languageChossed') ?? false;
+        if (languageChoosed) {
+          showDialog(
+            context: context,
+            builder: (context) {
+              return const ChooseLanguage();
+            },
+          );
+        } else {
+          GoRouter.of(context).pushReplacement(AppRouter.homeView);
+        }
       },
     );
   }

@@ -137,5 +137,10 @@
     "sub": "15 - 6 =",
     "four": "4 - f _  _ r",
     "multi": "2 * 7=",
-    "ok": "حسنا"
+    "ok": "حسنا",
+    "whatCanIDoForYou": "ما الذي يمكنني أن أفعله من أجلك؟",
+    "takePhoto": "تصوير",
+    "uploadPhoto": "حمل الصورة",
+    "send": "ارسل",
+    "noInformationFound": "لم يتم العثور على معلومات"
 }

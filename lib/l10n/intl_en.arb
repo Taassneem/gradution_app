@@ -137,5 +137,10 @@
     "sub": "15 - 6 =",
     "four":"4 - f _  _ r",
     "multi":"2 * 7=",
-    "ok": "OK"
+    "ok": "OK",
+    "whatCanIDoForYou":"What can I do for you?",
+    "takePhoto":"Take Photo",
+    "uploadPhoto":"Upload Photo",
+    "send":"Send",
+    "noInformationFound":"No information found"
 }

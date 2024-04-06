@@ -113,6 +113,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "يجب أن تكون كلمة المرور الجديدة مختلفة عن كلمة المرور المستخدمة مسبقًا"),
         "next": MessageLookupByLibrary.simpleMessage("التالي"),
         "nine": MessageLookupByLibrary.simpleMessage("تسعة"),
+        "noInformationFound":
+            MessageLookupByLibrary.simpleMessage("لم يتم العثور على معلومات"),
         "numbers": MessageLookupByLibrary.simpleMessage("الأرقام"),
         "office": MessageLookupByLibrary.simpleMessage("المكتب"),
         "ok": MessageLookupByLibrary.simpleMessage("حسنا"),
@@ -153,6 +155,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),
         "sad": MessageLookupByLibrary.simpleMessage("حزين"),
         "salmon": MessageLookupByLibrary.simpleMessage("سمك السالمون"),
+        "send": MessageLookupByLibrary.simpleMessage("ارسل"),
         "sendVerificationCode":
             MessageLookupByLibrary.simpleMessage("إرسال رمز التحقق"),
         "seven": MessageLookupByLibrary.simpleMessage("سبعة"),
@@ -173,6 +176,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "success": MessageLookupByLibrary.simpleMessage("نجاح"),
         "sum": MessageLookupByLibrary.simpleMessage("6 + 5 ="),
         "sunny": MessageLookupByLibrary.simpleMessage("مشمس"),
+        "takePhoto": MessageLookupByLibrary.simpleMessage("تصوير"),
         "task": MessageLookupByLibrary.simpleMessage("مهمة"),
         "tea": MessageLookupByLibrary.simpleMessage("الشاي"),
         "ten": MessageLookupByLibrary.simpleMessage("عشرة"),
@@ -188,12 +192,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "triangle": MessageLookupByLibrary.simpleMessage("المثلث"),
         "tryAgain": MessageLookupByLibrary.simpleMessage("حاول مرة أخرى"),
         "turtle": MessageLookupByLibrary.simpleMessage("سلحفاة"),
+        "uploadPhoto": MessageLookupByLibrary.simpleMessage("حمل الصورة"),
         "verification": MessageLookupByLibrary.simpleMessage("تَحَقّق"),
         "verificationSubTitle": MessageLookupByLibrary.simpleMessage(
             "الرجاء إدخال الرمز المكون من 4 أرقام المرسل إليك على عنوان البريد الإلكتروني"),
         "watch": MessageLookupByLibrary.simpleMessage("يشاهد"),
         "water": MessageLookupByLibrary.simpleMessage("الماء"),
         "welcome": MessageLookupByLibrary.simpleMessage("مرحبا!"),
+        "whatCanIDoForYou": MessageLookupByLibrary.simpleMessage(
+            "ما الذي يمكنني أن أفعله من أجلك؟"),
         "window": MessageLookupByLibrary.simpleMessage("نافذة او شباك"),
         "windy": MessageLookupByLibrary.simpleMessage("عاصف")
       };

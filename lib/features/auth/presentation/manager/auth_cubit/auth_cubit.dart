@@ -54,9 +54,9 @@ class AuthCubit extends Cubit<AuthState> {
         ApiKey.password: signInPassword.text
       });
       user = SignInModel.fromJson(response);
-      getIt
-          .get<CacheHelper>()
-          .saveData(key: 'token', value: user!.userUpdated!.token);
+      // getIt
+      //     .get<CacheHelper>()
+      //     .saveData(key: 'token', value: user!.userUpdated!.token);
       emit(SignInSuccess());
     } on ServerFailure catch (e) {
       emit(SignInFailure(errorMessage: e.failure.errorMessage));
