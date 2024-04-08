@@ -16,8 +16,8 @@ class ThingsQuizSixView extends StatelessWidget {
     return Scaffold(
         body: SafeArea(
       child: ThingsQuizImageViewBody(
-        question: S.of(context).hand,
-        answerOne: AppAssets.nose,
+        question: S.of(context).computer,
+        answerOne: AppAssets.tv,
         onTapOne: () {
           showDialog(
             context: context,
@@ -26,7 +26,7 @@ class ThingsQuizSixView extends StatelessWidget {
             },
           );
         },
-        answerTwo: AppAssets.hand,
+        answerTwo: AppAssets.computer,
         onTapTwo: () {
           showDialog(
             context: context,
@@ -39,7 +39,7 @@ class ThingsQuizSixView extends StatelessWidget {
             },
           );
         },
-        answerThree: AppAssets.leg,
+        answerThree: AppAssets.phone,
         onTapThree: () {
           showDialog(
             context: context,
@@ -48,7 +48,7 @@ class ThingsQuizSixView extends StatelessWidget {
             },
           );
         },
-        answerFour: AppAssets.lip,
+        answerFour: AppAssets.laptop,
         onTapFour: () {
           showDialog(
             context: context,

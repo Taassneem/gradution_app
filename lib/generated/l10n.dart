@@ -820,6 +820,16 @@ class S {
     );
   }
 
+  /// `Computer`
+  String get computer {
+    return Intl.message(
+      'Computer',
+      name: 'computer',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Windy`
   String get windy {
     return Intl.message(

@@ -45,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "circle": MessageLookupByLibrary.simpleMessage("الدائرة"),
         "cloudy": MessageLookupByLibrary.simpleMessage("غائم"),
         "coffee": MessageLookupByLibrary.simpleMessage("القهوة"),
+        "computer": MessageLookupByLibrary.simpleMessage("حاسوب"),
         "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),

@@ -98,6 +98,10 @@ class AppAssets {
   static const String grandFather = '${basePath}grandFather.png';
   static const String grandMother = '${basePath}grandMother.png';
   static const String happy = '${basePath}happy.png';
+  static const String phone = '${basePath}phone.png';
+  static const String tv = '${basePath}tv.png';
+  static const String computer = '${basePath}computer.png';
+  static const String laptop = '${basePath}happy.png';
   static const String hand = '${basePath}hand.png';
   static const String jacket = '${basePath}jacket.png';
   static const String leg = '${basePath}leg.png';
