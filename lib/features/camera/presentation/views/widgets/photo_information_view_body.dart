@@ -1,5 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
+import 'package:gradution_app/features/camera/presentation/manager/camera_cubit/camera_cubit.dart';
 
 import 'icon_method.dart';
 
@@ -10,42 +14,85 @@ class PhotoInforamtionViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Align(
-            alignment: Alignment.topLeft,
-            child: Image.asset(AppAssets.chatbot)),
-        Container(
-          height: MediaQuery.sizeOf(context).height * 0.3,
-          width: MediaQuery.sizeOf(context).width * 0.8,
-          decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(20)),
-        ),
-        const SizedBox(height: 24),
-        Stack(children: [
-          Container(
-              padding: const EdgeInsets.all(16),
-              alignment: Alignment.topRight,
-              height: MediaQuery.sizeOf(context).height * 0.45,
-              width: MediaQuery.sizeOf(context).width * 0.8,
-              decoration: BoxDecoration(
-                  color: Colors.white, borderRadius: BorderRadius.circular(30)),
-              child: Image.asset(AppAssets.chatbotMessage)),
-          const Positioned(
-            bottom: 2,
-            right: 1,
-            left: 1,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconMethod(icon: Icons.volume_off),
-                IconMethod(icon: Icons.translate),
-              ],
-            ),
-          )
-        ]),
-      ],
+    return SafeArea(
+      child: Column(
+        children: [
+          const SizedBox(height: 5),
+          Align(
+            alignment: Alignment.centerRight,
+            child: GestureDetector(
+                onTap: () => Navigator.pop(context),
+                child: const Icon(Icons.arrow_back)),
+          ),
+          Align(
+              alignment: Alignment.topLeft,
+              child: Image.asset(AppAssets.chatbot)),
+          BlocProvider.of<CameraCubit>(context).imageFromCamera == null
+              ? BlocProvider.of<CameraCubit>(context).imageFromGallery == null
+                  ? Container(
+                      height: MediaQuery.sizeOf(context).height * 0.3,
+                      width: MediaQuery.sizeOf(context).width * 0.8,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20)),
+                    )
+                  : Container(
+                      height: MediaQuery.sizeOf(context).height * 0.35,
+                      width: MediaQuery.sizeOf(context).width * 0.8,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: FileImage(File(
+                                BlocProvider.of<CameraCubit>(context)
+                                    .imageFromGallery!
+                                    .path)),
+                          ),
+                          borderRadius: BorderRadius.circular(20)),
+                    )
+              : Container(
+                  height: MediaQuery.sizeOf(context).height * 0.35,
+                  width: MediaQuery.sizeOf(context).width * 0.8,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: FileImage(File(
+                            BlocProvider.of<CameraCubit>(context)
+                                .imageFromCamera!
+                                .path)),
+                      ),
+                      borderRadius: BorderRadius.circular(20)),
+                ),
+          const SizedBox(height: 24),
+          Stack(children: [
+            Container(
+                padding: const EdgeInsets.all(16),
+                alignment: Alignment.topRight,
+                height: MediaQuery.sizeOf(context).height * 0.45,
+                width: MediaQuery.sizeOf(context).width * 0.8,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(30)),
+                child: Image.asset(AppAssets.chatbotMessage)),
+            const Positioned(
+              bottom: 2,
+              right: 1,
+              left: 1,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconMethod(
+                    icon: Icons.volume_off,
+                    rightIcon: true,
+                  ),
+                  IconMethod(
+                    icon: Icons.translate,
+                  ),
+                ],
+              ),
+            )
+          ]),
+        ],
+      ),
     );
   }
 }

@@ -34,27 +34,14 @@ class HomeViewBody extends StatelessWidget {
             child: IntrinsicHeight(
               child: Row(
                 children: [
-                  // BlocConsumer<CameraCubit, CameraState>(
-                  //   listener: (context, state) {
-                  //     if (state is CameraSuccess) {
-                  //       GoRouter.of(context).push(AppRouter.cameraView);
-                  //     } else if (state is CameraFailure) {
-                  //       log(state.errorMessage);
-                  //     }
-                  //   },
-                  //   builder: (context, state) {
                   ItemField(
                     onTap: () {
                       GoRouter.of(context).push(AppRouter.cameraView);
-                      // BlocProvider.of<CameraCubit>(context)
-                      //     .pickImageWithCamera();
                     },
                     color: AppColor.purple,
                     fieldName: S.of(context).camera,
                     image: AppAssets.robotWithCamera,
                   ),
-                  //   },
-                  // ),
                   const SizedBox(width: 20),
                   Column(
                     children: [

@@ -3,7 +3,7 @@ import 'package:gradution_app/features/Onboarding/presentation/views/on_boarding
 import 'package:gradution_app/features/auth/presentation/views/forget_password_view.dart';
 import 'package:gradution_app/features/auth/presentation/views/new_password_view.dart';
 import 'package:gradution_app/features/auth/presentation/views/password_changed_view.dart';
-import 'package:gradution_app/features/auth/presentation/views/profile_view.dart';
+import 'package:gradution_app/features/home/presentation/views/profile_view.dart';
 import 'package:gradution_app/features/auth/presentation/views/sign_in_view.dart';
 import 'package:gradution_app/features/auth/presentation/views/sign_up_view.dart';
 import 'package:gradution_app/features/auth/presentation/views/verify_code_view.dart';

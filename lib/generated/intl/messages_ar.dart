@@ -91,6 +91,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "howManyAnimalsInPicture":
             MessageLookupByLibrary.simpleMessage("كم عدد الحيوانات في الصورة؟"),
         "juice": MessageLookupByLibrary.simpleMessage("عصير"),
+        "language": MessageLookupByLibrary.simpleMessage("اللغة"),
         "lemure": MessageLookupByLibrary.simpleMessage("الليمور"),
         "lion": MessageLookupByLibrary.simpleMessage("الأسد"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),

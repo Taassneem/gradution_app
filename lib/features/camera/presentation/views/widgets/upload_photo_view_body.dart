@@ -1,7 +1,13 @@
+import 'dart:developer';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/func/custom_toast.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
+import 'package:gradution_app/features/camera/presentation/manager/camera_cubit/camera_cubit.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
 import 'upload_photo_feature.dart';
@@ -17,14 +23,29 @@ class UploadPhotoViewBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Image.asset(AppAssets.chatgpt),
-        Container(
-          alignment: Alignment.center,
-          height: MediaQuery.sizeOf(context).height * 0.3,
-          width: MediaQuery.sizeOf(context).width * 0.7,
-          decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(20)),
-          child: Image.asset(AppAssets.addImage),
-        ),
+        BlocProvider.of<CameraCubit>(context).imageFromGallery == null
+            ? Container(
+                alignment: Alignment.center,
+                height: MediaQuery.sizeOf(context).height * 0.3,
+                width: MediaQuery.sizeOf(context).width * 0.7,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20)),
+                child: Image.asset(AppAssets.addImage),
+              )
+            : Container(
+                alignment: Alignment.center,
+                height: MediaQuery.sizeOf(context).height * 0.3,
+                width: MediaQuery.sizeOf(context).width * 0.7,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: FileImage(File(
+                          BlocProvider.of<CameraCubit>(context)
+                              .imageFromGallery!
+                              .path)),
+                    ),
+                    borderRadius: BorderRadius.circular(20)),
+              ),
         SizedBox(height: MediaQuery.sizeOf(context).height * 0.06),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -34,9 +55,24 @@ class UploadPhotoViewBody extends StatelessWidget {
                 onTap: () {
                   GoRouter.of(context).push(AppRouter.photoInforamtion);
                 }),
-            UploadPhotoFeature(
-              feature: S.of(context).uploadPhoto,
-              horizontal: 35,
+            BlocConsumer<CameraCubit, CameraState>(
+              listener: (context, state) {
+                if (state is CameraGallerySuccess) {
+                  showToast('Photo upload successfully');
+                } else if (state is CameraGalleryFailure) {
+                  log(state.errorMessage);
+                }
+              },
+              builder: (context, state) {
+                return UploadPhotoFeature(
+                  feature: S.of(context).uploadPhoto,
+                  horizontal: 35,
+                  onTap: () {
+                    BlocProvider.of<CameraCubit>(context)
+                        .pickImageWithGallery();
+                  },
+                );
+              },
             ),
           ],
         )

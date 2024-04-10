@@ -143,5 +143,14 @@
     "takePhoto":"Take Photo",
     "uploadPhoto":"Upload Photo",
     "send":"Send",
-    "noInformationFound":"No information found"
+    "noInformationFound":"No information found",
+    "language":"Language",
+    "account":"Account",
+    "editProfile":"Edit Profile",
+    "notification":"Notification",
+    "more":"More",
+    "media":"Media",
+    "profile":"Profile",
+    "home":"Home",
+    "logout":"Logout"
 }

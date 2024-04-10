@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
@@ -10,20 +12,41 @@ part 'camera_state.dart';
 
 class CameraCubit extends Cubit<CameraState> {
   CameraCubit() : super(CameraInitial());
-  XFile? image;
+  XFile? imageFromGallery;
+  XFile? imageFromCamera;
   var imageBase64;
   String? base64Image;
-  pickImageWithCamera() async {
+  pickImageWithGallery() async {
     try {
-      emit(CameraLoading());
+      emit(CameraGalleryLoading());
 
       final retunedImage =
           await ImagePicker().pickImage(source: ImageSource.gallery);
 
       if (retunedImage == null) return;
 
-      image = XFile(retunedImage.path);
-      List<int> imageBytes = File(image!.path).readAsBytesSync();
+      imageFromGallery = XFile(retunedImage.path);
+      List<int> imageBytes = File(imageFromGallery!.path).readAsBytesSync();
+      base64Image = base64Encode(imageBytes);
+      imageBase64 = base64Decode(base64Image!);
+      log(base64Image!);
+      emit(CameraGallerySuccess());
+    } catch (e) {
+      emit(CameraGalleryFailure(errorMessage: e.toString()));
+    }
+  }
+
+  pickImageWithCamera() async {
+    try {
+      emit(CameraLoading());
+
+      final retunedImage =
+          await ImagePicker().pickImage(source: ImageSource.camera);
+
+      if (retunedImage == null) return;
+
+      imageFromCamera = XFile(retunedImage.path);
+      List<int> imageBytes = File(imageFromCamera!.path).readAsBytesSync();
       base64Image = base64Encode(imageBytes);
       imageBase64 = base64Decode(base64Image!);
       log(base64Image!);

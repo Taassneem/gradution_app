@@ -9,24 +9,27 @@ class ImageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
         body: SafeArea(
       child: Column(
         children: [
           Center(
-            child: BlocProvider.of<CameraCubit>(context).image == null
-                ? const CircleAvatar(
-                    backgroundColor: Colors.black,
-                    radius: 50,
-                  )
-                : Container(
-                    height: 200,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      image: FileImage(File(
-                          BlocProvider.of<CameraCubit>(context).image!.path)),
-                    )),
-                  ),
+            child:
+                BlocProvider.of<CameraCubit>(context).imageFromGallery == null
+                    ? const CircleAvatar(
+                        backgroundColor: Colors.black,
+                        radius: 50,
+                      )
+                    : Container(
+                        height: 200,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                          image: FileImage(File(
+                              BlocProvider.of<CameraCubit>(context)
+                                  .imageFromGallery!
+                                  .path)),
+                        )),
+                      ),
           ),
           const SizedBox(height: 20),
           BlocProvider.of<CameraCubit>(context).imageBase64 == null

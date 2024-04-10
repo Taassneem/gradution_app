@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "account": MessageLookupByLibrary.simpleMessage("Account"),
         "animals": MessageLookupByLibrary.simpleMessage("Animals"),
         "appName": MessageLookupByLibrary.simpleMessage("Autism children"),
         "back": MessageLookupByLibrary.simpleMessage("Back"),
@@ -68,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dog": MessageLookupByLibrary.simpleMessage("Dog"),
         "done": MessageLookupByLibrary.simpleMessage("Done"),
         "door": MessageLookupByLibrary.simpleMessage("Door"),
+        "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "egg": MessageLookupByLibrary.simpleMessage("Egg"),
         "eggplant": MessageLookupByLibrary.simpleMessage("Eggplant"),
         "elephant": MessageLookupByLibrary.simpleMessage("Elephant"),
@@ -88,20 +90,25 @@ class MessageLookup extends MessageLookupByLibrary {
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "grapes": MessageLookupByLibrary.simpleMessage("Grapes"),
         "hand": MessageLookupByLibrary.simpleMessage("Hand"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
         "howManyAnimalsInPicture": MessageLookupByLibrary.simpleMessage(
             "How many animals are in the picture?"),
         "juice": MessageLookupByLibrary.simpleMessage("Juice"),
+        "language": MessageLookupByLibrary.simpleMessage("Language"),
         "lemure": MessageLookupByLibrary.simpleMessage("Lemure"),
         "lion": MessageLookupByLibrary.simpleMessage("Lion"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "mail": MessageLookupByLibrary.simpleMessage("E-mail"),
         "mailHelpText":
             MessageLookupByLibrary.simpleMessage("Enter your email address"),
         "meaningOfSeven": MessageLookupByLibrary.simpleMessage(
             "Which of them means number Seven?"),
         "meat": MessageLookupByLibrary.simpleMessage("Meat"),
+        "media": MessageLookupByLibrary.simpleMessage("Media"),
         "milk": MessageLookupByLibrary.simpleMessage("Milk"),
         "monkey": MessageLookupByLibrary.simpleMessage("Monkey"),
+        "more": MessageLookupByLibrary.simpleMessage("More"),
         "multi": MessageLookupByLibrary.simpleMessage("2 * 7="),
         "mustBeBoth":
             MessageLookupByLibrary.simpleMessage("Both password must match"),
@@ -115,6 +122,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "nine": MessageLookupByLibrary.simpleMessage("Nine"),
         "noInformationFound":
             MessageLookupByLibrary.simpleMessage("No information found"),
+        "notification": MessageLookupByLibrary.simpleMessage("Notification"),
         "numbers": MessageLookupByLibrary.simpleMessage("Numbers"),
         "office": MessageLookupByLibrary.simpleMessage("Office"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
@@ -145,6 +153,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "8+cahracters,1capital letter"),
         "pepper": MessageLookupByLibrary.simpleMessage("Pepper"),
         "potato": MessageLookupByLibrary.simpleMessage("Potato"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "pumpkin": MessageLookupByLibrary.simpleMessage("Pumpkin"),
         "quiz": MessageLookupByLibrary.simpleMessage("Quiz"),
         "receiveCodeAgain":

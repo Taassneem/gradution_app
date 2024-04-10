@@ -16,4 +16,5 @@ class AppColor {
   static const error = Color(0xffFF8889);
   static const errorMessage = Color(0xffED1F2A);
   static const right = Color(0xffAFDE7E);
+  static const screenColor = Color(0xffF7F7F7);
 }

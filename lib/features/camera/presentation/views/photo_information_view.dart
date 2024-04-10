@@ -8,14 +8,12 @@ class PhotoInformationView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: AppColor.purple,
-      appBar: AppBar(backgroundColor: AppColor.purple),
-      body: const Padding(
+      body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 36.0),
         child: PhotoInforamtionViewBody(),
       ),
     );
   }
 }
-

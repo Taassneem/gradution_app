@@ -75,7 +75,7 @@
     "bed": "السرير",
     "window": "نافذة او شباك",
     "theEraser": "الممحاة",
-    "computer":"حاسوب",
+    "computer": "حاسوب",
     "hand": "يُسلِّم",
     "windy": "عاصف",
     "cloudy": "غائم",
@@ -143,5 +143,6 @@
     "takePhoto": "تصوير",
     "uploadPhoto": "حمل الصورة",
     "send": "ارسل",
-    "noInformationFound": "لم يتم العثور على معلومات"
+    "noInformationFound": "لم يتم العثور على معلومات",
+    "language": "اللغة"
 }

@@ -18,3 +18,12 @@ final class CameraFailure extends CameraState {
 
   const CameraFailure({required this.errorMessage});
 }
+final class CameraGalleryLoading extends CameraState {}
+
+final class CameraGallerySuccess extends CameraState {}
+
+final class CameraGalleryFailure extends CameraState {
+  final String errorMessage;
+
+  const CameraGalleryFailure({required this.errorMessage});
+}
