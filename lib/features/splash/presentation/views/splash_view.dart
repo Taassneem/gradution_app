@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/database/cache/cache_helper.dart';
-import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/core/utils/servive_locator.dart';
-import 'package:gradution_app/core/utils/widgets/choose_lang.dart';
+import 'package:gradution_app/features/splash/presentation/views/choose_lang.dart';
+import 'package:gradution_app/core/utils/widgets/custom_page_route_slide.dart';
+import 'package:gradution_app/features/home/presentation/views/home_view.dart';
 import 'widget/splash_view_body.dart';
 
 class SplashView extends StatefulWidget {
@@ -15,11 +15,12 @@ class SplashView extends StatefulWidget {
 
 class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
   late AnimationController animationController;
+  late Animation<double> scalingController;
   late Animation<Offset> slideController;
   @override
   void initState() {
     super.initState();
-    slidingAnimation();
+    scalingAnimation();
     navigate();
   }
 
@@ -32,21 +33,23 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SplashViewBody(slideController: slideController),
+      body: SplashViewBody(
+        scalingController: scalingController,
+      ),
     );
   }
 
-  void slidingAnimation() {
+  void scalingAnimation() {
     animationController = AnimationController(
       vsync: this,
       duration: const Duration(
         seconds: 3,
       ),
     );
-    slideController = Tween<Offset>(
-      begin: const Offset(0, 15),
-      end: Offset.zero,
-    ).animate(animationController);
+    scalingController = CurvedAnimation(
+      parent: animationController,
+      curve: Curves.easeIn,
+    );
     animationController.forward();
   }
 
@@ -59,14 +62,19 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
         bool languageChoosed =
             getIt.get<CacheHelper>().getData(key: 'languageChossed') ?? false;
         if (languageChoosed) {
-          showDialog(
-            context: context,
-            builder: (context) {
-              return const ChooseLanguage();
-            },
-          );
+          Navigator.push(
+              context,
+              CustomPageRouteSlide(
+                child: const ChooseLanguage(),
+                direction: AxisDirection.up,
+              ));
         } else {
-          GoRouter.of(context).pushReplacement(AppRouter.homeView);
+          Navigator.push(
+              context,
+              CustomPageRouteSlide(
+                child: const HomeView(),
+                direction: AxisDirection.up,
+              ));
         }
       },
     );

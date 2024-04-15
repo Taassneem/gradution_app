@@ -5,8 +5,8 @@ import 'package:gradution_app/core/utils/app_color.dart';
 import 'custom_logout.dart';
 import 'profile_view_informations.dart';
 
-class ProvileViewBody extends StatelessWidget {
-  const ProvileViewBody({
+class ProfileViewBody extends StatelessWidget {
+  const ProfileViewBody({
     super.key,
   });
 
@@ -19,23 +19,41 @@ class ProvileViewBody extends StatelessWidget {
           clipBehavior: Clip.none,
           children: [
             Container(
-              height: MediaQuery.sizeOf(context).height * 0.11,
+              height: MediaQuery.sizeOf(context).height * 0.12,
               width: MediaQuery.sizeOf(context).width,
               color: AppColor.purple,
-              child: const Padding(
-                padding: EdgeInsets.all(18.0),
+              child: Padding(
+                padding: const EdgeInsets.all(24.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [Text(' name'), Text(' gmail')],
+                  children: [
+                    Text(
+                      'Name',
+                      style: Theme.of(context).textTheme.titleSmall,
+                    ),
+                    Text(
+                      'Gmail',
+                      style: Theme.of(context).textTheme.displaySmall,
+                    )
+                  ],
                 ),
               ),
             ),
             Positioned(
-                right: 10,
-                top: 15,
-                child: Image.asset(
-                  AppAssets.model,
-                ))
+              right: 10,
+              top: -15,
+              child: Container(
+                width: 120,
+                height: 120,
+                decoration: BoxDecoration(
+                    color: AppColor.screenColor,
+                    borderRadius: BorderRadius.circular(60),
+                    image: const DecorationImage(
+                      fit: BoxFit.contain,
+                      image: AssetImage(AppAssets.model),
+                    )),
+              ),
+            )
           ],
         ),
         SizedBox(height: MediaQuery.sizeOf(context).height * 0.025),

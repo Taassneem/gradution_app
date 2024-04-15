@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
+import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
 import 'drop_dwon_button.dart';
@@ -17,13 +19,16 @@ class ProfileViewInformations extends StatelessWidget {
       padding: const EdgeInsets.all(18.0),
       child: Column(
         children: [
-          CustomProfileFeature(
-            featureName: S.of(context).account,
-            featureType: S.of(context).editProfile,
-            leading: const Icon(Icons.person, color: AppColor.purple),
-            trailing: GestureDetector(
-                onTap: () {},
-                child: const Icon(Icons.keyboard_double_arrow_right_outlined)),
+          GestureDetector(
+            onTap: () {
+              GoRouter.of(context).push(AppRouter.userProfileView);
+            },
+            child: CustomProfileFeature(
+              featureName: S.of(context).account,
+              featureType: S.of(context).editProfile,
+              leading: const Icon(Icons.person, color: AppColor.purple),
+              trailing: const Icon(Icons.keyboard_double_arrow_right_outlined),
+            ),
           ),
           CustomProfileFeature(
             featureName: S.of(context).notification,

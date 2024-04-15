@@ -8,15 +8,14 @@ class TextWithTextField extends StatelessWidget {
     required this.hintText,
     this.icon,
     this.obscureText = false,
-    this.isDense,
     this.controller,
+    this.userProfile = false,
   });
   final String textFieldName;
   final String hintText;
   final IconData? icon;
   final bool obscureText;
-  final bool? isDense;
-
+  final bool userProfile;
   final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
@@ -31,6 +30,7 @@ class TextWithTextField extends StatelessWidget {
           height: 10,
         ),
         CustomTextFormField(
+          userProfile: userProfile,
           hintText: hintText,
           icon: icon,
           obscureText: obscureText,

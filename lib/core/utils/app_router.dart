@@ -13,6 +13,7 @@ import 'package:gradution_app/features/camera/presentation/views/photo_informati
 import 'package:gradution_app/features/camera/presentation/views/upload_photo_view.dart';
 import 'package:gradution_app/features/choose/views/choose_view.dart';
 import 'package:gradution_app/features/home/presentation/views/home_view.dart';
+import 'package:gradution_app/features/home/presentation/views/user_profile_view.dart';
 import 'package:gradution_app/features/quiz/animals/views/animal_quiz_eight_view.dart';
 import 'package:gradution_app/features/quiz/animals/views/animal_quiz_final_view.dart';
 import 'package:gradution_app/features/quiz/animals/views/animal_quiz_five_view.dart';
@@ -64,10 +65,12 @@ class AppRouter {
   static const String newPassView = '/newPassView';
   static const String verifyCodeView = '/verificationCodeView';
   static const String profileView = '/profileView';
+  static const String userProfileView = '/userProfileView';
   static const String homeView = '/homeView';
   static const String passwordChanged = '/passwordChanged';
   static const String onBoardingView = '/onBoardingView';
   static const String chooseView = '/chooseView';
+  static const String chooseLang = '/chooseLang';
   static const String quizView = '/quizView';
   static const String cameraView = '/cameraView';
   static const String imageView = '/imageView';
@@ -116,6 +119,8 @@ class AppRouter {
   static const String numberQuizViewFinal = '/numberQuizViewFinal';
   static final router = GoRouter(routes: [
     GoRoute(path: '/', builder: (context, state) => const SplashView()),
+    GoRoute(
+        path: onBoardingView, builder: (context, state) => OnBoardingView()),
     GoRoute(path: signInView, builder: (context, state) => const SignInView()),
     GoRoute(path: signUpView, builder: (context, state) => const SignUpView()),
     GoRoute(
@@ -128,14 +133,14 @@ class AppRouter {
         path: verifyCodeView,
         builder: (context, state) => const VerifyCodeView()),
     GoRoute(
-        path: profileView, builder: (context, state) => const ProfileView()),
-    GoRoute(
         path: passwordChanged,
         builder: (context, state) => const PasswordChanged()),
+    GoRoute(path: chooseView, builder: (context, state) => const ChooseView()),
     GoRoute(path: homeView, builder: (context, state) => const HomeView()),
     GoRoute(
-        path: onBoardingView, builder: (context, state) => OnBoardingView()),
-    GoRoute(path: chooseView, builder: (context, state) => const ChooseView()),
+        path: profileView, builder: (context, state) => const ProfileView()),
+    GoRoute(
+        path: userProfileView, builder: (context, state) => const UserProfileView()),
     GoRoute(path: quizView, builder: (context, state) => const QuizView()),
     GoRoute(path: cameraView, builder: (context, state) => const CameraView()),
     GoRoute(

@@ -152,5 +152,11 @@
     "media":"Media",
     "profile":"Profile",
     "home":"Home",
-    "logout":"Logout"
+    "logout":"Logout",
+    "userProfile":"User Profile",
+    "email":"E-mail",
+    "changePassword":"Change Password",
+    "deleteAccount":"Delete Account",
+    "saveChanges":"Save Changes"
+
 }

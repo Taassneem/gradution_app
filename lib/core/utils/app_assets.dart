@@ -16,6 +16,7 @@ class AppAssets {
   static const String passwordChanged = '${basePath}Woman.png';
   static const String child = '${basePath}children.png';
   static const String parent = '${basePath}parent.png';
+  static const String discovery = '${basePath}discovery.png';
   static const String model = '${basePath}model.png';
   static const String robotWithCamera = '${basePath}robotWithCamera.png';
   static const String topHome = '${basePath}topHome.png';

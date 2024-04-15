@@ -9,7 +9,7 @@ class ProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: AppColor.screenColor,
-      body: SafeArea(child: ProvileViewBody()
+      body: SafeArea(child: ProfileViewBody()
           // BlocConsumer<AuthCubit, AuthState>(
           //   listener: (context, state) {
           //     if (state is GetUserFailure) {

@@ -36,6 +36,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "cat": MessageLookupByLibrary.simpleMessage("Cat"),
         "cebola": MessageLookupByLibrary.simpleMessage("Cebola"),
         "changeEmail": MessageLookupByLibrary.simpleMessage("Change Email"),
+        "changePassword":
+            MessageLookupByLibrary.simpleMessage("Change Password"),
         "changeSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Password changed successfully!"),
         "cherries": MessageLookupByLibrary.simpleMessage("Cherries"),
@@ -66,6 +68,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "cow": MessageLookupByLibrary.simpleMessage("Cow"),
         "createAcc": MessageLookupByLibrary.simpleMessage("Create Account"),
         "cucumber": MessageLookupByLibrary.simpleMessage("Cucumber"),
+        "deleteAccount": MessageLookupByLibrary.simpleMessage("Delete Account"),
         "dog": MessageLookupByLibrary.simpleMessage("Dog"),
         "done": MessageLookupByLibrary.simpleMessage("Done"),
         "door": MessageLookupByLibrary.simpleMessage("Door"),
@@ -73,6 +76,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "egg": MessageLookupByLibrary.simpleMessage("Egg"),
         "eggplant": MessageLookupByLibrary.simpleMessage("Eggplant"),
         "elephant": MessageLookupByLibrary.simpleMessage("Elephant"),
+        "email": MessageLookupByLibrary.simpleMessage("E-mail"),
         "emu": MessageLookupByLibrary.simpleMessage("Emu"),
         "errorMessage": MessageLookupByLibrary.simpleMessage(
             "The Answer is Wrong ,Please Try Again"),
@@ -163,6 +167,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "resetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
         "sad": MessageLookupByLibrary.simpleMessage("Sad"),
         "salmon": MessageLookupByLibrary.simpleMessage("Salmon"),
+        "saveChanges": MessageLookupByLibrary.simpleMessage("Save Changes"),
         "send": MessageLookupByLibrary.simpleMessage("Send"),
         "sendVerificationCode":
             MessageLookupByLibrary.simpleMessage("Send Verification Code"),
@@ -204,6 +209,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "tryAgain": MessageLookupByLibrary.simpleMessage("Try Again"),
         "turtle": MessageLookupByLibrary.simpleMessage("Turtle"),
         "uploadPhoto": MessageLookupByLibrary.simpleMessage("Upload Photo"),
+        "userProfile": MessageLookupByLibrary.simpleMessage("User Profile"),
         "verification": MessageLookupByLibrary.simpleMessage("Verification"),
         "verificationSubTitle": MessageLookupByLibrary.simpleMessage(
             "Please enter 4-digit code sent to you at email address"),

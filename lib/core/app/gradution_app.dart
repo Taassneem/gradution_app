@@ -23,15 +23,18 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => CameraCubit(),
         ),
-        BlocProvider(create: (context) => GlobalCubit()
+        BlocProvider(
+          create: (context) => GlobalCubit()
             // ..getThemeData()
             ..getLang(),
-            ),
+        ),
       ],
       child: BlocBuilder<GlobalCubit, GlobalState>(
         builder: (context, state) {
           return MaterialApp.router(
-            locale: Locale(BlocProvider.of<GlobalCubit>(context).langCode,),
+            locale: Locale(
+              BlocProvider.of<GlobalCubit>(context).langCode,
+            ),
             localizationsDelegates: const [
               S.delegate,
               GlobalMaterialLocalizations.delegate,

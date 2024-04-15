@@ -8,11 +8,13 @@ class CustomTextFormField extends StatefulWidget {
     this.icon,
     this.obscureText = false,
     this.controller,
+    this.userProfile = false,
   });
   final String hintText;
   final IconData? icon;
   final bool obscureText;
   final TextEditingController? controller;
+  final bool userProfile;
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
 }
@@ -22,7 +24,6 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-
       controller: widget.controller,
       obscureText: (widget.obscureText && obscureText),
       validator: (value) {
@@ -34,15 +35,15 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       autovalidateMode: AutovalidateMode.onUserInteraction,
       cursorColor: AppColor.lightGrey,
       decoration: InputDecoration(
+          fillColor: Colors.white,
+          filled: true,
           enabledBorder: outlineInputBorder(),
           focusedBorder: outlineInputBorder(),
           border: outlineInputBorder(),
           contentPadding: const EdgeInsets.symmetric(horizontal: 16),
           hintText: widget.hintText,
-          hintStyle: Theme.of(context)
-              .textTheme
-              .titleSmall!
-              .copyWith(color: AppColor.lightGrey),
+          hintStyle: Theme.of(context).textTheme.titleSmall!.copyWith(
+              color: widget.userProfile ? Colors.black : AppColor.lightGrey),
           suffixIcon: widget.obscureText
               ? IconButton(
                   onPressed: () {
@@ -59,7 +60,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
 
   OutlineInputBorder outlineInputBorder() {
     return OutlineInputBorder(
-      borderSide: const BorderSide(color: AppColor.purple),
+      borderSide: const BorderSide(color: AppColor.purple, width: 1.5),
       borderRadius: BorderRadius.circular(30),
     );
   }
