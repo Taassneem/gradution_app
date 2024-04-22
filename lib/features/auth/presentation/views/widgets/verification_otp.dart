@@ -23,7 +23,7 @@ class VerificationOTP extends StatelessWidget {
         margin: const EdgeInsets.all(2),
         textStyle: Theme.of(context).textTheme.titleLarge,
         decoration: BoxDecoration(
-            color: Colors.white,
+            color: AppColor.white,
             borderRadius: BorderRadius.circular(20),
             boxShadow: const [
               BoxShadow(

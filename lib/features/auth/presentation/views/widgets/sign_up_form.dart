@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/database/cache/cache_helper.dart';
 import 'package:gradution_app/core/func/custom_toast.dart';
+import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/servive_locator.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
@@ -33,7 +34,7 @@ class SignUpForm extends StatelessWidget {
         return Container(
             width: 330,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50), color: Colors.white),
+                borderRadius: BorderRadius.circular(50), color: AppColor.white),
             child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Form(

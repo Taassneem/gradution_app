@@ -14,7 +14,7 @@ class ThingsImageAnswer extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 166,
-        width: 155,
+        width: 145,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),

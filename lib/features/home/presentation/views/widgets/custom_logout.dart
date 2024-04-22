@@ -12,7 +12,7 @@ class CustomLogOut extends StatelessWidget {
     return Container(
       width: 133,
       decoration: BoxDecoration(
-          color: Colors.white,
+          color: AppColor.white,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: AppColor.error)),
       child: ListTile(

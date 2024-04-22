@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
@@ -9,6 +8,6 @@ showToast(String msg) {
       gravity: ToastGravity.CENTER,
       timeInSecForIosWeb: 1,
       backgroundColor: AppColor.purple,
-      textColor: Colors.white,
+      textColor:AppColor.white,
       fontSize: 16.0);
 }

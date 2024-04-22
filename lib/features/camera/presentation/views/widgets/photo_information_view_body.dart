@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
+import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/features/camera/presentation/manager/camera_cubit/camera_cubit.dart';
 
 import 'icon_method.dart';
@@ -33,7 +34,7 @@ class PhotoInforamtionViewBody extends StatelessWidget {
                       height: MediaQuery.sizeOf(context).height * 0.3,
                       width: MediaQuery.sizeOf(context).width * 0.8,
                       decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: AppColor.white,
                           borderRadius: BorderRadius.circular(20)),
                     )
                   : Container(
@@ -70,7 +71,7 @@ class PhotoInforamtionViewBody extends StatelessWidget {
                 height: MediaQuery.sizeOf(context).height * 0.45,
                 width: MediaQuery.sizeOf(context).width * 0.8,
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: AppColor.white,
                     borderRadius: BorderRadius.circular(30)),
                 child: Image.asset(AppAssets.chatbotMessage)),
             const Positioned(

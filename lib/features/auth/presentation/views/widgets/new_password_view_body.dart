@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/auth/presentation/manager/auth_cubit/auth_cubit.dart';
 import 'package:gradution_app/generated/l10n.dart';
@@ -20,7 +21,7 @@ class NewPasswordViewBody extends StatelessWidget {
     return Container(
         width: 330,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(50), color: Colors.white),
+            borderRadius: BorderRadius.circular(50), color: AppColor.white),
         child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Form(

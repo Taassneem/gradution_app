@@ -11,7 +11,7 @@ class ChangePasswordButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: Colors.white,
+          color: AppColor.white,
           borderRadius: BorderRadius.circular(30),
           border: Border.all(color: AppColor.purple, width: 1.5)),
       child: ListTile(

@@ -21,7 +21,7 @@ class ChoosenType extends StatelessWidget {
             width: 200,
             height: 200,
             decoration: BoxDecoration(
-                color: Colors.white,
+                color: AppColor.white,
                 border: const Border(
                     bottom: BorderSide(color: AppColor.purple),
                     top: BorderSide(color: AppColor.purple),

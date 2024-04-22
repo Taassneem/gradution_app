@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/func/custom_toast.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
+import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/camera/presentation/manager/camera_cubit/camera_cubit.dart';
 import 'package:gradution_app/generated/l10n.dart';
@@ -29,7 +30,7 @@ class UploadPhotoViewBody extends StatelessWidget {
                 height: MediaQuery.sizeOf(context).height * 0.3,
                 width: MediaQuery.sizeOf(context).width * 0.7,
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: AppColor.white,
                     borderRadius: BorderRadius.circular(20)),
                 child: Image.asset(AppAssets.addImage),
               )

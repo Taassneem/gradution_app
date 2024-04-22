@@ -35,7 +35,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       autovalidateMode: AutovalidateMode.onUserInteraction,
       cursorColor: AppColor.lightGrey,
       decoration: InputDecoration(
-          fillColor: Colors.white,
+          fillColor: AppColor.white,
           filled: true,
           enabledBorder: outlineInputBorder(),
           focusedBorder: outlineInputBorder(),

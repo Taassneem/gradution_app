@@ -22,6 +22,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "AnHourBefore": MessageLookupByLibrary.simpleMessage("ساعة قبل"),
+        "account": MessageLookupByLibrary.simpleMessage("الحساب"),
+        "add": MessageLookupByLibrary.simpleMessage("إضافة"),
+        "addPhoto": MessageLookupByLibrary.simpleMessage("إضافة صورة"),
+        "addTask": MessageLookupByLibrary.simpleMessage("إضافة مهمة"),
+        "allDays": MessageLookupByLibrary.simpleMessage("كل الأيام"),
         "animals": MessageLookupByLibrary.simpleMessage("الحيوانات"),
         "appName": MessageLookupByLibrary.simpleMessage("أطفال التوحد"),
         "back": MessageLookupByLibrary.simpleMessage("العودة"),
@@ -34,8 +40,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "camera": MessageLookupByLibrary.simpleMessage("الكاميرا"),
         "carrot": MessageLookupByLibrary.simpleMessage("جزر"),
         "cat": MessageLookupByLibrary.simpleMessage("القط"),
+        "categories": MessageLookupByLibrary.simpleMessage("الفئات"),
         "cebola": MessageLookupByLibrary.simpleMessage("البصل"),
         "changeEmail": MessageLookupByLibrary.simpleMessage("تغيير الايميل"),
+        "changePassword":
+            MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
         "changeSuccessfully":
             MessageLookupByLibrary.simpleMessage("تم تغيير كلمة المرور بنجاح!"),
         "cherries": MessageLookupByLibrary.simpleMessage("كرز"),
@@ -64,13 +73,20 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تهانينا! الإجابة صحيحة"),
         "cow": MessageLookupByLibrary.simpleMessage("البقرة"),
         "createAcc": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+        "createNewTask":
+            MessageLookupByLibrary.simpleMessage("إنشاء مهمة جديدة"),
         "cucumber": MessageLookupByLibrary.simpleMessage("خيار"),
+        "dailyTasks": MessageLookupByLibrary.simpleMessage("المهام اليومية"),
+        "deleteAccount": MessageLookupByLibrary.simpleMessage("حذف الحساب"),
         "dog": MessageLookupByLibrary.simpleMessage("الكلب"),
         "done": MessageLookupByLibrary.simpleMessage("تم"),
         "door": MessageLookupByLibrary.simpleMessage("الباب"),
+        "editProfile":
+            MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
         "egg": MessageLookupByLibrary.simpleMessage("البيض"),
         "eggplant": MessageLookupByLibrary.simpleMessage("الباذنجان"),
         "elephant": MessageLookupByLibrary.simpleMessage("الفيل"),
+        "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "emu": MessageLookupByLibrary.simpleMessage("الإيمو"),
         "errorMessage": MessageLookupByLibrary.simpleMessage(
             "الإجابة خاطئة، يرجى المحاولة مرة أخرى"),
@@ -85,24 +101,36 @@ class MessageLookup extends MessageLookupByLibrary {
             "أدخل عنوان البريد الإلكتروني المرتبط بحسابك"),
         "four": MessageLookupByLibrary.simpleMessage("4 - f _  _ r"),
         "fox": MessageLookupByLibrary.simpleMessage("الثعلب"),
+        "friday": MessageLookupByLibrary.simpleMessage("الجمعة"),
         "fullName": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
         "grapes": MessageLookupByLibrary.simpleMessage("عنب"),
         "hand": MessageLookupByLibrary.simpleMessage("يُسلِّم"),
+        "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+        "hour": MessageLookupByLibrary.simpleMessage("ساعة"),
         "howManyAnimalsInPicture":
             MessageLookupByLibrary.simpleMessage("كم عدد الحيوانات في الصورة؟"),
+        "itsGreatToArrangeDailyTasksToHelpYourChild":
+            MessageLookupByLibrary.simpleMessage(
+                "من الرائع تنظيم المهام اليومية لمساعدة طفلك"),
         "juice": MessageLookupByLibrary.simpleMessage("عصير"),
         "language": MessageLookupByLibrary.simpleMessage("اللغة"),
         "lemure": MessageLookupByLibrary.simpleMessage("الليمور"),
         "lion": MessageLookupByLibrary.simpleMessage("الأسد"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "mail": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "mailHelpText":
             MessageLookupByLibrary.simpleMessage("أدخل عنوان بريدك الإلكتروني"),
         "meaningOfSeven":
             MessageLookupByLibrary.simpleMessage("أي منهم يعني الرقم سبعة؟"),
         "meat": MessageLookupByLibrary.simpleMessage("اللحم"),
+        "media": MessageLookupByLibrary.simpleMessage("وسائط"),
         "milk": MessageLookupByLibrary.simpleMessage("الحليب"),
+        "min": MessageLookupByLibrary.simpleMessage("دقيقة"),
+        "monday": MessageLookupByLibrary.simpleMessage("الاثنين"),
         "monkey": MessageLookupByLibrary.simpleMessage("القرد"),
+        "monthly": MessageLookupByLibrary.simpleMessage("شهريًا"),
+        "more": MessageLookupByLibrary.simpleMessage("المزيد"),
         "multi": MessageLookupByLibrary.simpleMessage("2 * 7="),
         "mustBeBoth":
             MessageLookupByLibrary.simpleMessage("يجب أن تتطابق كلمتا المرور"),
@@ -117,6 +145,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "nine": MessageLookupByLibrary.simpleMessage("تسعة"),
         "noInformationFound":
             MessageLookupByLibrary.simpleMessage("لم يتم العثور على معلومات"),
+        "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
         "numbers": MessageLookupByLibrary.simpleMessage("الأرقام"),
         "office": MessageLookupByLibrary.simpleMessage("المكتب"),
         "ok": MessageLookupByLibrary.simpleMessage("حسنا"),
@@ -135,6 +164,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("القيام باختبار"),
         "onBoardingTitleTwo":
             MessageLookupByLibrary.simpleMessage("المهام اليومية"),
+        "onTime": MessageLookupByLibrary.simpleMessage("في الموعد"),
         "oops": MessageLookupByLibrary.simpleMessage("عذرا!"),
         "orange": MessageLookupByLibrary.simpleMessage("البرتقال"),
         "otherThings": MessageLookupByLibrary.simpleMessage("أشياء أخرى"),
@@ -147,16 +177,24 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("٨+ أحرف، ١ حرف كبير"),
         "pepper": MessageLookupByLibrary.simpleMessage("الفلفل"),
         "potato": MessageLookupByLibrary.simpleMessage("البطاطس"),
+        "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "pumpkin": MessageLookupByLibrary.simpleMessage("يقطين"),
         "quiz": MessageLookupByLibrary.simpleMessage("اختبار"),
         "receiveCodeAgain":
             MessageLookupByLibrary.simpleMessage("لم تتلقَ الرمز؟"),
         "rectangle": MessageLookupByLibrary.simpleMessage("المستطيل"),
+        "reminder": MessageLookupByLibrary.simpleMessage("تذكير"),
+        "repeater": MessageLookupByLibrary.simpleMessage("مكرر"),
         "resend": MessageLookupByLibrary.simpleMessage("إعادة إرسال"),
         "resetPassword":
             MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),
         "sad": MessageLookupByLibrary.simpleMessage("حزين"),
         "salmon": MessageLookupByLibrary.simpleMessage("سمك السالمون"),
+        "saturday": MessageLookupByLibrary.simpleMessage("السبت"),
+        "saveChanges": MessageLookupByLibrary.simpleMessage("حفظ التغييرات"),
+        "saveEdit": MessageLookupByLibrary.simpleMessage("حفظ التعديل"),
+        "saveTask": MessageLookupByLibrary.simpleMessage("حفظ المهمة"),
+        "selectDays": MessageLookupByLibrary.simpleMessage("تحديد الأيام"),
         "send": MessageLookupByLibrary.simpleMessage("ارسل"),
         "sendVerificationCode":
             MessageLookupByLibrary.simpleMessage("إرسال رمز التحقق"),
@@ -177,9 +215,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "sub": MessageLookupByLibrary.simpleMessage("15 - 6 ="),
         "success": MessageLookupByLibrary.simpleMessage("نجاح"),
         "sum": MessageLookupByLibrary.simpleMessage("6 + 5 ="),
+        "sunday": MessageLookupByLibrary.simpleMessage("الأحد"),
         "sunny": MessageLookupByLibrary.simpleMessage("مشمس"),
         "takePhoto": MessageLookupByLibrary.simpleMessage("تصوير"),
         "task": MessageLookupByLibrary.simpleMessage("مهمة"),
+        "taskTitle": MessageLookupByLibrary.simpleMessage("عنوان المهمة"),
         "tea": MessageLookupByLibrary.simpleMessage("الشاي"),
         "ten": MessageLookupByLibrary.simpleMessage("عشرة"),
         "theCamel": MessageLookupByLibrary.simpleMessage("أي من هذه هو الجمل؟"),
@@ -190,16 +230,25 @@ class MessageLookup extends MessageLookupByLibrary {
         "theShip": MessageLookupByLibrary.simpleMessage("السفينة"),
         "theSnake":
             MessageLookupByLibrary.simpleMessage("أي من هذه هو الثعبان؟"),
+        "thereAreNoTasksAddedYet":
+            MessageLookupByLibrary.simpleMessage("لا توجد مهام مضافة بعد"),
+        "thursday": MessageLookupByLibrary.simpleMessage("الخميس"),
+        "time": MessageLookupByLibrary.simpleMessage("الوقت"),
+        "today": MessageLookupByLibrary.simpleMessage("اليوم"),
         "tomato": MessageLookupByLibrary.simpleMessage("طماطم"),
         "triangle": MessageLookupByLibrary.simpleMessage("المثلث"),
         "tryAgain": MessageLookupByLibrary.simpleMessage("حاول مرة أخرى"),
+        "tuesday": MessageLookupByLibrary.simpleMessage("الثلاثاء"),
         "turtle": MessageLookupByLibrary.simpleMessage("سلحفاة"),
         "uploadPhoto": MessageLookupByLibrary.simpleMessage("حمل الصورة"),
+        "userProfile": MessageLookupByLibrary.simpleMessage("ملف المستخدم"),
         "verification": MessageLookupByLibrary.simpleMessage("تَحَقّق"),
         "verificationSubTitle": MessageLookupByLibrary.simpleMessage(
             "الرجاء إدخال الرمز المكون من 4 أرقام المرسل إليك على عنوان البريد الإلكتروني"),
         "watch": MessageLookupByLibrary.simpleMessage("يشاهد"),
         "water": MessageLookupByLibrary.simpleMessage("الماء"),
+        "wednesday": MessageLookupByLibrary.simpleMessage("الأربعاء"),
+        "weekly": MessageLookupByLibrary.simpleMessage("أسبوعيًا"),
         "welcome": MessageLookupByLibrary.simpleMessage("مرحبا!"),
         "whatCanIDoForYou": MessageLookupByLibrary.simpleMessage(
             "ما الذي يمكنني أن أفعله من أجلك؟"),

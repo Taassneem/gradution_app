@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_app/core/utils/app_color.dart';
 
 class AnimalQuestion extends StatelessWidget {
   const AnimalQuestion({
@@ -12,7 +13,7 @@ class AnimalQuestion extends StatelessWidget {
       width: 290,
       height: MediaQuery.sizeOf(context).height * 0.1,
       decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(20)),
+          color: AppColor.white, borderRadius: BorderRadius.circular(20)),
       child: Center(
         child: Text(
           question,

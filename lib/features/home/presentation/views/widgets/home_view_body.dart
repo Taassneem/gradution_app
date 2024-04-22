@@ -56,7 +56,9 @@ class HomeViewBody extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       ItemField(
-                        onTap: () {},
+                        onTap: () {
+                          GoRouter.of(context).push(AppRouter.taskView);
+                        },
                         color: AppColor.pink,
                         fieldName: S.of(context).task,
                         image: AppAssets.task,

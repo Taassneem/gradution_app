@@ -7,22 +7,29 @@ class CustomElevatedButton extends StatelessWidget {
     super.key,
     required this.text,
     this.onPressed,
+    this.isTask = false,
   });
   final String text;
   final void Function()? onPressed;
+  final bool isTask;
   @override
   Widget build(BuildContext context) {
     return Center(
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-              backgroundColor: AppColor.purple, fixedSize: const Size(250, 50)),
+              backgroundColor: isTask ? AppColor.pink : AppColor.purple,
+              fixedSize: const Size(250, 50)),
           onPressed: onPressed,
-          child: Text(
-            text,
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium!
-                .copyWith(fontWeight: FontWeight.w400),
+          child: Row(
+            children: [
+              Text(
+                text,
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium!
+                    .copyWith(fontWeight: FontWeight.w400),
+              ),
+            ],
           )),
     );
   }

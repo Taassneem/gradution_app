@@ -60,7 +60,6 @@ class OnBoardingViewBody extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: GoogleFonts.montserrat(
                   fontSize: 18,
-                  // color: Colors.white,
                 ),
               ),
               const SizedBox(

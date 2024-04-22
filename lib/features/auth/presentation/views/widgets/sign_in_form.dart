@@ -35,7 +35,7 @@ class SignInForm extends StatelessWidget {
         return Container(
             width: 315,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50), color: Colors.white),
+                borderRadius: BorderRadius.circular(50), color: AppColor.white),
             child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Form(

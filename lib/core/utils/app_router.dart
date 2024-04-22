@@ -57,6 +57,8 @@ import 'package:gradution_app/features/quiz/ontherThings/views/things_quiz_three
 import 'package:gradution_app/features/quiz/ontherThings/views/things_quiz_two_view.dart';
 import 'package:gradution_app/features/quiz/presentation/views/quiz_view.dart';
 import 'package:gradution_app/features/splash/presentation/views/splash_view.dart';
+import 'package:gradution_app/features/task/presentation/views/add_task_view.dart';
+import 'package:gradution_app/features/task/presentation/views/task_view.dart';
 
 class AppRouter {
   static const String signInView = '/signInView';
@@ -74,6 +76,8 @@ class AppRouter {
   static const String quizView = '/quizView';
   static const String cameraView = '/cameraView';
   static const String imageView = '/imageView';
+  static const String taskView = '/taskView';
+  static const String addTaskView = '/addTaskView';
   static const String photoInforamtion = '/photoInforamtion';
   static const String uploadPhotoView = '/uploadPhotoView';
   static const String foodQuizViewOne = '/foodQuizViewOne';
@@ -140,13 +144,16 @@ class AppRouter {
     GoRoute(
         path: profileView, builder: (context, state) => const ProfileView()),
     GoRoute(
-        path: userProfileView, builder: (context, state) => const UserProfileView()),
+        path: userProfileView,
+        builder: (context, state) => const UserProfileView()),
     GoRoute(path: quizView, builder: (context, state) => const QuizView()),
     GoRoute(path: cameraView, builder: (context, state) => const CameraView()),
     GoRoute(
         path: uploadPhotoView,
         builder: (context, state) => const UploadPhotoView()),
     GoRoute(path: imageView, builder: (context, state) => const ImageView()),
+    GoRoute(path: taskView, builder: (context, state) => const TaskView()),
+    GoRoute(path: addTaskView, builder: (context, state) => const AddTaskView()),
     GoRoute(
         path: photoInforamtion,
         builder: (context, state) => const PhotoInformationView()),

@@ -11,7 +11,7 @@ class DeleteAccountButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: Colors.white,
+          color: AppColor.white,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: AppColor.error, width: 1.5)),
       child: ListTile(

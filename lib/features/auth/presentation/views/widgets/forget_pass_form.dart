@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
 import '../../../../../core/utils/app_router.dart';
@@ -21,7 +22,7 @@ class ForgetPasswordForm extends StatelessWidget {
         width: 311,
         height: 300,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(50), color: Colors.white),
+            borderRadius: BorderRadius.circular(50), color: AppColor.white),
         child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Form(

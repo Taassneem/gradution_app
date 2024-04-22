@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_app/core/utils/app_color.dart';
 
 class UploadPhotoFeature extends StatelessWidget {
   const UploadPhotoFeature({
@@ -16,7 +17,7 @@ class UploadPhotoFeature extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(20)),
+            color: AppColor.white, borderRadius: BorderRadius.circular(20)),
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: horizontal, vertical: 11),
           child: Text(

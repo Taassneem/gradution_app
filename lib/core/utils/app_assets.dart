@@ -18,10 +18,8 @@ class AppAssets {
   static const String parent = '${basePath}parent.png';
   static const String discovery = '${basePath}discovery.png';
   static const String model = '${basePath}model.png';
-  static const String robotWithCamera = '${basePath}robotWithCamera.png';
-  static const String topHome = '${basePath}topHome.png';
   static const String quiz = '${basePath}quiz.png';
-  static const String task = '${basePath}task.png';
+  static const String topHome = '${basePath}topHome.png';
   static const String animals = '${basePath}animals.png';
   static const String apple = '${basePath}apple.png';
   static const String guava = '${basePath}guava.png';
@@ -135,6 +133,7 @@ class AppAssets {
   static const String window = '${basePath}window.png';
   static const String arabic = '${basePath}arabic.png';
   static const String translate = '${basePath}translate.png';
+  static const String robotWithCamera = '${basePath}robotWithCamera.png';
   static const String robot = '${basePath}robot.png';
   static const String camera = '${basePath}camera.png';
   static const String chatgpt = '${basePath}chatgpt.png';
@@ -142,6 +141,9 @@ class AppAssets {
   static const String chatbotMessage = '${basePath}chatbotMessage.png';
   static const String cloud = '${basePath}cloud.png';
   static const String addImage = '${basePath}addImage.png';
+  static const String task = '${basePath}task.png';
+  static const String task2 = '${basePath}task2.png';
+  static const String comingSoon = '${basePath}comingSoon.png';
   // static const String cat = '${basePath}cat.svg';
   // static const String cateBird = '${basePath}cateBird.svg';
   // static const String cuteCat = '${basePath}cuteCat.svg';

@@ -1639,6 +1639,316 @@ class S {
       args: [],
     );
   }
+
+  /// `Daily Tasks`
+  String get dailyTasks {
+    return Intl.message(
+      'Daily Tasks',
+      name: 'dailyTasks',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `It's great to arrange daily tasks to help your child`
+  String get itsGreatToArrangeDailyTasksToHelpYourChild {
+    return Intl.message(
+      'It\'s great to arrange daily tasks to help your child',
+      name: 'itsGreatToArrangeDailyTasksToHelpYourChild',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Task`
+  String get addTask {
+    return Intl.message(
+      'Add Task',
+      name: 'addTask',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Today`
+  String get today {
+    return Intl.message(
+      'Today',
+      name: 'today',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There are no tasks added yet`
+  String get thereAreNoTasksAddedYet {
+    return Intl.message(
+      'There are no tasks added yet',
+      name: 'thereAreNoTasksAddedYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create New Task`
+  String get createNewTask {
+    return Intl.message(
+      'Create New Task',
+      name: 'createNewTask',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Task Title`
+  String get taskTitle {
+    return Intl.message(
+      'Task Title',
+      name: 'taskTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Time`
+  String get time {
+    return Intl.message(
+      'Time',
+      name: 'time',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hour`
+  String get hour {
+    return Intl.message(
+      'Hour',
+      name: 'hour',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Min`
+  String get min {
+    return Intl.message(
+      'Min',
+      name: 'min',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Days`
+  String get selectDays {
+    return Intl.message(
+      'Select Days',
+      name: 'selectDays',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Photo`
+  String get addPhoto {
+    return Intl.message(
+      'Add Photo',
+      name: 'addPhoto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reminder`
+  String get reminder {
+    return Intl.message(
+      'Reminder',
+      name: 'reminder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Repeater`
+  String get repeater {
+    return Intl.message(
+      'Repeater',
+      name: 'repeater',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Categories`
+  String get categories {
+    return Intl.message(
+      'Categories',
+      name: 'categories',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Task`
+  String get saveTask {
+    return Intl.message(
+      'Save Task',
+      name: 'saveTask',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Saturday`
+  String get saturday {
+    return Intl.message(
+      'Saturday',
+      name: 'saturday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sunday`
+  String get sunday {
+    return Intl.message(
+      'Sunday',
+      name: 'sunday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Monday`
+  String get monday {
+    return Intl.message(
+      'Monday',
+      name: 'monday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tuesday`
+  String get tuesday {
+    return Intl.message(
+      'Tuesday',
+      name: 'tuesday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wednesday`
+  String get wednesday {
+    return Intl.message(
+      'Wednesday',
+      name: 'wednesday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Thursday`
+  String get thursday {
+    return Intl.message(
+      'Thursday',
+      name: 'thursday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Friday`
+  String get friday {
+    return Intl.message(
+      'Friday',
+      name: 'friday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All Days`
+  String get allDays {
+    return Intl.message(
+      'All Days',
+      name: 'allDays',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `On Time`
+  String get onTime {
+    return Intl.message(
+      'On Time',
+      name: 'onTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  // skipped getter for the '5MinutesBefore' key
+
+  // skipped getter for the '15MinutesBefore' key
+
+  // skipped getter for the '30MinutesBefore' key
+
+  /// `An hour before`
+  String get AnHourBefore {
+    return Intl.message(
+      'An hour before',
+      name: 'AnHourBefore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weekly`
+  String get weekly {
+    return Intl.message(
+      'Weekly',
+      name: 'weekly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Monthly`
+  String get monthly {
+    return Intl.message(
+      'Monthly',
+      name: 'monthly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  // skipped getter for the '3Month' key
+
+  // skipped getter for the '6Month' key
+
+  /// `add`
+  String get add {
+    return Intl.message(
+      'add',
+      name: 'add',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Edit`
+  String get saveEdit {
+    return Intl.message(
+      'Save Edit',
+      name: 'saveEdit',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

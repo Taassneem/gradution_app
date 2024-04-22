@@ -4,7 +4,7 @@ class CustomPageRouteSlide extends PageRouteBuilder {
   final Widget child;
   final AxisDirection direction;
   CustomPageRouteSlide({
-    this.direction = AxisDirection.down,
+    required this.direction,
     required this.child,
   }) : super(
             transitionDuration: const Duration(seconds: 2),

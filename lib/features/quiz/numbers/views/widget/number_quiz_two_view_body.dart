@@ -32,6 +32,7 @@ class NumberQuizTwoViewBody extends StatelessWidget {
             ),
             SizedBox(height: MediaQuery.sizeOf(context).height * 0.08),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ImageAnswerNumber(
                     number: AppAssets.six,

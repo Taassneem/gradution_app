@@ -15,13 +15,10 @@ class ImageAnswerNumber extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: CircleAvatar(
-          radius: 50,
-          backgroundColor: isWhite ? Colors.white : AppColor.babyBlue,
-          child: Image.asset(number),
-        ),
+      child: CircleAvatar(
+        radius: 50,
+        backgroundColor: isWhite ? Colors.white : AppColor.babyBlue,
+        child: Image.asset(number),
       ),
     );
   }

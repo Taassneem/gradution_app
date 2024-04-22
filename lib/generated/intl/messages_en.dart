@@ -22,7 +22,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "AnHourBefore": MessageLookupByLibrary.simpleMessage("An hour before"),
         "account": MessageLookupByLibrary.simpleMessage("Account"),
+        "add": MessageLookupByLibrary.simpleMessage("add"),
+        "addPhoto": MessageLookupByLibrary.simpleMessage("Add Photo"),
+        "addTask": MessageLookupByLibrary.simpleMessage("Add Task"),
+        "allDays": MessageLookupByLibrary.simpleMessage("All Days"),
         "animals": MessageLookupByLibrary.simpleMessage("Animals"),
         "appName": MessageLookupByLibrary.simpleMessage("Autism children"),
         "back": MessageLookupByLibrary.simpleMessage("Back"),
@@ -34,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "camera": MessageLookupByLibrary.simpleMessage("Camera"),
         "carrot": MessageLookupByLibrary.simpleMessage("Carrot"),
         "cat": MessageLookupByLibrary.simpleMessage("Cat"),
+        "categories": MessageLookupByLibrary.simpleMessage("Categories"),
         "cebola": MessageLookupByLibrary.simpleMessage("Cebola"),
         "changeEmail": MessageLookupByLibrary.simpleMessage("Change Email"),
         "changePassword":
@@ -67,7 +73,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Congratulations! The Answer is Correct"),
         "cow": MessageLookupByLibrary.simpleMessage("Cow"),
         "createAcc": MessageLookupByLibrary.simpleMessage("Create Account"),
+        "createNewTask":
+            MessageLookupByLibrary.simpleMessage("Create New Task"),
         "cucumber": MessageLookupByLibrary.simpleMessage("Cucumber"),
+        "dailyTasks": MessageLookupByLibrary.simpleMessage("Daily Tasks"),
         "deleteAccount": MessageLookupByLibrary.simpleMessage("Delete Account"),
         "dog": MessageLookupByLibrary.simpleMessage("Dog"),
         "done": MessageLookupByLibrary.simpleMessage("Done"),
@@ -91,12 +100,17 @@ class MessageLookup extends MessageLookupByLibrary {
             "Enter the email address associated with your account"),
         "four": MessageLookupByLibrary.simpleMessage("4 - f _  _ r"),
         "fox": MessageLookupByLibrary.simpleMessage("Fox"),
+        "friday": MessageLookupByLibrary.simpleMessage("Friday"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "grapes": MessageLookupByLibrary.simpleMessage("Grapes"),
         "hand": MessageLookupByLibrary.simpleMessage("Hand"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "hour": MessageLookupByLibrary.simpleMessage("Hour"),
         "howManyAnimalsInPicture": MessageLookupByLibrary.simpleMessage(
             "How many animals are in the picture?"),
+        "itsGreatToArrangeDailyTasksToHelpYourChild":
+            MessageLookupByLibrary.simpleMessage(
+                "It\'s great to arrange daily tasks to help your child"),
         "juice": MessageLookupByLibrary.simpleMessage("Juice"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "lemure": MessageLookupByLibrary.simpleMessage("Lemure"),
@@ -111,7 +125,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "meat": MessageLookupByLibrary.simpleMessage("Meat"),
         "media": MessageLookupByLibrary.simpleMessage("Media"),
         "milk": MessageLookupByLibrary.simpleMessage("Milk"),
+        "min": MessageLookupByLibrary.simpleMessage("Min"),
+        "monday": MessageLookupByLibrary.simpleMessage("Monday"),
         "monkey": MessageLookupByLibrary.simpleMessage("Monkey"),
+        "monthly": MessageLookupByLibrary.simpleMessage("Monthly"),
         "more": MessageLookupByLibrary.simpleMessage("More"),
         "multi": MessageLookupByLibrary.simpleMessage("2 * 7="),
         "mustBeBoth":
@@ -145,6 +162,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Parental supervision"),
         "onBoardingTitleTwo":
             MessageLookupByLibrary.simpleMessage("Daily tasks"),
+        "onTime": MessageLookupByLibrary.simpleMessage("On Time"),
         "oops": MessageLookupByLibrary.simpleMessage("Ooops!"),
         "orange": MessageLookupByLibrary.simpleMessage("Orange"),
         "otherThings": MessageLookupByLibrary.simpleMessage("Other Things"),
@@ -163,11 +181,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "receiveCodeAgain":
             MessageLookupByLibrary.simpleMessage("Didn’t receive code?"),
         "rectangle": MessageLookupByLibrary.simpleMessage("Rectangle"),
+        "reminder": MessageLookupByLibrary.simpleMessage("Reminder"),
+        "repeater": MessageLookupByLibrary.simpleMessage("Repeater"),
         "resend": MessageLookupByLibrary.simpleMessage("Resend"),
         "resetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
         "sad": MessageLookupByLibrary.simpleMessage("Sad"),
         "salmon": MessageLookupByLibrary.simpleMessage("Salmon"),
+        "saturday": MessageLookupByLibrary.simpleMessage("Saturday"),
         "saveChanges": MessageLookupByLibrary.simpleMessage("Save Changes"),
+        "saveEdit": MessageLookupByLibrary.simpleMessage("Save Edit"),
+        "saveTask": MessageLookupByLibrary.simpleMessage("Save Task"),
+        "selectDays": MessageLookupByLibrary.simpleMessage("Select Days"),
         "send": MessageLookupByLibrary.simpleMessage("Send"),
         "sendVerificationCode":
             MessageLookupByLibrary.simpleMessage("Send Verification Code"),
@@ -187,9 +211,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "sub": MessageLookupByLibrary.simpleMessage("15 - 6 ="),
         "success": MessageLookupByLibrary.simpleMessage("Success"),
         "sum": MessageLookupByLibrary.simpleMessage("6 + 5 ="),
+        "sunday": MessageLookupByLibrary.simpleMessage("Sunday"),
         "sunny": MessageLookupByLibrary.simpleMessage("Sunny"),
         "takePhoto": MessageLookupByLibrary.simpleMessage("Take Photo"),
         "task": MessageLookupByLibrary.simpleMessage("Task"),
+        "taskTitle": MessageLookupByLibrary.simpleMessage("Task Title"),
         "tea": MessageLookupByLibrary.simpleMessage("Tea"),
         "ten": MessageLookupByLibrary.simpleMessage("Ten"),
         "theCamel": MessageLookupByLibrary.simpleMessage(
@@ -204,9 +230,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "theShip": MessageLookupByLibrary.simpleMessage("The Ship"),
         "theSnake": MessageLookupByLibrary.simpleMessage(
             "Which of These is \'the Snake\'?"),
+        "thereAreNoTasksAddedYet": MessageLookupByLibrary.simpleMessage(
+            "There are no tasks added yet"),
+        "thursday": MessageLookupByLibrary.simpleMessage("Thursday"),
+        "time": MessageLookupByLibrary.simpleMessage("Time"),
+        "today": MessageLookupByLibrary.simpleMessage("Today"),
         "tomato": MessageLookupByLibrary.simpleMessage("Tomato"),
         "triangle": MessageLookupByLibrary.simpleMessage("Triangle"),
         "tryAgain": MessageLookupByLibrary.simpleMessage("Try Again"),
+        "tuesday": MessageLookupByLibrary.simpleMessage("Tuesday"),
         "turtle": MessageLookupByLibrary.simpleMessage("Turtle"),
         "uploadPhoto": MessageLookupByLibrary.simpleMessage("Upload Photo"),
         "userProfile": MessageLookupByLibrary.simpleMessage("User Profile"),
@@ -215,6 +247,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please enter 4-digit code sent to you at email address"),
         "watch": MessageLookupByLibrary.simpleMessage("Watch"),
         "water": MessageLookupByLibrary.simpleMessage("Water"),
+        "wednesday": MessageLookupByLibrary.simpleMessage("Wednesday"),
+        "weekly": MessageLookupByLibrary.simpleMessage("Weekly"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome !"),
         "whatCanIDoForYou":
             MessageLookupByLibrary.simpleMessage("What can I do for you?"),
