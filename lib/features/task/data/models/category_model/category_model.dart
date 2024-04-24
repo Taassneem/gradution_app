@@ -1,22 +1,18 @@
 import 'package:equatable/equatable.dart';
 
-import 'todo.dart';
-
 class CategoryModel extends Equatable {
-  final List<Todo>? todos;
+  final String title;
+  final String image;
 
-  const CategoryModel({this.todos});
+  const CategoryModel({required this.title, required this.image});
 
-  factory CategoryModel.fromJson(Map<String, dynamic> json) => CategoryModel(
-        todos: (json['todos'] as List<dynamic>?)
-            ?.map((e) => Todo.fromJson(e as Map<String, dynamic>))
-            .toList(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'todos': todos?.map((e) => e.toJson()).toList(),
-      };
+  factory CategoryModel.fromJson(Map<String, dynamic> json) {
+    return CategoryModel(
+      title: json['title'],
+      image: json['autoImage'],
+    );
+  }
 
   @override
-  List<Object?> get props => [todos];
+  List<Object?> get props => throw UnimplementedError();
 }

@@ -7,7 +7,7 @@ import 'package:gradution_app/core/utils/servive_locator.dart';
 import 'package:gradution_app/features/auth/data/models/sign_in_model/sign_in_model.dart';
 import 'package:gradution_app/features/auth/data/models/sign_up_model/sign_up_model.dart';
 import 'package:gradution_app/features/auth/data/models/user_data_model/user_data_model.dart';
-import 'package:gradution_app/features/auth/data/repo/api_consumer.dart';
+import 'package:gradution_app/core/api/api_consumer.dart';
 
 part 'auth_state.dart';
 

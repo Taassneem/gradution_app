@@ -1,5 +1,5 @@
 class EndPoint {
-  static const String baseUrl = 'https://89fc-156-210-149-164.ngrok-free.app/';
+  static const String baseUrl = 'https://bc13-197-54-175-139.ngrok-free.app/';
   static const String signUp = 'auth/';
   static const String login = 'auth/login';
   static const String reset = 'auth/forget';
@@ -7,6 +7,7 @@ class EndPoint {
   static String confirm(token) {
     return 'auth/confirm/$token';
   }
+  static const String categories = 'blog/getTodos';
 }
 
 class ApiKey {

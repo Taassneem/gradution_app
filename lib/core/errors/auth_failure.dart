@@ -59,19 +59,6 @@ ServerFailure handelDioException(DioException dioException) {
         default:
           throw ServerFailure(
               failure: FailureModel.fromJson(dioException.response!.data));
-        // if (dioException.response?.data is Map<String, dynamic>) {
-        //   throw ServerFailure(
-        //       failure: FailureModel.fromJson(dioException.response!.data));
-        // } else if (dioException.response?.data is String) {
-        //   // Handle the case when data is a string (might be an error message)
-        //   throw ServerFailure(
-        //       failure:
-        //           FailureModel(errorMessage: dioException.response!.data));
-        // } else {
-        //   // Handle other cases if necessary
-        //   throw ServerFailure(
-        //       failure: FailureModel(errorMessage: "Unknown error"));
-        // }
       }
     case DioExceptionType.cancel:
       throw ServerFailure(

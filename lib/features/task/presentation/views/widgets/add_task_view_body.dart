@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/func/custom_show_dialog.dart';
 
@@ -6,6 +7,7 @@ import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/auth/presentation/views/widgets/custom_elevated_button.dart';
+import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
 import 'package:gradution_app/features/task/presentation/views/widgets/add_photo.dart';
 import 'package:gradution_app/features/task/presentation/views/widgets/reminder.dart';
 import 'package:gradution_app/features/task/presentation/views/widgets/repeater.dart';
@@ -80,6 +82,7 @@ class AddTaskViewBody extends StatelessWidget {
                   title: S.of(context).categories,
                   image: AppAssets.categories,
                   onTap: () {
+                    BlocProvider.of<TaskCubit>(context).fetchCategories();
                     GoRouter.of(context).push(AppRouter.categoriesView);
                   },
                 ),

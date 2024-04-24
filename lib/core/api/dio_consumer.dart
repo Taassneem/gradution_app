@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:gradution_app/core/errors/auth_failure.dart';
 // import 'package:gradution_app/core/errors/failure.dart';
 import 'package:gradution_app/core/utils/api_keys.dart';
-import 'package:gradution_app/features/auth/data/repo/api_consumer.dart';
+import 'package:gradution_app/core/api/api_consumer.dart';
 
 class DioConsumer extends ApiConsumer {
   final Dio dio;
