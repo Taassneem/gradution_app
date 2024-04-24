@@ -20,4 +20,5 @@ class AppColor {
   static const weekEnd = Color(0xFF6A6A6A);
   static const white = Colors.white;
   static const black = Colors.black;
+  static const divider = Color(0xff434343);
 }

@@ -40,7 +40,7 @@ class GlobalCubit extends Cubit<GlobalState> {
   bool isArabic = false;
   void arabic() {
     isArabic = !isArabic;
-    langCode = 'ar' ;
+    langCode = 'ar';
     getIt<CacheHelper>()
         .saveData(key: 'isArabic', value: isArabic ? 'en' : 'ar');
     emit(ChangeLanguageArabic());
@@ -49,7 +49,7 @@ class GlobalCubit extends Cubit<GlobalState> {
   bool isEnglish = false;
   void english() {
     isEnglish = !isEnglish;
-    langCode =  'en' ;
+    langCode = 'en';
     getIt<CacheHelper>()
         .saveData(key: 'isEnglish', value: isEnglish ? 'ar' : 'en');
     emit(ChangeLanguageEnglish());

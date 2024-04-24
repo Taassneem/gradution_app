@@ -5,7 +5,8 @@ class IconMethod extends StatelessWidget {
   const IconMethod({
     super.key,
     this.icon,
-    this.onTap, this.rightIcon=false,
+    this.onTap,
+    this.rightIcon = false,
   });
   final IconData? icon;
   final void Function()? onTap;

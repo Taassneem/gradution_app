@@ -7,7 +7,8 @@ import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/core/utils/servive_locator.dart';
-import 'package:gradution_app/generated/l10n.dart';
+
+import 'custom_ok_elevated_button.dart';
 
 class ChoosLanguageBody extends StatelessWidget {
   const ChoosLanguageBody({
@@ -80,44 +81,36 @@ class ChoosLanguageBody extends StatelessWidget {
                         BlocProvider.of<GlobalCubit>(context).isArabic = value!;
                       },
                     ),
-                    ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColor.purple,
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 15, horizontal: 60)),
-                        onPressed: () {
-                          getIt
-                              .get<CacheHelper>()
-                              .saveData(key: 'languageChossed', value: true);
-                          bool onBoardingVisited = getIt
-                                  .get<CacheHelper>()
-                                  .getData(key: 'OnBoardingVisited') ??
-                              false;
-                          bool signedIn = getIt
-                                  .get<CacheHelper>()
-                                  .getData(key: 'SignedIn') ??
-                              false;
-                          bool signedOut = getIt
-                                  .get<CacheHelper>()
-                                  .getData(key: 'SignedUp') ??
-                              false;
-                          if (onBoardingVisited == true) {
-                            if (signedIn == true || signedOut == true) {
-                              GoRouter.of(context)
-                                  .pushReplacement(AppRouter.homeView);
-                            } else {
-                              GoRouter.of(context)
-                                  .pushReplacement(AppRouter.signInView);
-                            }
+                    CustomOkElevatedButton(
+                      isPurple: true,
+                      onPressed: () {
+                        getIt
+                            .get<CacheHelper>()
+                            .saveData(key: 'languageChossed', value: true);
+                        bool onBoardingVisited = getIt
+                                .get<CacheHelper>()
+                                .getData(key: 'OnBoardingVisited') ??
+                            false;
+                        bool signedIn =
+                            getIt.get<CacheHelper>().getData(key: 'SignedIn') ??
+                                false;
+                        bool signedOut =
+                            getIt.get<CacheHelper>().getData(key: 'SignedUp') ??
+                                false;
+                        if (onBoardingVisited == true) {
+                          if (signedIn == true || signedOut == true) {
+                            GoRouter.of(context)
+                                .pushReplacement(AppRouter.homeView);
                           } else {
                             GoRouter.of(context)
-                                .pushReplacement(AppRouter.onBoardingView);
+                                .pushReplacement(AppRouter.signInView);
                           }
-                        },
-                        child: Text(
-                          S.of(context).ok,
-                          style: Theme.of(context).textTheme.titleSmall,
-                        ))
+                        } else {
+                          GoRouter.of(context)
+                              .pushReplacement(AppRouter.onBoardingView);
+                        }
+                      },
+                    )
                   ],
                 ),
               ),

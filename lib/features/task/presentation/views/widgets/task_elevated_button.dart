@@ -7,22 +7,24 @@ class TaskElevatedButton extends StatelessWidget {
     super.key,
     this.onPressed,
     this.isWhite = true,
+    this.upload = false,
   });
   final void Function()? onPressed;
   final bool isWhite;
+  final bool upload;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
-            fixedSize: const Size(150, 50),
+            fixedSize: const Size(200, 50),
             backgroundColor: isWhite ? Colors.white : AppColor.pink,
             elevation: 0),
         onPressed: onPressed,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Icon(
-              Icons.add,
+            Icon(
+              upload ? Icons.file_upload_outlined : Icons.add,
               color: Colors.black,
             ),
             const SizedBox(width: 8),

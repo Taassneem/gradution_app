@@ -10,7 +10,9 @@ class CameraView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.purple,
-      appBar: AppBar(backgroundColor: AppColor.purple),
+      appBar: AppBar(
+        backgroundColor: AppColor.purple,
+      ),
       body: const SafeArea(
           child: Padding(
         padding: EdgeInsets.all(24.0),

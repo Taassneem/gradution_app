@@ -91,8 +91,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "errorMessage": MessageLookupByLibrary.simpleMessage(
             "الإجابة خاطئة، يرجى المحاولة مرة أخرى"),
         "father": MessageLookupByLibrary.simpleMessage("الأب"),
+        "fifteenMinutesBefore":
+            MessageLookupByLibrary.simpleMessage("15 دقيقة قبل"),
         "fish": MessageLookupByLibrary.simpleMessage("سمكة"),
         "five": MessageLookupByLibrary.simpleMessage("خمسة"),
+        "fiveMinutesBefore":
+            MessageLookupByLibrary.simpleMessage("5 دقائق قبل"),
         "foodAndDrink": MessageLookupByLibrary.simpleMessage("الطعام والشراب"),
         "forgetPass": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
         "forgetPassQ":
@@ -207,6 +211,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "signedUpSuccessfully":
             MessageLookupByLibrary.simpleMessage("تم التسجيل بنجاح"),
         "six": MessageLookupByLibrary.simpleMessage("ستة"),
+        "sixMonth": MessageLookupByLibrary.simpleMessage("6 أشهر"),
         "skip": MessageLookupByLibrary.simpleMessage("تخطى"),
         "snake": MessageLookupByLibrary.simpleMessage("الثعبان"),
         "snow": MessageLookupByLibrary.simpleMessage("ثلج"),
@@ -232,6 +237,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("أي من هذه هو الثعبان؟"),
         "thereAreNoTasksAddedYet":
             MessageLookupByLibrary.simpleMessage("لا توجد مهام مضافة بعد"),
+        "thirtyMinutesBefore":
+            MessageLookupByLibrary.simpleMessage("30 دقيقة قبل"),
+        "threeMonth": MessageLookupByLibrary.simpleMessage("3 أشهر"),
         "thursday": MessageLookupByLibrary.simpleMessage("الخميس"),
         "time": MessageLookupByLibrary.simpleMessage("الوقت"),
         "today": MessageLookupByLibrary.simpleMessage("اليوم"),

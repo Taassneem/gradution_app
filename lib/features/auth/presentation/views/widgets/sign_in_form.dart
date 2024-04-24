@@ -78,7 +78,8 @@ class SignInForm extends StatelessWidget {
                         Center(
                           child: TextButton(
                               onPressed: () {
-                                GoRouter.of(context).pushReplacement(AppRouter.signUpView);
+                                GoRouter.of(context)
+                                    .pushReplacement(AppRouter.signUpView);
                               },
                               child: Text(s.createAcc,
                                   style: Theme.of(context)

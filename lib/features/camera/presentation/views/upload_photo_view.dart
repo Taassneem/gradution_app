@@ -10,7 +10,9 @@ class UploadPhotoView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.purple,
-      appBar: AppBar(backgroundColor: AppColor.purple),
+      appBar: AppBar(
+        backgroundColor: AppColor.purple,
+      ),
       body: const Padding(
         padding: EdgeInsets.all(36.0),
         child: UploadPhotoViewBody(),
@@ -18,4 +20,3 @@ class UploadPhotoView extends StatelessWidget {
     );
   }
 }
-

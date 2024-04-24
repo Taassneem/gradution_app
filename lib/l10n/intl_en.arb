@@ -183,15 +183,16 @@
     "friday":"Friday",
     "allDays":"All Days",
     "onTime":"On Time",
-    "5MinutesBefore":"5 minutes before",
-    "15MinutesBefore":"15 minutes before",
-    "30MinutesBefore":"30  minutes before",
+    "fiveMinutesBefore":"5 minutes before",
+    "fifteenMinutesBefore":"15 minutes before",
+    "thirtyMinutesBefore":"30  minutes before",
     "AnHourBefore":"An hour before",
     "weekly":"Weekly",
     "monthly":"Monthly",
-    "3Month":"3 months",
-    "6Month":"6 months",
+    "threeMonth":"3 months",
+    "sixMonth":"6 months",
     "add":"add",
-    "saveEdit":"Save Edit"
-
+    "saveEdit":"Save Edit",
+    "am":"AM",
+    "pm":"PM"
 }

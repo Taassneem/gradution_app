@@ -8,6 +8,7 @@ class EndPoint {
     return 'auth/confirm/$token';
   }
 }
+
 class ApiKey {
   static const String cause = 'cause';
   static const String message = 'message';

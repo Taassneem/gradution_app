@@ -20,16 +20,12 @@ class CustomElevatedButton extends StatelessWidget {
               backgroundColor: isTask ? AppColor.pink : AppColor.purple,
               fixedSize: const Size(250, 50)),
           onPressed: onPressed,
-          child: Row(
-            children: [
-              Text(
-                text,
-                style: Theme.of(context)
-                    .textTheme
-                    .titleMedium!
-                    .copyWith(fontWeight: FontWeight.w400),
-              ),
-            ],
+          child: Text(
+            text,
+            style: Theme.of(context)
+                .textTheme
+                .titleMedium!
+                .copyWith(fontWeight: FontWeight.w400),
           )),
     );
   }

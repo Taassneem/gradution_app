@@ -11,7 +11,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const SizedBox.shrink(),
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
               onPressed: () {

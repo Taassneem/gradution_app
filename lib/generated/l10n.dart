@@ -1890,11 +1890,35 @@ class S {
     );
   }
 
-  // skipped getter for the '5MinutesBefore' key
+  /// `5 minutes before`
+  String get fiveMinutesBefore {
+    return Intl.message(
+      '5 minutes before',
+      name: 'fiveMinutesBefore',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the '15MinutesBefore' key
+  /// `15 minutes before`
+  String get fifteenMinutesBefore {
+    return Intl.message(
+      '15 minutes before',
+      name: 'fifteenMinutesBefore',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the '30MinutesBefore' key
+  /// `30  minutes before`
+  String get thirtyMinutesBefore {
+    return Intl.message(
+      '30  minutes before',
+      name: 'thirtyMinutesBefore',
+      desc: '',
+      args: [],
+    );
+  }
 
   /// `An hour before`
   String get AnHourBefore {
@@ -1926,9 +1950,25 @@ class S {
     );
   }
 
-  // skipped getter for the '3Month' key
+  /// `3 months`
+  String get threeMonth {
+    return Intl.message(
+      '3 months',
+      name: 'threeMonth',
+      desc: '',
+      args: [],
+    );
+  }
 
-  // skipped getter for the '6Month' key
+  /// `6 months`
+  String get sixMonth {
+    return Intl.message(
+      '6 months',
+      name: 'sixMonth',
+      desc: '',
+      args: [],
+    );
+  }
 
   /// `add`
   String get add {
@@ -1945,6 +1985,26 @@ class S {
     return Intl.message(
       'Save Edit',
       name: 'saveEdit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `AM`
+  String get am {
+    return Intl.message(
+      'AM',
+      name: 'am',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `PM`
+  String get pm {
+    return Intl.message(
+      'PM',
+      name: 'pm',
       desc: '',
       args: [],
     );

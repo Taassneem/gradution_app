@@ -18,4 +18,3 @@ class UserProfileView extends StatelessWidget {
     );
   }
 }
-

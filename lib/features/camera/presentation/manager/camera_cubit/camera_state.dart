@@ -18,6 +18,7 @@ final class CameraFailure extends CameraState {
 
   const CameraFailure({required this.errorMessage});
 }
+
 final class CameraGalleryLoading extends CameraState {}
 
 final class CameraGallerySuccess extends CameraState {}

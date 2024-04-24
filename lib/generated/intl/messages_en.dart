@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "addPhoto": MessageLookupByLibrary.simpleMessage("Add Photo"),
         "addTask": MessageLookupByLibrary.simpleMessage("Add Task"),
         "allDays": MessageLookupByLibrary.simpleMessage("All Days"),
+        "am": MessageLookupByLibrary.simpleMessage("AM"),
         "animals": MessageLookupByLibrary.simpleMessage("Animals"),
         "appName": MessageLookupByLibrary.simpleMessage("Autism children"),
         "back": MessageLookupByLibrary.simpleMessage("Back"),
@@ -90,8 +91,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "errorMessage": MessageLookupByLibrary.simpleMessage(
             "The Answer is Wrong ,Please Try Again"),
         "father": MessageLookupByLibrary.simpleMessage("Father"),
+        "fifteenMinutesBefore":
+            MessageLookupByLibrary.simpleMessage("15 minutes before"),
         "fish": MessageLookupByLibrary.simpleMessage("Fish"),
         "five": MessageLookupByLibrary.simpleMessage("Five"),
+        "fiveMinutesBefore":
+            MessageLookupByLibrary.simpleMessage("5 minutes before"),
         "foodAndDrink": MessageLookupByLibrary.simpleMessage("Food and Drink"),
         "forgetPass": MessageLookupByLibrary.simpleMessage("Forget password "),
         "forgetPassQ":
@@ -174,6 +179,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordValidate": MessageLookupByLibrary.simpleMessage(
             "8+cahracters,1capital letter"),
         "pepper": MessageLookupByLibrary.simpleMessage("Pepper"),
+        "pm": MessageLookupByLibrary.simpleMessage("PM"),
         "potato": MessageLookupByLibrary.simpleMessage("Potato"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "pumpkin": MessageLookupByLibrary.simpleMessage("Pumpkin"),
@@ -203,6 +209,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "signedUpSuccessfully":
             MessageLookupByLibrary.simpleMessage("Signed Up Successfully"),
         "six": MessageLookupByLibrary.simpleMessage("Six"),
+        "sixMonth": MessageLookupByLibrary.simpleMessage("6 months"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "snake": MessageLookupByLibrary.simpleMessage("Snake"),
         "snow": MessageLookupByLibrary.simpleMessage("Snow"),
@@ -232,6 +239,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Which of These is \'the Snake\'?"),
         "thereAreNoTasksAddedYet": MessageLookupByLibrary.simpleMessage(
             "There are no tasks added yet"),
+        "thirtyMinutesBefore":
+            MessageLookupByLibrary.simpleMessage("30  minutes before"),
+        "threeMonth": MessageLookupByLibrary.simpleMessage("3 months"),
         "thursday": MessageLookupByLibrary.simpleMessage("Thursday"),
         "time": MessageLookupByLibrary.simpleMessage("Time"),
         "today": MessageLookupByLibrary.simpleMessage("Today"),
