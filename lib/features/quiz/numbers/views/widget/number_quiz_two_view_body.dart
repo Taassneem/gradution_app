@@ -4,7 +4,6 @@ import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/quiz/numbers/views/widget/name_speaker.dart';
 import 'package:gradution_app/generated/l10n.dart';
-import 'package:intl/intl.dart';
 
 import 'number_answer_image.dart';
 import 'number_error_widget.dart';
@@ -79,8 +78,4 @@ class NumberQuizTwoViewBody extends StatelessWidget {
       ),
     );
   }
-}
-
-bool isArabic() {
-  return Intl.getCurrentLocale() == 'ar';
 }

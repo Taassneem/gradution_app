@@ -86,7 +86,7 @@ class ChoosLanguageBody extends StatelessWidget {
                       onPressed: () {
                         getIt
                             .get<CacheHelper>()
-                            .saveData(key: 'languageChossed', value: true);
+                            .saveData(key: 'languageChoosed', value: true);
                         bool onBoardingVisited = getIt
                                 .get<CacheHelper>()
                                 .getData(key: 'OnBoardingVisited') ??

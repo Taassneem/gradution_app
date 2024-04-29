@@ -17,6 +17,7 @@ class ListViewComponent extends StatelessWidget {
       alignment: Alignment.center,
       decoration: const BoxDecoration(color: AppColor.white),
       child: ListTile(
+        onTap: () {},
         leading: AspectRatio(
           aspectRatio: 2.3,
           child: CachedNetworkImage(

@@ -1,5 +1,5 @@
 class EndPoint {
-  static const String baseUrl = 'https://bc13-197-54-175-139.ngrok-free.app/';
+  static const String baseUrl = 'https://c4b6-156-210-187-72.ngrok-free.app/';
   static const String signUp = 'auth/';
   static const String login = 'auth/login';
   static const String reset = 'auth/forget';
@@ -7,7 +7,12 @@ class EndPoint {
   static String confirm(token) {
     return 'auth/confirm/$token';
   }
+
   static const String categories = 'blog/getTodos';
+  static const String addTask = 'blog/add';
+  static String getTasks(id) {
+    return 'blog/createdBy/$id';
+  }
 }
 
 class ApiKey {
@@ -20,4 +25,11 @@ class ApiKey {
   static const String id = '_id';
   static const String token = 'token';
   static const String confirmPassword = 'confirmPassword';
+  static const String title = 'title';
+  static const String image = 'image';
+  static const String selectedActivity = 'selectedActivity';
+  static const String daysOfWeek = 'daysOfWeek';
+  static const String date = 'date';
+  static const String reminder = 'reminder';
+  static const String time = 'time';
 }

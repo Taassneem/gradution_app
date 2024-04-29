@@ -14,15 +14,10 @@ class ChoosenFeature extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(feature, style: Theme.of(context).textTheme.titleSmall),
-            Checkbox(
-              value: false,
-              onChanged: (value) {},
-            )
-          ],
+        CheckboxListTile(
+          value: false,
+          onChanged: (value) {},
+          title: Text(feature, style: Theme.of(context).textTheme.titleSmall),
         ),
         isFinalFeature ? const SizedBox.shrink() : const CustomDivider(),
       ],

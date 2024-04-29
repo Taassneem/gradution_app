@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_app/core/func/is_arabic_func.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -34,37 +35,43 @@ class _CustomCalenderState extends State<CustomCalender> {
                   .textTheme
                   .titleSmall!
                   .copyWith(color: AppColor.weekEnd),
-              dowTextFormatter: widget.isWeekCalender
-                  ? (date, locale) {
-                      return DateFormat.E(locale).format(date)[0] +
-                          DateFormat.E(locale).format(date)[1].toUpperCase();
-                    }
-                  : (date, locale) => DateFormat.E(locale).format(date)[0]),
+              dowTextFormatter: isArabic()
+                  ? (date, locale) => DateFormat.E(locale).format(date)
+                  : widget.isWeekCalender
+                      ? (date, locale) {
+                          return DateFormat.E(locale).format(date)[0] +
+                              DateFormat.E(locale)
+                                  .format(date)[1]
+                                  .toUpperCase();
+                        }
+                      : (date, locale) => DateFormat.E(locale).format(date)[0]),
           calendarFormat: widget.isWeekCalender
               ? CalendarFormat.week
               : CalendarFormat.month,
-          calendarStyle: const CalendarStyle(
-              todayTextStyle: TextStyle(
+          calendarStyle: CalendarStyle(
+              todayTextStyle: const TextStyle(
                   color: AppColor.black,
                   fontSize: 15,
                   fontWeight: FontWeight.w500),
               defaultTextStyle:
-                  TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
-              outsideTextStyle: TextStyle(color: AppColor.pink),
-              weekendTextStyle: TextStyle(
+                  const TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
+              outsideTextStyle: TextStyle(
+                  color:
+                      widget.isWeekCalender ? AppColor.weekEnd : AppColor.pink),
+              weekendTextStyle: const TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
-                  color: Color(0xFF5A5A5A)),
-              todayDecoration: BoxDecoration(
+                  color: AppColor.weekEnd),
+              todayDecoration: const BoxDecoration(
                 color: AppColor.pink,
                 shape: BoxShape.circle,
               ),
-              selectedTextStyle: TextStyle(
+              selectedTextStyle: const TextStyle(
                   color: AppColor.black,
                   fontSize: 15,
                   fontWeight: FontWeight.w500),
-              selectedDecoration:
-                  BoxDecoration(color: AppColor.white, shape: BoxShape.circle)),
+              selectedDecoration: const BoxDecoration(
+                  color: AppColor.white, shape: BoxShape.circle)),
           onDaySelected: selectedDay,
           selectedDayPredicate: (day) => isSameDay(day, today),
           daysOfWeekHeight: 22,

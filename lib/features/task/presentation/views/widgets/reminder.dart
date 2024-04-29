@@ -4,7 +4,7 @@ import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
 import '../../../../splash/presentation/views/widget/custom_ok_elevated_button.dart';
-import 'choosen_feature.dart';
+import 'reminder_list_view.dart';
 
 class Reminder extends StatelessWidget {
   const Reminder({super.key});
@@ -26,24 +26,7 @@ class Reminder extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleMedium),
                   trailing: Image.asset(AppAssets.reminder),
                 ),
-                Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  decoration: BoxDecoration(
-                      border: Border.all(color: AppColor.white, width: 1.5),
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Column(
-                    children: [
-                      ChoosenFeature(feature: S.of(context).onTime),
-                      ChoosenFeature(feature: S.of(context).fiveMinutesBefore),
-                      ChoosenFeature(
-                          feature: S.of(context).fifteenMinutesBefore),
-                      ChoosenFeature(
-                          feature: S.of(context).thirtyMinutesBefore,
-                          isFinalFeature: true)
-                    ],
-                  ),
-                ),
+                const ReminderListView(),
                 const SizedBox(height: 24),
                 CustomOkElevatedButton(onPressed: () {
                   Navigator.pop(context);

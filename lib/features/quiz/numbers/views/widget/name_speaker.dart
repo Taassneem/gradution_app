@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_app/core/func/is_arabic_func.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
-import 'package:intl/intl.dart';
 
 class NameSpeaker extends StatelessWidget {
   const NameSpeaker({
@@ -22,8 +22,4 @@ class NameSpeaker extends StatelessWidget {
       ),
     );
   }
-}
-
-bool isArabic() {
-  return Intl.getCurrentLocale() == 'ar';
 }

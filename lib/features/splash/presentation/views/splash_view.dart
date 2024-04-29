@@ -60,7 +60,7 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
       ),
       () {
         bool languageChoosed =
-            getIt.get<CacheHelper>().getData(key: 'languageChossed') ?? false;
+            getIt.get<CacheHelper>().getData(key: 'languageChoosed') ?? false;
         if (languageChoosed) {
           Navigator.pushReplacement(
               context,

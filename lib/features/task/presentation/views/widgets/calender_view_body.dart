@@ -22,28 +22,30 @@ class CalenderViewBody extends StatelessWidget {
       children: [
         MonthAndYear(monthName: monthName, today: today),
         const CustomCalender(),
-        Container(
-          width: MediaQuery.sizeOf(context).width,
-          decoration: const BoxDecoration(color: AppColor.screenColor),
-          child: Padding(
-            padding: const EdgeInsets.all(18.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                TodayNumber(today: today, dayName: dayName),
-                const TasksComponent(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    TaskElevatedButton(
-                      isWhite: false,
-                      onPressed: () {
-                        GoRouter.of(context).push(AppRouter.addTaskView);
-                      },
-                    )
-                  ],
-                )
-              ],
+        Expanded(
+          child: Container(
+            width: MediaQuery.sizeOf(context).width,
+            decoration: const BoxDecoration(color: AppColor.screenColor),
+            child: Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TodayNumber(today: today, dayName: dayName),
+                  const TasksComponent(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TaskElevatedButton(
+                        isWhite: false,
+                        onPressed: () {
+                          GoRouter.of(context).push(AppRouter.addTaskView);
+                        },
+                      )
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         )

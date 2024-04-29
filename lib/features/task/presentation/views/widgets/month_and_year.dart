@@ -14,7 +14,7 @@ class MonthAndYear extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 18.0) +
-          const EdgeInsets.only(top: 18),
+          const EdgeInsets.only(top: 15),
       child: Row(
         children: [
           const Icon(Icons.calendar_month_outlined),
