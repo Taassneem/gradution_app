@@ -12,7 +12,7 @@ class NumberSuccessWidget extends StatelessWidget {
       child: Container(
         width: MediaQuery.sizeOf(context).width * 0.82,
         decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(10)),
+            color:  AppColor.white, borderRadius: BorderRadius.circular(10)),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -52,7 +52,7 @@ class NumberSuccessWidget extends StatelessWidget {
                       style: Theme.of(context)
                           .textTheme
                           .titleSmall!
-                          .copyWith(color: Colors.white),
+                          .copyWith(color: AppColor.white),
                     ),
                   ),
                 ],

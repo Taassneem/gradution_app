@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/quiz/foodAndDrink/views/widgets/food_quiz_view_body_images.dart';
@@ -21,41 +22,22 @@ class FoodQuizViewNine extends StatelessWidget {
         body: FoodQuizViewImageBody(
             answerOne: AppAssets.friuts,
             onTapOne: () {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return const MiddleFoodErrorWidget();
-                },
-              );
+              customShowDialog(context, widget: const MiddleFoodErrorWidget());
             },
             answerTwo: AppAssets.cake,
             onTapTwo: () {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return MiddleFoodRightWidget(onPressed: () {
-                    GoRouter.of(context).push(AppRouter.foodQuizViewFinal);
-                  });
-                },
-              );
+              customShowDialog(context,
+                  widget: MiddleFoodRightWidget(onPressed: () {
+                GoRouter.of(context).push(AppRouter.foodQuizViewFinal);
+              }));
             },
             answerThree: AppAssets.burger,
             onTapThree: () {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return const MiddleFoodErrorWidget();
-                },
-              );
+              customShowDialog(context, widget: const MiddleFoodErrorWidget());
             },
             answerFour: AppAssets.pizza,
             onTapFour: () {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return const MiddleFoodErrorWidget();
-                },
-              );
+              customShowDialog(context, widget: const MiddleFoodErrorWidget());
             },
             question: S.of(context).cake));
   }

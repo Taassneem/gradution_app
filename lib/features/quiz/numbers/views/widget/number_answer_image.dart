@@ -17,7 +17,7 @@ class ImageAnswerNumber extends StatelessWidget {
       onTap: onTap,
       child: CircleAvatar(
         radius: 50,
-        backgroundColor: isWhite ? Colors.white : AppColor.babyBlue,
+        backgroundColor: isWhite ? AppColor.white : AppColor.babyBlue,
         child: Image.asset(number),
       ),
     );

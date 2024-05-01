@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_app/core/common/common_lists.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
+import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
 
 import 'all_days_widget.dart';
 import 'custom_divider.dart';
@@ -38,6 +40,7 @@ class _DaysListViewState extends State<DaysListView> {
                     onChanged: (value) {
                       isSelected[index] = value!;
                       setState(() {});
+                      BlocProvider.of<TaskCubit>(context).days = days;
                     },
                     activeColor: AppColor.divider,
                     title: Text(days[index],
@@ -49,6 +52,7 @@ class _DaysListViewState extends State<DaysListView> {
             AllDaysWidget(
               selected: isSelected.every((element) => element),
               onChanged: (value) {
+                BlocProvider.of<TaskCubit>(context).days = days;
                 setState(() {
                   for (int i = 0; i < isSelected.length; i++) {
                     isSelected[i] = value;

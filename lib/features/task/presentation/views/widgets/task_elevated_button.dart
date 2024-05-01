@@ -17,7 +17,7 @@ class TaskElevatedButton extends StatelessWidget {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
             fixedSize: const Size(200, 50),
-            backgroundColor: isWhite ? Colors.white : AppColor.pink,
+            backgroundColor: isWhite ?  AppColor.white : AppColor.pink,
             elevation: 0),
         onPressed: onPressed,
         child: Row(
@@ -25,7 +25,7 @@ class TaskElevatedButton extends StatelessWidget {
           children: [
             Icon(
               upload ? Icons.file_upload_outlined : Icons.add,
-              color: Colors.black,
+              color: AppColor.black,
             ),
             const SizedBox(width: 8),
             Text(S.of(context).addTask,

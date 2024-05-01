@@ -26,7 +26,7 @@ class SplashViewBody extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .headlineMedium!
-                    .copyWith(color: Colors.white),
+                    .copyWith(color:  AppColor.white),
               )
             ],
           ),
@@ -74,14 +74,14 @@ class SplashViewBody extends StatelessWidget {
 //                       style: GoogleFonts.montserrat(
 //                         fontSize: 32,
 //                         fontWeight: FontWeight.w500,
-//                         color: Colors.white,
+//                         color:  AppColor.white,
 //                       ),
 //                     ),
 //                     Text(
 //                       'Autism children',
 //                       style: GoogleFonts.montserrat(
 //                         fontSize: 22,
-//                         color: Colors.white,
+//                         color:  AppColor.white,
 //                       ),
 //                     ),
 //                   ],

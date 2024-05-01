@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/generated/l10n.dart';
@@ -20,63 +21,33 @@ class NumberQuizEightView extends StatelessWidget {
         question: S.of(context).sub,
         numberOne: '21',
         onTapOne: () {
-          showDialog(
-            context: context,
-            builder: (context) {
-              return const NumberErrorWidget();
-            },
-          );
+          customShowDialog(context, widget: const NumberErrorWidget());
         },
         numberTwo: '12',
         onTapTwo: () {
-          showDialog(
-            context: context,
-            builder: (context) {
-              return const NumberErrorWidget();
-            },
-          );
+          customShowDialog(context, widget: const NumberErrorWidget());
         },
         numberThree: '10',
         onTapThree: () {
-          showDialog(
-            context: context,
-            builder: (context) {
-              return const NumberErrorWidget();
-            },
-          );
+          customShowDialog(context, widget: const NumberErrorWidget());
         },
         numberFour: '11',
         onTapFour: () {
-          showDialog(
-            context: context,
-            builder: (context) {
-              return const NumberErrorWidget();
-            },
-          );
+          customShowDialog(context, widget: const NumberErrorWidget());
         },
         numberFive: '9',
         isOneNumberFive: true,
         onTapFive: () {
-          showDialog(
-            context: context,
-            builder: (context) {
-              return NumberSuccessWidget(
-                onPressed: () {
-                  GoRouter.of(context).push(AppRouter.numberQuizViewNine);
-                },
-              );
+          customShowDialog(context, widget: NumberSuccessWidget(
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.numberQuizViewNine);
             },
-          );
+          ));
         },
         numberSix: '6',
         isOneNumberSix: true,
         onTapSix: () {
-          showDialog(
-            context: context,
-            builder: (context) {
-              return const NumberErrorWidget();
-            },
-          );
+          customShowDialog(context, widget: const NumberErrorWidget());
         },
       )),
     );

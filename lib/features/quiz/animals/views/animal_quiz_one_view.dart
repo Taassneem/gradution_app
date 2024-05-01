@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/quiz/animals/views/widgets/middle_animal_error.dart';
@@ -17,25 +18,15 @@ class AnimalQuizOneView extends StatelessWidget {
         question: S.of(context).theCamel,
         imageOne: AppAssets.camal,
         onTapOne: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return MiddleAnimalRight(
-                onPressed: () {
-                  GoRouter.of(context).push(AppRouter.animalQuizViewTwo);
-                },
-              );
+          customShowDialog(context, widget: MiddleAnimalRight(
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.animalQuizViewTwo);
             },
-          );
+          ));
         },
         imageTwo: AppAssets.monkey,
         onTapTwo: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return const MiddleAnimalError();
-            },
-          );
+          customShowDialog(context, widget: const MiddleAnimalError());
         },
       ),
     );

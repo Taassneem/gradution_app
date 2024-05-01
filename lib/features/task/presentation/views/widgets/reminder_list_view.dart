@@ -1,6 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_app/core/common/common_lists.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
+import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
 
 import 'custom_divider.dart';
 
@@ -41,6 +45,8 @@ class _ReminderListViewState extends State<ReminderListView> {
                 setState(() {
                   selectedReminder = value;
                 });
+                BlocProvider.of<TaskCubit>(context).reminder = reminder[index];
+                log(reminder[index]);
               },
               title: Text(
                 reminder[index],

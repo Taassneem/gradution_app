@@ -29,7 +29,7 @@ class CameraCubit extends Cubit<CameraState> {
       List<int> imageBytes = File(imageFromGallery!.path).readAsBytesSync();
       base64Image = base64Encode(imageBytes);
       imageBase64 = base64Decode(base64Image!);
-      log(base64Image!);
+      // log(base64Image!);
       emit(CameraGallerySuccess());
     } catch (e) {
       emit(CameraGalleryFailure(errorMessage: e.toString()));

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/quiz/numbers/views/widget/name_speaker.dart';
@@ -22,42 +23,23 @@ class FoodQuizViewSix extends StatelessWidget {
       body: FoodQuizViewTextBody(
         answerOne: s.pepper,
         onTapOne: () {
-          showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return MiddleFoodRightWidget(
-                  onPressed: () {
-                    GoRouter.of(context).push(AppRouter.foodQuizViewSeven);
-                  },
-                );
-              });
+          customShowDialog(context, widget: MiddleFoodRightWidget(
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.foodQuizViewSeven);
+            },
+          ));
         },
         answerTwo: s.eggplant,
         onTapTwo: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return const MiddleFoodErrorWidget();
-            },
-          );
+          customShowDialog(context, widget: const MiddleFoodErrorWidget());
         },
         answerThree: s.potato,
         onTapThree: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return const MiddleFoodErrorWidget();
-            },
-          );
+          customShowDialog(context, widget: const MiddleFoodErrorWidget());
         },
         answerFour: s.cebola,
         onTapFour: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return const MiddleFoodErrorWidget();
-            },
-          );
+          customShowDialog(context, widget: const MiddleFoodErrorWidget());
         },
         question: AppAssets.coloredPapper,
       ),

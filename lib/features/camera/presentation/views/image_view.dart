@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/features/camera/presentation/manager/camera_cubit/camera_cubit.dart';
 
 class ImageView extends StatelessWidget {
@@ -17,7 +18,7 @@ class ImageView extends StatelessWidget {
             child:
                 BlocProvider.of<CameraCubit>(context).imageFromGallery == null
                     ? const CircleAvatar(
-                        backgroundColor: Colors.black,
+                        backgroundColor: AppColor.black,
                         radius: 50,
                       )
                     : Container(
@@ -34,7 +35,7 @@ class ImageView extends StatelessWidget {
           const SizedBox(height: 20),
           BlocProvider.of<CameraCubit>(context).imageBase64 == null
               ? const CircleAvatar(
-                  backgroundColor: Colors.black,
+                  backgroundColor: AppColor.black,
                   radius: 50,
                 )
               : Image.memory(

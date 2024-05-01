@@ -62,17 +62,17 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
         bool languageChoosed =
             getIt.get<CacheHelper>().getData(key: 'languageChoosed') ?? false;
         if (languageChoosed) {
-          Navigator.pushReplacement(
+          Navigator.push(
               context,
               CustomPageRouteSlide(
-                child: const ChooseLanguage(),
+                child: const HomeView(),
                 direction: AxisDirection.up,
               ));
         } else {
           Navigator.push(
               context,
               CustomPageRouteSlide(
-                child: const HomeView(),
+                child: const ChooseLanguage(),
                 direction: AxisDirection.up,
               ));
         }

@@ -22,9 +22,7 @@ class IconMethod extends StatelessWidget {
             color: AppColor.purple,
             borderRadius: rightIcon == true
                 ? const BorderRadius.only(bottomRight: Radius.circular(30))
-                : const BorderRadius.only(
-                    bottomLeft: Radius.circular(30),
-                  ),
+                : const BorderRadius.only(bottomLeft: Radius.circular(30)),
           ),
           child: Icon(icon),
         ));

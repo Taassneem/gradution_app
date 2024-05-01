@@ -20,7 +20,8 @@ class AddTaskFeature extends StatelessWidget {
         ListTile(
           onTap: onTap,
           title: Text(title, style: Theme.of(context).textTheme.titleMedium),
-          trailing: Image.asset(image),
+          leading: Image.asset(image),
+          trailing: const Icon(Icons.add),
         )
       ],
     );

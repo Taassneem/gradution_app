@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_app/core/func/is_arabic_func.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
+import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
 import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -73,7 +75,10 @@ class _CustomCalenderState extends State<CustomCalender> {
               selectedDecoration: const BoxDecoration(
                   color: AppColor.white, shape: BoxShape.circle)),
           onDaySelected: selectedDay,
-          selectedDayPredicate: (day) => isSameDay(day, today),
+          selectedDayPredicate: (day) {
+            BlocProvider.of<TaskCubit>(context).date = day;
+            return isSameDay(day, today);
+          },
           daysOfWeekHeight: 22,
           focusedDay: today,
           headerVisible: false,

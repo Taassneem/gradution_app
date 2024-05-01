@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/quiz/numbers/views/widget/name_speaker.dart';
@@ -37,39 +38,26 @@ class NumberQuizTwoViewBody extends StatelessWidget {
                     number: AppAssets.six,
                     isWhite: true,
                     onTap: () {
-                      showDialog(
-                        context: context,
-                        builder: (context) {
-                          return const NumberErrorWidget();
-                        },
-                      );
+                      customShowDialog(context,
+                          widget: const NumberErrorWidget());
                     }),
                 ImageAnswerNumber(
                     number: AppAssets.seven,
                     isWhite: true,
                     onTap: () {
-                      showDialog(
-                        context: context,
-                        builder: (context) {
-                          return NumberSuccessWidget(
-                            onPressed: () {
-                              GoRouter.of(context)
-                                  .push(AppRouter.numberQuizViewThree);
-                            },
-                          );
+                      customShowDialog(context, widget: NumberSuccessWidget(
+                        onPressed: () {
+                          GoRouter.of(context)
+                              .push(AppRouter.numberQuizViewThree);
                         },
-                      );
+                      ));
                     }),
                 ImageAnswerNumber(
                     number: AppAssets.nine,
                     isWhite: true,
                     onTap: () {
-                      showDialog(
-                        context: context,
-                        builder: (context) {
-                          return const NumberErrorWidget();
-                        },
-                      );
+                      customShowDialog(context,
+                          widget: const NumberErrorWidget());
                     })
               ],
             )

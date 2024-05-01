@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_app/core/common/common_lists.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
+import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
 
 import 'custom_divider.dart';
 
@@ -40,6 +42,7 @@ class _RepeaterListViewState extends State<RepeaterListView> {
                 setState(() {
                   selectedRepeater = value;
                 });
+                BlocProvider.of<TaskCubit>(context).repeater = repeater[index];
               },
               title: Text(repeater[index],
                   style: Theme.of(context).textTheme.titleSmall),

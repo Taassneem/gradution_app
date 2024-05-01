@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/generated/l10n.dart';
@@ -20,61 +21,31 @@ class NumberQuizThreeView extends StatelessWidget {
         question: S.of(context).multi,
         numberOne: '19',
         onTapOne: () {
-          showDialog(
-            context: context,
-            builder: (context) {
-              return const NumberErrorWidget();
-            },
-          );
+          customShowDialog(context, widget: const NumberErrorWidget());
         },
         numberTwo: '10',
         onTapTwo: () {
-          showDialog(
-            context: context,
-            builder: (context) {
-              return const NumberErrorWidget();
-            },
-          );
+          customShowDialog(context, widget: const NumberErrorWidget());
         },
         numberFive: '16',
         onTapFive: () {
-          showDialog(
-            context: context,
-            builder: (context) {
-              return const NumberErrorWidget();
-            },
-          );
+          customShowDialog(context, widget: const NumberErrorWidget());
         },
         numberFour: '11',
         onTapFour: () {
-          showDialog(
-            context: context,
-            builder: (context) {
-              return const NumberErrorWidget();
-            },
-          );
+          customShowDialog(context, widget: const NumberErrorWidget());
         },
         numberThree: '14',
         onTapThree: () {
-          showDialog(
-            context: context,
-            builder: (context) {
-              return NumberSuccessWidget(
-                onPressed: () {
-                  GoRouter.of(context).push(AppRouter.numberQuizViewFour);
-                },
-              );
+          customShowDialog(context, widget: NumberSuccessWidget(
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.numberQuizViewFour);
             },
-          );
+          ));
         },
         numberSix: '13',
         onTapSix: () {
-          showDialog(
-            context: context,
-            builder: (context) {
-              return const NumberErrorWidget();
-            },
-          );
+          customShowDialog(context, widget: const NumberErrorWidget());
         },
       )),
     );

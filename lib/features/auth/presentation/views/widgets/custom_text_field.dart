@@ -43,7 +43,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           contentPadding: const EdgeInsets.symmetric(horizontal: 16),
           hintText: widget.hintText,
           hintStyle: Theme.of(context).textTheme.titleSmall!.copyWith(
-              color: widget.userProfile ? Colors.black : AppColor.lightGrey),
+              color: widget.userProfile ? AppColor.black : AppColor.lightGrey),
           suffixIcon: widget.obscureText
               ? IconButton(
                   onPressed: () {

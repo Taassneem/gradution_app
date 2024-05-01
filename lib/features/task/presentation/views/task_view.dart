@@ -21,7 +21,7 @@ class TaskView extends StatelessWidget {
           style: Theme.of(context)
               .textTheme
               .titleMedium!
-              .copyWith(color: Colors.white),
+              .copyWith(color: AppColor.white),
         ),
       ),
       body: const TaskViewBody(),

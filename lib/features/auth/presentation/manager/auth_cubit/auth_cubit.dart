@@ -39,7 +39,7 @@ class AuthCubit extends Cubit<AuthState> {
         ApiKey.confirmPassword: confirmPassword.text
       });
       register = SignUpModel.fromJson(response);
-      getIt.get<CacheHelper>().saveData(key: 'token', value: register!.token);
+      // getIt.get<CacheHelper>().saveData(key: 'token', value: register!.token);
       emit(SignUpSuccess());
     } on ServerFailure catch (e) {
       emit(SignUpFailure(errorMessage: e.failure.errorMessage));
@@ -54,9 +54,9 @@ class AuthCubit extends Cubit<AuthState> {
         ApiKey.password: signInPassword.text
       });
       user = SignInModel.fromJson(response);
-      // getIt
-      //     .get<CacheHelper>()
-      //     .saveData(key: 'token', value: user!.userUpdated!.token);
+      getIt
+          .get<CacheHelper>()
+          .saveData(key: ApiKey.loginToken, value: user!.userUpdated!.token);
       emit(SignInSuccess());
     } on ServerFailure catch (e) {
       emit(SignInFailure(errorMessage: e.failure.errorMessage));
@@ -67,7 +67,7 @@ class AuthCubit extends Cubit<AuthState> {
     try {
       emit(GetUserLoading());
       final response = await api.get(
-          EndPoint.confirm(getIt.get<CacheHelper>().getData(key: 'token')),
+          EndPoint.confirm(getIt.get<CacheHelper>().getData(key: ApiKey.loginToken)),
           data: {
             ApiKey.email: signInEmail.text,
             ApiKey.password: signInPassword.text

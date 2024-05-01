@@ -6,10 +6,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_app/core/func/custom_toast.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
+import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
 import 'package:gradution_app/features/task/presentation/views/widgets/task_elevated_button.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
-import '../../../../camera/presentation/manager/camera_cubit/camera_cubit.dart';
 import '../../../../splash/presentation/views/widget/custom_ok_elevated_button.dart';
 
 class AddPhoto extends StatelessWidget {
@@ -32,7 +32,7 @@ class AddPhoto extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleMedium),
                   trailing: Image.asset(AppAssets.addPhoto),
                 ),
-                BlocProvider.of<CameraCubit>(context).imageFromGallery == null
+                BlocProvider.of<TaskCubit>(context).taskImageFromCamera == null
                     ? Container(
                         alignment: Alignment.center,
                         width: MediaQuery.sizeOf(context).width * 0.6,
@@ -48,18 +48,22 @@ class AddPhoto extends StatelessWidget {
                         decoration: BoxDecoration(
                             image: DecorationImage(
                               image: FileImage(File(
-                                  BlocProvider.of<CameraCubit>(context)
-                                      .imageFromGallery!
+                                  BlocProvider.of<TaskCubit>(context)
+                                      .taskImageFromCamera!
                                       .path)),
                             ),
                             borderRadius: BorderRadius.circular(20)),
                       ),
                 const SizedBox(height: 24),
-                BlocConsumer<CameraCubit, CameraState>(
+                BlocConsumer<TaskCubit, TaskState>(
                   listener: (context, state) {
-                    if (state is CameraGallerySuccess) {
+                    if (state is UploadingPhotoSuccess) {
                       showToast('Photo upload successfully');
-                    } else if (state is CameraGalleryFailure) {
+                      BlocProvider.of<TaskCubit>(context).image =
+                          BlocProvider.of<TaskCubit>(context)
+                              .taskImageFromCamera!
+                              .path;
+                    } else if (state is UploadingPhotoFailure) {
                       log(state.errorMessage);
                     }
                   },
@@ -68,7 +72,7 @@ class AddPhoto extends StatelessWidget {
                       upload: true,
                       isWhite: true,
                       onPressed: () {
-                        BlocProvider.of<CameraCubit>(context)
+                        BlocProvider.of<TaskCubit>(context)
                             .pickImageWithGallery();
                       },
                     );

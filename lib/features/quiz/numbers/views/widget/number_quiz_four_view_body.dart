@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
@@ -29,24 +30,14 @@ class NumberQuizFourViewBody extends StatelessWidget {
                 isOneNumber: true,
                 isColored: true,
                 onTap: () {
-                  showDialog(
-                    context: context,
-                    builder: (context) {
-                      return const NumberErrorWidget();
-                    },
-                  );
+                  customShowDialog(context, widget: const NumberErrorWidget());
                 }),
             HexagonShape(
                 number: '7',
                 isOneNumber: true,
                 isColored: true,
                 onTap: () {
-                  showDialog(
-                    context: context,
-                    builder: (context) {
-                      return const NumberErrorWidget();
-                    },
-                  );
+                  customShowDialog(context, widget: const NumberErrorWidget());
                 }),
           ],
         ),
@@ -58,40 +49,25 @@ class NumberQuizFourViewBody extends StatelessWidget {
                 isOneNumber: true,
                 isColored: true,
                 onTap: () {
-                  showDialog(
-                    context: context,
-                    builder: (context) {
-                      return const NumberErrorWidget();
-                    },
-                  );
+                  customShowDialog(context, widget: const NumberErrorWidget());
                 }),
             HexagonShape(
                 number: '5',
                 isOneNumber: true,
                 isColored: true,
                 onTap: () {
-                  showDialog(
-                    context: context,
-                    builder: (context) {
-                      return const NumberErrorWidget();
-                    },
-                  );
+                  customShowDialog(context, widget: const NumberErrorWidget());
                 }),
             HexagonShape(
               number: '4',
               isOneNumber: true,
               isColored: true,
               onTap: () {
-                showDialog(
-                  context: context,
-                  builder: (context) {
-                    return NumberSuccessWidget(
-                      onPressed: () {
-                        GoRouter.of(context).push(AppRouter.numberQuizViewNine);
-                      },
-                    );
+                customShowDialog(context, widget: NumberSuccessWidget(
+                  onPressed: () {
+                    GoRouter.of(context).push(AppRouter.numberQuizViewNine);
                   },
-                );
+                ));
               },
             )
           ],
@@ -121,7 +97,7 @@ class NumberQuizFourViewBody extends StatelessWidget {
                     width: MediaQuery.sizeOf(context).width * 0.75,
                     height: MediaQuery.sizeOf(context).height * 0.3,
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: AppColor.white,
                         borderRadius: BorderRadius.circular(20)),
                   )),
             ),

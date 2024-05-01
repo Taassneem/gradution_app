@@ -16,7 +16,7 @@ class NameSpeaker extends StatelessWidget {
       alignment: isArabic() ? Alignment.centerRight : Alignment.centerLeft,
       child: CircleAvatar(
         radius: 25,
-        backgroundColor: isWhite ? Colors.white : AppColor.babyBlue,
+        backgroundColor: isWhite ? AppColor.white : AppColor.babyBlue,
         child: IconButton(
             onPressed: onPressed, icon: const Icon(Icons.volume_up_outlined)),
       ),

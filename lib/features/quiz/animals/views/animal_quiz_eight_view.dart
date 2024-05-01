@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/generated/l10n.dart';
@@ -19,34 +20,19 @@ class AnimalQuizEightView extends StatelessWidget {
         question: AppAssets.monkey2,
         answerOne: s.bear,
         onTapOne: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return const MiddleAnimalError();
-            },
-          );
+          customShowDialog(context, widget: const MiddleAnimalError());
         },
         answerTwo: s.monkey,
         onTapTwo: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return MiddleAnimalRight(
-                onPressed: () {
-                  GoRouter.of(context).push(AppRouter.animalQuizViewNine);
-                },
-              );
+          customShowDialog(context, widget: MiddleAnimalRight(
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.animalQuizViewNine);
             },
-          );
+          ));
         },
         answerThree: s.fox,
         onTapThree: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return const MiddleAnimalError();
-            },
-          );
+          customShowDialog(context, widget: const MiddleAnimalError());
         },
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/quiz/foodAndDrink/views/widgets/food_quiz_view_body_images.dart';
@@ -21,43 +22,23 @@ class FoodQuizViewThree extends StatelessWidget {
         body: FoodQuizViewImageBody(
             answerOne: AppAssets.tea,
             onTapOne: () {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return const MiddleFoodErrorWidget();
-                },
-              );
+              customShowDialog(context, widget: const MiddleFoodErrorWidget());
             },
             answerFour: AppAssets.juice,
             onTapFour: () {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return MiddleFoodRightWidget(
-                    onPressed: () {
-                      GoRouter.of(context).push(AppRouter.foodQuizViewFour);
-                    },
-                  );
+              customShowDialog(context, widget: MiddleFoodRightWidget(
+                onPressed: () {
+                  GoRouter.of(context).push(AppRouter.foodQuizViewFour);
                 },
-              );
+              ));
             },
             answerThree: AppAssets.cocacola,
             onTapThree: () {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return const MiddleFoodErrorWidget();
-                },
-              );
+              customShowDialog(context, widget: const MiddleFoodErrorWidget());
             },
             answerTwo: AppAssets.water,
             onTapTwo: () {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return const MiddleFoodErrorWidget();
-                },
-              );
+              customShowDialog(context, widget: const MiddleFoodErrorWidget());
             },
             question: S.of(context).juice));
   }

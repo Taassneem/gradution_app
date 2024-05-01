@@ -40,7 +40,7 @@ class MiddleAnimalError extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .titleSmall!
-                        .copyWith(color: Colors.white),
+                        .copyWith(color:  AppColor.white),
                   ),
                 ),
               ),

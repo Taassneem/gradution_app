@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/generated/l10n.dart';
@@ -19,43 +20,23 @@ class ThingsQuizTenView extends StatelessWidget {
         question: S.of(context).father,
         answerOne: AppAssets.mother,
         onTapOne: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return const MiddleThingsError();
-            },
-          );
+          customShowDialog(context, widget: const MiddleThingsError());
         },
         answerTwo: AppAssets.father,
         onTapTwo: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return MiddleThingsRight(
-                onPressed: () {
-                  GoRouter.of(context).push(AppRouter.otherThingsQuizViewFinal);
-                },
-              );
+          customShowDialog(context, widget: MiddleThingsRight(
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.otherThingsQuizViewFinal);
             },
-          );
+          ));
         },
         answerThree: AppAssets.grandMother,
         onTapThree: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return const MiddleThingsError();
-            },
-          );
+          customShowDialog(context, widget: const MiddleThingsError());
         },
         answerFour: AppAssets.grandFather,
         onTapFour: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return const MiddleThingsError();
-            },
-          );
+          customShowDialog(context, widget: const MiddleThingsError());
         },
       ),
     ));

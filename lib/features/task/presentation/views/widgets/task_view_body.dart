@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
+import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/features/task/presentation/views/calender_view.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
@@ -22,14 +23,14 @@ class TaskViewBody extends StatelessWidget {
               style: Theme.of(context)
                   .textTheme
                   .titleLarge!
-                  .copyWith(color: Colors.white, fontWeight: FontWeight.w600)),
+                  .copyWith(color:  AppColor.white, fontWeight: FontWeight.w600)),
           const SizedBox(height: 16),
           Text(
             S.of(context).itsGreatToArrangeDailyTasksToHelpYourChild,
             style: Theme.of(context)
                 .textTheme
                 .titleMedium!
-                .copyWith(color: Colors.white, fontWeight: FontWeight.w500),
+                .copyWith(color:  AppColor.white, fontWeight: FontWeight.w500),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 40),

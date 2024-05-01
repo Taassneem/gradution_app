@@ -128,7 +128,8 @@ class AppRouter {
   static final router = GoRouter(routes: [
     GoRoute(path: '/', builder: (context, state) => const SplashView()),
     GoRoute(
-        path: onBoardingView, builder: (context, state) => OnBoardingView()),
+        path: onBoardingView,
+        builder: (context, state) => const OnBoardingView()),
     GoRoute(path: signInView, builder: (context, state) => const SignInView()),
     GoRoute(path: signUpView, builder: (context, state) => const SignUpView()),
     GoRoute(

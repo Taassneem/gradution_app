@@ -68,7 +68,7 @@ class FoodQuizViewTextBody extends StatelessWidget {
                   child: Container(
                     width: 120,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color:  AppColor.white,
                       borderRadius: BorderRadius.circular(100),
                       border: const Border(
                           top: BorderSide(color: AppColor.babyBlue, width: 2),

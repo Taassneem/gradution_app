@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_app/core/utils/app_color.dart';
 
 class ThingsTextAnswer extends StatelessWidget {
   const ThingsTextAnswer({
@@ -16,7 +17,7 @@ class ThingsTextAnswer extends StatelessWidget {
         height: 90,
         width: 150,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: AppColor.white,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Center(

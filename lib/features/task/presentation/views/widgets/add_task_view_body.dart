@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -26,80 +28,98 @@ class AddTaskViewBody extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          const CustomCalender(
-            isWeekCalender: true,
-          ),
-          Container(
-            padding: const EdgeInsets.all(16),
-            width: MediaQuery.sizeOf(context).width,
-            decoration: const BoxDecoration(
-                color: AppColor.white,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(50),
-                    topRight: Radius.circular(50))),
+    TaskCubit taskCubit = BlocProvider.of<TaskCubit>(context);
+    return BlocConsumer<TaskCubit, TaskState>(
+      listener: (context, state) {
+        if (state is AddTaskSuccess) {
+          ScaffoldMessenger.of(context)
+              .showSnackBar(const SnackBar(content: Text('Doneee')));
+        } else if (state is AddTaskFailure) {
+          log(state.errorMessage);
+          ScaffoldMessenger.of(context)
+              .showSnackBar(SnackBar(content: Text(state.errorMessage)));
+        }
+      },
+      builder: (context, state) {
+        return SingleChildScrollView(
+          child: Form(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 24),
-                Text(S.of(context).taskTitle,
-                    style: Theme.of(context).textTheme.titleMedium),
-                const SizedBox(height: 16),
-                const TaskTitleTextField(),
-                const SizedBox(height: 16),
-                Text(S.of(context).time,
-                    style: Theme.of(context).textTheme.titleMedium),
-                SelectTimeWidgets(),
-                AddTaskFeature(
-                    title: S.of(context).selectDays,
-                    image: AppAssets.calendarClock,
-                    onTap: () {
-                      customShowDialog(context,
-                          widget: const SelectDayWidget());
-                    }),
-                AddTaskFeature(
-                  title: S.of(context).addPhoto,
-                  image: AppAssets.addPhoto,
-                  onTap: () {
-                    customShowDialog(context, widget: const AddPhoto());
-                  },
+                const CustomCalender(
+                  isWeekCalender: true,
                 ),
-                AddTaskFeature(
-                    title: S.of(context).repeater,
-                    image: AppAssets.repeater,
-                    onTap: () {
-                      customShowDialog(context, widget: const Repeater());
-                    }),
-                AddTaskFeature(
-                    title: S.of(context).reminder,
-                    image: AppAssets.reminder,
-                    onTap: () {
-                      customShowDialog(context, widget: const Reminder());
-                    }),
-                AddTaskFeature(
-                  title: S.of(context).categories,
-                  image: AppAssets.categories,
-                  onTap: () {
-                    BlocProvider.of<TaskCubit>(context).fetchCategories();
-                    GoRouter.of(context).push(AppRouter.categoriesView);
-                  },
-                ),
-                const CustomDivider(),
-                const SizedBox(height: 24),
-                CustomElevatedButton(
-                  isTask: true,
-                  text: S.of(context).saveChanges,
-                  onPressed: () {
-                    GoRouter.of(context).push(AppRouter.calendarView);
-                  },
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  width: MediaQuery.sizeOf(context).width,
+                  decoration: const BoxDecoration(
+                      color: AppColor.white,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(50),
+                          topRight: Radius.circular(50))),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 24),
+                      Text(S.of(context).taskTitle,
+                          style: Theme.of(context).textTheme.titleMedium),
+                      const SizedBox(height: 16),
+                      const TaskTitleTextField(),
+                      const SizedBox(height: 16),
+                      Text(S.of(context).time,
+                          style: Theme.of(context).textTheme.titleMedium),
+                      SelectTimeWidgets(),
+                      AddTaskFeature(
+                          title: S.of(context).selectDays,
+                          image: AppAssets.calendarClock,
+                          onTap: () {
+                            customShowDialog(context,
+                                widget: const SelectDayWidget());
+                          }),
+                      AddTaskFeature(
+                        title: S.of(context).addPhoto,
+                        image: AppAssets.addPhoto,
+                        onTap: () {
+                          customShowDialog(context, widget: const AddPhoto());
+                        },
+                      ),
+                      AddTaskFeature(
+                          title: S.of(context).repeater,
+                          image: AppAssets.repeater,
+                          onTap: () {
+                            customShowDialog(context, widget: const Repeater());
+                          }),
+                      AddTaskFeature(
+                          title: S.of(context).reminder,
+                          image: AppAssets.reminder,
+                          onTap: () {
+                            customShowDialog(context, widget: const Reminder());
+                          }),
+                      AddTaskFeature(
+                        title: S.of(context).categories,
+                        image: AppAssets.categories,
+                        onTap: () {
+                          taskCubit.fetchCategories();
+                          GoRouter.of(context).push(AppRouter.categoriesView);
+                        },
+                      ),
+                      const CustomDivider(),
+                      const SizedBox(height: 24),
+                      CustomElevatedButton(
+                        isTask: true,
+                        text: S.of(context).saveChanges,
+                        onPressed: () {
+                          taskCubit.addTask();
+                          GoRouter.of(context).push(AppRouter.calendarView);
+                        },
+                      )
+                    ],
+                  ),
                 )
               ],
             ),
-          )
-        ],
-      ),
+          ),
+        );
+      },
     );
   }
 }

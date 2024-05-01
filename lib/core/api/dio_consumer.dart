@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:gradution_app/core/api/api_interceptors.dart';
 import 'package:gradution_app/core/errors/auth_failure.dart';
 import 'package:gradution_app/core/utils/api_keys.dart';
 import 'package:gradution_app/core/api/api_consumer.dart';
@@ -9,7 +10,14 @@ class DioConsumer extends ApiConsumer {
   DioConsumer({required this.dio}) {
     dio.options.baseUrl = EndPoint.baseUrl;
     dio.interceptors.add(LogInterceptor(
-        request: true, error: true, requestBody: true, responseBody: true));
+      request: true,
+      error: true,
+      requestBody: true,
+      responseBody: true,
+      requestHeader: true,
+      responseHeader: true,
+    ));
+    dio.interceptors.add(ApiInterceptors());
   }
 
   @override

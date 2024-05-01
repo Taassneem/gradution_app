@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
@@ -35,22 +36,14 @@ class NumberQuizFiveNiewBody extends StatelessWidget {
               TextAnswerNumber(
                   number: s.nine,
                   onTap: () {
-                    showDialog(
-                      context: context,
-                      builder: (context) {
-                        return const NumberErrorWidget();
-                      },
-                    );
+                    customShowDialog(context,
+                        widget: const NumberErrorWidget());
                   }),
               TextAnswerNumber(
                   number: s.seven,
                   onTap: () {
-                    showDialog(
-                      context: context,
-                      builder: (context) {
-                        return const NumberErrorWidget();
-                      },
-                    );
+                    customShowDialog(context,
+                        widget: const NumberErrorWidget());
                   }),
             ],
           ),
@@ -59,27 +52,17 @@ class NumberQuizFiveNiewBody extends StatelessWidget {
               TextAnswerNumber(
                   number: s.ten,
                   onTap: () {
-                    showDialog(
-                      context: context,
-                      builder: (context) {
-                        return const NumberErrorWidget();
-                      },
-                    );
+                    customShowDialog(context,
+                        widget: const NumberErrorWidget());
                   }),
               TextAnswerNumber(
                   number: s.five,
                   onTap: () {
-                    showDialog(
-                      context: context,
-                      builder: (context) {
-                        return NumberSuccessWidget(
-                          onPressed: () {
-                            GoRouter.of(context)
-                                .push(AppRouter.numberQuizViewSix);
-                          },
-                        );
+                    customShowDialog(context, widget: NumberSuccessWidget(
+                      onPressed: () {
+                        GoRouter.of(context).push(AppRouter.numberQuizViewSix);
                       },
-                    );
+                    ));
                   }),
             ],
           ),

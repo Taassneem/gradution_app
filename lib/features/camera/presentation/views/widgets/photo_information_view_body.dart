@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gradution_app/core/func/is_arabic_func.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/features/camera/presentation/manager/camera_cubit/camera_cubit.dart';
@@ -20,13 +21,14 @@ class PhotoInforamtionViewBody extends StatelessWidget {
         children: [
           const SizedBox(height: 5),
           Align(
-            alignment: Alignment.centerRight,
+            alignment:
+                isArabic() ? Alignment.centerRight : Alignment.centerLeft,
             child: GestureDetector(
                 onTap: () => Navigator.pop(context),
                 child: const Icon(Icons.arrow_back)),
           ),
           Align(
-              alignment: Alignment.topLeft,
+              alignment: isArabic() ? Alignment.topLeft : Alignment.centerRight,
               child: Image.asset(AppAssets.chatbot)),
           BlocProvider.of<CameraCubit>(context).imageFromCamera == null
               ? BlocProvider.of<CameraCubit>(context).imageFromGallery == null
@@ -48,8 +50,7 @@ class PhotoInforamtionViewBody extends StatelessWidget {
                                     .imageFromGallery!
                                     .path)),
                           ),
-                          borderRadius: BorderRadius.circular(20)),
-                    )
+                          borderRadius: BorderRadius.circular(20)))
               : Container(
                   height: MediaQuery.sizeOf(context).height * 0.35,
                   width: MediaQuery.sizeOf(context).width * 0.8,
@@ -74,7 +75,7 @@ class PhotoInforamtionViewBody extends StatelessWidget {
                     color: AppColor.white,
                     borderRadius: BorderRadius.circular(30)),
                 child: Image.asset(AppAssets.chatbotMessage)),
-            const Positioned(
+            Positioned(
               bottom: 2,
               right: 1,
               left: 1,
@@ -83,10 +84,11 @@ class PhotoInforamtionViewBody extends StatelessWidget {
                 children: [
                   IconMethod(
                     icon: Icons.volume_off,
-                    rightIcon: true,
+                    rightIcon: isArabic() ? true : false,
                   ),
                   IconMethod(
                     icon: Icons.translate,
+                    rightIcon: isArabic() ? false : true,
                   ),
                 ],
               ),

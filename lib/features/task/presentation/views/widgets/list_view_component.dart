@@ -1,7 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/features/task/data/models/category_model/category_model.dart';
+import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
 
 class ListViewComponent extends StatelessWidget {
   const ListViewComponent({
@@ -17,7 +19,12 @@ class ListViewComponent extends StatelessWidget {
       alignment: Alignment.center,
       decoration: const BoxDecoration(color: AppColor.white),
       child: ListTile(
-        onTap: () {},
+        onTap: () {
+          BlocProvider.of<TaskCubit>(context).categories = categoryModel.title;
+          
+          ScaffoldMessenger.of(context)
+              .showSnackBar(const SnackBar(content: Text('Category Selected')));
+        },
         leading: AspectRatio(
           aspectRatio: 2.3,
           child: CachedNetworkImage(

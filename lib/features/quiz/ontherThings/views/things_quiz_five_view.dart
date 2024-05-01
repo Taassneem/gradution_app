@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/generated/l10n.dart';
@@ -19,43 +20,23 @@ class ThingsQuizFiveView extends StatelessWidget {
         question: S.of(context).theEraser,
         answerOne: AppAssets.sharpner,
         onTapOne: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return const MiddleThingsError();
-            },
-          );
+          customShowDialog(context, widget: const MiddleThingsError());
         },
         answerTwo: AppAssets.eraser,
         onTapTwo: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return MiddleThingsRight(
-                onPressed: () {
-                  GoRouter.of(context).push(AppRouter.otherThingsQuizViewSix);
-                },
-              );
+          customShowDialog(context, widget: MiddleThingsRight(
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.otherThingsQuizViewSix);
             },
-          );
+          ));
         },
         answerThree: AppAssets.pencil,
         onTapThree: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return const MiddleThingsError();
-            },
-          );
+          customShowDialog(context, widget: const MiddleThingsError());
         },
         answerFour: AppAssets.ruler,
         onTapFour: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return const MiddleThingsError();
-            },
-          );
+          customShowDialog(context, widget: const MiddleThingsError());
         },
       ),
     ));

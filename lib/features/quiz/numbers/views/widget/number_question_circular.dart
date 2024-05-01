@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_app/core/utils/app_color.dart';
 
 class NumberQuestionCircular extends StatelessWidget {
   const NumberQuestionCircular({
@@ -12,7 +13,7 @@ class NumberQuestionCircular extends StatelessWidget {
       width: MediaQuery.sizeOf(context).width,
       height: 90,
       decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(100)),
+          color: AppColor.white, borderRadius: BorderRadius.circular(100)),
       child: Center(
         child: Text(question, style: Theme.of(context).textTheme.headlineLarge),
       ),

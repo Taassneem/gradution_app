@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
+import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
@@ -26,7 +27,7 @@ class QuizViewBody extends StatelessWidget {
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(100),
                         topRight: Radius.circular(100)),
-                    color: Colors.white),
+                    color: AppColor.white),
                 child: Column(
                   children: [
                     Row(

@@ -10,7 +10,7 @@ class MiddleThingsError extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Card(
-        color: Colors.white,
+        color:  AppColor.white,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -49,7 +49,7 @@ class MiddleThingsError extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .titleSmall!
-                        .copyWith(color: Colors.white),
+                        .copyWith(color:  AppColor.white),
                   ),
                 ),
               ),

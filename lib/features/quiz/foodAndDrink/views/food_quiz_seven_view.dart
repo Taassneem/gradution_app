@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/quiz/numbers/views/widget/name_speaker.dart';
@@ -22,43 +23,23 @@ class FoodQuizViewSeven extends StatelessWidget {
       body: FoodQuizViewTextBody(
         answerOne: s.water,
         onTapOne: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return const MiddleFoodErrorWidget();
-            },
-          );
+          customShowDialog(context, widget: const MiddleFoodErrorWidget());
         },
         answerTwo: s.milk,
         onTapTwo: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return MiddleFoodRightWidget(
-                onPressed: () {
-                  GoRouter.of(context).push(AppRouter.foodQuizViewEight);
-                },
-              );
+          customShowDialog(context, widget: MiddleFoodRightWidget(
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.foodQuizViewEight);
             },
-          );
+          ));
         },
         answerThree: s.coffee,
         onTapThree: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return const MiddleFoodErrorWidget();
-            },
-          );
+          customShowDialog(context, widget: const MiddleFoodErrorWidget());
         },
         answerFour: s.tea,
         onTapFour: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return const MiddleFoodErrorWidget();
-            },
-          );
+          customShowDialog(context, widget: const MiddleFoodErrorWidget());
         },
         question: AppAssets.milk,
       ),

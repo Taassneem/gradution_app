@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/generated/l10n.dart';
@@ -20,43 +21,23 @@ class OtherThingsQuizView extends StatelessWidget {
           question: AppAssets.triangle,
           answerOne: s.star,
           onTapOne: () {
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return const MiddleThingsError();
-              },
-            );
+            customShowDialog(context, widget: const MiddleThingsError());
           },
           answerTwo: s.circle,
           onTapTwo: () {
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return const MiddleThingsError();
-              },
-            );
+            customShowDialog(context, widget: const MiddleThingsError());
           },
           answerThree: s.triangle,
           onTapThree: () {
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return MiddleThingsRight(
-                  onPressed: () {
-                    GoRouter.of(context).push(AppRouter.otherThingsQuizViewTwo);
-                  },
-                );
+            customShowDialog(context, widget: MiddleThingsRight(
+              onPressed: () {
+                GoRouter.of(context).push(AppRouter.otherThingsQuizViewTwo);
               },
-            );
+            ));
           },
           answerFour: s.rectangle,
           onTapFour: () {
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return const MiddleThingsError();
-              },
-            );
+            customShowDialog(context, widget: const MiddleThingsError());
           },
         ),
       ),

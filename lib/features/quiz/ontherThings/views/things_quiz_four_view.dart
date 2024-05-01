@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/generated/l10n.dart';
@@ -20,44 +21,23 @@ class ThingsQuizFourView extends StatelessWidget {
           question: AppAssets.window,
           answerOne: s.door,
           onTapOne: () {
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return const MiddleThingsError();
-              },
-            );
+            customShowDialog(context, widget: const MiddleThingsError());
           },
           answerTwo: s.office,
           onTapTwo: () {
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return const MiddleThingsError();
-              },
-            );
+            customShowDialog(context, widget: const MiddleThingsError());
           },
           answerThree: s.window,
           onTapThree: () {
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return MiddleThingsRight(
-                  onPressed: () {
-                    GoRouter.of(context)
-                        .push(AppRouter.otherThingsQuizViewFive);
-                  },
-                );
+            customShowDialog(context, widget: MiddleThingsRight(
+              onPressed: () {
+                GoRouter.of(context).push(AppRouter.otherThingsQuizViewFive);
               },
-            );
+            ));
           },
           answerFour: s.bed,
           onTapFour: () {
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return const MiddleThingsError();
-              },
-            );
+            customShowDialog(context, widget: const MiddleThingsError());
           },
         ),
       ),

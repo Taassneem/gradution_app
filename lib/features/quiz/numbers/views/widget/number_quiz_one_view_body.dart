@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/quiz/numbers/views/widget/name_speaker.dart';
@@ -29,38 +30,23 @@ class NumberQuizOneViewBody extends StatelessWidget {
               number: AppAssets.twelve,
               isWhite: true,
               onTap: () {
-                showDialog(
-                  context: context,
-                  builder: (context) {
-                    return const NumberErrorWidget();
-                  },
-                );
+                customShowDialog(context, widget: const NumberErrorWidget());
               }),
           ImageAnswerNumber(
               number: AppAssets.eleven,
               isWhite: true,
               onTap: () {
-                showDialog(
-                  context: context,
-                  builder: (context) {
-                    return NumberSuccessWidget(
-                      onPressed: () {
-                        GoRouter.of(context).push(AppRouter.numberQuizViewTwo);
-                      },
-                    );
+                customShowDialog(context, widget: NumberSuccessWidget(
+                  onPressed: () {
+                    GoRouter.of(context).push(AppRouter.numberQuizViewTwo);
                   },
-                );
+                ));
               }),
           ImageAnswerNumber(
               number: AppAssets.ten,
               isWhite: true,
               onTap: () {
-                showDialog(
-                  context: context,
-                  builder: (context) {
-                    return const NumberErrorWidget();
-                  },
-                );
+                customShowDialog(context, widget: const NumberErrorWidget());
               })
         ],
       ),

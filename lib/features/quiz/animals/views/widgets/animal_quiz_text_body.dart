@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
+import 'package:gradution_app/core/utils/app_color.dart';
 
 class AnimalQuizTextViewBody extends StatelessWidget {
   const AnimalQuizTextViewBody(
@@ -33,21 +34,21 @@ class AnimalQuizTextViewBody extends StatelessWidget {
               GestureDetector(
                 onTap: onTapOne,
                 child: CircleAvatar(
-                    backgroundColor: Colors.white,
+                    backgroundColor: AppColor.white,
                     radius: 45,
                     child: Text(answerOne)),
               ),
               GestureDetector(
                 onTap: onTapTwo,
                 child: CircleAvatar(
-                    backgroundColor: Colors.white,
+                    backgroundColor: AppColor.white,
                     radius: 45,
                     child: Text(answerTwo)),
               ),
               GestureDetector(
                 onTap: onTapThree,
                 child: CircleAvatar(
-                    backgroundColor: Colors.white,
+                    backgroundColor: AppColor.white,
                     radius: 45,
                     child: Text(answerThree)),
               ),

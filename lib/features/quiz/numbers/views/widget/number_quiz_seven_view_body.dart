@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/generated/l10n.dart';
@@ -31,28 +32,19 @@ class NumberQuizSevenViewBody extends StatelessWidget {
                   answerImage: true,
                   image: AppAssets.no,
                   onTap: () {
-                    showDialog(
-                      context: context,
-                      builder: (context) {
-                        return const NumberErrorWidget();
-                      },
-                    );
+                    customShowDialog(context,
+                        widget: const NumberErrorWidget());
                   }),
               TextAnswerNumber(
                   answerImage: true,
                   image: AppAssets.ou,
                   onTap: () {
-                    showDialog(
-                      context: context,
-                      builder: (context) {
-                        return NumberSuccessWidget(
-                          onPressed: () {
-                            GoRouter.of(context)
-                                .push(AppRouter.numberQuizViewEight);
-                          },
-                        );
+                    customShowDialog(context, widget: NumberSuccessWidget(
+                      onPressed: () {
+                        GoRouter.of(context)
+                            .push(AppRouter.numberQuizViewEight);
                       },
-                    );
+                    ));
                   }),
             ],
           ),
@@ -63,23 +55,15 @@ class NumberQuizSevenViewBody extends StatelessWidget {
                   answerImage: true,
                   image: AppAssets.uv,
                   onTap: () {
-                    showDialog(
-                      context: context,
-                      builder: (context) {
-                        return const NumberErrorWidget();
-                      },
-                    );
+                    customShowDialog(context,
+                        widget: const NumberErrorWidget());
                   }),
               TextAnswerNumber(
                   answerImage: true,
                   image: AppAssets.uo,
                   onTap: () {
-                    showDialog(
-                      context: context,
-                      builder: (context) {
-                        return const NumberErrorWidget();
-                      },
-                    );
+                    customShowDialog(context,
+                        widget: const NumberErrorWidget());
                   }),
             ],
           )

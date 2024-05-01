@@ -25,7 +25,7 @@ class QuizFinalCongrats extends StatelessWidget {
           child: Container(
             width: MediaQuery.sizeOf(context).width,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color:  AppColor.white,
               borderRadius: BorderRadius.circular(30),
               border: const Border(
                   top: BorderSide(color: AppColor.babyBlue, width: 2),
