@@ -23,6 +23,7 @@ class _CustomCalenderState extends State<CustomCalender> {
     setState(() {
       today = selectedDay;
     });
+    BlocProvider.of<TaskCubit>(context).date = today;
   }
 
   @override
@@ -76,7 +77,7 @@ class _CustomCalenderState extends State<CustomCalender> {
                   color: AppColor.white, shape: BoxShape.circle)),
           onDaySelected: selectedDay,
           selectedDayPredicate: (day) {
-            BlocProvider.of<TaskCubit>(context).date = day;
+            BlocProvider.of<TaskCubit>(context).date = today;
             return isSameDay(day, today);
           },
           daysOfWeekHeight: 22,

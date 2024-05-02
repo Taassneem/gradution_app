@@ -88,11 +88,9 @@ class OnBoardingViewBody extends StatelessWidget {
                                     duration: const Duration(milliseconds: 300),
                                     curve: Curves.slowMiddle);
                               },
-                              icon: const Icon(Icons.arrow_forward_rounded),
+                              icon: const Icon(Icons.arrow_forward_rounded,
+                                  size: 30),
                               color: AppColor.grey,
-                              style: const ButtonStyle(
-                                iconSize: MaterialStatePropertyAll(30),
-                              ),
                             )
                           : const NextTextButton(),
                     ),

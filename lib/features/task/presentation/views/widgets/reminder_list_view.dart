@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_app/core/common/common_lists.dart';
@@ -46,7 +44,6 @@ class _ReminderListViewState extends State<ReminderListView> {
                   selectedReminder = value;
                 });
                 BlocProvider.of<TaskCubit>(context).reminder = reminder[index];
-                log(reminder[index]);
               },
               title: Text(
                 reminder[index],

@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gradution_app/core/func/custom_toast.dart';
+import 'package:gradution_app/core/func/custom_snack_bar.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
@@ -58,7 +58,8 @@ class AddPhoto extends StatelessWidget {
                 BlocConsumer<TaskCubit, TaskState>(
                   listener: (context, state) {
                     if (state is UploadingPhotoSuccess) {
-                      showToast('Photo upload successfully');
+                      showSnackBar(context,
+                          content: Text(S.of(context).photoUploadSuccessfully));
                       BlocProvider.of<TaskCubit>(context).image =
                           BlocProvider.of<TaskCubit>(context)
                               .taskImageFromCamera!
@@ -89,4 +90,6 @@ class AddPhoto extends StatelessWidget {
       ),
     );
   }
+
+  
 }

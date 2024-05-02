@@ -37,6 +37,12 @@ final class AddTaskFailure extends TaskState {
   const AddTaskFailure({required this.errorMessage});
 }
 
+final class TaskDaySelected extends TaskState {
+  final DateTime today;
+
+  const TaskDaySelected(this.today);
+}
+
 final class UploadingPhotoLoading extends TaskState {}
 
 final class UploadingPhotoSuccess extends TaskState {}

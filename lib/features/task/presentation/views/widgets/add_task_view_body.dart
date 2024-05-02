@@ -3,11 +3,14 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/database/cache/cache_helper.dart';
 import 'package:gradution_app/core/func/custom_show_dialog.dart';
+import 'package:gradution_app/core/utils/api_keys.dart';
 
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
+import 'package:gradution_app/core/utils/servive_locator.dart';
 import 'package:gradution_app/features/auth/presentation/views/widgets/custom_elevated_button.dart';
 import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
 import 'package:gradution_app/features/task/presentation/views/widgets/add_photo.dart';
@@ -32,22 +35,18 @@ class AddTaskViewBody extends StatelessWidget {
     return BlocConsumer<TaskCubit, TaskState>(
       listener: (context, state) {
         if (state is AddTaskSuccess) {
-          ScaffoldMessenger.of(context)
-              .showSnackBar(const SnackBar(content: Text('Doneee')));
+          GoRouter.of(context).push(AppRouter.calendarView);
         } else if (state is AddTaskFailure) {
-          log(state.errorMessage);
-          ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text(state.errorMessage)));
+          log('Add Task exception ${state.errorMessage}');
         }
       },
       builder: (context, state) {
         return SingleChildScrollView(
           child: Form(
+            key: taskCubit.taskKey,
             child: Column(
               children: [
-                const CustomCalender(
-                  isWeekCalender: true,
-                ),
+                const CustomCalender(isWeekCalender: true),
                 Container(
                   padding: const EdgeInsets.all(16),
                   width: MediaQuery.sizeOf(context).width,
@@ -72,6 +71,9 @@ class AddTaskViewBody extends StatelessWidget {
                           title: S.of(context).selectDays,
                           image: AppAssets.calendarClock,
                           onTap: () {
+                            getIt
+                                .get<CacheHelper>()
+                                .getData(key: CacheHelperKey.selectedDays);
                             customShowDialog(context,
                                 widget: const SelectDayWidget());
                           }),
@@ -108,8 +110,9 @@ class AddTaskViewBody extends StatelessWidget {
                         isTask: true,
                         text: S.of(context).saveChanges,
                         onPressed: () {
-                          taskCubit.addTask();
-                          GoRouter.of(context).push(AppRouter.calendarView);
+                          if (taskCubit.taskKey.currentState!.validate()) {
+                            taskCubit.addTask();
+                          }
                         },
                       )
                     ],

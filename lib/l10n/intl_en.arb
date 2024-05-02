@@ -194,5 +194,7 @@
     "add":"add",
     "saveEdit":"Save Edit",
     "am":"AM",
-    "pm":"PM"
+    "pm":"PM",
+    "photoUploadSuccessfully":"Photo upload successfully",
+    "fieldIsRequired":"Field is required"
 }

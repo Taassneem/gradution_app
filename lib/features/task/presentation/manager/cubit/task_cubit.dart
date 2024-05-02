@@ -13,15 +13,16 @@ class TaskCubit extends Cubit<TaskState> {
   final TaskRepo taskRepo;
   GlobalKey<FormState> taskKey = GlobalKey();
   TextEditingController title = TextEditingController();
-  TextEditingController timeHour = TextEditingController();
-  TextEditingController timeMin = TextEditingController();
   String? image;
-  String? categories;
+  String? categoryTitle;
+  String? categoryImage;
   List<String>? days;
   String? reminder;
   String? repeater;
   DateTime? date;
   XFile? taskImageFromCamera;
+  DateTime? time;
+
   Future<void> fetchCategories() async {
     var result = await taskRepo.fetchCategories();
     result.fold(
@@ -32,17 +33,25 @@ class TaskCubit extends Cubit<TaskState> {
 
   Future<void> addTask() async {
     var result = await taskRepo.addTask(
-      categories: categories ?? '',
+      categoryTitle: categoryTitle,
       days: days ?? [''],
       reminder: reminder ?? '',
       repeater: repeater ?? '',
-      image: image ?? '',
+      image: image ?? categoryImage,
       title: title.text,
       date: date ?? DateTime.now(),
+      time: time ?? DateTime.now()
     );
     result.fold(
-        (failure) => emit(AddTaskFailure(errorMessage: failure.failure.errorMessage)),
+        (failure) => emit(AddTaskFailure(errorMessage: failure.errorMessage)),
         (addTask) => emit(AddTaskSuccess(model: addTask)));
+  }
+
+  DateTime today = DateTime.now();
+
+  void selectedDay(selectedDay, focusedDay) {
+    today = selectedDay;
+    emit(TaskDaySelected(today));
   }
 
   pickImageWithGallery() async {

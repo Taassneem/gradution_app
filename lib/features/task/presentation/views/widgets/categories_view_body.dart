@@ -40,6 +40,7 @@ class CategoriesViewBody extends StatelessWidget {
                     child: Text(
                       state.errorMessage,
                       textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.headlineLarge,
                     ),
                   );
                 } else {

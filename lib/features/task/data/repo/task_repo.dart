@@ -8,15 +8,17 @@ abstract class TaskRepo {
   Future<Either<FailureString, List<CategoryModel>>> fetchCategories();
   Future<Either<FailureString, List<CategoryModel>>> fetchTasks(
       {required String id});
-  Future<Either<ServerFailure, TaskModel>> addTask({
+  Future<Either<FailureString, TaskModel>> addTask({
     required String title,
-    required String image,
-    required String categories,
+    String? image,
+    String? categoryTitle,
+    String? categoryImage,
     required List<String> days,
     required String reminder,
     required String repeater,
-    required DateTime date
+    required DateTime date,
+    required DateTime time,
   });
-  Future<Either<FailureString, TaskModel>> updateTask();
+  Future<Either<ServerFailure, TaskModel>> updateTask();
   Future<Either<FailureString, TaskModel>> deleteTask();
 }

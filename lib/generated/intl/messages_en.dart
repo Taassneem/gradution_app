@@ -91,6 +91,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "errorMessage": MessageLookupByLibrary.simpleMessage(
             "The Answer is Wrong ,Please Try Again"),
         "father": MessageLookupByLibrary.simpleMessage("Father"),
+        "fieldIsRequired":
+            MessageLookupByLibrary.simpleMessage("Field is required"),
         "fifteenMinutesBefore":
             MessageLookupByLibrary.simpleMessage("15 minutes before"),
         "fish": MessageLookupByLibrary.simpleMessage("Fish"),
@@ -179,6 +181,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordValidate": MessageLookupByLibrary.simpleMessage(
             "8+cahracters,1capital letter"),
         "pepper": MessageLookupByLibrary.simpleMessage("Pepper"),
+        "photoUploadSuccessfully":
+            MessageLookupByLibrary.simpleMessage("Photo upload successfully"),
         "pm": MessageLookupByLibrary.simpleMessage("PM"),
         "potato": MessageLookupByLibrary.simpleMessage("Potato"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),

@@ -20,8 +20,11 @@ class ListViewComponent extends StatelessWidget {
       decoration: const BoxDecoration(color: AppColor.white),
       child: ListTile(
         onTap: () {
-          BlocProvider.of<TaskCubit>(context).categories = categoryModel.title;
-          
+          BlocProvider.of<TaskCubit>(context).categoryTitle =
+              categoryModel.title;
+          BlocProvider.of<TaskCubit>(context).categoryImage =
+              categoryModel.image;
+          Navigator.pop(context);
           ScaffoldMessenger.of(context)
               .showSnackBar(const SnackBar(content: Text('Category Selected')));
         },

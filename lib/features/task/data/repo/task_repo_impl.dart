@@ -2,12 +2,10 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:gradution_app/core/api/api_consumer.dart';
 import 'package:gradution_app/core/errors/auth_failure.dart';
-
 import 'package:gradution_app/core/errors/failure.dart';
 import 'package:gradution_app/core/utils/api_keys.dart';
 
 import 'package:gradution_app/features/task/data/models/category_model/category_model.dart';
-
 import 'package:gradution_app/features/task/data/models/task_model/task_model.dart';
 
 import 'task_repo.dart';
@@ -18,33 +16,43 @@ class TaskRepoImpl extends TaskRepo {
 
   TaskModel? addTaskModel;
   @override
-  Future<Either<ServerFailure, TaskModel>> addTask({
+  Future<Either<FailureString, TaskModel>> addTask({
     required String title,
-    required String image,
-    required String categories,
+    String? image,
+    String? categoryTitle,
+    String? categoryImage,
     required List<String> days,
     required String reminder,
     required String repeater,
-      required DateTime date
-
+    required DateTime date,
+    required DateTime time,
   }) async {
     try {
       final response = await api.post(
         EndPoint.addTask,
         isFormData: true,
         data: {
-          ApiKey.image: image,
+          ApiKey.image: image ?? categoryImage,
           ApiKey.reminder: reminder,
           ApiKey.repeater: repeater,
           ApiKey.daysOfWeek: days,
           ApiKey.title: title,
-          ApiKey.selectedActivity: categories
+          ApiKey.selectedActivity: categoryTitle,
+          ApiKey.date: date,
+          ApiKey.time: time,
         },
       );
       addTaskModel = TaskModel.fromJson(response);
       return Right(addTaskModel!);
-    } on DioException catch (e) {
-      return Left(handelDioException(e));
+    } catch (e) {
+      if (e is DioException) {
+        return left(FailureString.fromDioException(e));
+      }
+      return left(
+        FailureString(
+          e.toString(),
+        ),
+      );
     }
   }
 
@@ -99,7 +107,7 @@ class TaskRepoImpl extends TaskRepo {
   }
 
   @override
-  Future<Either<FailureString, TaskModel>> updateTask() {
+  Future<Either<ServerFailure, TaskModel>> updateTask() {
     throw UnimplementedError();
   }
 }
