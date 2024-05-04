@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:gradution_app/core/utils/api_keys.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/core/utils/servive_locator.dart';
@@ -116,7 +117,7 @@ class NextTextButton extends StatelessWidget {
         onPressed: () {
           getIt
               .get<CacheHelper>()
-              .saveData(key: 'OnBoardingVisited', value: true);
+              .saveData(key: CacheHelperKey.onBoardingVisited, value: true);
           GoRouter.of(context).pushReplacement(AppRouter.signInView);
         },
         child: Text(
@@ -137,7 +138,7 @@ class SkipTextButton extends StatelessWidget {
         onPressed: () {
           getIt
               .get<CacheHelper>()
-              .saveData(key: 'OnBoardingVisited', value: true);
+              .saveData(key: CacheHelperKey.onBoardingVisited, value: true);
           GoRouter.of(context).pushReplacement(AppRouter.signInView);
         },
         child: Text(S.of(context).skip,

@@ -1,11 +1,10 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:gradution_app/core/global_cubit/global_cubit.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
-import 'package:gradution_app/core/api/dio_consumer.dart';
 import 'package:gradution_app/core/utils/servive_locator.dart';
+import 'package:gradution_app/features/auth/data/repo/auth_repo_impl.dart';
 import 'package:gradution_app/features/auth/presentation/manager/auth_cubit/auth_cubit.dart';
 import 'package:gradution_app/features/camera/presentation/manager/camera_cubit/camera_cubit.dart';
 import 'package:gradution_app/features/task/data/repo/task_repo_impl.dart';
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => AuthCubit(DioConsumer(dio: Dio())),
+          create: (context) => AuthCubit(getIt.get<AuthRepoImpl>()),
         ),
         BlocProvider(
           create: (context) => CameraCubit(),
@@ -36,9 +35,7 @@ class MyApp extends StatelessWidget {
       child: BlocBuilder<GlobalCubit, GlobalState>(
         builder: (context, state) {
           return MaterialApp.router(
-            locale: Locale(
-              BlocProvider.of<GlobalCubit>(context).langCode,
-            ),
+            locale: Locale(BlocProvider.of<GlobalCubit>(context).langCode),
             localizationsDelegates: const [
               S.delegate,
               GlobalMaterialLocalizations.delegate,

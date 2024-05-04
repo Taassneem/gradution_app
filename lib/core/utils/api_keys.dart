@@ -1,5 +1,5 @@
 class EndPoint {
-  static const String baseUrl = 'https://6ffe-156-210-187-72.ngrok-free.app/';
+  static const String baseUrl = 'https://1066-197-54-172-112.ngrok-free.app/';
   static const String signUp = 'auth/';
   static const String login = 'auth/login';
   static const String reset = 'auth/forget';
@@ -46,4 +46,10 @@ class ApiKey {
 }
 class CacheHelperKey{
   static const String selectedDays = 'selectedDays';
+  static const String onBoardingVisited = 'onBoardingVisited';
+  static const String languageChoosed = 'languageChoosed';
+  static const String signedIn = 'signedIn';
+  static const String signedUp = 'signedUp';
+  static const String isArabic = 'isArabic';
+  static const String isEnglish = 'isEnglish';
 }

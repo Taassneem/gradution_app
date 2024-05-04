@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/database/cache/cache_helper.dart';
 import 'package:gradution_app/core/func/custom_show_dialog.dart';
+import 'package:gradution_app/core/func/custom_toast.dart';
 import 'package:gradution_app/core/utils/api_keys.dart';
 
 import 'package:gradution_app/core/utils/app_assets.dart';
@@ -37,6 +38,7 @@ class AddTaskViewBody extends StatelessWidget {
         if (state is AddTaskSuccess) {
           GoRouter.of(context).push(AppRouter.calendarView);
         } else if (state is AddTaskFailure) {
+          showToast(state.errorMessage);
           log('Add Task exception ${state.errorMessage}');
         }
       },
@@ -111,6 +113,7 @@ class AddTaskViewBody extends StatelessWidget {
                         text: S.of(context).saveChanges,
                         onPressed: () {
                           if (taskCubit.taskKey.currentState!.validate()) {
+                            taskCubit.taskKey.currentState!.save();
                             taskCubit.addTask();
                           }
                         },

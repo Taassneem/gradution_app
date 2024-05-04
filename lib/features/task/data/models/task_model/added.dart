@@ -4,7 +4,7 @@ import 'image.dart';
 
 class Added extends Equatable {
   final String? title;
-  final List<String>? daysOfWeek;
+  final List<dynamic>? daysOfWeek;
   final Image? image;
   final String? reminder;
   final String? time;
@@ -33,7 +33,7 @@ class Added extends Equatable {
 
   factory Added.fromJson(Map<String, dynamic> json) => Added(
         title: json['title'] as String?,
-        daysOfWeek: json['daysOfWeek'] as List<String>?,
+        daysOfWeek: json['daysOfWeek'] as List<dynamic>,
         image: json['image'] == null
             ? null
             : Image.fromJson(json['image'] as Map<String, dynamic>),

@@ -1,8 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:gradution_app/core/api/api_consumer.dart';
-import 'package:gradution_app/core/errors/auth_failure.dart';
-import 'package:gradution_app/core/errors/failure.dart';
+import 'package:gradution_app/core/errors/server_failure.dart';
 import 'package:gradution_app/core/utils/api_keys.dart';
 
 import 'package:gradution_app/features/task/data/models/category_model/category_model.dart';
@@ -16,12 +15,12 @@ class TaskRepoImpl extends TaskRepo {
 
   TaskModel? addTaskModel;
   @override
-  Future<Either<FailureString, TaskModel>> addTask({
+  Future<Either<ServerFailure, TaskModel>> addTask({
     required String title,
     String? image,
     String? categoryTitle,
     String? categoryImage,
-    required List<String> days,
+    required List<dynamic> days,
     required String reminder,
     required String repeater,
     required DateTime date,
@@ -44,20 +43,13 @@ class TaskRepoImpl extends TaskRepo {
       );
       addTaskModel = TaskModel.fromJson(response);
       return Right(addTaskModel!);
-    } catch (e) {
-      if (e is DioException) {
-        return left(FailureString.fromDioException(e));
-      }
-      return left(
-        FailureString(
-          e.toString(),
-        ),
-      );
+    } on ServerFailure catch (e) {
+      return left(e);
     }
   }
 
   @override
-  Future<Either<FailureString, List<CategoryModel>>> fetchCategories() async {
+  Future<Either<ServerFailure, List<CategoryModel>>> fetchCategories() async {
     try {
       final response = await api.get(EndPoint.categories);
 
@@ -66,20 +58,13 @@ class TaskRepoImpl extends TaskRepo {
       List<CategoryModel> category =
           categories.map((item) => CategoryModel.fromJson(item)).toList();
       return right(category);
-    } catch (e) {
-      if (e is DioException) {
-        return left(FailureString.fromDioException(e));
-      }
-      return left(
-        FailureString(
-          e.toString(),
-        ),
-      );
+    } on DioException catch (e) {
+      return left(handelDioException(e));
     }
   }
 
   @override
-  Future<Either<FailureString, List<CategoryModel>>> fetchTasks(
+  Future<Either<ServerFailure, List<CategoryModel>>> fetchTasks(
       {required String id}) async {
     try {
       final response = await api.get(EndPoint.getTasks(id));
@@ -89,20 +74,13 @@ class TaskRepoImpl extends TaskRepo {
       List<CategoryModel> category =
           categories.map((item) => CategoryModel.fromJson(item)).toList();
       return right(category);
-    } catch (e) {
-      if (e is DioException) {
-        return left(FailureString.fromDioException(e));
-      }
-      return left(
-        FailureString(
-          e.toString(),
-        ),
-      );
+    } on DioException catch (e) {
+      return left(handelDioException(e));
     }
   }
 
   @override
-  Future<Either<FailureString, TaskModel>> deleteTask() {
+  Future<Either<ServerFailure, TaskModel>> deleteTask() {
     throw UnimplementedError();
   }
 

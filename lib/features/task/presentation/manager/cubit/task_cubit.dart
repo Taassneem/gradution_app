@@ -16,7 +16,7 @@ class TaskCubit extends Cubit<TaskState> {
   String? image;
   String? categoryTitle;
   String? categoryImage;
-  List<String>? days;
+  List<dynamic>? days;
   String? reminder;
   String? repeater;
   DateTime? date;
@@ -27,23 +27,23 @@ class TaskCubit extends Cubit<TaskState> {
     var result = await taskRepo.fetchCategories();
     result.fold(
         (failure) =>
-            emit(CategoriesFailure(errorMessage: failure.errorMessage)),
+            emit(CategoriesFailure(errorMessage: failure.failure.errorMessage)),
         (category) => emit(CategoriesSuccess(categoryModel: category)));
   }
 
   Future<void> addTask() async {
     var result = await taskRepo.addTask(
-      categoryTitle: categoryTitle,
-      days: days ?? [''],
-      reminder: reminder ?? '',
-      repeater: repeater ?? '',
-      image: image ?? categoryImage,
-      title: title.text,
-      date: date ?? DateTime.now(),
-      time: time ?? DateTime.now()
-    );
+        categoryTitle: categoryTitle,
+        days: days??[''],
+        reminder: reminder ?? '',
+        repeater: repeater ?? '',
+        image: image ?? categoryImage,
+        title: title.text,
+        date: date ?? DateTime.now(),
+        time: time ?? DateTime.now());
     result.fold(
-        (failure) => emit(AddTaskFailure(errorMessage: failure.errorMessage)),
+        (failure) =>
+            emit(AddTaskFailure(errorMessage: failure.failure.errorMessage)),
         (addTask) => emit(AddTaskSuccess(model: addTask)));
   }
 

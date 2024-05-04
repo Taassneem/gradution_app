@@ -21,6 +21,7 @@ class TaskTitleTextField extends StatelessWidget {
           }
           return null;
         },
+        onSaved: (newValue) {},
         decoration: const InputDecoration(
           fillColor: AppColor.pink,
           filled: true,

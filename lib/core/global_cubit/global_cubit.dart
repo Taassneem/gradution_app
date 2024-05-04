@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_app/core/database/cache/cache_helper.dart';
+import 'package:gradution_app/core/utils/api_keys.dart';
 import 'package:gradution_app/core/utils/servive_locator.dart';
 
 part 'global_state.dart';
@@ -42,7 +43,7 @@ class GlobalCubit extends Cubit<GlobalState> {
     isArabic = !isArabic;
     langCode = 'ar';
     getIt<CacheHelper>()
-        .saveData(key: 'isArabic', value: isArabic ? 'en' : 'ar');
+        .saveData(key: CacheHelperKey.isArabic, value: isArabic ? 'en' : 'ar');
     emit(ChangeLanguageArabic());
   }
 
@@ -50,13 +51,14 @@ class GlobalCubit extends Cubit<GlobalState> {
   void english() {
     isEnglish = !isEnglish;
     langCode = 'en';
-    getIt<CacheHelper>()
-        .saveData(key: 'isEnglish', value: isEnglish ? 'ar' : 'en');
+    getIt<CacheHelper>().saveData(
+        key: CacheHelperKey.isEnglish, value: isEnglish ? 'ar' : 'en');
     emit(ChangeLanguageEnglish());
   }
 
   void getLang() {
-    String? langCodeFromCache = getIt<CacheHelper>().getData(key: 'isArabic');
+    String? langCodeFromCache =
+        getIt<CacheHelper>().getData(key: CacheHelperKey.isArabic);
     isArabic = langCodeFromCache == 'en';
     langCode = isArabic ? 'ar' : 'en';
     emit(GetChangeLang());

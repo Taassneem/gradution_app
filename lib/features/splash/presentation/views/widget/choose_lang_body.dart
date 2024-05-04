@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/database/cache/cache_helper.dart';
 import 'package:gradution_app/core/global_cubit/global_cubit.dart';
+import 'package:gradution_app/core/utils/api_keys.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
@@ -38,41 +39,35 @@ class ChoosLanguageBody extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Row(
-                      children: [
-                        Image.asset(
-                          AppAssets.translate,
-                        ),
-                        Text(
-                          ' Language/ اللغه',
-                          style: Theme.of(context).textTheme.titleSmall,
-                        )
-                      ],
-                    ),
+                    Row(children: [
+                      Image.asset(AppAssets.translate),
+                      Text(
+                        ' Language/ اللغه',
+                        style: Theme.of(context).textTheme.titleSmall,
+                      )
+                    ]),
                     const SizedBox(height: 8),
                     CheckboxListTile(
-                      contentPadding: const EdgeInsets.all(0),
-                      title: Text(
-                        'English / الانجليزيه',
-                        style: Theme.of(context).textTheme.titleSmall,
-                      ),
-                      value: BlocProvider.of<GlobalCubit>(context).isEnglish,
-                      onChanged: (value) {
-                        BlocProvider.of<GlobalCubit>(context).english();
-                        BlocProvider.of<GlobalCubit>(context).isEnglish =
-                            value!;
-                      },
-                    ),
+                        contentPadding: const EdgeInsets.all(0),
+                        title: Text(
+                          'English ',
+                          style: Theme.of(context).textTheme.titleSmall,
+                        ),
+                        value: BlocProvider.of<GlobalCubit>(context).isEnglish,
+                        onChanged: (value) {
+                          BlocProvider.of<GlobalCubit>(context).english();
+                          BlocProvider.of<GlobalCubit>(context).isEnglish =
+                              value!;
+                        }),
                     const Divider(
-                      color: AppColor.purple,
-                      thickness: 1.5,
-                      indent: 20,
-                      endIndent: 20,
-                    ),
+                        color: AppColor.purple,
+                        thickness: 1.5,
+                        indent: 20,
+                        endIndent: 20),
                     CheckboxListTile(
                       contentPadding: const EdgeInsets.all(0),
                       title: Text(
-                        'Arabic / العربيه',
+                        'العربية',
                         style: Theme.of(context).textTheme.titleSmall,
                       ),
                       value: BlocProvider.of<GlobalCubit>(context).isArabic,
@@ -84,31 +79,10 @@ class ChoosLanguageBody extends StatelessWidget {
                     CustomOkElevatedButton(
                       isPurple: true,
                       onPressed: () {
-                        getIt
-                            .get<CacheHelper>()
-                            .saveData(key: 'languageChoosed', value: true);
-                        bool onBoardingVisited = getIt
-                                .get<CacheHelper>()
-                                .getData(key: 'OnBoardingVisited') ??
-                            false;
-                        bool signedIn =
-                            getIt.get<CacheHelper>().getData(key: 'SignedIn') ??
-                                false;
-                        bool signedOut =
-                            getIt.get<CacheHelper>().getData(key: 'SignedUp') ??
-                                false;
-                        if (onBoardingVisited == true) {
-                          if (signedIn == true || signedOut == true) {
-                            GoRouter.of(context)
-                                .pushReplacement(AppRouter.homeView);
-                          } else {
-                            GoRouter.of(context)
-                                .pushReplacement(AppRouter.signInView);
-                          }
-                        } else {
-                          GoRouter.of(context)
-                              .pushReplacement(AppRouter.onBoardingView);
-                        }
+                        getIt.get<CacheHelper>().saveData(
+                            key: CacheHelperKey.languageChoosed, value: true);
+                        GoRouter.of(context)
+                            .pushReplacement(AppRouter.onBoardingView);
                       },
                     )
                   ],

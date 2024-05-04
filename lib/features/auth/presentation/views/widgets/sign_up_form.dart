@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/database/cache/cache_helper.dart';
 import 'package:gradution_app/core/func/custom_toast.dart';
+import 'package:gradution_app/core/utils/api_keys.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/servive_locator.dart';
 import 'package:gradution_app/generated/l10n.dart';
@@ -81,7 +82,7 @@ class SignUpForm extends StatelessWidget {
                                     authCubit.signUp();
                                     getIt
                                         .get<CacheHelper>()
-                                        .saveData(key: 'SignedUp', value: true);
+                                        .saveData(key: CacheHelperKey.signedUp, value: true);
                                   }
                                 })
                       ]),
