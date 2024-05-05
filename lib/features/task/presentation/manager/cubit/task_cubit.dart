@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_app/features/task/data/models/category_model/category_model.dart';
+import 'package:gradution_app/features/task/data/models/add_task_model/add_task_model.dart';
 import 'package:gradution_app/features/task/data/models/task_model/task_model.dart';
 import 'package:gradution_app/features/task/data/repo/task_repo.dart';
 import 'package:image_picker/image_picker.dart';
@@ -34,7 +35,7 @@ class TaskCubit extends Cubit<TaskState> {
   Future<void> addTask() async {
     var result = await taskRepo.addTask(
         categoryTitle: categoryTitle,
-        days: days??[''],
+        days: days ?? [''],
         reminder: reminder ?? '',
         repeater: repeater ?? '',
         image: image ?? categoryImage,
@@ -45,6 +46,30 @@ class TaskCubit extends Cubit<TaskState> {
         (failure) =>
             emit(AddTaskFailure(errorMessage: failure.failure.errorMessage)),
         (addTask) => emit(AddTaskSuccess(model: addTask)));
+  }
+
+  Future<void> fetchTasks() async {
+    var result = await taskRepo.fetchTasks();
+    result.fold(
+        (failure) =>
+            emit(FetchTasksFailure(errorMessage: failure.failure.errorMessage)),
+        (tasks) => emit(FetchTasksSuccess(tasks: tasks)));
+  }
+
+  Future<void> editTask() async {
+    var result = await taskRepo.editTask();
+    result.fold(
+        (failure) =>
+            emit(EditTaskFailure(errorMessage: failure.failure.errorMessage)),
+        (edit) => emit(EditTaskSuccess()));
+  }
+
+  Future<void> deleteTask() async {
+    var result = await taskRepo.deleteTask();
+    result.fold(
+        (failure) =>
+            emit(DeleteTaskFailure(errorMessage: failure.failure.errorMessage)),
+        (delete) => emit(DeleteTaskSuccess()));
   }
 
   DateTime today = DateTime.now();

@@ -22,7 +22,7 @@ class MiddleFoodRightWidget extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .titleMedium!
-                    .copyWith(color:  AppColor.white),
+                    .copyWith(color: AppColor.white),
                 textAlign: TextAlign.center,
               ),
               Text(
@@ -30,7 +30,7 @@ class MiddleFoodRightWidget extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .titleSmall!
-                    .copyWith(color:  AppColor.white),
+                    .copyWith(color: AppColor.white),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 20.0),

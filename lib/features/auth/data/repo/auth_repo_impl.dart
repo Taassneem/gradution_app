@@ -26,6 +26,9 @@ class AuthRepoImpl extends AuthRepo {
       getIt
           .get<CacheHelper>()
           .saveData(key: ApiKey.loginToken, value: user.userUpdated!.token);
+      getIt
+          .get<CacheHelper>()
+          .saveData(key: ApiKey.loginId, value: user.userUpdated!.id);
       return right(user);
     } on ServerFailure catch (e) {
       return left(e);

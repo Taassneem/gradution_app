@@ -4,8 +4,8 @@ import 'package:gradution_app/generated/l10n.dart';
 
 import 'circle_custom_vertical_divider.dart';
 
-class TasksComponent extends StatelessWidget {
-  const TasksComponent({
+class ComingSoonWidget extends StatelessWidget {
+  const ComingSoonWidget({
     super.key,
   });
 

@@ -1,10 +1,13 @@
 import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
 import 'package:gradution_app/core/api/api_consumer.dart';
+import 'package:gradution_app/core/database/cache/cache_helper.dart';
 import 'package:gradution_app/core/errors/server_failure.dart';
 import 'package:gradution_app/core/utils/api_keys.dart';
+import 'package:gradution_app/core/utils/servive_locator.dart';
 
 import 'package:gradution_app/features/task/data/models/category_model/category_model.dart';
+import 'package:gradution_app/features/task/data/models/add_task_model/add_task_model.dart';
+import 'package:gradution_app/features/task/data/models/delete_task_model.dart';
 import 'package:gradution_app/features/task/data/models/task_model/task_model.dart';
 
 import 'task_repo.dart';
@@ -13,9 +16,9 @@ class TaskRepoImpl extends TaskRepo {
   final ApiConsumer api;
   TaskRepoImpl({required this.api});
 
-  TaskModel? addTaskModel;
+  AddTaskModel? addTaskModel;
   @override
-  Future<Either<ServerFailure, TaskModel>> addTask({
+  Future<Either<ServerFailure, AddTaskModel>> addTask({
     required String title,
     String? image,
     String? categoryTitle,
@@ -41,7 +44,10 @@ class TaskRepoImpl extends TaskRepo {
           ApiKey.time: time,
         },
       );
-      addTaskModel = TaskModel.fromJson(response);
+      addTaskModel = AddTaskModel.fromJson(response);
+      getIt
+          .get<CacheHelper>()
+          .saveData(key: ApiKey.taskId, value: addTaskModel!.added!.id);
       return Right(addTaskModel!);
     } on ServerFailure catch (e) {
       return left(e);
@@ -58,34 +64,39 @@ class TaskRepoImpl extends TaskRepo {
       List<CategoryModel> category =
           categories.map((item) => CategoryModel.fromJson(item)).toList();
       return right(category);
-    } on DioException catch (e) {
-      return left(handelDioException(e));
+    } on ServerFailure catch (e) {
+      return left(e);
     }
   }
 
   @override
-  Future<Either<ServerFailure, List<CategoryModel>>> fetchTasks(
-      {required String id}) async {
+  Future<Either<ServerFailure, List<TaskModel>>> fetchTasks() async {
     try {
-      final response = await api.get(EndPoint.getTasks(id));
-
-      List<dynamic> categories = response['todos'];
-
-      List<CategoryModel> category =
-          categories.map((item) => CategoryModel.fromJson(item)).toList();
-      return right(category);
-    } on DioException catch (e) {
-      return left(handelDioException(e));
+      final response = await api.get(EndPoint.getTasks(
+          getIt.get<CacheHelper>().getData(key: ApiKey.loginId)));
+      List<dynamic> tasks = response['blogs'];
+      List<TaskModel> task =
+          tasks.map((item) => TaskModel.fromJson(item)).toList();
+      return right(task);
+    } on ServerFailure catch (e) {
+      return left(e);
     }
   }
 
   @override
-  Future<Either<ServerFailure, TaskModel>> deleteTask() {
-    throw UnimplementedError();
+  Future<Either<ServerFailure, DeleteTaskModel>> deleteTask() async {
+    try {
+      final response = await api.delete(EndPoint.deteleTask(
+          getIt.get<CacheHelper>().getData(key: ApiKey.taskId)));
+      DeleteTaskModel model = DeleteTaskModel.fromJson(response);
+      return right(model);
+    } on ServerFailure catch (e) {
+      return left(e);
+    }
   }
 
   @override
-  Future<Either<ServerFailure, TaskModel>> updateTask() {
+  Future<Either<ServerFailure, AddTaskModel>> editTask() {
     throw UnimplementedError();
   }
 }

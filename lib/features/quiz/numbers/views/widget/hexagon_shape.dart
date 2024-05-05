@@ -26,7 +26,7 @@ class HexagonShape extends StatelessWidget {
             child: Container(
               width: 100,
               height: 100,
-              color: isColored ? AppColor.babyBlue :  AppColor.white,
+              color: isColored ? AppColor.babyBlue : AppColor.white,
             ),
           ),
           Positioned(

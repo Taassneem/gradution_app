@@ -90,6 +90,4 @@ class AddPhoto extends StatelessWidget {
       ),
     );
   }
-
-  
 }

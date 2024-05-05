@@ -196,5 +196,7 @@
     "am":"AM",
     "pm":"PM",
     "photoUploadSuccessfully":"Photo upload successfully",
-    "fieldIsRequired":"Field is required"
+    "fieldIsRequired":"Field is required",
+    "delete":"Delete",
+    "editTask":"Edit Task"
 }

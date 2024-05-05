@@ -8,6 +8,6 @@ showToast(String msg) {
       gravity: ToastGravity.CENTER,
       timeInSecForIosWeb: 1,
       backgroundColor: AppColor.purple,
-      textColor: AppColor.white,
+      textColor: AppColor.black,
       fontSize: 16.0);
 }

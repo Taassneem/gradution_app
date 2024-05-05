@@ -31,7 +31,7 @@ class DioConsumer extends ApiConsumer {
           queryParameters: queryParameters);
       return response.data;
     } on DioException catch (e) {
-      return handelDioException(e);
+      handelDioException(e);
     }
   }
 
@@ -46,7 +46,7 @@ class DioConsumer extends ApiConsumer {
       );
       return respose.data;
     } on DioException catch (e) {
-      return handelDioException(e);
+      handelDioException(e);
     }
   }
 

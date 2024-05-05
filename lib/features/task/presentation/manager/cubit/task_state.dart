@@ -26,7 +26,7 @@ final class CategoriesFailure extends TaskState {
 final class AddTaskLoading extends TaskState {}
 
 final class AddTaskSuccess extends TaskState {
-  final TaskModel model;
+  final AddTaskModel model;
 
   const AddTaskSuccess({required this.model});
 }
@@ -51,4 +51,38 @@ final class UploadingPhotoFailure extends TaskState {
   final String errorMessage;
 
   const UploadingPhotoFailure({required this.errorMessage});
+}
+
+final class FetchTasksLoading extends TaskState {}
+
+final class FetchTasksSuccess extends TaskState {
+  final List<TaskModel> tasks;
+
+  const FetchTasksSuccess({required this.tasks});
+}
+
+final class FetchTasksFailure extends TaskState {
+  final String errorMessage;
+
+  const FetchTasksFailure({required this.errorMessage});
+}
+
+final class EditTaskLoading extends TaskState {}
+
+final class EditTaskSuccess extends TaskState {}
+
+final class EditTaskFailure extends TaskState {
+  final String errorMessage;
+
+  const EditTaskFailure({required this.errorMessage});
+}
+
+final class DeleteTaskLoading extends TaskState {}
+
+final class DeleteTaskSuccess extends TaskState {}
+
+final class DeleteTaskFailure extends TaskState {
+  final String errorMessage;
+
+  const DeleteTaskFailure({required this.errorMessage});
 }

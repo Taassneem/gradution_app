@@ -70,9 +70,8 @@ class SignInForm extends StatelessWidget {
                               if (authCubit.signInKey.currentState!
                                   .validate()) {
                                 authCubit.signIn();
-                                getIt
-                                    .get<CacheHelper>()
-                                    .saveData(key: CacheHelperKey.signedIn, value: true);
+                                getIt.get<CacheHelper>().saveData(
+                                    key: CacheHelperKey.signedIn, value: true);
                               }
                             }),
                         Center(

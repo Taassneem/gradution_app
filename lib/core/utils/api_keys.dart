@@ -1,12 +1,9 @@
 class EndPoint {
-  static const String baseUrl = 'https://1066-197-54-172-112.ngrok-free.app/';
+  static const String baseUrl = 'https://autistic-children.vercel.app/';
   static const String signUp = 'auth/';
   static const String login = 'auth/login';
   static const String reset = 'auth/forget';
   static const String forget = 'auth/reset';
-  static String confirm(token) {
-    return 'auth/confirm/$token';
-  }
   static String getUser(id) {
     return 'user/getuserById/$id';
   }
@@ -16,9 +13,11 @@ class EndPoint {
   static String getTasks(id) {
     return 'blog/createdBy/$id';
   }
-  static String updateTasks(id) {
+
+  static String editTasks(id) {
     return 'blog/updateBlog/$id';
   }
+
   static String deteleTask(id) {
     return 'blog/deleteBlog/$id';
   }
@@ -31,8 +30,9 @@ class ApiKey {
   static const String userName = 'userName';
   static const String email = 'email';
   static const String password = 'password';
-  static const String id = '_id';
-  static const String loginToken = 'token';
+  static const String loginId = '_id';
+  static const String loginToken = '_id';
+  static const String taskId = 'token';
   static const String authorization = 'Authorization';
   static const String confirmPassword = 'confirmPassword';
   static const String title = 'title';
@@ -44,7 +44,8 @@ class ApiKey {
   static const String date = 'date';
   static const String time = 'time';
 }
-class CacheHelperKey{
+
+class CacheHelperKey {
   static const String selectedDays = 'selectedDays';
   static const String onBoardingVisited = 'onBoardingVisited';
   static const String languageChoosed = 'languageChoosed';

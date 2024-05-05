@@ -17,7 +17,7 @@ class ImageAnswer extends StatelessWidget {
         height: 200,
         width: 155,
         decoration: BoxDecoration(
-          color:  AppColor.white,
+          color: AppColor.white,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Center(child: Image.asset(image)),

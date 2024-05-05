@@ -26,7 +26,7 @@ class SplashViewBody extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .headlineMedium!
-                    .copyWith(color:  AppColor.white),
+                    .copyWith(color: AppColor.white),
               )
             ],
           ),

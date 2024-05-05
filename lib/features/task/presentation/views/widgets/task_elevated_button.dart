@@ -17,7 +17,7 @@ class TaskElevatedButton extends StatelessWidget {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
             fixedSize: const Size(200, 50),
-            backgroundColor: isWhite ?  AppColor.white : AppColor.pink,
+            backgroundColor: isWhite ? AppColor.white : AppColor.pink,
             elevation: 0),
         onPressed: onPressed,
         child: Row(

@@ -12,7 +12,7 @@ class NumberSuccessWidget extends StatelessWidget {
       child: Container(
         width: MediaQuery.sizeOf(context).width * 0.82,
         decoration: BoxDecoration(
-            color:  AppColor.white, borderRadius: BorderRadius.circular(10)),
+            color: AppColor.white, borderRadius: BorderRadius.circular(10)),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [

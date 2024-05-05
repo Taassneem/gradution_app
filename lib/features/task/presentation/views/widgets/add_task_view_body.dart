@@ -36,7 +36,7 @@ class AddTaskViewBody extends StatelessWidget {
     return BlocConsumer<TaskCubit, TaskState>(
       listener: (context, state) {
         if (state is AddTaskSuccess) {
-          GoRouter.of(context).push(AppRouter.calendarView);
+          GoRouter.of(context).pop(context);
         } else if (state is AddTaskFailure) {
           showToast(state.errorMessage);
           log('Add Task exception ${state.errorMessage}');
@@ -115,6 +115,7 @@ class AddTaskViewBody extends StatelessWidget {
                           if (taskCubit.taskKey.currentState!.validate()) {
                             taskCubit.taskKey.currentState!.save();
                             taskCubit.addTask();
+                            taskCubit.title.clear();
                           }
                         },
                       )
