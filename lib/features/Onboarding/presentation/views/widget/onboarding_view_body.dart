@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:gradution_app/core/utils/api_keys.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
@@ -36,21 +35,19 @@ class OnBoardingViewBody extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              const SizedBox(height: 52),
+              SizedBox(height: index != 3 ? 27 : 60),
               Image.asset(OnBoardingModel.onBoardingView[index].image),
               const SizedBox(height: 40),
               Text(OnBoardingModel.onBoardingView[index].title,
-                  style: GoogleFonts.montserrat(
-                    fontSize: 22,
-                    fontWeight: FontWeight.w600,
-                  )),
+                  style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: 24),
-              Text(OnBoardingModel.onBoardingView[index].subTitle,
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.montserrat(
-                    fontSize: 18,
-                  )),
-              const SizedBox(height: 40),
+              SizedBox(
+                width: 300,
+                child: Text(OnBoardingModel.onBoardingView[index].subTitle,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.titleMedium),
+              ),
+              SizedBox(height: index != 3 ? 40 : 70),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -67,34 +64,31 @@ class OnBoardingViewBody extends StatelessWidget {
                         dotColor: AppColor.ligthGrey,
                         offset: 0.5,
                       )),
-                  Align(
+                  Container(
                     alignment: Alignment.center,
-                    child: Container(
-                      width: 77,
-                      height: 77,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: OnBoardingModel.onBoardingView[index].color,
-                          boxShadow: [
-                            BoxShadow(
-                              blurRadius: 10,
-                              color: Colors.grey.withOpacity(0.3),
-                              offset: const Offset(0, 15),
-                            )
-                          ]),
-                      child: index != 3
-                          ? IconButton(
-                              onPressed: () {
-                                controller.nextPage(
-                                    duration: const Duration(milliseconds: 300),
-                                    curve: Curves.slowMiddle);
-                              },
-                              icon: const Icon(Icons.arrow_forward_rounded,
-                                  size: 30),
-                              color: AppColor.grey,
-                            )
-                          : const NextTextButton(),
-                    ),
+                    width: 65,
+                    height: 60,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: OnBoardingModel.onBoardingView[index].color,
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 18,
+                            color: Colors.grey.withOpacity(0.3),
+                            offset: const Offset(0, 15),
+                          )
+                        ]),
+                    child: index != 3
+                        ? IconButton(
+                            onPressed: () {
+                              controller.nextPage(
+                                  duration: const Duration(milliseconds: 300),
+                                  curve: Curves.slowMiddle);
+                            },
+                            icon: const Icon(Icons.arrow_forward_rounded),
+                            color: AppColor.grey,
+                          )
+                        : const NextTextButton(),
                   ),
                 ],
               )
@@ -122,7 +116,9 @@ class NextTextButton extends StatelessWidget {
         },
         child: Text(
           S.of(context).next,
-          style: const TextStyle(fontSize: 20),
+          style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                color: AppColor.grey,
+              ),
         ));
   }
 }
@@ -142,9 +138,8 @@ class SkipTextButton extends StatelessWidget {
           GoRouter.of(context).pushReplacement(AppRouter.signInView);
         },
         child: Text(S.of(context).skip,
-            style: GoogleFonts.montserrat(
-              fontSize: 18,
-              color: AppColor.grey,
-            )));
+            style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                  color: AppColor.grey,
+                )));
   }
 }

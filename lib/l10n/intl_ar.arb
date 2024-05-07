@@ -192,5 +192,11 @@
     "threeMonth": "3 أشهر",
     "sixMonth": "6 أشهر",
     "add": "إضافة",
-    "saveEdit": "حفظ التعديل"
+    "saveEdit": "حفظ التعديل",
+    "am": "AM",
+    "pm": "PM",
+    "photoUploadSuccessfully": "تم تحميل الصورة بنجاح",
+    "fieldIsRequired": "هذا الحقل مطلوب",
+    "delete": "حذف",
+    "editTask": "تعديل المهمة"
 }

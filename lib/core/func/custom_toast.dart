@@ -1,13 +1,13 @@
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
-showToast(String msg) {
+showToast(String msg, {bool task = false}) {
   Fluttertoast.showToast(
       msg: msg,
       toastLength: Toast.LENGTH_LONG,
       gravity: ToastGravity.CENTER,
       timeInSecForIosWeb: 1,
-      backgroundColor: AppColor.purple,
+      backgroundColor: task ? AppColor.screenColor : AppColor.purple,
       textColor: AppColor.black,
       fontSize: 16.0);
 }

@@ -28,3 +28,17 @@ final class CameraGalleryFailure extends CameraState {
 
   const CameraGalleryFailure({required this.errorMessage});
 }
+
+final class SendPhotoLoading extends CameraState {}
+
+final class SendPhotoSuccess extends CameraState {
+  final CameraModel model;
+
+  const SendPhotoSuccess({required this.model});
+}
+
+final class SendPhotoFailure extends CameraState {
+  final String errorMessage;
+
+  const SendPhotoFailure({required this.errorMessage});
+}

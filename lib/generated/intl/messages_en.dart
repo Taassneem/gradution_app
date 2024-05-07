@@ -161,9 +161,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "onBoardingSubTitleOne": MessageLookupByLibrary.simpleMessage(
             "When you find something you don\'t know you can take a picture to wonder what the thing is"),
         "onBoardingSubTitleThree": MessageLookupByLibrary.simpleMessage(
-            "can organize tasks and track the child\'s location"),
+            "You will take a simple test that will help your child learn Pictures of  things and  simple mathematical operations"),
         "onBoardingSubTitleTwo": MessageLookupByLibrary.simpleMessage(
-            "You can upload the picture to identify its contents"),
+            "You will receive a notification of the task at the specified time Arranged with parental assistance"),
         "onBoardingTitleFour": MessageLookupByLibrary.simpleMessage("Welcome"),
         "onBoardingTitleOne":
             MessageLookupByLibrary.simpleMessage("Discovering things"),

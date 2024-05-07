@@ -90,10 +90,10 @@ class S {
     );
   }
 
-  /// `You can upload the picture to identify its contents`
+  /// `You will receive a notification of the task at the specified time Arranged with parental assistance`
   String get onBoardingSubTitleTwo {
     return Intl.message(
-      'You can upload the picture to identify its contents',
+      'You will receive a notification of the task at the specified time Arranged with parental assistance',
       name: 'onBoardingSubTitleTwo',
       desc: '',
       args: [],
@@ -110,10 +110,10 @@ class S {
     );
   }
 
-  /// `can organize tasks and track the child's location`
+  /// `You will take a simple test that will help your child learn Pictures of  things and  simple mathematical operations`
   String get onBoardingSubTitleThree {
     return Intl.message(
-      'can organize tasks and track the child\'s location',
+      'You will take a simple test that will help your child learn Pictures of  things and  simple mathematical operations',
       name: 'onBoardingSubTitleThree',
       desc: '',
       args: [],

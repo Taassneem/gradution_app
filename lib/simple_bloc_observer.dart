@@ -5,17 +5,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class SimpleBLocObserver implements BlocObserver {
   @override
   void onEvent(Bloc bloc, Object? event) {
-    log('event $event');
+    log('$event');
   }
 
   @override
   void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
-    log('error $error');
+    log('$error');
   }
 
   @override
   void onChange(BlocBase bloc, Change change) {
-    log('change $change');
+    log('$change');
   }
 
   @override

@@ -1,16 +1,10 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
-import 'package:gradution_app/core/utils/app_assets.dart';
 
 import 'package:gradution_app/core/utils/app_color.dart';
-import 'package:gradution_app/core/utils/app_router.dart';
-import 'package:gradution_app/features/camera/presentation/manager/camera_cubit/camera_cubit.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
-import 'image_features.dart';
+import 'photo_from_camera.dart';
+import 'photo_from_gallery.dart';
 
 class CameraFeature extends StatelessWidget {
   const CameraFeature({
@@ -40,47 +34,11 @@ class CameraFeature extends StatelessWidget {
               S.of(context).whatCanIDoForYou,
               style: Theme.of(context).textTheme.titleMedium,
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                BlocConsumer<CameraCubit, CameraState>(
-                  listener: (context, state) {
-                    if (state is CameraSuccess) {
-                      GoRouter.of(context).push(AppRouter.photoInforamtion);
-                    } else if (state is CameraFailure) {
-                      log(state.errorMessage);
-                    }
-                  },
-                  builder: (context, state) {
-                    return ImageFeatures(
-                      image: AppAssets.camera,
-                      type: S.of(context).takePhoto,
-                      onTap: () {
-                        BlocProvider.of<CameraCubit>(context)
-                            .pickImageWithCamera();
-                      },
-                    );
-                  },
-                ),
-                BlocConsumer<CameraCubit, CameraState>(
-                  listener: (context, state) {
-                    if (state is CameraGallerySuccess) {
-                      GoRouter.of(context).push(AppRouter.photoInforamtion);
-                    } else if (state is CameraGalleryFailure) {
-                      log(state.errorMessage);
-                    }
-                  },
-                  builder: (context, state) {
-                    return ImageFeatures(
-                      onTap: () {
-                        BlocProvider.of<CameraCubit>(context)
-                            .pickImageWithGallery();
-                      },
-                      image: AppAssets.cloud,
-                      type: S.of(context).uploadPhoto,
-                    );
-                  },
-                ),
+                PhotoFromCamera(),
+                PhotoFromGallery(),
               ],
             )
           ],

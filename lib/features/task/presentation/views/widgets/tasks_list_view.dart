@@ -27,7 +27,6 @@ class TasksListView extends StatelessWidget {
                   },
                 ),
               ),
-             
             ],
           );
         } else if (state is FetchTasksFailure) {

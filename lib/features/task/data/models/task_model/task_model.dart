@@ -29,7 +29,7 @@ class TaskModel extends Equatable {
       days: json['daysOfWeek'],
       reminder: json['reminder'],
       repeater: json['repeater'],
-      time: json['time'] ,
+      time: json['time'],
       date:
           json['date'] == null ? null : DateTime.parse(json['date'] as String),
       selectedActivity: json['selectedActivity']);

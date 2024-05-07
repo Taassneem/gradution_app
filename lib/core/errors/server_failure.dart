@@ -67,10 +67,10 @@ ServerFailure handelDioException(DioException dioException) {
       throw ServerFailure(
           failure: FailureModel.fromJson(dioException.response!.data));
     case DioExceptionType.unknown:
-      if (dioException.message!.contains('SocketException')) {
-        throw ServerFailure(
-            failure: FailureModel.fromJson(dioException.response!.data));
-      }
+      // if (dioException.message!.contains('SocketException')) {
+      //   throw ServerFailure(
+      //       failure: FailureModel.fromJson(dioException.response!.data));
+      // }
       throw ServerFailure(
           failure: FailureModel.fromJson(dioException.response!.data));
     case DioExceptionType.badCertificate:

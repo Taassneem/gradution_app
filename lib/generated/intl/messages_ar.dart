@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "addPhoto": MessageLookupByLibrary.simpleMessage("إضافة صورة"),
         "addTask": MessageLookupByLibrary.simpleMessage("إضافة مهمة"),
         "allDays": MessageLookupByLibrary.simpleMessage("كل الأيام"),
+        "am": MessageLookupByLibrary.simpleMessage("AM"),
         "animals": MessageLookupByLibrary.simpleMessage("الحيوانات"),
         "appName": MessageLookupByLibrary.simpleMessage("أطفال التوحد"),
         "back": MessageLookupByLibrary.simpleMessage("العودة"),
@@ -77,12 +78,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("إنشاء مهمة جديدة"),
         "cucumber": MessageLookupByLibrary.simpleMessage("خيار"),
         "dailyTasks": MessageLookupByLibrary.simpleMessage("المهام اليومية"),
+        "delete": MessageLookupByLibrary.simpleMessage("حذف"),
         "deleteAccount": MessageLookupByLibrary.simpleMessage("حذف الحساب"),
         "dog": MessageLookupByLibrary.simpleMessage("الكلب"),
         "done": MessageLookupByLibrary.simpleMessage("تم"),
         "door": MessageLookupByLibrary.simpleMessage("الباب"),
         "editProfile":
             MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
+        "editTask": MessageLookupByLibrary.simpleMessage("تعديل المهمة"),
         "egg": MessageLookupByLibrary.simpleMessage("البيض"),
         "eggplant": MessageLookupByLibrary.simpleMessage("الباذنجان"),
         "elephant": MessageLookupByLibrary.simpleMessage("الفيل"),
@@ -91,6 +94,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "errorMessage": MessageLookupByLibrary.simpleMessage(
             "الإجابة خاطئة، يرجى المحاولة مرة أخرى"),
         "father": MessageLookupByLibrary.simpleMessage("الأب"),
+        "fieldIsRequired":
+            MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
         "fifteenMinutesBefore":
             MessageLookupByLibrary.simpleMessage("15 دقيقة قبل"),
         "fish": MessageLookupByLibrary.simpleMessage("سمكة"),
@@ -180,6 +185,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordValidate":
             MessageLookupByLibrary.simpleMessage("٨+ أحرف، ١ حرف كبير"),
         "pepper": MessageLookupByLibrary.simpleMessage("الفلفل"),
+        "photoUploadSuccessfully":
+            MessageLookupByLibrary.simpleMessage("تم تحميل الصورة بنجاح"),
+        "pm": MessageLookupByLibrary.simpleMessage("PM"),
         "potato": MessageLookupByLibrary.simpleMessage("البطاطس"),
         "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "pumpkin": MessageLookupByLibrary.simpleMessage("يقطين"),

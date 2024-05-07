@@ -1,5 +1,5 @@
 class EndPoint {
-  static const String baseUrl = 'https://autistic-children.vercel.app/';
+  static const String baseUrl = 'https://autistic-children-git-main-autistic-childrens-projects.vercel.app/';
   static const String signUp = 'auth/';
   static const String login = 'auth/login';
   static const String reset = 'auth/forget';
@@ -21,6 +21,8 @@ class EndPoint {
   static String deteleTask(id) {
     return 'blog/deleteBlog/$id';
   }
+
+  static const String modelAi = '/predict';
 }
 
 class ApiKey {
@@ -43,6 +45,7 @@ class ApiKey {
   static const String repeater = 'repeater';
   static const String date = 'date';
   static const String time = 'time';
+  static const String imageAi = 'image_data';
 }
 
 class CacheHelperKey {
