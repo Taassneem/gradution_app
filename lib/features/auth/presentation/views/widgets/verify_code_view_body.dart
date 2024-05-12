@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
 import '../../../../../core/utils/app_assets.dart';
+import '../../../../../core/utils/widgets/back_icon.dart';
 import 'change_email_text_button.dart';
 import 'custom_elevated_button.dart';
 import 'custom_welcome_text.dart';
@@ -24,24 +26,27 @@ class VerifyCodeViewBody extends StatelessWidget {
                 image: AssetImage(AppAssets.forgetBack2),
                 fit: BoxFit.fitWidth,
                 alignment: Alignment.topCenter)),
-        child: Column(children: [
-          const SizedBox(height: 40),
-          CustomWelcomeText(
-              welcome: S.of(context).verification,
-              welcomeSubTitle: S.of(context).verificationSubTitle),
-          const SizedBox(height: 40),
-          const VerificationOTP(),
-          const SizedBox(height: 40),
-          const ReciveCodeAgain(),
-          const SizedBox(height: 24),
-          CustomElevatedButton(
-            text: S.of(context).confirm,
-            onPressed: () {
-              GoRouter.of(context).push(AppRouter.newPassView);
-            },
-          ),
-          const SizedBox(height: 24),
-          const ChangeEmailTextButton()
-        ]));
+        child: SafeArea(
+          child: Column(children: [
+            const BackIcon(),
+            SizedBox(height: 40.h),
+            CustomWelcomeText(
+                welcome: S.of(context).verification,
+                welcomeSubTitle: S.of(context).verificationSubTitle),
+            SizedBox(height: 40.h),
+            const VerificationOTP(),
+            SizedBox(height: 40.h),
+            const ReciveCodeAgain(),
+            SizedBox(height: 24.h),
+            CustomElevatedButton(
+              text: S.of(context).confirm,
+              onPressed: () {
+                GoRouter.of(context).push(AppRouter.newPassView);
+              },
+            ),
+            SizedBox(height: 24.h),
+            const ChangeEmailTextButton()
+          ]),
+        ));
   }
 }

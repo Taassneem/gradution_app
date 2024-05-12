@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/generated/l10n.dart';
@@ -12,7 +13,7 @@ class MiddleFoodErrorWidget extends StatelessWidget {
       child: Card(
         color: AppColor.error,
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0.r),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -33,7 +34,7 @@ class MiddleFoodErrorWidget extends StatelessWidget {
                     .copyWith(color: AppColor.white),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 20.0),
+              SizedBox(height: 20.0.h),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).pop();

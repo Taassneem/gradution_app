@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
@@ -32,16 +33,16 @@ class FoodQuizViewImageBody extends StatelessWidget {
           image: DecorationImage(image: AssetImage(AppAssets.quizBackground))),
       child: Column(
         children: [
-          const SizedBox(height: 130),
+          SizedBox(height: 130.h),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Stack(clipBehavior: Clip.none, children: [
               Container(
                 width: MediaQuery.sizeOf(context).width,
-                padding: const EdgeInsets.all(16),
+                padding: EdgeInsets.all(16.r),
                 decoration: BoxDecoration(
                     color: AppColor.babyBlue,
-                    borderRadius: BorderRadius.circular(30)),
+                    borderRadius: BorderRadius.circular(30.w)),
                 child: Column(
                   children: [
                     Row(
@@ -51,7 +52,7 @@ class FoodQuizViewImageBody extends StatelessWidget {
                         ImageAnswer(image: answerTwo, onTap: onTapTwo)
                       ],
                     ),
-                    const SizedBox(height: 30),
+                    SizedBox(height: 30.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -63,20 +64,22 @@ class FoodQuizViewImageBody extends StatelessWidget {
                 ),
               ),
               Positioned(
-                  top: -55,
-                  left: 70,
+                  top: -55.h,
+                  left: 70.w,
                   child: Container(
-                    width: 225,
-                    height: 85,
+                    width: 225.w,
+                    height: 85.h,
                     decoration: BoxDecoration(
                       color: AppColor.white,
-                      borderRadius: BorderRadius.circular(100),
-                      border: const Border(
-                          top: BorderSide(color: AppColor.babyBlue, width: 2),
-                          left: BorderSide(color: AppColor.babyBlue, width: 2),
-                          right: BorderSide(color: AppColor.babyBlue, width: 2),
+                      borderRadius: BorderRadius.circular(100.w),
+                      border: Border(
+                          top: BorderSide(color: AppColor.babyBlue, width: 2.w),
+                          left:
+                              BorderSide(color: AppColor.babyBlue, width: 2.w),
+                          right:
+                              BorderSide(color: AppColor.babyBlue, width: 2.w),
                           bottom:
-                              BorderSide(color: AppColor.babyBlue, width: 2)),
+                              BorderSide(color: AppColor.babyBlue, width: 2.w)),
                     ),
                     child: Center(
                       child: Text(

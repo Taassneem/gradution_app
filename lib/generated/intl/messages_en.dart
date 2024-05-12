@@ -89,6 +89,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "eggplant": MessageLookupByLibrary.simpleMessage("Eggplant"),
         "elephant": MessageLookupByLibrary.simpleMessage("Elephant"),
         "email": MessageLookupByLibrary.simpleMessage("E-mail"),
+        "emailValidate":
+            MessageLookupByLibrary.simpleMessage("Field is required"),
         "emu": MessageLookupByLibrary.simpleMessage("Emu"),
         "errorMessage": MessageLookupByLibrary.simpleMessage(
             "The Answer is Wrong ,Please Try Again"),

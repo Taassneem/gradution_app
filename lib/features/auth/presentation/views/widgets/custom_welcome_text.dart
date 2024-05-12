@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomWelcomeText extends StatelessWidget {
   const CustomWelcomeText({
@@ -17,9 +18,9 @@ class CustomWelcomeText extends StatelessWidget {
           welcome,
           style: theme.titleMedium,
         ),
-        const SizedBox(height: 5),
+        SizedBox(height: 5.h),
         SizedBox(
-          width: 250,
+          width: 250.w,
           child: Text(
             welcomeSubTitle,
             textAlign: TextAlign.center,

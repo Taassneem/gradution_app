@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-class User extends Equatable {
+class ResetedPassData extends Equatable {
   final String? id;
   final String? userName;
   final String? email;
@@ -11,8 +11,9 @@ class User extends Equatable {
   final DateTime? updatedAt;
   final int? v;
   final String? token;
+  final dynamic forgetCode;
 
-  const User({
+  const ResetedPassData({
     this.id,
     this.userName,
     this.email,
@@ -23,24 +24,28 @@ class User extends Equatable {
     this.updatedAt,
     this.v,
     this.token,
+    this.forgetCode,
   });
 
-  factory User.fromJson(Map<String, dynamic> json) => User(
-        id: json['_id'] as String?,
-        userName: json['userName'] as String?,
-        email: json['email'] as String?,
-        password: json['password'] as String?,
-        isConfirmed: json['isConfirmed'] as bool?,
-        role: json['role'] as String?,
-        createdAt: json['createdAt'] == null
-            ? null
-            : DateTime.parse(json['createdAt'] as String),
-        updatedAt: json['updatedAt'] == null
-            ? null
-            : DateTime.parse(json['updatedAt'] as String),
-        v: json['__v'] as int?,
-        token: json['token'] as String?,
-      );
+  factory ResetedPassData.fromJson(Map<String, dynamic> json) {
+    return ResetedPassData(
+      id: json['_id'] as String?,
+      userName: json['userName'] as String?,
+      email: json['email'] as String?,
+      password: json['password'] as String?,
+      isConfirmed: json['isConfirmed'] as bool?,
+      role: json['role'] as String?,
+      createdAt: json['createdAt'] == null
+          ? null
+          : DateTime.parse(json['createdAt'] as String),
+      updatedAt: json['updatedAt'] == null
+          ? null
+          : DateTime.parse(json['updatedAt'] as String),
+      v: json['__v'] as int?,
+      token: json['token'] as String?,
+      forgetCode: json['forgetCode'] as dynamic,
+    );
+  }
 
   Map<String, dynamic> toJson() => {
         '_id': id,
@@ -53,6 +58,7 @@ class User extends Equatable {
         'updatedAt': updatedAt?.toIso8601String(),
         '__v': v,
         'token': token,
+        'forgetCode': forgetCode,
       };
 
   @override
@@ -68,6 +74,7 @@ class User extends Equatable {
       updatedAt,
       v,
       token,
+      forgetCode,
     ];
   }
 }

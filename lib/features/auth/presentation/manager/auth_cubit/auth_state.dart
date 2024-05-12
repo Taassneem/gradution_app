@@ -8,7 +8,11 @@ final class AuthInitial extends AuthState {}
 
 final class SignUpLoading extends AuthState {}
 
-final class SignUpSuccess extends AuthState {}
+final class SignUpSuccess extends AuthState {
+  final SignUpModel signUpModel;
+
+  SignUpSuccess({required this.signUpModel});
+}
 
 final class SignUpFailure extends AuthState {
   final String errorMessage;
@@ -16,7 +20,11 @@ final class SignUpFailure extends AuthState {
   SignUpFailure({required this.errorMessage});
 }
 
-final class SignInSuccess extends AuthState {}
+final class SignInSuccess extends AuthState {
+  final SignInModel signInModel;
+
+  SignInSuccess({required this.signInModel});
+}
 
 final class SignInLoading extends AuthState {}
 
@@ -26,16 +34,30 @@ final class SignInFailure extends AuthState {
   SignInFailure({required this.errorMessage});
 }
 
-final class GetUserLoading extends AuthState {}
+final class ForgetPasswordSuccess extends AuthState {
+  final ForgetPasswordModel forgetModel;
 
-final class GetUserSuccess extends AuthState {
-  final UserDataModel user;
-
-  GetUserSuccess({required this.user});
+  ForgetPasswordSuccess({required this.forgetModel});
 }
 
-final class GetUserFailure extends AuthState {
+final class ForgetPasswordLoading extends AuthState {}
+
+final class ForgetPasswordFailure extends AuthState {
   final String errorMessage;
 
-  GetUserFailure({required this.errorMessage});
+  ForgetPasswordFailure({required this.errorMessage});
+}
+
+final class ResetPasswordSuccess extends AuthState {
+  final ResetPasswordModel resetModel;
+
+  ResetPasswordSuccess({required this.resetModel});
+}
+
+final class ResetPasswordLoading extends AuthState {}
+
+final class ResetPasswordFailure extends AuthState {
+  final String errorMessage;
+
+  ResetPasswordFailure({required this.errorMessage});
 }

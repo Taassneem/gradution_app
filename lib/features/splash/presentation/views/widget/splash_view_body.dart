@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
@@ -11,8 +12,7 @@ class SplashViewBody extends StatelessWidget {
       scale: scalingController,
       child: Center(
         child: Container(
-          // height: MediaQuery.sizeOf(context).height * 0.5,
-          width: MediaQuery.sizeOf(context).width,
+          width: MediaQuery.sizeOf(context).width.w,
           decoration: BoxDecoration(
             color: AppColor.purple,
             borderRadius: BorderRadius.circular(200),

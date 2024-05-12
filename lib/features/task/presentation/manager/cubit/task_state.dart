@@ -79,7 +79,11 @@ final class EditTaskFailure extends TaskState {
 
 final class DeleteTaskLoading extends TaskState {}
 
-final class DeleteTaskSuccess extends TaskState {}
+final class DeleteTaskSuccess extends TaskState {
+  final DeleteTaskModel deleteTaskModel;
+
+  const DeleteTaskSuccess({required this.deleteTaskModel});
+}
 
 final class DeleteTaskFailure extends TaskState {
   final String errorMessage;

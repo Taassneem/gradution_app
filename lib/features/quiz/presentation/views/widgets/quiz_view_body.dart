@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
+import 'package:gradution_app/core/utils/widgets/back_icon.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
 import 'quiz_item_field.dart';
@@ -16,6 +17,7 @@ class QuizViewBody extends StatelessWidget {
     return SafeArea(
       child: Column(
         children: [
+          const BackIcon(),
           Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [Image.asset(AppAssets.quiz)]),
@@ -31,6 +33,7 @@ class QuizViewBody extends StatelessWidget {
                 child: Column(
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         QuizItemField(
                             onTap: () {
@@ -52,6 +55,7 @@ class QuizViewBody extends StatelessWidget {
                       ],
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         QuizItemField(
                             onTap: () {

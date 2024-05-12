@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/utils/api_keys.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
@@ -32,22 +33,22 @@ class OnBoardingViewBody extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding:  EdgeInsets.all(20.0.r),
           child: Column(
             children: [
-              SizedBox(height: index != 3 ? 27 : 60),
+              SizedBox(height: index != 3 ? 27.h : 60.h),
               Image.asset(OnBoardingModel.onBoardingView[index].image),
-              const SizedBox(height: 40),
+              SizedBox(height: 40.h),
               Text(OnBoardingModel.onBoardingView[index].title,
                   style: Theme.of(context).textTheme.titleLarge),
-              const SizedBox(height: 24),
+              SizedBox(height: 24.h),
               SizedBox(
-                width: 300,
+                width: 300.w,
                 child: Text(OnBoardingModel.onBoardingView[index].subTitle,
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.titleMedium),
               ),
-              SizedBox(height: index != 3 ? 40 : 70),
+              SizedBox(height: index != 3 ? 40.h : 70.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -66,10 +67,10 @@ class OnBoardingViewBody extends StatelessWidget {
                       )),
                   Container(
                     alignment: Alignment.center,
-                    width: 65,
-                    height: 60,
+                    width: 65.w,
+                    height: 60.h,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(20.w),
                         color: OnBoardingModel.onBoardingView[index].color,
                         boxShadow: [
                           BoxShadow(

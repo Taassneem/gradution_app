@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 
 import 'camera_feature.dart';
@@ -14,7 +15,7 @@ class CameraViewBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Image.asset(AppAssets.robot),
-        SizedBox(height: MediaQuery.sizeOf(context).height * 0.1),
+        SizedBox(height: MediaQuery.sizeOf(context).height * 0.1.h),
         const CameraFeature()
       ],
     );

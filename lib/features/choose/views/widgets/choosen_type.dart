@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
 class ChoosenType extends StatelessWidget {
@@ -30,9 +31,9 @@ class ChoosenType extends StatelessWidget {
                 borderRadius: BorderRadius.circular(100)),
             child: Image.asset(image),
           ),
-          const SizedBox(height: 24),
+          SizedBox(height: 24.h),
           Text(type, style: Theme.of(context).textTheme.titleMedium),
-          const SizedBox(height: 24),
+          SizedBox(height: 24.h),
         ],
       ),
     );

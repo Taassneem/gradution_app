@@ -24,6 +24,7 @@
     "confirmPassword": "تأكيد كلمة المرور",
     "mustBeBoth": "يجب أن تتطابق كلمتا المرور",
     "passwordValidate": "٨+ أحرف، ١ حرف كبير",
+    "emailValidate": "هذاالجزء لا يمكن تخطى",
     "sendVerificationCode": "إرسال رمز التحقق",
     "signUP": "التسجيل",
     "createAcc": "إنشاء حساب",

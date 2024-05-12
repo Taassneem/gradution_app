@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
-import 'package:gradution_app/core/utils/app_color.dart';
+import 'package:gradution_app/core/utils/widgets/custom_shimmer.dart';
 import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
@@ -44,8 +44,15 @@ class CategoriesViewBody extends StatelessWidget {
                     ),
                   );
                 } else {
-                  return const Center(
-                      child: CircularProgressIndicator(color: AppColor.black));
+                  return const Column(
+                    children: [
+                      CustomShimmer(width: 350, height: 90),
+                      CustomShimmer(width: 350, height: 90),
+                      CustomShimmer(width: 350, height: 90),
+                      CustomShimmer(width: 350, height: 90),
+                      CustomShimmer(width: 350, height: 90),
+                    ],
+                  );
                 }
               },
             ),

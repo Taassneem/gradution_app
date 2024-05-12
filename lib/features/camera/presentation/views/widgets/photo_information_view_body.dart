@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/func/is_arabic_func.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/features/camera/presentation/manager/camera_cubit/camera_cubit.dart';
@@ -19,7 +20,7 @@ class PhotoInforamtionViewBody extends StatelessWidget {
     return SafeArea(
       child: Column(
         children: [
-          const SizedBox(height: 5),
+          SizedBox(height: 5.h),
           const ArrowBack(),
           Align(
               alignment: isArabic() ? Alignment.topLeft : Alignment.centerRight,
@@ -35,7 +36,7 @@ class PhotoInforamtionViewBody extends StatelessWidget {
                   path: BlocProvider.of<CameraCubit>(context)
                       .imageFromCamera!
                       .path),
-          const SizedBox(height: 24),
+          SizedBox(height: 24.h),
           Stack(children: [
             const AiContent(),
             Positioned(

@@ -310,6 +310,16 @@ class S {
     );
   }
 
+  /// `Field is required`
+  String get emailValidate {
+    return Intl.message(
+      'Field is required',
+      name: 'emailValidate',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Send Verification Code`
   String get sendVerificationCode {
     return Intl.message(

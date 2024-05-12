@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/func/custom_toast.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
@@ -47,7 +48,7 @@ class UploadPhotoViewBody extends StatelessWidget {
                     ),
                     borderRadius: BorderRadius.circular(20)),
               ),
-        SizedBox(height: MediaQuery.sizeOf(context).height * 0.06),
+        SizedBox(height: MediaQuery.sizeOf(context).height * 0.06.h),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [

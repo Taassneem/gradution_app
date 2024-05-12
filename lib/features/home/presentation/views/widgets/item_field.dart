@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ItemField extends StatelessWidget {
   const ItemField({
@@ -27,7 +28,7 @@ class ItemField extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(image),
-            const SizedBox(height: 16),
+            SizedBox(height: 16.h),
             Text(
               fieldName,
               style: Theme.of(context).textTheme.titleMedium,

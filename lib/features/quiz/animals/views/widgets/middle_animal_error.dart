@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/generated/l10n.dart';
@@ -11,7 +12,7 @@ class MiddleAnimalError extends StatelessWidget {
     return Center(
       child: Card(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0.r),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -26,7 +27,7 @@ class MiddleAnimalError extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleSmall,
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 20.0),
+              SizedBox(height: 20.0.h),
               ElevatedButton(
                 style:
                     ElevatedButton.styleFrom(backgroundColor: AppColor.error),
@@ -34,7 +35,7 @@ class MiddleAnimalError extends StatelessWidget {
                   Navigator.of(context).pop();
                 },
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0.r),
                   child: Text(
                     S.of(context).tryAgain,
                     style: Theme.of(context)

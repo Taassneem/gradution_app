@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
@@ -14,7 +15,7 @@ class ProfileViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: MediaQuery.sizeOf(context).height * 0.045),
+        SizedBox(height: MediaQuery.sizeOf(context).height * 0.045.h),
         Stack(
           clipBehavior: Clip.none,
           children: [
@@ -23,7 +24,7 @@ class ProfileViewBody extends StatelessWidget {
               width: MediaQuery.sizeOf(context).width,
               color: AppColor.purple,
               child: Padding(
-                padding: const EdgeInsets.all(24.0),
+                padding: EdgeInsets.all(24.0.r),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -56,7 +57,7 @@ class ProfileViewBody extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(height: MediaQuery.sizeOf(context).height * 0.025),
+        SizedBox(height: MediaQuery.sizeOf(context).height * 0.025.h),
         const ProfileViewInformations(),
         const CustomLogOut()
       ],

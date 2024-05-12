@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/database/cache/cache_helper.dart';
 import 'package:gradution_app/core/func/custom_toast.dart';
@@ -43,35 +44,37 @@ class SignUpForm extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const SizedBox(height: 30),
-                        // const CustomFullName(),
+                        SizedBox(height: 30.h),
                         TextWithTextField(
                           textFieldName: s.fullName,
                           hintText: s.nameHelpText,
                           controller: authCubit.signUpName,
                           icon: Icons.person_outline,
                         ),
-                        const SizedBox(height: 16),
+                        SizedBox(height: 16.h),
                         TextWithTextField(
                             textFieldName: s.mail,
                             hintText: s.mailHelpText,
                             controller: authCubit.signUpEmail,
                             icon: Icons.mail_outline),
-                        const SizedBox(height: 16),
+                        SizedBox(height: 16.h),
                         TextWithTextField(
                           textFieldName: s.password,
                           hintText: s.passwordValidate,
                           controller: authCubit.signUpPassword,
                           obscureText: true,
+                          isPassword: true,
                         ),
-                        const SizedBox(height: 16),
+                        SizedBox(height: 16.h),
                         TextWithTextField(
                           textFieldName: s.confirmPassword,
                           hintText: s.mustBeBoth,
                           controller: authCubit.confirmPassword,
                           obscureText: true,
+                          finalField: true,
+                          isPassword: true,
                         ),
-                        const SizedBox(height: 20),
+                        SizedBox(height: 20.h),
                         state is SignUpLoading
                             ? const Center(child: CircularProgressIndicator())
                             : CustomElevatedButton(

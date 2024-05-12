@@ -40,7 +40,7 @@ class TaskCustomDialog extends StatelessWidget {
                   ),
                   onTap: () {
                     BlocProvider.of<TaskCubit>(context).deleteTask();
-                    BlocProvider.of<TaskCubit>(context).fetchTasks();
+                    // BlocProvider.of<TaskCubit>(context).fetchTasks();
                     Navigator.pop(context);
                   },
                   title: Text(

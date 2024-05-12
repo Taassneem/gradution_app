@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/global_cubit/global_cubit.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/core/utils/servive_locator.dart';
@@ -35,18 +36,21 @@ class MyApp extends StatelessWidget {
       ],
       child: BlocBuilder<GlobalCubit, GlobalState>(
         builder: (context, state) {
-          return MaterialApp.router(
-            locale: Locale(BlocProvider.of<GlobalCubit>(context).langCode),
-            localizationsDelegates: const [
-              S.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            supportedLocales: S.delegate.supportedLocales,
-            theme: getThemeData(),
-            routerConfig: AppRouter.router,
-            debugShowCheckedModeBanner: false,
+          return ScreenUtilInit(
+            designSize: const Size(375, 812),
+            builder: (context, child) => MaterialApp.router(
+              locale: Locale(BlocProvider.of<GlobalCubit>(context).langCode),
+              localizationsDelegates: const [
+                S.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              supportedLocales: S.delegate.supportedLocales,
+              theme: getThemeData(),
+              routerConfig: AppRouter.router,
+              debugShowCheckedModeBanner: false,
+            ),
           );
         },
       ),

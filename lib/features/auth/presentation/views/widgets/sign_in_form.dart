@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/database/cache/cache_helper.dart';
 import 'package:gradution_app/core/func/custom_toast.dart';
@@ -44,26 +45,28 @@ class SignInForm extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const SizedBox(height: 30),
+                        SizedBox(height: 30.h),
                         TextWithTextField(
                             textFieldName: s.mail,
                             hintText: s.mailHelpText,
                             controller: authCubit.signInEmail,
                             icon: Icons.mail_outline),
-                        const SizedBox(height: 24),
+                        SizedBox(height: 24.h),
                         TextWithTextField(
                           textFieldName: s.password,
                           hintText: s.passwordHelpText,
                           controller: authCubit.signInPassword,
                           obscureText: true,
+                          finalField: true,
+                          isPassword: true,
                         ),
                         CustomTextButton(
                             text: S.of(context).forgetPassQ,
                             onPressed: () {
                               GoRouter.of(context)
-                                  .push(AppRouter.forgetPassView);
+                                  .pushReplacement(AppRouter.forgetPassView);
                             }),
-                        const SizedBox(height: 32),
+                        SizedBox(height: 32.h),
                         CustomElevatedButton(
                             text: s.login,
                             onPressed: () {

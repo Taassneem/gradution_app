@@ -7,7 +7,7 @@ showToast(String msg, {bool task = false}) {
       toastLength: Toast.LENGTH_LONG,
       gravity: ToastGravity.CENTER,
       timeInSecForIosWeb: 1,
-      backgroundColor: task ? AppColor.screenColor : AppColor.purple,
+      backgroundColor: task ? AppColor.pink : AppColor.purple,
       textColor: AppColor.black,
       fontSize: 16.0);
 }

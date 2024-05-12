@@ -38,7 +38,6 @@ class CalenderViewBody extends StatelessWidget {
                 children: [
                   TodayNumber(today: today, dayName: dayName),
                   const TasksListView(),
-                  // const ComingSoonWidget(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [

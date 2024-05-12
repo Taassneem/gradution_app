@@ -25,6 +25,7 @@
     "confirmPassword": "Confirm Password",
     "mustBeBoth": "Both password must match",
     "passwordValidate": "8+cahracters,1capital letter",
+    "emailValidate": "Field is required",
     "sendVerificationCode": "Send Verification Code",
     "signUP": "Sign UP",
     "forgetPassQ": "Forget password ?",

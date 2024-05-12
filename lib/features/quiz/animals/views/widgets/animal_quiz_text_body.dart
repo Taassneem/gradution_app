@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
@@ -27,7 +28,7 @@ class AnimalQuizTextViewBody extends StatelessWidget {
               image: AssetImage(AppAssets.animalQuiz), fit: BoxFit.fill)),
       child: Column(
         children: [
-          SizedBox(height: MediaQuery.sizeOf(context).height * 0.35),
+          SizedBox(height: MediaQuery.sizeOf(context).height * 0.35.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -54,7 +55,7 @@ class AnimalQuizTextViewBody extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: MediaQuery.sizeOf(context).height * 0.04),
+          SizedBox(height: MediaQuery.sizeOf(context).height * 0.04.h),
           Image.asset(question)
         ],
       ),

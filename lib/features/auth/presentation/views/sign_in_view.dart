@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/generated/l10n.dart';
 import 'widgets/custom_welcome_text.dart';
@@ -19,11 +20,11 @@ class SignInView extends StatelessWidget {
                   alignment: Alignment.topCenter)),
           child: SafeArea(
             child: Column(children: [
-              const SizedBox(height: 64),
+              SizedBox(height: 64.h),
               CustomWelcomeText(
                   welcome: S.of(context).signInWelcome,
                   welcomeSubTitle: S.of(context).signInSubTitle),
-              const SizedBox(height: 40),
+              SizedBox(height: 40.h),
               const SignInForm()
             ]),
           ),

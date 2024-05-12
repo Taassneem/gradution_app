@@ -1,12 +1,9 @@
 class EndPoint {
-  static const String baseUrl = 'https://autistic-children-git-main-autistic-childrens-projects.vercel.app/';
+  static const String baseUrl = 'https://6b27-197-53-100-101.ngrok-free.app/';
   static const String signUp = 'auth/';
   static const String login = 'auth/login';
-  static const String reset = 'auth/forget';
-  static const String forget = 'auth/reset';
-  static String getUser(id) {
-    return 'user/getuserById/$id';
-  }
+  static const String forget = 'auth/forget';
+  static const String reset = 'auth/reset';
 
   static const String categories = 'blog/getTodos';
   static const String addTask = 'blog/add';
@@ -32,11 +29,13 @@ class ApiKey {
   static const String userName = 'userName';
   static const String email = 'email';
   static const String password = 'password';
-  static const String loginId = '_id';
-  static const String loginToken = '_id';
-  static const String taskId = 'token';
+  static const String loginId = 'loginId';
+  static const String loginToken = 'token';
+  static const String forgetCode = 'forgetCode';
+  static const String newPassword = 'newPassword';
   static const String authorization = 'Authorization';
   static const String confirmPassword = 'confirmPassword';
+  static const String confirmPasswordReset = 'confirmpassword';
   static const String title = 'title';
   static const String image = 'image';
   static const String selectedActivity = 'selectedActivity';
@@ -45,6 +44,7 @@ class ApiKey {
   static const String repeater = 'repeater';
   static const String date = 'date';
   static const String time = 'time';
+  static const String taskId = 'taskId';
   static const String imageAi = 'image_data';
 }
 

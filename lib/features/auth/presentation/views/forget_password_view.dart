@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gradution_app/features/auth/presentation/manager/auth_cubit/auth_cubit.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gradution_app/core/utils/widgets/back_icon.dart';
 import 'package:gradution_app/generated/l10n.dart';
 import '../../../../core/utils/app_assets.dart';
-import '../../../../core/utils/app_color.dart';
 import 'widgets/custom_welcome_text.dart';
 import 'widgets/forget_pass_form.dart';
 
@@ -13,31 +12,28 @@ class ForgetPasswordView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: AppColor.purple,
-        ),
-        body: BlocConsumer<AuthCubit, AuthState>(
-          listener: (context, state) {},
-          builder: (context, state) {
-            return CustomScrollView(slivers: <Widget>[
-              SliverToBoxAdapter(
-                  child: Container(
-                      alignment: Alignment.center,
-                      decoration: const BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage(AppAssets.forgetBack),
-                              fit: BoxFit.fitWidth,
-                              alignment: Alignment.topCenter)),
-                      child: Column(children: [
-                        const SizedBox(height: 40),
-                        CustomWelcomeText(
-                            welcome: S.of(context).forgetPass,
-                            welcomeSubTitle: S.of(context).forgetPassSubTitle),
-                        const SizedBox(height: 40),
-                        const ForgetPasswordForm()
-                      ])))
-            ]);
-          },
-        ));
+        body: SafeArea(
+      child: CustomScrollView(slivers: <Widget>[
+        SliverToBoxAdapter(
+            child: Container(
+                alignment: Alignment.center,
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(AppAssets.forgetBack),
+                        fit: BoxFit.fitWidth,
+                        alignment: Alignment.topCenter)),
+                child: Column(
+                  children: [
+                    const BackIcon(),
+                    SizedBox(height: 40.h),
+                    CustomWelcomeText(
+                        welcome: S.of(context).forgetPass,
+                        welcomeSubTitle: S.of(context).forgetPassSubTitle),
+                    SizedBox(height: 40.h),
+                    const ForgetPasswordForm()
+                  ],
+                )))
+      ]),
+    ));
   }
 }

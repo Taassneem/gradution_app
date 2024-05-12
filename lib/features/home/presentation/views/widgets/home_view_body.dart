@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
@@ -15,7 +16,7 @@ class HomeViewBody extends StatelessWidget {
     return SafeArea(
         child: Column(
       children: [
-        const SizedBox(height: 16),
+        SizedBox(height: 16.h),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -42,7 +43,7 @@ class HomeViewBody extends StatelessWidget {
                     fieldName: S.of(context).camera,
                     image: AppAssets.robotWithCamera,
                   ),
-                  const SizedBox(width: 20),
+                  SizedBox(width: 20.w),
                   Column(
                     children: [
                       ItemField(
@@ -54,7 +55,7 @@ class HomeViewBody extends StatelessWidget {
                         image: AppAssets.quiz,
                         height: 170,
                       ),
-                      const SizedBox(height: 16),
+                      SizedBox(height: 16.h),
                       ItemField(
                         onTap: () {
                           GoRouter.of(context).push(AppRouter.taskView);

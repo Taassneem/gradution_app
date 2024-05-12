@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/features/quiz/animals/views/widgets/animal_image_answer.dart';
 
@@ -28,11 +29,11 @@ class AnimalQuizImageViewBody extends StatelessWidget {
         padding: const EdgeInsets.all(18.0),
         child: Column(
           children: [
-            SizedBox(height: MediaQuery.sizeOf(context).height * 0.45),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.45.h),
             AnimalQuestion(
               question: question,
             ),
-            SizedBox(height: MediaQuery.sizeOf(context).height * 0.03),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.03.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

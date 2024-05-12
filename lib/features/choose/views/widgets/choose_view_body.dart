@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
@@ -18,14 +19,14 @@ class ChooseViewBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: MediaQuery.sizeOf(context).height * 0.1),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.1.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Column(
                   children: [
                     Text(S.of(context).choose, style: text.titleMedium),
-                    const SizedBox(height: 24),
+                    SizedBox(height: 24.h),
                     ChoosenType(
                       image: AppAssets.child,
                       type: S.of(context).child,

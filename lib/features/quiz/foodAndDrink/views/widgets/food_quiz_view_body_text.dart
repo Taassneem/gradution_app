@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
@@ -32,16 +33,16 @@ class FoodQuizViewTextBody extends StatelessWidget {
           image: DecorationImage(image: AssetImage(AppAssets.quizBackground))),
       child: Column(
         children: [
-          const SizedBox(height: 120),
+          SizedBox(height: 120.h),
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(16.0.r),
             child: Stack(clipBehavior: Clip.none, children: [
               Container(
                 width: MediaQuery.sizeOf(context).width,
-                padding: const EdgeInsets.all(16),
+                padding: EdgeInsets.all(16.r),
                 decoration: BoxDecoration(
                     color: AppColor.babyBlue,
-                    borderRadius: BorderRadius.circular(30)),
+                    borderRadius: BorderRadius.circular(30.w)),
                 child: Column(
                   children: [
                     Row(
@@ -51,7 +52,7 @@ class FoodQuizViewTextBody extends StatelessWidget {
                         TextAnswer(answer: answerTwo, onTap: onTapTwo),
                       ],
                     ),
-                    const SizedBox(height: 30),
+                    SizedBox(height: 30.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -63,19 +64,21 @@ class FoodQuizViewTextBody extends StatelessWidget {
                 ),
               ),
               Positioned(
-                  top: -65,
-                  left: 120,
+                  top: -65.h,
+                  left: 120.w,
                   child: Container(
-                    width: 120,
+                    width: 120.w,
                     decoration: BoxDecoration(
                       color: AppColor.white,
-                      borderRadius: BorderRadius.circular(100),
-                      border: const Border(
-                          top: BorderSide(color: AppColor.babyBlue, width: 2),
-                          left: BorderSide(color: AppColor.babyBlue, width: 2),
-                          right: BorderSide(color: AppColor.babyBlue, width: 2),
+                      borderRadius: BorderRadius.circular(100.r),
+                      border: Border(
+                          top: BorderSide(color: AppColor.babyBlue, width: 2.w),
+                          left:
+                              BorderSide(color: AppColor.babyBlue, width: 2.w),
+                          right:
+                              BorderSide(color: AppColor.babyBlue, width: 2.w),
                           bottom:
-                              BorderSide(color: AppColor.babyBlue, width: 2)),
+                              BorderSide(color: AppColor.babyBlue, width: 2.w)),
                     ),
                     child: Image.asset(question),
                   ))

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
+import 'package:gradution_app/generated/l10n.dart';
 
 class CustomTextFormField extends StatefulWidget {
   const CustomTextFormField({
@@ -9,12 +10,17 @@ class CustomTextFormField extends StatefulWidget {
     this.obscureText = false,
     this.controller,
     this.userProfile = false,
+    this.finalField = false,
+    this.isPassword = false,
   });
   final String hintText;
   final IconData? icon;
   final bool obscureText;
   final TextEditingController? controller;
   final bool userProfile;
+  final bool finalField;
+  final bool isPassword;
+
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
 }
@@ -28,10 +34,14 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       obscureText: (widget.obscureText && obscureText),
       validator: (value) {
         if (value!.isEmpty) {
-          return 'Field is required';
+          widget.isPassword
+              ? S.of(context).passwordValidate
+              : S.of(context).emailValidate;
         }
         return null;
       },
+      textInputAction:
+          widget.finalField ? TextInputAction.done : TextInputAction.next,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       cursorColor: AppColor.lightGrey,
       decoration: InputDecoration(

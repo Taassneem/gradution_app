@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/features/auth/presentation/views/widgets/custom_elevated_button.dart';
 import 'package:gradution_app/features/auth/presentation/views/widgets/text_with_text_field.dart';
 import 'package:gradution_app/generated/l10n.dart';
@@ -24,17 +25,17 @@ class UserProfileViewBody extends StatelessWidget {
             hintText: 'Name',
             userProfile: true,
           ),
-          const SizedBox(height: 24),
+          SizedBox(height: 24.h),
           TextWithTextField(
             textFieldName: S.of(context).email,
             hintText: 'email',
             userProfile: true,
           ),
-          const SizedBox(height: 24),
+          SizedBox(height: 24.h),
           const ChangePasswordButton(),
-          const SizedBox(height: 24),
+          SizedBox(height: 24.h),
           const DeleteAccountButton(),
-          const SizedBox(height: 24),
+          SizedBox(height: 24.h),
           CustomElevatedButton(
             text: S.of(context).saveChanges,
             onPressed: () {},

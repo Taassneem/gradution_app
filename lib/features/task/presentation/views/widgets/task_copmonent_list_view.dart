@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
@@ -53,9 +54,19 @@ class TaskListViewComponent extends StatelessWidget {
                       color: AppColor.pink,
                       borderRadius: BorderRadius.circular(10)),
                   child: ListTile(
-                    leading: Image.network(taskModel.image!.url!),
+                    leading: AspectRatio(
+                      aspectRatio: 2,
+                      child: CachedNetworkImage(
+                        imageUrl: taskModel.image!.url!,
+                        placeholder: (context, url) => const Center(
+                            child: CircularProgressIndicator(
+                                color: AppColor.black)),
+                        errorWidget: (context, url, error) =>
+                            const Icon(Icons.error),
+                      ),
+                    ),
                     title: Text(
-                      taskModel.selectedActivity!,
+                      taskModel.title!,
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
                   ),

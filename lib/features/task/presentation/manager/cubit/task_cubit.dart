@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_app/features/task/data/models/category_model/category_model.dart';
 import 'package:gradution_app/features/task/data/models/add_task_model/add_task_model.dart';
+import 'package:gradution_app/features/task/data/models/delete_task_model.dart';
 import 'package:gradution_app/features/task/data/models/task_model/task_model.dart';
 import 'package:gradution_app/features/task/data/repo/task_repo.dart';
 import 'package:image_picker/image_picker.dart';
@@ -69,7 +70,7 @@ class TaskCubit extends Cubit<TaskState> {
     result.fold(
         (failure) =>
             emit(DeleteTaskFailure(errorMessage: failure.failure.errorMessage)),
-        (delete) => emit(DeleteTaskSuccess()));
+        (delete) => emit(DeleteTaskSuccess(deleteTaskModel: delete)));
   }
 
   DateTime today = DateTime.now();

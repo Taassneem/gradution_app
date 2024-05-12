@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gradution_app/features/auth/data/models/forget_password_model.dart';
+import 'package:gradution_app/features/auth/data/models/reset_password_model/reset_password_model.dart';
 import 'package:gradution_app/features/auth/data/models/sign_in_model/sign_in_model.dart';
 import 'package:gradution_app/features/auth/data/models/sign_up_model/sign_up_model.dart';
-import 'package:gradution_app/features/auth/data/models/user_data_model/user_data_model.dart';
 import 'package:gradution_app/features/auth/data/repo/auth_repo.dart';
 
 part 'auth_state.dart';
@@ -16,15 +17,20 @@ class AuthCubit extends Cubit<AuthState> {
   GlobalKey<FormState> newPassKey = GlobalKey();
 
   TextEditingController signUpName = TextEditingController();
-  TextEditingController signUpPhoneNumber = TextEditingController();
   TextEditingController signUpEmail = TextEditingController();
   TextEditingController signUpPassword = TextEditingController();
   TextEditingController confirmPassword = TextEditingController();
   TextEditingController signInEmail = TextEditingController();
   TextEditingController signInPassword = TextEditingController();
+  TextEditingController forgetEmail = TextEditingController();
+  TextEditingController resetEmail = TextEditingController();
+  TextEditingController forgetCode = TextEditingController();
+  TextEditingController resetNewPassword = TextEditingController();
+  TextEditingController resetConfirmPassword = TextEditingController();
+
   SignUpModel? register;
   SignInModel? user;
-  UserDataModel? data;
+
   signUp() async {
     emit(SignUpLoading());
     var result = await getAuthRepo.signUp(
@@ -35,7 +41,7 @@ class AuthCubit extends Cubit<AuthState> {
     result.fold(
         (failure) =>
             emit(SignUpFailure(errorMessage: failure.failure.errorMessage)),
-        (signUpRespone) => emit(SignUpSuccess()));
+        (signUpRespone) => emit(SignUpSuccess(signUpModel: signUpRespone)));
   }
 
   signIn() async {
@@ -45,23 +51,29 @@ class AuthCubit extends Cubit<AuthState> {
     result.fold(
         (failure) =>
             emit(SignInFailure(errorMessage: failure.failure.errorMessage)),
-        (signInResponse) => emit(SignInSuccess()));
+        (signInResponse) => emit(SignInSuccess(signInModel: signInResponse)));
   }
 
-  // getUserData() async {
-  //   try {
-  //     emit(GetUserLoading());
-  //     final response = await api.get(
-  //         EndPoint.confirm(
-  //             getIt.get<CacheHelper>().getData(key: ApiKey.loginToken)),
-  //         data: {
-  //           ApiKey.email: signInEmail.text,
-  //           ApiKey.password: signInPassword.text
-  //         });
-  //     data = UserDataModel.fromJson(response);
-  //     emit(GetUserSuccess(user: data!));
-  //   } on ServerFailure catch (e) {
-  //     emit(GetUserFailure(errorMessage: e.failure.errorMessage));
-  //   }
-  // }
+  forgetPassword() async {
+    emit(ForgetPasswordLoading());
+    var result = await getAuthRepo.forgetPassword(email: forgetEmail.text);
+    result.fold(
+        (failure) => emit(
+            ForgetPasswordFailure(errorMessage: failure.failure.errorMessage)),
+        (forgetPassword) =>
+            emit(ForgetPasswordSuccess(forgetModel: forgetPassword)));
+  }
+
+  resetPassword() async {
+    emit(ResetPasswordLoading());
+    var result = await getAuthRepo.resetPassword(
+        forgetCode: forgetCode.text,
+        newPassword: resetNewPassword.text,
+        confirmPassword: resetConfirmPassword.text);
+    result.fold(
+        (failure) => emit(
+            ResetPasswordFailure(errorMessage: failure.failure.errorMessage)),
+        (resetPasswordResopnse) =>
+            emit(ResetPasswordSuccess(resetModel: resetPasswordResopnse)));
+  }
 }

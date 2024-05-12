@@ -90,6 +90,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "eggplant": MessageLookupByLibrary.simpleMessage("الباذنجان"),
         "elephant": MessageLookupByLibrary.simpleMessage("الفيل"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+        "emailValidate":
+            MessageLookupByLibrary.simpleMessage("هذاالجزء لا يمكن تخطى"),
         "emu": MessageLookupByLibrary.simpleMessage("الإيمو"),
         "errorMessage": MessageLookupByLibrary.simpleMessage(
             "الإجابة خاطئة، يرجى المحاولة مرة أخرى"),

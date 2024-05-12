@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
 class CustomProfileFeature extends StatelessWidget {
@@ -19,7 +20,7 @@ class CustomProfileFeature extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(featureName, style: Theme.of(context).textTheme.titleMedium),
-        const SizedBox(height: 8),
+        SizedBox(height: 8.h),
         Container(
           decoration: BoxDecoration(
               color: AppColor.white,
@@ -32,7 +33,7 @@ class CustomProfileFeature extends StatelessWidget {
             trailing: trailing,
           ),
         ),
-        const SizedBox(height: 24),
+        SizedBox(height: 24.h),
       ],
     );
   }
