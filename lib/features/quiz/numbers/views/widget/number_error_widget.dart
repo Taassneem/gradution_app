@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/generated/l10n.dart';
@@ -10,7 +11,7 @@ class NumberErrorWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        width: MediaQuery.sizeOf(context).width * 0.82,
+        width: MediaQuery.sizeOf(context).width * 0.82.w,
         decoration: BoxDecoration(
             color: AppColor.white, borderRadius: BorderRadius.circular(10)),
         child: Column(
@@ -19,13 +20,13 @@ class NumberErrorWidget extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                   color: AppColor.error,
-                  borderRadius: BorderRadius.circular(10)),
-              height: 200,
-              width: MediaQuery.sizeOf(context).width,
+                  borderRadius: BorderRadius.circular(10.w)),
+              height: 200.h,
+              width: MediaQuery.sizeOf(context).width.w,
               child: Image.asset(AppAssets.numberError),
             ),
             Padding(
-              padding: const EdgeInsets.all(18.0),
+              padding: EdgeInsets.all(18.0.r),
               child: Column(
                 children: [
                   Text(
@@ -34,18 +35,18 @@ class NumberErrorWidget extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(
-                    width: 250,
+                    width: 250.w,
                     child: Text(
                       S.of(context).errorMessage,
                       style: Theme.of(context).textTheme.titleSmall,
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  const SizedBox(height: 20.0),
+                  SizedBox(height: 20.0.h),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         backgroundColor: AppColor.error,
-                        fixedSize: const Size.fromWidth(150)),
+                        fixedSize: Size.fromWidth(150.w)),
                     onPressed: () {
                       Navigator.of(context).pop();
                     },

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/features/quiz/numbers/views/widget/hexagon_shape.dart';
 
 import 'name_speaker.dart';
@@ -41,15 +42,13 @@ class NumberQuizHexagonShape extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(18.0),
+      padding: EdgeInsets.all(18.0.r),
       child: Column(
         children: [
           NameSpeaker(isWhite: true, onPressed: () {}),
-          const SizedBox(height: 32),
-          NumberQuestionCircular(
-            question: question,
-          ),
-          SizedBox(height: MediaQuery.sizeOf(context).height * 0.08),
+          SizedBox(height: 32.h),
+          NumberQuestionCircular(question: question),
+          SizedBox(height: MediaQuery.sizeOf(context).height * 0.08.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -69,7 +68,10 @@ class NumberQuizHexagonShape extends StatelessWidget {
             ],
           ),
           HexagonShape(
-              number: numberSix, isOneNumber: isOneNumberSix, onTap: onTapSix)
+            number: numberSix,
+            isOneNumber: isOneNumberSix,
+            onTap: onTapSix,
+          )
         ],
       ),
     );

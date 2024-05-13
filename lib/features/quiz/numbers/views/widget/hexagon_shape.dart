@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'dart:math' as math;
 
 import 'package:gradution_app/core/utils/app_color.dart';
@@ -24,14 +25,14 @@ class HexagonShape extends StatelessWidget {
           ClipPath(
             clipper: HexagonClipper(),
             child: Container(
-              width: 100,
-              height: 100,
+              width: 100.w,
+              height: 100.h,
               color: isColored ? AppColor.babyBlue : AppColor.white,
             ),
           ),
           Positioned(
-            top: 24,
-            right: isOneNumber ? 38 : 28,
+            top: 24.h,
+            right: isOneNumber ? 38.w : 28.w,
             child:
                 Text(number, style: Theme.of(context).textTheme.headlineMedium),
           )
@@ -44,9 +45,9 @@ class HexagonShape extends StatelessWidget {
 class HexagonClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
-    final double radius = size.width / 2;
-    final double centerX = size.width / 2;
-    final double centerY = size.height / 2;
+    final double radius = size.width / 2.w;
+    final double centerX = size.width / 2.w;
+    final double centerY = size.height / 2.w;
 
     final Path path = Path();
 

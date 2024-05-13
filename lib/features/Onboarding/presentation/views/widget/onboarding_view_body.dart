@@ -33,7 +33,7 @@ class OnBoardingViewBody extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding:  EdgeInsets.all(20.0.r),
+          padding: EdgeInsets.all(20.0.r),
           child: Column(
             children: [
               SizedBox(height: index != 3 ? 27.h : 60.h),

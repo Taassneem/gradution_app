@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
 class IconMethod extends StatelessWidget {
@@ -16,13 +17,13 @@ class IconMethod extends StatelessWidget {
     return GestureDetector(
         onTap: onTap,
         child: Container(
-          height: 50,
-          width: MediaQuery.sizeOf(context).width * 0.395,
+          height: 50.h,
+          width: MediaQuery.sizeOf(context).width * 0.395.w,
           decoration: BoxDecoration(
             color: AppColor.purple,
             borderRadius: rightIcon == true
-                ? const BorderRadius.only(bottomRight: Radius.circular(30))
-                : const BorderRadius.only(bottomLeft: Radius.circular(30)),
+                ? BorderRadius.only(bottomRight: Radius.circular(30.w))
+                : BorderRadius.only(bottomLeft: Radius.circular(30.w)),
           ),
           child: Icon(icon),
         ));

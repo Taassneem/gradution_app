@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/func/custom_show_dialog.dart';
@@ -24,13 +25,13 @@ class NumberQuizNineViewBody extends StatelessWidget {
           image: DecorationImage(
               image: AssetImage(AppAssets.monkeies), fit: BoxFit.fill)),
       child: Padding(
-        padding: const EdgeInsets.all(18.0),
+        padding: EdgeInsets.all(18.0.r),
         child: Column(
           children: [
             NameSpeaker(onPressed: () {}),
-            SizedBox(height: MediaQuery.sizeOf(context).height * 0.15),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.15.h),
             NumberQuestion(question: S.of(context).howManyAnimalsInPicture),
-            SizedBox(height: MediaQuery.sizeOf(context).height * 0.05),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.05.h),
             ImageAnswerNumber(
                 number: AppAssets.five,
                 onTap: () {

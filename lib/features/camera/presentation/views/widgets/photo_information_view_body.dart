@@ -8,7 +8,6 @@ import 'package:gradution_app/features/camera/presentation/manager/camera_cubit/
 import 'ai_content.dart';
 import 'arrow_back.dart';
 import 'empty_image.dart';
-import 'icon_method.dart';
 import 'image_for_ai.dart';
 
 class PhotoInforamtionViewBody extends StatelessWidget {
@@ -37,27 +36,7 @@ class PhotoInforamtionViewBody extends StatelessWidget {
                       .imageFromCamera!
                       .path),
           SizedBox(height: 24.h),
-          Stack(children: [
-            const AiContent(),
-            Positioned(
-              bottom: 2,
-              right: 1,
-              left: 1,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconMethod(
-                    icon: Icons.volume_off,
-                    rightIcon: isArabic() ? true : false,
-                  ),
-                  IconMethod(
-                    icon: Icons.translate,
-                    rightIcon: isArabic() ? false : true,
-                  ),
-                ],
-              ),
-            )
-          ]),
+          AiContent(),
         ],
       ),
     );

@@ -26,6 +26,7 @@ class TaskCubit extends Cubit<TaskState> {
   DateTime? time;
 
   Future<void> fetchCategories() async {
+    emit(CategoriesLoading());
     var result = await taskRepo.fetchCategories();
     result.fold(
         (failure) =>
@@ -34,6 +35,7 @@ class TaskCubit extends Cubit<TaskState> {
   }
 
   Future<void> addTask() async {
+    emit(AddTaskLoading());
     var result = await taskRepo.addTask(
         categoryTitle: categoryTitle,
         days: days ?? [''],
@@ -50,6 +52,7 @@ class TaskCubit extends Cubit<TaskState> {
   }
 
   Future<void> fetchTasks() async {
+    emit(FetchTasksLoading());
     var result = await taskRepo.fetchTasks();
     result.fold(
         (failure) =>
@@ -58,6 +61,7 @@ class TaskCubit extends Cubit<TaskState> {
   }
 
   Future<void> editTask() async {
+    emit(EditTaskLoading());
     var result = await taskRepo.editTask();
     result.fold(
         (failure) =>
@@ -66,6 +70,7 @@ class TaskCubit extends Cubit<TaskState> {
   }
 
   Future<void> deleteTask() async {
+    emit(DeleteTaskLoading());
     var result = await taskRepo.deleteTask();
     result.fold(
         (failure) =>

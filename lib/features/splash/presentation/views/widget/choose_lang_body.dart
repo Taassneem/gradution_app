@@ -47,7 +47,7 @@ class ChoosLanguageBody extends StatelessWidget {
                         style: Theme.of(context).textTheme.titleSmall,
                       )
                     ]),
-                     SizedBox(height: 8.h),
+                    SizedBox(height: 8.h),
                     CheckboxListTile(
                         contentPadding: const EdgeInsets.all(0),
                         title: Text(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
@@ -33,7 +34,7 @@ class CalenderViewBody extends StatelessWidget {
             width: MediaQuery.sizeOf(context).width,
             decoration: const BoxDecoration(color: AppColor.screenColor),
             child: Padding(
-              padding: const EdgeInsets.all(18.0),
+              padding: EdgeInsets.all(18.0.r),
               child: Column(
                 children: [
                   TodayNumber(today: today, dayName: dayName),

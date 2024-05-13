@@ -33,9 +33,10 @@ class NewPasswordViewBody extends StatelessWidget {
         return Container(
             width: 330,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50.w), color: AppColor.white),
+                borderRadius: BorderRadius.circular(50.w),
+                color: AppColor.white),
             child: Padding(
-                padding:  EdgeInsets.all(16.0.r),
+                padding: EdgeInsets.all(16.0.r),
                 child: Form(
                   key: authCubit.newPassKey,
                   child: Column(

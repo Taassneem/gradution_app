@@ -1,5 +1,5 @@
 class EndPoint {
-  static const String baseUrl = 'https://6b27-197-53-100-101.ngrok-free.app/';
+  static const String baseUrl = 'https://autistic-children.vercel.app/';
   static const String signUp = 'auth/';
   static const String login = 'auth/login';
   static const String forget = 'auth/forget';
@@ -17,6 +17,31 @@ class EndPoint {
 
   static String deteleTask(id) {
     return 'blog/deleteBlog/$id';
+  }
+
+  static String changePassword(id) {
+    return 'user/changePassword/$id';
+  }
+
+  static const String logOut = 'user/logout';
+  static String editProfile(id) {
+    return 'user/editProfile/$id';
+  }
+
+  static String editProfilePic(id) {
+    return 'user/updateprofilepic/$id';
+  }
+
+  static String uploadProfilepic(id) {
+    return 'user/profilepic/$id';
+  }
+
+  static String deleteUser(id) {
+    return 'user/deleteUser/$id';
+  }
+
+  static String getuserById(id) {
+    return 'user/getuserById/$id';
   }
 
   static const String modelAi = '/predict';

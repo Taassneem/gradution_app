@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
@@ -18,19 +19,19 @@ class NumberQuizFiveNiewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     S s = S.of(context);
     return Padding(
-      padding: const EdgeInsets.all(22.0),
+      padding: EdgeInsets.all(22.0.r),
       child: Column(
         children: [
           NameSpeaker(onPressed: () {}),
-          const SizedBox(height: 32),
+          SizedBox(height: 32.h),
           Text(s.nameOfNumber, style: Theme.of(context).textTheme.titleMedium),
-          const SizedBox(height: 18),
+          SizedBox(height: 18.h),
           CircleAvatar(
             radius: 60,
             backgroundColor: AppColor.babyBlue,
             child: Image.asset(AppAssets.five),
           ),
-          SizedBox(height: MediaQuery.sizeOf(context).height * 0.08),
+          SizedBox(height: MediaQuery.sizeOf(context).height * 0.08.h),
           Row(
             children: [
               TextAnswerNumber(

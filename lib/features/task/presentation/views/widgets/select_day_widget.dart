@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/generated/l10n.dart';
@@ -15,7 +16,7 @@ class SelectDayWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        width: MediaQuery.sizeOf(context).width * 0.9,
+        width: MediaQuery.sizeOf(context).width * 0.9.w,
         child: Card(
           color: AppColor.pink,
           child: Padding(
@@ -29,7 +30,7 @@ class SelectDayWidget extends StatelessWidget {
                   trailing: Image.asset(AppAssets.calendarClock),
                 ),
                 const DaysListView(),
-                const SizedBox(height: 24),
+                SizedBox(height: 24.h),
                 CustomOkElevatedButton(onPressed: () {
                   Navigator.pop(context);
                 })

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/func/custom_show_dialog.dart';
@@ -21,7 +22,7 @@ class NumberQuizFourViewBody extends StatelessWidget {
     return Column(
       children: [
         NameSpeaker(onPressed: () {}),
-        SizedBox(height: MediaQuery.sizeOf(context).height * 0.08),
+        SizedBox(height: MediaQuery.sizeOf(context).height * 0.08.h),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -72,38 +73,38 @@ class NumberQuizFourViewBody extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(height: MediaQuery.sizeOf(context).height * 0.05),
+        SizedBox(height: MediaQuery.sizeOf(context).height * 0.05.h),
         Text(
           S.of(context).howManyAnimalsInPicture,
           style: Theme.of(context).textTheme.titleMedium,
         ),
-        SizedBox(height: MediaQuery.sizeOf(context).height * 0.05),
+        SizedBox(height: MediaQuery.sizeOf(context).height * 0.05.h),
         Stack(
           clipBehavior: Clip.antiAliasWithSaveLayer,
           children: [
             Container(
-              width: MediaQuery.sizeOf(context).width,
-              height: MediaQuery.sizeOf(context).height * 0.35,
+              width: MediaQuery.sizeOf(context).width.w,
+              height: MediaQuery.sizeOf(context).height * 0.35.h,
               decoration: BoxDecoration(
                   color: AppColor.babyBlue,
-                  borderRadius: BorderRadius.circular(20)),
+                  borderRadius: BorderRadius.circular(20.w)),
             ),
             Positioned(
-              left: 35,
-              top: 16,
+              left: 35.w,
+              top: 16.h,
               child: Transform.rotate(
-                  angle: -5 * 3.141592653589793 / 180,
+                  angle: -5 * 3.141592653589793 / 180.r,
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width * 0.75,
-                    height: MediaQuery.sizeOf(context).height * 0.3,
+                    width: MediaQuery.sizeOf(context).width * 0.75.w,
+                    height: MediaQuery.sizeOf(context).height * 0.3.h,
                     decoration: BoxDecoration(
                         color: AppColor.white,
-                        borderRadius: BorderRadius.circular(20)),
+                        borderRadius: BorderRadius.circular(20.w)),
                   )),
             ),
             Positioned(
-                top: 30,
-                left: 80,
+                top: 30.h,
+                left: 80.w,
                 child: Center(child: Image.asset(AppAssets.dabdob)))
           ],
         )

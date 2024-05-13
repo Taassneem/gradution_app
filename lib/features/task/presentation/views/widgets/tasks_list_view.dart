@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gradution_app/core/func/custom_toast.dart';
 import 'package:gradution_app/core/utils/widgets/custom_shimmer.dart';
 import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
 
@@ -20,7 +22,7 @@ class TasksListView extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               SizedBox(
-                height: MediaQuery.sizeOf(context).height * 0.449,
+                height: MediaQuery.sizeOf(context).height * 0.449.h,
                 child: state.tasks.isEmpty
                     ? const ComingSoonWidget()
                     : ListView.builder(
@@ -47,12 +49,12 @@ class TasksListView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               CustomShimmer(width: 300, height: 90),
-              CustomShimmer(width: 300, height: 90),
-              CustomShimmer(width: 300, height: 90),
             ],
           );
+        } else if (state is DeleteTaskSuccess) {
+          return showToast(state.deleteTaskModel.message);
         } else {
-          return const Text('Error ');
+          return const CustomShimmer(width: 300, height: 90);
         }
       },
     );

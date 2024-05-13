@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gradution_app/core/func/custom_toast.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/widgets/custom_shimmer.dart';
 import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
@@ -36,19 +37,10 @@ class CategoriesViewBody extends StatelessWidget {
                     },
                   );
                 } else if (state is CategoriesFailure) {
-                  return Center(
-                    child: Text(
-                      state.errorMessage,
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.headlineLarge,
-                    ),
-                  );
+                  return showToast(state.errorMessage, task: true);
                 } else {
                   return const Column(
                     children: [
-                      CustomShimmer(width: 350, height: 90),
-                      CustomShimmer(width: 350, height: 90),
-                      CustomShimmer(width: 350, height: 90),
                       CustomShimmer(width: 350, height: 90),
                       CustomShimmer(width: 350, height: 90),
                     ],
