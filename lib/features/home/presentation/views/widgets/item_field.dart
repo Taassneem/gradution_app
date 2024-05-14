@@ -21,9 +21,9 @@ class ItemField extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: height,
-        width: 165,
+        width: 165.w,
         decoration: BoxDecoration(
-            color: color, borderRadius: BorderRadius.circular(30)),
+            color: color, borderRadius: BorderRadius.circular(30.w)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

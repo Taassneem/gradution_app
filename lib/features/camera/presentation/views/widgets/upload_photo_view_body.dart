@@ -28,17 +28,17 @@ class UploadPhotoViewBody extends StatelessWidget {
         BlocProvider.of<CameraCubit>(context).imageFromGallery == null
             ? Container(
                 alignment: Alignment.center,
-                height: MediaQuery.sizeOf(context).height * 0.3,
-                width: MediaQuery.sizeOf(context).width * 0.7,
+                height: MediaQuery.sizeOf(context).height * 0.3.h,
+                width: MediaQuery.sizeOf(context).width * 0.7.w,
                 decoration: BoxDecoration(
                     color: AppColor.white,
-                    borderRadius: BorderRadius.circular(20)),
+                    borderRadius: BorderRadius.circular(20.w)),
                 child: Image.asset(AppAssets.addImage),
               )
             : Container(
                 alignment: Alignment.center,
-                height: MediaQuery.sizeOf(context).height * 0.3,
-                width: MediaQuery.sizeOf(context).width * 0.7,
+                height: MediaQuery.sizeOf(context).height * 0.3.h,
+                width: MediaQuery.sizeOf(context).width * 0.7.w,
                 decoration: BoxDecoration(
                     image: DecorationImage(
                       image: FileImage(File(
@@ -46,7 +46,7 @@ class UploadPhotoViewBody extends StatelessWidget {
                               .imageFromGallery!
                               .path)),
                     ),
-                    borderRadius: BorderRadius.circular(20)),
+                    borderRadius: BorderRadius.circular(20.w)),
               ),
         SizedBox(height: MediaQuery.sizeOf(context).height * 0.06.h),
         Row(
@@ -60,7 +60,7 @@ class UploadPhotoViewBody extends StatelessWidget {
             BlocConsumer<CameraCubit, CameraState>(
               listener: (context, state) {
                 if (state is CameraGallerySuccess) {
-                  showToast('Photo upload successfully');
+                  showToast(S.of(context).photoUploadSuccessfully);
                 } else if (state is CameraGalleryFailure) {
                   log(state.errorMessage);
                 }

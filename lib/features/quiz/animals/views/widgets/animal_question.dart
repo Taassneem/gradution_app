@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
 class AnimalQuestion extends StatelessWidget {
@@ -10,10 +11,10 @@ class AnimalQuestion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 290,
-      height: MediaQuery.sizeOf(context).height * 0.1,
+      width: 290.w,
+      height: MediaQuery.sizeOf(context).height * 0.1.h,
       decoration: BoxDecoration(
-          color: AppColor.white, borderRadius: BorderRadius.circular(20)),
+          color: AppColor.white, borderRadius: BorderRadius.circular(20.w)),
       child: Center(
         child: Text(
           question,

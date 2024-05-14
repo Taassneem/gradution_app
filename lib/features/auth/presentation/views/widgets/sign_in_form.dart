@@ -34,11 +34,12 @@ class SignInForm extends StatelessWidget {
       },
       builder: (context, state) {
         return Container(
-            width: 315,
+            width: 315.w,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50), color: AppColor.white),
+                borderRadius: BorderRadius.circular(50.w),
+                color: AppColor.white),
             child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(16.0.r),
                 child: Form(
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   key: authCubit.signInKey,

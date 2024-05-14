@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/generated/l10n.dart';
@@ -14,21 +15,21 @@ class CameraFeature extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.sizeOf(context).width,
-      height: MediaQuery.sizeOf(context).height * 0.32,
+      width: MediaQuery.sizeOf(context).width.w,
+      height: MediaQuery.sizeOf(context).height * 0.32.h,
       decoration: BoxDecoration(
-          color: AppColor.white, borderRadius: BorderRadius.circular(20)),
+          color: AppColor.white, borderRadius: BorderRadius.circular(20.w)),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0.r),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Container(
-              height: 8,
-              width: 50,
+              height: 8.h,
+              width: 50.w,
               decoration: BoxDecoration(
                   color: AppColor.purple,
-                  borderRadius: BorderRadius.circular(5)),
+                  borderRadius: BorderRadius.circular(5.w)),
             ),
             Text(
               S.of(context).whatCanIDoForYou,

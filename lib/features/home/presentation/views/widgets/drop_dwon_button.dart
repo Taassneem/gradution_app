@@ -27,7 +27,7 @@ class _CustomDropDwonButtonState extends State<CustomDropDwonButton> {
         });
       },
       icon: const Icon(Icons.keyboard_double_arrow_down_rounded),
-      underline: Container(),
+      underline: const SizedBox.shrink(),
       items: [
         DropdownMenuItem(
             onTap: () {

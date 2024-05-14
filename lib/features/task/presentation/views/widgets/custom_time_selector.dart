@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
 class CustomTimeSelector extends StatefulWidget {
@@ -26,8 +27,8 @@ class _CustomTimeSelectorState extends State<CustomTimeSelector> {
         // });
       },
       child: Container(
-        width: 80,
-        height: 40,
+        width: 80.w,
+        height: 40.h,
         alignment: Alignment.center,
         decoration: BoxDecoration(
             border: Border.all(color: AppColor.pink, width: 1.5),

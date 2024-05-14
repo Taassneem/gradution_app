@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
 class AnimalImageAnswer extends StatelessWidget {
@@ -14,11 +15,11 @@ class AnimalImageAnswer extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: MediaQuery.sizeOf(context).height * 0.35,
-        width: 163,
+        height: MediaQuery.sizeOf(context).height * 0.35.h,
+        width: 163.w,
         decoration: BoxDecoration(
           color: AppColor.white,
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(20.w),
         ),
         child: Center(child: Image.asset(image)),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/generated/l10n.dart';
@@ -13,11 +14,11 @@ class Repeater extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        width: MediaQuery.sizeOf(context).width * 0.9,
+        width: MediaQuery.sizeOf(context).width * 0.9.w,
         child: Card(
           color: AppColor.pink,
           child: Padding(
-            padding: const EdgeInsets.all(18.0),
+            padding: EdgeInsets.all(18.0.r),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -27,7 +28,7 @@ class Repeater extends StatelessWidget {
                   trailing: Image.asset(AppAssets.repeater),
                 ),
                 const RepeaterListView(),
-                const SizedBox(height: 24),
+                SizedBox(height: 24.h),
                 CustomOkElevatedButton(onPressed: () {
                   Navigator.pop(context);
                 })

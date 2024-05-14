@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/func/is_arabic_func.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
@@ -13,16 +14,17 @@ class TaskCustomDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(18.0),
+      padding: EdgeInsets.all(18.0.r),
       child: Align(
         alignment: isArabic() ? Alignment.centerLeft : Alignment.bottomRight,
         child: Card(
           child: Container(
-            height: 150,
-            width: 190,
-            padding: const EdgeInsets.all(16),
+            height: 150.w,
+            width: 190.h,
+            padding: EdgeInsets.all(16.r),
             decoration: BoxDecoration(
-                color: AppColor.white, borderRadius: BorderRadius.circular(20)),
+                color: AppColor.white,
+                borderRadius: BorderRadius.circular(20.w)),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

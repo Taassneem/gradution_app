@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/database/cache/cache_helper.dart';
 import 'package:gradution_app/core/func/custom_show_dialog.dart';
@@ -51,22 +52,22 @@ class AddTaskViewBody extends StatelessWidget {
               children: [
                 const CustomCalender(isWeekCalender: true),
                 Container(
-                  padding: const EdgeInsets.all(16),
+                  padding: EdgeInsets.all(16.r),
                   width: MediaQuery.sizeOf(context).width,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                       color: AppColor.white,
                       borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(50),
-                          topRight: Radius.circular(50))),
+                          topLeft: Radius.circular(50.w),
+                          topRight: Radius.circular(50.w))),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const SizedBox(height: 24),
+                      SizedBox(height: 24.h),
                       Text(S.of(context).taskTitle,
                           style: Theme.of(context).textTheme.titleMedium),
-                      const SizedBox(height: 16),
+                      SizedBox(height: 16.h),
                       const TaskTitleTextField(),
-                      const SizedBox(height: 16),
+                      SizedBox(height: 16.h),
                       Text(S.of(context).time,
                           style: Theme.of(context).textTheme.titleMedium),
                       SelectTimeWidgets(),
@@ -108,7 +109,7 @@ class AddTaskViewBody extends StatelessWidget {
                         },
                       ),
                       const CustomDivider(),
-                      const SizedBox(height: 24),
+                      SizedBox(height: 24.h),
                       CustomElevatedButton(
                         isTask: true,
                         text: S.of(context).saveChanges,

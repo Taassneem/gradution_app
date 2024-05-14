@@ -32,7 +32,7 @@ class ChoosLanguageBody extends StatelessWidget {
         child: Card(
           color: AppColor.screenColor,
           child: Padding(
-            padding: const EdgeInsets.all(28),
+            padding: EdgeInsets.all(28.r),
             child: Material(
               color: AppColor.screenColor,
               child: SizedBox(
@@ -49,7 +49,7 @@ class ChoosLanguageBody extends StatelessWidget {
                     ]),
                     SizedBox(height: 8.h),
                     CheckboxListTile(
-                        contentPadding: const EdgeInsets.all(0),
+                        contentPadding: EdgeInsets.zero,
                         title: Text(
                           'English ',
                           style: Theme.of(context).textTheme.titleSmall,
@@ -60,13 +60,13 @@ class ChoosLanguageBody extends StatelessWidget {
                           BlocProvider.of<GlobalCubit>(context).isEnglish =
                               value!;
                         }),
-                    const Divider(
+                    Divider(
                         color: AppColor.purple,
                         thickness: 1.5,
-                        indent: 20,
-                        endIndent: 20),
+                        indent: 20.w,
+                        endIndent: 20.w),
                     CheckboxListTile(
-                      contentPadding: const EdgeInsets.all(0),
+                      contentPadding: EdgeInsets.zero,
                       title: Text(
                         'العربية',
                         style: Theme.of(context).textTheme.titleSmall,

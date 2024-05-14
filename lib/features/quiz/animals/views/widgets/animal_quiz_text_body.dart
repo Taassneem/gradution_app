@@ -36,21 +36,21 @@ class AnimalQuizTextViewBody extends StatelessWidget {
                 onTap: onTapOne,
                 child: CircleAvatar(
                     backgroundColor: AppColor.white,
-                    radius: 45,
+                    radius: 45.w,
                     child: Text(answerOne)),
               ),
               GestureDetector(
                 onTap: onTapTwo,
                 child: CircleAvatar(
                     backgroundColor: AppColor.white,
-                    radius: 45,
+                    radius: 45.w,
                     child: Text(answerTwo)),
               ),
               GestureDetector(
                 onTap: onTapThree,
                 child: CircleAvatar(
                     backgroundColor: AppColor.white,
-                    radius: 45,
+                    radius: 45.w,
                     child: Text(answerThree)),
               ),
             ],

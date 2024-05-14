@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
 class ThingsTextAnswer extends StatelessWidget {
@@ -14,11 +15,11 @@ class ThingsTextAnswer extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 90,
-        width: 150,
+        height: 90.h,
+        width: 150.w,
         decoration: BoxDecoration(
           color: AppColor.white,
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(10.w),
         ),
         child: Center(
             child: Text(

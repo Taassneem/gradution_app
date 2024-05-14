@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
 class ThingsImageAnswer extends StatelessWidget {
@@ -14,11 +15,11 @@ class ThingsImageAnswer extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 166,
-        width: 145,
+        height: 166.h,
+        width: 145.w,
         decoration: BoxDecoration(
           color: AppColor.white,
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(10.w),
         ),
         child: Center(child: Image.asset(image)),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
 class TextAnswerNumber extends StatelessWidget {
@@ -18,15 +19,15 @@ class TextAnswerNumber extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: EdgeInsets.all(8.0.r),
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-          width: 155,
-          height: question ? 60 : 100,
+          width: 155.w,
+          height: question ? 60.h : 100.h,
           decoration: BoxDecoration(
               color: AppColor.babyBlue,
-              borderRadius: BorderRadius.circular(10)),
+              borderRadius: BorderRadius.circular(10.w)),
           child: Center(
               child: answerImage
                   ? Image.asset(image)

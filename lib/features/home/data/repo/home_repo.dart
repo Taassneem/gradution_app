@@ -9,11 +9,19 @@ import 'package:gradution_app/features/home/data/models/uplaod_profile_pic_model
 import 'package:gradution_app/features/home/data/models/user_data_model/user_data_model.dart';
 
 abstract class HomeRepo {
-  Future<Either<ServerFailure, ChangePasswordModel>> changePassword();
-  Future<Either<ServerFailure, LogOutModel>> logOut();
-  Future<Either<ServerFailure, EditProfileModel>> editProfile();
-  Future<Either<ServerFailure, EditProfilePicModel>> editProfilePic();
-  Future<Either<ServerFailure, UplaodProfilePicModel>> uplaodProfile();
+  Future<Either<ServerFailure, ChangePasswordModel>> changePassword({
+    required String oldPassword,
+    required String newPassword,
+  });
+  Future<Either<ServerFailure, LogOutModel>> logOut({required String userId});
+  Future<Either<ServerFailure, EditProfileModel>> editProfile({
+    required String userName,
+    required String email,
+  });
+  Future<Either<ServerFailure, EditProfilePicModel>> editProfilePic(
+      {required String image});
+  Future<Either<ServerFailure, UplaodProfilePicModel>> uplaodProfilePic(
+      {required String image});
   Future<Either<ServerFailure, DeleteUserModel>> deleteUser();
   Future<Either<ServerFailure, UserDataModel>> getUserData();
 }

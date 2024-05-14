@@ -13,7 +13,7 @@ class NumberErrorWidget extends StatelessWidget {
       child: Container(
         width: MediaQuery.sizeOf(context).width * 0.82.w,
         decoration: BoxDecoration(
-            color: AppColor.white, borderRadius: BorderRadius.circular(10)),
+            color: AppColor.white, borderRadius: BorderRadius.circular(10.w)),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [

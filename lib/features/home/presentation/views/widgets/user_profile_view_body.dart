@@ -16,7 +16,7 @@ class UserProfileViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(18.0),
+      padding: EdgeInsets.all(18.0.r),
       child: Column(
         children: [
           const UserProfileImage(),

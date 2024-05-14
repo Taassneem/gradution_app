@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/features/quiz/numbers/views/widget/number_quiz_four_view_body.dart';
 
 class NumberQuizFourView extends StatelessWidget {
@@ -6,11 +7,11 @@ class NumberQuizFourView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
           child: Padding(
-        padding: EdgeInsets.all(18),
-        child: NumberQuizFourViewBody(),
+        padding: EdgeInsets.all(18.r),
+        child: const NumberQuizFourViewBody(),
       )),
     );
   }

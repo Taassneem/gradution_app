@@ -24,8 +24,8 @@ class CustomProfileFeature extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
               color: AppColor.white,
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: AppColor.purple, width: 2)),
+              borderRadius: BorderRadius.circular(10.w),
+              border: Border.all(color: AppColor.purple, width: 2.w)),
           child: ListTile(
             title: Text(featureType,
                 style: Theme.of(context).textTheme.titleSmall),

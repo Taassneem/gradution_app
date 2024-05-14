@@ -61,6 +61,8 @@ class ApiKey {
   static const String authorization = 'Authorization';
   static const String confirmPassword = 'confirmPassword';
   static const String confirmPasswordReset = 'confirmpassword';
+  static const String oldPassword = 'oldPassword';
+  static const String userId = 'userId';
   static const String title = 'title';
   static const String image = 'image';
   static const String selectedActivity = 'selectedActivity';

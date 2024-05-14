@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
@@ -33,26 +34,28 @@ class ThingsQuizImageViewBody extends StatelessWidget {
       decoration: const BoxDecoration(
           image: DecorationImage(image: AssetImage(AppAssets.thingsBack))),
       child: Padding(
-        padding: const EdgeInsets.all(18.0),
+        padding: EdgeInsets.all(18.0.r),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CircleAvatar(
-              radius: 30,
+              radius: 30.r,
               backgroundColor: AppColor.babyBlue,
               child: IconButton(
-                  onPressed: () {}, icon: const Icon(Icons.volume_up_outlined)),
+                onPressed: () {},
+                icon: const Icon(Icons.volume_up_outlined),
+              ),
             ),
-            const SizedBox(height: 30),
+            SizedBox(height: 30.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                    width: 170,
-                    height: 90,
+                    width: 170.w,
+                    height: 90.h,
                     decoration: BoxDecoration(
                         color: AppColor.babyBlue,
-                        borderRadius: BorderRadius.circular(20)),
+                        borderRadius: BorderRadius.circular(20.w)),
                     child: Center(
                         child: Text(
                       question,
@@ -60,16 +63,16 @@ class ThingsQuizImageViewBody extends StatelessWidget {
                     ))),
               ],
             ),
-            SizedBox(height: MediaQuery.sizeOf(context).height * 0.08),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.08.h),
             Container(
-              width: MediaQuery.sizeOf(context).width,
-              padding: const EdgeInsets.all(18),
+              width: MediaQuery.sizeOf(context).width.w,
+              padding: EdgeInsets.all(18.r),
               decoration: BoxDecoration(
                   color: AppColor.babyBlue,
-                  borderRadius: BorderRadius.circular(20)),
+                  borderRadius: BorderRadius.circular(20.w)),
               child: Column(
                 children: [
-                  const SizedBox(height: 20),
+                  SizedBox(height: 20.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -77,7 +80,7 @@ class ThingsQuizImageViewBody extends StatelessWidget {
                       ThingsImageAnswer(image: answerTwo, onTap: onTapTwo)
                     ],
                   ),
-                  const SizedBox(height: 30),
+                  SizedBox(height: 30.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -85,7 +88,7 @@ class ThingsQuizImageViewBody extends StatelessWidget {
                       ThingsImageAnswer(image: answerFour, onTap: onTapFour)
                     ],
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: 20.h),
                 ],
               ),
             ),

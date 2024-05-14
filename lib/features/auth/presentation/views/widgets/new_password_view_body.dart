@@ -31,7 +31,7 @@ class NewPasswordViewBody extends StatelessWidget {
       },
       builder: (context, state) {
         return Container(
-            width: 330,
+            width: 330.w,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50.w),
                 color: AppColor.white),

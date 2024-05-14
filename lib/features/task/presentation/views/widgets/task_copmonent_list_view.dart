@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/features/task/data/models/task_model/task_model.dart';
@@ -26,36 +27,36 @@ class TaskListViewComponent extends StatelessWidget {
                   taskModel.time!.split('')[20],
               style: Theme.of(context).textTheme.titleMedium,
             ),
-            const SizedBox(width: 16),
-            const CircleAvatar(
+            SizedBox(width: 1.w),
+            CircleAvatar(
               backgroundColor: AppColor.pink,
-              radius: 10,
+              radius: 10.r,
             ),
           ],
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 28.0),
+          padding: EdgeInsets.only(left: 28.0.w),
           child: Row(
             children: [
               Container(
-                width: 2,
-                height: 88,
+                width: 2.w,
+                height: 88.h,
                 decoration: const BoxDecoration(
                   color: AppColor.pink,
                 ),
               ),
-              const SizedBox(width: 34),
+              SizedBox(width: 3.w),
               Expanded(
                 child: Container(
-                  height: 88,
+                  height: 88.h,
                   alignment: Alignment.center,
-                  margin: const EdgeInsets.symmetric(vertical: 16),
+                  margin: EdgeInsets.symmetric(vertical: 16.h),
                   decoration: BoxDecoration(
                       color: AppColor.pink,
                       borderRadius: BorderRadius.circular(10)),
                   child: ListTile(
                     leading: AspectRatio(
-                      aspectRatio: 2,
+                      aspectRatio: 2.r,
                       child: CachedNetworkImage(
                         imageUrl: taskModel.image!.url!,
                         placeholder: (context, url) => const Center(
@@ -72,7 +73,7 @@ class TaskListViewComponent extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: 8.w),
               GestureDetector(
                   onTap: () {
                     customShowDialog(context, widget: const TaskCustomDialog());

@@ -35,7 +35,7 @@ class FoodQuizViewImageBody extends StatelessWidget {
         children: [
           SizedBox(height: 130.h),
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(16.0.r),
             child: Stack(clipBehavior: Clip.none, children: [
               Container(
                 width: MediaQuery.sizeOf(context).width,

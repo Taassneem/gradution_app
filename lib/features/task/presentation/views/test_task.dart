@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
@@ -16,7 +17,7 @@ class TestTask extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColor.pink,
       body: Padding(
-        padding: const EdgeInsets.all(18.0),
+        padding: EdgeInsets.all(18.0.r),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -26,10 +27,10 @@ class TestTask extends StatelessWidget {
               trailing: Image.asset(AppAssets.calendarClock),
             ),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
               decoration: BoxDecoration(
-                  border: Border.all(color: AppColor.white, width: 1.5),
-                  borderRadius: BorderRadius.circular(10)),
+                  border: Border.all(color: AppColor.white, width: 1.5.w),
+                  borderRadius: BorderRadius.circular(10.w)),
               child: Column(
                 children: [
                   ChoosenFeature(feature: S.of(context).saturday),
@@ -39,12 +40,12 @@ class TestTask extends StatelessWidget {
                   ChoosenFeature(feature: S.of(context).wednesday),
                   ChoosenFeature(feature: S.of(context).thursday),
                   ChoosenFeature(feature: S.of(context).friday),
-                  const SizedBox(height: 8),
+                  SizedBox(height: 8.h),
                   const AllDaysWidget()
                 ],
               ),
             ),
-            const SizedBox(height: 24),
+            SizedBox(height: 24.h),
             CustomOkElevatedButton(onPressed: () {})
           ],
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/common/common_lists.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
@@ -21,13 +22,13 @@ class _RepeaterListViewState extends State<RepeaterListView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(8),
-      padding: const EdgeInsets.symmetric(horizontal: 8),
+      margin: EdgeInsets.all(8.r),
+      padding: EdgeInsets.symmetric(horizontal: 8.w),
       decoration: BoxDecoration(
-          border: Border.all(color: AppColor.white, width: 1.5),
-          borderRadius: BorderRadius.circular(10)),
+          border: Border.all(color: AppColor.white, width: 1.5.w),
+          borderRadius: BorderRadius.circular(10.w)),
       child: SizedBox(
-        height: MediaQuery.sizeOf(context).height * 0.3,
+        height: MediaQuery.sizeOf(context).height * 0.3.h,
         child: ListView.separated(
           separatorBuilder: (context, index) {
             return const CustomDivider();

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
@@ -22,15 +23,15 @@ class NumberQuizTwoViewBody extends StatelessWidget {
       decoration: const BoxDecoration(
           image: DecorationImage(image: AssetImage(AppAssets.fireworks))),
       child: Padding(
-        padding: const EdgeInsets.all(22.0),
+        padding: EdgeInsets.all(22.0.r),
         child: Column(
           children: [
             NameSpeaker(onPressed: () {}),
-            const SizedBox(height: 32),
+            SizedBox(height: 32.h),
             NumberQuestion(
               question: S.of(context).meaningOfSeven,
             ),
-            SizedBox(height: MediaQuery.sizeOf(context).height * 0.08),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.08.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

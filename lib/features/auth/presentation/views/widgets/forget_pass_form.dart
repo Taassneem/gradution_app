@@ -29,12 +29,12 @@ class ForgetPasswordForm extends StatelessWidget {
       }
     }, builder: (context, state) {
       return Container(
-          width: 311,
-          height: 300,
+          width: 311.w,
+          height: 300.h,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(50), color: AppColor.white),
+              borderRadius: BorderRadius.circular(50.w), color: AppColor.white),
           child: Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(16.0.r),
               child: Form(
                 key: authCubit.forgetKey,
                 child: Column(

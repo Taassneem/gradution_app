@@ -45,12 +45,7 @@ class TasksListView extends StatelessWidget {
             ),
           );
         } else if (state is FetchTasksLoading) {
-          return const Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              CustomShimmer(width: 300, height: 90),
-            ],
-          );
+          return const CustomShimmer(width: 300, height: 90);
         } else if (state is DeleteTaskSuccess) {
           return showToast(state.deleteTaskModel.message);
         } else {

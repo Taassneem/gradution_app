@@ -20,10 +20,18 @@ class HomeRepoImpl extends HomeRepo {
 
   HomeRepoImpl({required this.api});
   @override
-  Future<Either<ServerFailure, ChangePasswordModel>> changePassword() async {
+  Future<Either<ServerFailure, ChangePasswordModel>> changePassword({
+    required String oldPassword,
+    required String newPassword,
+  }) async {
     try {
-      final response = await api.post(EndPoint.changePassword(
-          getIt.get<CacheHelper>().getData(key: ApiKey.loginId)));
+      final response = await api.post(
+          EndPoint.changePassword(
+              getIt.get<CacheHelper>().getData(key: ApiKey.loginId)),
+          data: {
+            ApiKey.oldPassword: oldPassword,
+            ApiKey.newPassword: newPassword
+          });
       final changePass = ChangePasswordModel.fromJson(response);
       return right(changePass);
     } on ServerFailure catch (e) {
@@ -44,10 +52,18 @@ class HomeRepoImpl extends HomeRepo {
   }
 
   @override
-  Future<Either<ServerFailure, EditProfileModel>> editProfile() async {
+  Future<Either<ServerFailure, EditProfileModel>> editProfile({
+    required String userName,
+    required String email,
+  }) async {
     try {
-      final response = await api.pacth(EndPoint.editProfile(
-          getIt.get<CacheHelper>().getData(key: ApiKey.loginId)));
+      final response = await api.pacth(
+          EndPoint.editProfile(
+              getIt.get<CacheHelper>().getData(key: ApiKey.loginId)),
+          data: {
+            ApiKey.userName: userName,
+            ApiKey.email: email,
+          });
       final editProfile = EditProfileModel.fromJson(response);
       return right(editProfile);
     } on ServerFailure catch (e) {
@@ -56,10 +72,14 @@ class HomeRepoImpl extends HomeRepo {
   }
 
   @override
-  Future<Either<ServerFailure, EditProfilePicModel>> editProfilePic() async {
+  Future<Either<ServerFailure, EditProfilePicModel>> editProfilePic(
+      {required String image}) async {
     try {
-      final response = await api.post(EndPoint.editProfilePic(
-          getIt.get<CacheHelper>().getData(key: ApiKey.loginId)));
+      final response = await api.post(
+          EndPoint.editProfilePic(
+              getIt.get<CacheHelper>().getData(key: ApiKey.loginId)),
+          data: {ApiKey.image: image},
+          isFormData: true);
       final editProfilePic = EditProfilePicModel.fromJson(response);
       return right(editProfilePic);
     } on ServerFailure catch (e) {
@@ -80,9 +100,11 @@ class HomeRepoImpl extends HomeRepo {
   }
 
   @override
-  Future<Either<ServerFailure, LogOutModel>> logOut() async {
+  Future<Either<ServerFailure, LogOutModel>> logOut(
+      {required String userId}) async {
     try {
-      final response = await api.post(EndPoint.logOut);
+      final response =
+          await api.post(EndPoint.logOut, data: {ApiKey.userId: userId});
       final logOut = LogOutModel.fromJson(response);
       return right(logOut);
     } on ServerFailure catch (e) {
@@ -91,10 +113,14 @@ class HomeRepoImpl extends HomeRepo {
   }
 
   @override
-  Future<Either<ServerFailure, UplaodProfilePicModel>> uplaodProfile() async {
+  Future<Either<ServerFailure, UplaodProfilePicModel>> uplaodProfilePic(
+      {required String image}) async {
     try {
-      final response = await api.post(EndPoint.uploadProfilepic(
-          getIt.get<CacheHelper>().getData(key: ApiKey.loginId)));
+      final response = await api.post(
+          EndPoint.uploadProfilepic(
+              getIt.get<CacheHelper>().getData(key: ApiKey.loginId)),
+          data: {ApiKey.image: image},
+          isFormData: true);
       final uploadProfilePic = UplaodProfilePicModel.fromJson(response);
       return right(uploadProfilePic);
     } on ServerFailure catch (e) {

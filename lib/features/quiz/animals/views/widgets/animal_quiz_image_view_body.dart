@@ -26,7 +26,7 @@ class AnimalQuizImageViewBody extends StatelessWidget {
           image: DecorationImage(
               image: AssetImage(AppAssets.animalsQuiz), fit: BoxFit.fill)),
       child: Padding(
-        padding: const EdgeInsets.all(18.0),
+        padding: EdgeInsets.all(18.0.r),
         child: Column(
           children: [
             SizedBox(height: MediaQuery.sizeOf(context).height * 0.45.h),

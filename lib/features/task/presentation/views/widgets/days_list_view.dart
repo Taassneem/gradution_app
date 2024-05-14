@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/common/common_lists.dart';
 import 'package:gradution_app/core/database/cache/cache_helper.dart';
 import 'package:gradution_app/core/utils/api_keys.dart';
@@ -24,14 +25,14 @@ class _DaysListViewState extends State<DaysListView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        padding:  EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
         decoration: BoxDecoration(
-            border: Border.all(color: AppColor.white, width: 1.5),
-            borderRadius: BorderRadius.circular(10)),
+            border: Border.all(color: AppColor.white, width: 1.5.w),
+            borderRadius: BorderRadius.circular(10.w)),
         child: Column(
           children: [
             SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.45,
+              height: MediaQuery.sizeOf(context).height * 0.45.h,
               child: ListView.separated(
                 itemCount: days.length,
                 separatorBuilder: (BuildContext context, int index) {

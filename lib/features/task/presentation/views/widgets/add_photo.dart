@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/func/custom_snack_bar.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
@@ -19,11 +20,11 @@ class AddPhoto extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        width: MediaQuery.sizeOf(context).width * 0.9,
+        width: MediaQuery.sizeOf(context).width * 0.9.w,
         child: Card(
           color: AppColor.pink,
           child: Padding(
-            padding: const EdgeInsets.all(18.0),
+            padding: EdgeInsets.all(18.0.r),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -35,16 +36,16 @@ class AddPhoto extends StatelessWidget {
                 BlocProvider.of<TaskCubit>(context).taskImageFromCamera == null
                     ? Container(
                         alignment: Alignment.center,
-                        width: MediaQuery.sizeOf(context).width * 0.6,
-                        height: MediaQuery.sizeOf(context).height * 0.3,
+                        width: MediaQuery.sizeOf(context).width * 0.6.w,
+                        height: MediaQuery.sizeOf(context).height * 0.3.h,
                         decoration: BoxDecoration(
                             color: AppColor.white,
-                            borderRadius: BorderRadius.circular(10)),
+                            borderRadius: BorderRadius.circular(10.w)),
                         child: Image.asset(AppAssets.addPhoto))
                     : Container(
                         alignment: Alignment.center,
-                        width: MediaQuery.sizeOf(context).width * 0.6,
-                        height: MediaQuery.sizeOf(context).height * 0.3,
+                        width: MediaQuery.sizeOf(context).width * 0.6.w,
+                        height: MediaQuery.sizeOf(context).height * 0.3.h,
                         decoration: BoxDecoration(
                             image: DecorationImage(
                               image: FileImage(File(
@@ -52,9 +53,9 @@ class AddPhoto extends StatelessWidget {
                                       .taskImageFromCamera!
                                       .path)),
                             ),
-                            borderRadius: BorderRadius.circular(20)),
+                            borderRadius: BorderRadius.circular(20.w)),
                       ),
-                const SizedBox(height: 24),
+                SizedBox(height: 24.h),
                 BlocConsumer<TaskCubit, TaskState>(
                   listener: (context, state) {
                     if (state is UploadingPhotoSuccess) {
@@ -79,7 +80,7 @@ class AddPhoto extends StatelessWidget {
                     );
                   },
                 ),
-                const SizedBox(height: 24),
+                SizedBox(height: 24.h),
                 CustomOkElevatedButton(onPressed: () {
                   Navigator.pop(context);
                 })

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
@@ -16,7 +17,7 @@ class TaskElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
-            fixedSize: const Size(200, 50),
+            fixedSize: Size(200.w, 50.h),
             backgroundColor: isWhite ? AppColor.white : AppColor.pink,
             elevation: 0),
         onPressed: onPressed,
@@ -27,7 +28,7 @@ class TaskElevatedButton extends StatelessWidget {
               upload ? Icons.file_upload_outlined : Icons.add,
               color: AppColor.black,
             ),
-            const SizedBox(width: 8),
+            SizedBox(width: 8.w),
             Text(S.of(context).addTask,
                 style: Theme.of(context).textTheme.titleSmall),
           ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
 import 'widgets/upload_photo_view_body.dart';
@@ -13,9 +14,9 @@ class UploadPhotoView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColor.purple,
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(36.0),
-        child: UploadPhotoViewBody(),
+      body: Padding(
+        padding: EdgeInsets.all(36.0.r),
+        child: const UploadPhotoViewBody(),
       ),
     );
   }

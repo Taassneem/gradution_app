@@ -31,7 +31,7 @@ class CalenderViewBody extends StatelessWidget {
         ),
         SliverFillRemaining(
           child: Container(
-            width: MediaQuery.sizeOf(context).width,
+            width: MediaQuery.sizeOf(context).width.w,
             decoration: const BoxDecoration(color: AppColor.screenColor),
             child: Padding(
               padding: EdgeInsets.all(18.0.r),

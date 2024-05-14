@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
@@ -24,11 +25,11 @@ class QuizViewBody extends StatelessWidget {
           Expanded(
             child: Container(
                 width: MediaQuery.sizeOf(context).width,
-                padding: const EdgeInsets.only(top: 64, right: 8, left: 8),
-                decoration: const BoxDecoration(
+                padding:  EdgeInsets.only(top: 64.h, right: 8.w, left: 8.w),
+                decoration:  BoxDecoration(
                     borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(100),
-                        topRight: Radius.circular(100)),
+                        topLeft: Radius.circular(100.w),
+                        topRight: Radius.circular(100.w)),
                     color: AppColor.white),
                 child: Column(
                   children: [

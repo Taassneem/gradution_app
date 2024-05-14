@@ -24,14 +24,14 @@ class HomeViewBody extends StatelessWidget {
           ],
         ),
         Container(
-          width: 375,
+          width: 375.w,
           decoration: BoxDecoration(
-              border: const Border(
-                top: BorderSide(color: AppColor.purple, width: 2),
+              border: Border(
+                top: BorderSide(color: AppColor.purple, width: 2.w),
               ),
-              borderRadius: BorderRadius.circular(100)),
+              borderRadius: BorderRadius.circular(100.w)),
           child: Padding(
-            padding: const EdgeInsets.only(top: 55.0, left: 12, right: 12),
+            padding: EdgeInsets.only(top: 55.0.h, left: 12.w, right: 12.w),
             child: IntrinsicHeight(
               child: Row(
                 children: [
@@ -53,7 +53,7 @@ class HomeViewBody extends StatelessWidget {
                         color: AppColor.babyBlue,
                         fieldName: S.of(context).quiz,
                         image: AppAssets.quiz,
-                        height: 170,
+                        height: 170.h,
                       ),
                       SizedBox(height: 16.h),
                       ItemField(
@@ -63,7 +63,7 @@ class HomeViewBody extends StatelessWidget {
                         color: AppColor.pink,
                         fieldName: S.of(context).task,
                         image: AppAssets.task,
-                        height: 180,
+                        height: 180.h,
                       )
                     ],
                   )

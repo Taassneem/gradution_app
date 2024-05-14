@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
 class CustomTimeTextField extends StatelessWidget {
@@ -12,9 +13,9 @@ class CustomTimeTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: BorderRadius.circular(20.w),
       child: SizedBox(
-        width: 80,
+        width: 80.w,
         child: TextField(
           controller: controller,
           maxLength: 2,

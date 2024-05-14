@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
@@ -50,7 +51,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           enabledBorder: outlineInputBorder(),
           focusedBorder: outlineInputBorder(),
           border: outlineInputBorder(),
-          contentPadding: const EdgeInsets.symmetric(horizontal: 16),
+          contentPadding: EdgeInsets.symmetric(horizontal: 16.w),
           hintText: widget.hintText,
           hintStyle: Theme.of(context).textTheme.titleSmall!.copyWith(
               color: widget.userProfile ? AppColor.black : AppColor.lightGrey),
@@ -70,8 +71,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
 
   OutlineInputBorder outlineInputBorder() {
     return OutlineInputBorder(
-      borderSide: const BorderSide(color: AppColor.purple, width: 1.5),
-      borderRadius: BorderRadius.circular(30),
+      borderSide: BorderSide(color: AppColor.purple, width: 1.5.w),
+      borderRadius: BorderRadius.circular(30.w),
     );
   }
 }

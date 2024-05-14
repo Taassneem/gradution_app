@@ -20,8 +20,8 @@ class ProfileViewBody extends StatelessWidget {
           clipBehavior: Clip.none,
           children: [
             Container(
-              height: MediaQuery.sizeOf(context).height * 0.12,
-              width: MediaQuery.sizeOf(context).width,
+              height: MediaQuery.sizeOf(context).height * 0.12.h,
+              width: MediaQuery.sizeOf(context).width.w,
               color: AppColor.purple,
               child: Padding(
                 padding: EdgeInsets.all(24.0.r),
@@ -41,14 +41,14 @@ class ProfileViewBody extends StatelessWidget {
               ),
             ),
             Positioned(
-              right: 10,
-              top: -15,
+              right: 10.w,
+              top: -15.h,
               child: Container(
-                width: 120,
-                height: 120,
+                width: 120.w,
+                height: 120.h,
                 decoration: BoxDecoration(
                     color: AppColor.screenColor,
-                    borderRadius: BorderRadius.circular(60),
+                    borderRadius: BorderRadius.circular(60.w),
                     image: const DecorationImage(
                       fit: BoxFit.contain,
                       image: AssetImage(AppAssets.model),

@@ -15,7 +15,7 @@ class SplashViewBody extends StatelessWidget {
           width: MediaQuery.sizeOf(context).width.w,
           decoration: BoxDecoration(
             color: AppColor.purple,
-            borderRadius: BorderRadius.circular(200),
+            borderRadius: BorderRadius.circular(200.w),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

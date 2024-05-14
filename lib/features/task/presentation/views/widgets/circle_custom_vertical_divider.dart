@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
 class CircleWithCustomVerticalDivider extends StatelessWidget {
@@ -11,17 +12,17 @@ class CircleWithCustomVerticalDivider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 16),
-        const CircleAvatar(
+        SizedBox(height: 16.h),
+        CircleAvatar(
           backgroundColor: AppColor.pink,
-          radius: 10,
+          radius: 10.r,
         ),
-        const SizedBox(height: 16),
+        SizedBox(height: 16.h),
         isFinalTask
             ? const SizedBox.shrink()
             : Container(
-                width: 2,
-                height: 88,
+                width: 2.w,
+                height: 88.h,
                 decoration: const BoxDecoration(
                   color: AppColor.pink,
                 ),

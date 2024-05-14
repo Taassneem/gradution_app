@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
@@ -33,37 +34,37 @@ class ThingsQuizTextViewBody extends StatelessWidget {
       decoration: const BoxDecoration(
           image: DecorationImage(image: AssetImage(AppAssets.thingsBack))),
       child: Padding(
-        padding: const EdgeInsets.all(18.0),
+        padding: EdgeInsets.all(18.0.r),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CircleAvatar(
-              radius: 30,
+              radius: 30.r,
               backgroundColor: AppColor.babyBlue,
               child: IconButton(
                   onPressed: () {}, icon: const Icon(Icons.volume_up_outlined)),
             ),
-            const SizedBox(height: 30),
+            SizedBox(height: 30.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                    width: 233,
-                    height: 187,
+                    width: 233.w,
+                    height: 187.h,
                     color: AppColor.babyBlue,
                     child: Image.asset(question)),
               ],
             ),
-            SizedBox(height: MediaQuery.sizeOf(context).height * 0.13),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.13.h),
             Container(
               width: MediaQuery.sizeOf(context).width,
-              padding: const EdgeInsets.all(18),
+              padding: EdgeInsets.all(18.r),
               decoration: BoxDecoration(
                   color: AppColor.babyBlue,
-                  borderRadius: BorderRadius.circular(20)),
+                  borderRadius: BorderRadius.circular(20.w)),
               child: Column(
                 children: [
-                  const SizedBox(height: 20),
+                  SizedBox(height: 20.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -71,7 +72,7 @@ class ThingsQuizTextViewBody extends StatelessWidget {
                       ThingsTextAnswer(answer: answerTwo, onTap: onTapTwo)
                     ],
                   ),
-                  const SizedBox(height: 30),
+                  SizedBox(height: 30.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -79,7 +80,7 @@ class ThingsQuizTextViewBody extends StatelessWidget {
                       ThingsTextAnswer(answer: answerFour, onTap: onTapFour)
                     ],
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: 20.h),
                 ],
               ),
             ),

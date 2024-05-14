@@ -19,8 +19,8 @@ class ChoosenType extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            width: 200,
-            height: 200,
+            width: 200.w,
+            height: 200.h,
             decoration: BoxDecoration(
                 color: AppColor.white,
                 border: const Border(
@@ -28,7 +28,7 @@ class ChoosenType extends StatelessWidget {
                     top: BorderSide(color: AppColor.purple),
                     left: BorderSide(color: AppColor.purple),
                     right: BorderSide(color: AppColor.purple)),
-                borderRadius: BorderRadius.circular(100)),
+                borderRadius: BorderRadius.circular(100.w)),
             child: Image.asset(image),
           ),
           SizedBox(height: 24.h),
