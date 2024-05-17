@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
+import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
 class ChangePasswordButton extends StatelessWidget {
@@ -16,6 +18,9 @@ class ChangePasswordButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(30.w),
           border: Border.all(color: AppColor.purple, width: 1.5.w)),
       child: ListTile(
+        onTap: () {
+          GoRouter.of(context).push(AppRouter.changePasswordView);
+        },
         leading: const Icon(Icons.lock_outline),
         title: Text(S.of(context).changePassword,
             style: Theme.of(context).textTheme.titleMedium),

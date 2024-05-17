@@ -3,6 +3,7 @@ import 'package:gradution_app/features/Onboarding/presentation/views/on_boarding
 import 'package:gradution_app/features/auth/presentation/views/forget_password_view.dart';
 import 'package:gradution_app/features/auth/presentation/views/new_password_view.dart';
 import 'package:gradution_app/features/auth/presentation/views/password_changed_view.dart';
+import 'package:gradution_app/features/home/presentation/views/change_password_view.dart';
 import 'package:gradution_app/features/home/presentation/views/profile_view.dart';
 import 'package:gradution_app/features/auth/presentation/views/sign_in_view.dart';
 import 'package:gradution_app/features/auth/presentation/views/sign_up_view.dart';
@@ -69,6 +70,7 @@ class AppRouter {
   static const String verifyCodeView = '/verificationCodeView';
   static const String profileView = '/profileView';
   static const String userProfileView = '/userProfileView';
+  static const String changePasswordView = '/changePasswordView';
   static const String homeView = '/homeView';
   static const String passwordChanged = '/passwordChanged';
   static const String onBoardingView = '/onBoardingView';
@@ -146,6 +148,8 @@ class AppRouter {
     GoRoute(path: homeView, builder: (context, state) => const HomeView()),
     GoRoute(
         path: profileView, builder: (context, state) => const ProfileView()),
+    GoRoute(
+        path: changePasswordView, builder: (context, state) => const ChangePasswordView()),
     GoRoute(
         path: userProfileView,
         builder: (context, state) => const UserProfileView()),

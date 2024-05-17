@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gradution_app/features/auth/presentation/views/widgets/custom_elevated_button.dart';
+import 'package:gradution_app/core/utils/widgets/custom_elevated_button.dart';
 import 'package:gradution_app/features/auth/presentation/views/widgets/text_with_text_field.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
@@ -24,12 +24,14 @@ class UserProfileViewBody extends StatelessWidget {
             textFieldName: S.of(context).fullName,
             hintText: 'Name',
             userProfile: true,
+            icon: Icons.border_color_outlined,
           ),
           SizedBox(height: 24.h),
           TextWithTextField(
             textFieldName: S.of(context).email,
             hintText: 'email',
             userProfile: true,
+            icon: Icons.border_color_outlined,
           ),
           SizedBox(height: 24.h),
           const ChangePasswordButton(),

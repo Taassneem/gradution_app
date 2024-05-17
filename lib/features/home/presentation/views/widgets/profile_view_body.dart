@@ -20,7 +20,7 @@ class ProfileViewBody extends StatelessWidget {
           clipBehavior: Clip.none,
           children: [
             Container(
-              height: MediaQuery.sizeOf(context).height * 0.12.h,
+              height: MediaQuery.sizeOf(context).height * 0.14.h,
               width: MediaQuery.sizeOf(context).width.w,
               color: AppColor.purple,
               child: Padding(
@@ -29,11 +29,12 @@ class ProfileViewBody extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Name',
+                      'Ahmed Mahmoud',
                       style: Theme.of(context).textTheme.titleSmall,
                     ),
+                    SizedBox(height: 16.h),
                     Text(
-                      'Gmail',
+                      'Ahmed_Mahmoud@gmail.com ',
                       style: Theme.of(context).textTheme.displaySmall,
                     )
                   ],
@@ -42,9 +43,9 @@ class ProfileViewBody extends StatelessWidget {
             ),
             Positioned(
               right: 10.w,
-              top: -15.h,
+              top: -10.h,
               child: Container(
-                width: 120.w,
+                width: 130.w,
                 height: 120.h,
                 decoration: BoxDecoration(
                     color: AppColor.screenColor,

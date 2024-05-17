@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/utils/app_color.dart';
+import '../app_color.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   const CustomElevatedButton({
     super.key,
     required this.text,
     this.onPressed,
-    this.isTask = false,
+    this.color = AppColor.purple,
   });
   final String text;
   final void Function()? onPressed;
-  final bool isTask;
+  final Color color;
   @override
   Widget build(BuildContext context) {
     return Center(
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-              backgroundColor: isTask ? AppColor.pink : AppColor.purple,
-              fixedSize: const Size(250, 50)),
+              elevation: 0,
+              backgroundColor: color,
+              fixedSize: Size(250.w, 55.h)),
           onPressed: onPressed,
           child: Text(
             text,

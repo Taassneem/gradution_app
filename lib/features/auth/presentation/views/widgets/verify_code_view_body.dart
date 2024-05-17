@@ -7,7 +7,7 @@ import 'package:gradution_app/generated/l10n.dart';
 import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/utils/widgets/back_icon.dart';
 import 'change_email_text_button.dart';
-import 'custom_elevated_button.dart';
+import '../../../../../core/utils/widgets/custom_elevated_button.dart';
 import 'custom_welcome_text.dart';
 import 'receive_code_again.dart';
 import 'verification_otp.dart';

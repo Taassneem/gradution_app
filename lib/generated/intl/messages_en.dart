@@ -237,6 +237,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Which of These is \'the camel\'?"),
         "theCat": MessageLookupByLibrary.simpleMessage(
             "Which of These is \'the Cat\'?"),
+        "theCurrentPassword":
+            MessageLookupByLibrary.simpleMessage("The Current Password"),
         "theDog": MessageLookupByLibrary.simpleMessage(
             "Which of These is \'the Dog\'?"),
         "theEraser": MessageLookupByLibrary.simpleMessage("The Eraser"),
@@ -258,6 +260,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "tryAgain": MessageLookupByLibrary.simpleMessage("Try Again"),
         "tuesday": MessageLookupByLibrary.simpleMessage("Tuesday"),
         "turtle": MessageLookupByLibrary.simpleMessage("Turtle"),
+        "typeYourCurrentPassword":
+            MessageLookupByLibrary.simpleMessage("Type your current password"),
         "uploadPhoto": MessageLookupByLibrary.simpleMessage("Upload Photo"),
         "userProfile": MessageLookupByLibrary.simpleMessage("User Profile"),
         "verification": MessageLookupByLibrary.simpleMessage("Verification"),

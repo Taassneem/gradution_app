@@ -11,7 +11,7 @@ import 'package:gradution_app/generated/l10n.dart';
 
 import '../../../../../core/utils/app_router.dart';
 import '../../manager/auth_cubit/auth_cubit.dart';
-import 'custom_elevated_button.dart';
+import '../../../../../core/utils/widgets/custom_elevated_button.dart';
 import 'text_with_text_field.dart';
 
 class SignUpForm extends StatelessWidget {

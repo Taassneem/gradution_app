@@ -199,5 +199,7 @@
     "photoUploadSuccessfully": "Photo upload successfully",
     "fieldIsRequired": "Field is required",
     "delete": "Delete",
-    "editTask": "Edit Task"
+    "editTask": "Edit Task",
+    "theCurrentPassword":"The Current Password",
+    "typeYourCurrentPassword":"Type your current password"
 }

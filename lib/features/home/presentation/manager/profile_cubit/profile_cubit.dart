@@ -19,6 +19,7 @@ class ProfileCubit extends Cubit<ProfileState> {
   ProfileCubit(this.homeRepo) : super(ProfileInitial());
   final HomeRepo homeRepo;
   GlobalKey editProfileKey = GlobalKey();
+  GlobalKey changePassKey = GlobalKey();
   TextEditingController editUserName = TextEditingController();
   TextEditingController editEmail = TextEditingController();
   TextEditingController newPassword = TextEditingController();

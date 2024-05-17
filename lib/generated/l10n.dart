@@ -2059,6 +2059,26 @@ class S {
       args: [],
     );
   }
+
+  /// `The Current Password`
+  String get theCurrentPassword {
+    return Intl.message(
+      'The Current Password',
+      name: 'theCurrentPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type your current password`
+  String get typeYourCurrentPassword {
+    return Intl.message(
+      'Type your current password',
+      name: 'typeYourCurrentPassword',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

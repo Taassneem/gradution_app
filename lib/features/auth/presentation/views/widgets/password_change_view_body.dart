@@ -5,7 +5,7 @@ import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
-import 'custom_elevated_button.dart';
+import '../../../../../core/utils/widgets/custom_elevated_button.dart';
 
 class PasswordChangeViewBody extends StatelessWidget {
   const PasswordChangeViewBody({

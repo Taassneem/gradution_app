@@ -1,50 +1,49 @@
 class EndPoint {
-  static const String baseUrl = 'https://autistic-children.vercel.app/';
-  static const String signUp = 'auth/';
-  static const String login = 'auth/login';
-  static const String forget = 'auth/forget';
-  static const String reset = 'auth/reset';
+  static const String signUp = 'https://autistic-children.vercel.app/auth/';
+  static const String login = 'https://autistic-children.vercel.app/auth/login';
+  static const String forget = 'https://autistic-children.vercel.app/auth/forget';
+  static const String reset = 'https://autistic-children.vercel.app/auth/reset';
 
-  static const String categories = 'blog/getTodos';
-  static const String addTask = 'blog/add';
+  static const String categories = 'https://autistic-children.vercel.app/blog/getTodos';
+  static const String addTask = 'https://autistic-children.vercel.app/blog/add';
   static String getTasks(id) {
-    return 'blog/createdBy/$id';
+    return 'https://autistic-children.vercel.app/blog/createdBy/$id';
   }
 
   static String editTasks(id) {
-    return 'blog/updateBlog/$id';
+    return 'https://autistic-children.vercel.app/blog/updateBlog/$id';
   }
 
   static String deteleTask(id) {
-    return 'blog/deleteBlog/$id';
+    return 'https://autistic-children.vercel.app/blog/deleteBlog/$id';
   }
 
   static String changePassword(id) {
-    return 'user/changePassword/$id';
+    return 'https://autistic-children.vercel.app/user/changePassword/$id';
   }
 
-  static const String logOut = 'user/logout';
+  static const String logOut = 'https://autistic-children.vercel.app/user/logout';
   static String editProfile(id) {
-    return 'user/editProfile/$id';
+    return 'https://autistic-children.vercel.app/user/editProfile/$id';
   }
 
   static String editProfilePic(id) {
-    return 'user/updateprofilepic/$id';
+    return 'https://autistic-children.vercel.app/user/updateprofilepic/$id';
   }
 
   static String uploadProfilepic(id) {
-    return 'user/profilepic/$id';
+    return 'https://autistic-children.vercel.app/user/profilepic/$id';
   }
 
   static String deleteUser(id) {
-    return 'user/deleteUser/$id';
+    return 'https://autistic-children.vercel.app/user/deleteUser/$id';
   }
 
   static String getuserById(id) {
-    return 'user/getuserById/$id';
+    return 'https://autistic-children.vercel.app/user/getuserById/$id';
   }
 
-  static const String modelAi = '/predict';
+  static const String modelAi = 'https://gradprojectyolov8-aren.onrender.com/predict';
 }
 
 class ApiKey {
@@ -59,6 +58,7 @@ class ApiKey {
   static const String forgetCode = 'forgetCode';
   static const String newPassword = 'newPassword';
   static const String authorization = 'Authorization';
+  static const String acceptLanguage = 'Accept-Language';
   static const String confirmPassword = 'confirmPassword';
   static const String confirmPasswordReset = 'confirmpassword';
   static const String oldPassword = 'oldPassword';

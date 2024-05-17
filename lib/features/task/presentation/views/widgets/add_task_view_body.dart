@@ -13,7 +13,7 @@ import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/core/utils/servive_locator.dart';
-import 'package:gradution_app/features/auth/presentation/views/widgets/custom_elevated_button.dart';
+import 'package:gradution_app/core/utils/widgets/custom_elevated_button.dart';
 import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
 import 'package:gradution_app/features/task/presentation/views/widgets/add_photo.dart';
 import 'package:gradution_app/features/task/presentation/views/widgets/reminder.dart';
@@ -111,7 +111,7 @@ class AddTaskViewBody extends StatelessWidget {
                       const CustomDivider(),
                       SizedBox(height: 24.h),
                       CustomElevatedButton(
-                        isTask: true,
+                       color: AppColor.pink,
                         text: S.of(context).saveChanges,
                         onPressed: () {
                           if (taskCubit.taskKey.currentState!.validate()) {

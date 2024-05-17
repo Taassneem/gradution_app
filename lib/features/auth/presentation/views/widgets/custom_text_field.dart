@@ -63,8 +63,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                     });
                   },
                   icon: obscureText
-                      ? const Icon(Icons.remove_red_eye_outlined)
-                      : const Icon(Icons.visibility_off_outlined))
+                      ? const Icon(Icons.visibility_off_outlined)
+                      : const Icon(Icons.remove_red_eye_outlined))
               : Icon(widget.icon)),
     );
   }

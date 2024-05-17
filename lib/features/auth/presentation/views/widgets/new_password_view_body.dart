@@ -9,7 +9,7 @@ import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/auth/presentation/manager/auth_cubit/auth_cubit.dart';
 import 'package:gradution_app/generated/l10n.dart';
 import 'text_with_text_field.dart';
-import 'custom_elevated_button.dart';
+import '../../../../../core/utils/widgets/custom_elevated_button.dart';
 
 class NewPasswordViewBody extends StatelessWidget {
   const NewPasswordViewBody({
