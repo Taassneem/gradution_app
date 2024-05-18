@@ -2,14 +2,14 @@ import 'package:equatable/equatable.dart';
 
 import 'user.dart';
 
-class UplaodProfilePicModel extends Equatable {
+class UploadProfilePicModel extends Equatable {
   final String? message;
   final User? user;
 
-  const UplaodProfilePicModel({this.message, this.user});
+  const UploadProfilePicModel({this.message, this.user});
 
-  factory UplaodProfilePicModel.fromJson(Map<String, dynamic> json) {
-    return UplaodProfilePicModel(
+  factory UploadProfilePicModel.fromJson(Map<String, dynamic> json) {
+    return UploadProfilePicModel(
       message: json['message'] as String?,
       user: json['user'] == null
           ? null

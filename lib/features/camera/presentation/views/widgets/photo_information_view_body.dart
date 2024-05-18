@@ -19,7 +19,7 @@ class PhotoInforamtionViewBody extends StatelessWidget {
     return SafeArea(
       child: Column(
         children: [
-          SizedBox(height: 5.h),
+          SizedBox(height: 15.h),
           const ArrowBack(),
           Align(
               alignment: isArabic() ? Alignment.topLeft : Alignment.centerRight,

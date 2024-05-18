@@ -10,10 +10,11 @@ import 'package:gradution_app/features/home/data/models/delete_user_model.dart';
 import 'package:gradution_app/features/home/data/models/edit_profile_model/edit_profile_model.dart';
 import 'package:gradution_app/features/home/data/models/edit_profile_pic_model/edit_profile_pic_model.dart';
 import 'package:gradution_app/features/home/data/models/log_out_model.dart';
-import 'package:gradution_app/features/home/data/models/uplaod_profile_pic_model/uplaod_profile_pic_model.dart';
+import 'package:gradution_app/features/home/data/models/upload_profile_pic_model/upload_profile_pic_model.dart';
 import 'package:gradution_app/features/home/data/models/user_data_model/user_data_model.dart';
+import 'package:image_picker/image_picker.dart';
 
-import 'home_repo.dart';
+import 'profile_repo.dart';
 
 class HomeRepoImpl extends HomeRepo {
   final ApiConsumer api;
@@ -72,22 +73,6 @@ class HomeRepoImpl extends HomeRepo {
   }
 
   @override
-  Future<Either<ServerFailure, EditProfilePicModel>> editProfilePic(
-      {required String image}) async {
-    try {
-      final response = await api.post(
-          EndPoint.editProfilePic(
-              getIt.get<CacheHelper>().getData(key: ApiKey.loginId)),
-          data: {ApiKey.image: image},
-          isFormData: true);
-      final editProfilePic = EditProfilePicModel.fromJson(response);
-      return right(editProfilePic);
-    } on ServerFailure catch (e) {
-      return left(e);
-    }
-  }
-
-  @override
   Future<Either<ServerFailure, UserDataModel>> getUserData() async {
     try {
       final response = await api.get(EndPoint.getuserById(
@@ -113,15 +98,33 @@ class HomeRepoImpl extends HomeRepo {
   }
 
   @override
-  Future<Either<ServerFailure, UplaodProfilePicModel>> uplaodProfilePic(
+  Future<Either<ServerFailure, EditProfilePicModel>> editProfilePic(
       {required String image}) async {
     try {
       final response = await api.post(
-          EndPoint.uploadProfilepic(
-              getIt.get<CacheHelper>().getData(key: ApiKey.loginId)),
-          data: {ApiKey.image: image},
-          isFormData: true);
-      final uploadProfilePic = UplaodProfilePicModel.fromJson(response);
+        EndPoint.editProfilePic(
+            getIt.get<CacheHelper>().getData(key: ApiKey.loginId)),
+        isFormData: true,
+        data: {ApiKey.image: image},
+      );
+      final editProfilePic = EditProfilePicModel.fromJson(response);
+      return right(editProfilePic);
+    } on ServerFailure catch (e) {
+      return left(e);
+    }
+  }
+
+  @override
+  Future<Either<ServerFailure, UploadProfilePicModel>> uplaodProfilePic(
+      {required  image}) async {
+    try {
+      final response = await api.post(
+        EndPoint.uploadProfilepic(
+            getIt.get<CacheHelper>().getData(key: ApiKey.loginId)),
+        data: {ApiKey.image: image},
+        isFormData: true,
+      );
+      final uploadProfilePic = UploadProfilePicModel.fromJson(response);
       return right(uploadProfilePic);
     } on ServerFailure catch (e) {
       return left(e);

@@ -29,7 +29,7 @@ class TaskElevatedButton extends StatelessWidget {
               color: AppColor.black,
             ),
             SizedBox(width: 8.w),
-            Text(S.of(context).addTask,
+            Text(upload ? S.of(context).uploadPhoto : S.of(context).addTask,
                 style: Theme.of(context).textTheme.titleSmall),
           ],
         ));

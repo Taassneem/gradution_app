@@ -22,7 +22,7 @@ class TaskCubit extends Cubit<TaskState> {
   String? reminder;
   String? repeater;
   DateTime? date;
-  XFile? taskImageFromCamera;
+  XFile? taskImageFromGallery;
   DateTime? time;
 
   Future<void> fetchCategories() async {
@@ -94,7 +94,7 @@ class TaskCubit extends Cubit<TaskState> {
 
       if (retunedImage == null) return;
 
-      taskImageFromCamera = XFile(retunedImage.path);
+      taskImageFromGallery = XFile(retunedImage.path);
 
       emit(UploadingPhotoSuccess());
     } catch (e) {

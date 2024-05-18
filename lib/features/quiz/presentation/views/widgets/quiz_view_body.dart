@@ -25,8 +25,8 @@ class QuizViewBody extends StatelessWidget {
           Expanded(
             child: Container(
                 width: MediaQuery.sizeOf(context).width,
-                padding:  EdgeInsets.only(top: 64.h, right: 8.w, left: 8.w),
-                decoration:  BoxDecoration(
+                padding: EdgeInsets.only(top: 64.h, right: 8.w, left: 8.w),
+                decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(100.w),
                         topRight: Radius.circular(100.w)),

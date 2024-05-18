@@ -88,7 +88,7 @@ class AiContent extends StatelessWidget {
                     child: Text(
                       state.errorMessage,
                       textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.headlineLarge,
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
                   );
                 } else {

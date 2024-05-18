@@ -33,7 +33,7 @@ class AddPhoto extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleMedium),
                   trailing: Image.asset(AppAssets.addPhoto),
                 ),
-                BlocProvider.of<TaskCubit>(context).taskImageFromCamera == null
+                BlocProvider.of<TaskCubit>(context).taskImageFromGallery == null
                     ? Container(
                         alignment: Alignment.center,
                         width: MediaQuery.sizeOf(context).width * 0.6.w,
@@ -50,7 +50,7 @@ class AddPhoto extends StatelessWidget {
                             image: DecorationImage(
                               image: FileImage(File(
                                   BlocProvider.of<TaskCubit>(context)
-                                      .taskImageFromCamera!
+                                      .taskImageFromGallery!
                                       .path)),
                             ),
                             borderRadius: BorderRadius.circular(20.w)),
@@ -63,7 +63,7 @@ class AddPhoto extends StatelessWidget {
                           content: Text(S.of(context).photoUploadSuccessfully));
                       BlocProvider.of<TaskCubit>(context).image =
                           BlocProvider.of<TaskCubit>(context)
-                              .taskImageFromCamera!
+                              .taskImageFromGallery!
                               .path;
                     } else if (state is UploadingPhotoFailure) {
                       log(state.errorMessage);

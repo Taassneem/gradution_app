@@ -65,10 +65,30 @@ final class EditProfilePicFailure extends ProfileState {
   const EditProfilePicFailure({required this.errorMessage});
 }
 
+final class PickProfileFromGalleryLoading extends ProfileState {}
+
+final class PickProfileFromGallerySuccess extends ProfileState {}
+
+final class PickProfileFromGalleryFailure extends ProfileState {
+  final String errorMessage;
+
+  const PickProfileFromGalleryFailure({required this.errorMessage});
+}
+
+final class PickProfileFromCameraLoading extends ProfileState {}
+
+final class PickProfileFromCameraSuccess extends ProfileState {}
+
+final class PickProfileFromCameraFailure extends ProfileState {
+  final String errorMessage;
+
+  const PickProfileFromCameraFailure({required this.errorMessage});
+}
+
 final class UploadProfilePicLoading extends ProfileState {}
 
 final class UploadProfilePicSuccess extends ProfileState {
-  final UplaodProfilePicModel uplaodProfilePicModel;
+  final UploadProfilePicModel uplaodProfilePicModel;
 
   const UploadProfilePicSuccess({required this.uplaodProfilePicModel});
 }

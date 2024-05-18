@@ -27,7 +27,7 @@ class TaskListViewComponent extends StatelessWidget {
                   taskModel.time!.split('')[20],
               style: Theme.of(context).textTheme.titleMedium,
             ),
-            SizedBox(width: 1.w),
+            SizedBox(width: 10.w),
             CircleAvatar(
               backgroundColor: AppColor.pink,
               radius: 10.r,
@@ -45,7 +45,7 @@ class TaskListViewComponent extends StatelessWidget {
                   color: AppColor.pink,
                 ),
               ),
-              SizedBox(width: 3.w),
+              SizedBox(width: 30.w),
               Expanded(
                 child: Container(
                   height: 88.h,

@@ -28,7 +28,7 @@ class ItemField extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(image),
-            SizedBox(height: 16.h),
+            SizedBox(height: 15.h),
             Text(
               fieldName,
               style: Theme.of(context).textTheme.titleMedium,

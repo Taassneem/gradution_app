@@ -149,7 +149,8 @@ class AppRouter {
     GoRoute(
         path: profileView, builder: (context, state) => const ProfileView()),
     GoRoute(
-        path: changePasswordView, builder: (context, state) => const ChangePasswordView()),
+        path: changePasswordView,
+        builder: (context, state) => const ChangePasswordView()),
     GoRoute(
         path: userProfileView,
         builder: (context, state) => const UserProfileView()),

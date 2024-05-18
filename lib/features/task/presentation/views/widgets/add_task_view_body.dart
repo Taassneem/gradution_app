@@ -111,7 +111,7 @@ class AddTaskViewBody extends StatelessWidget {
                       const CustomDivider(),
                       SizedBox(height: 24.h),
                       CustomElevatedButton(
-                       color: AppColor.pink,
+                        color: AppColor.pink,
                         text: S.of(context).saveChanges,
                         onPressed: () {
                           if (taskCubit.taskKey.currentState!.validate()) {

@@ -50,4 +50,3 @@ class MiddleAnimalRight extends StatelessWidget {
     );
   }
 }
-

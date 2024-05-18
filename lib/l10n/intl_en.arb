@@ -201,5 +201,6 @@
     "delete": "Delete",
     "editTask": "Edit Task",
     "theCurrentPassword":"The Current Password",
-    "typeYourCurrentPassword":"Type your current password"
+    "typeYourCurrentPassword":"Type your current password",
+    "uploadPhoto ":"Upload a photo "
 }

@@ -20,7 +20,7 @@ class SelectDayWidget extends StatelessWidget {
         child: Card(
           color: AppColor.pink,
           child: Padding(
-            padding:  EdgeInsets.all(18.0.r),
+            padding: EdgeInsets.all(18.0.r),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [

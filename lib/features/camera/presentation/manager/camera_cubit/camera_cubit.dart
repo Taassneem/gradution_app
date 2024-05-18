@@ -34,7 +34,6 @@ class CameraCubit extends Cubit<CameraState> {
       imageFromGallery = XFile(retunedImage.path);
       List<int> imageBytes = File(imageFromGallery!.path).readAsBytesSync();
       base64ImageFromGallery = base64Encode(imageBytes);
-      // imageBase64FromGallery = base64Decode(base64ImageFromGallery!);
       log(base64ImageFromGallery!);
       emit(CameraGallerySuccess());
     } catch (e) {
@@ -54,7 +53,6 @@ class CameraCubit extends Cubit<CameraState> {
       imageFromCamera = XFile(retunedImage.path);
       List<int> imageBytes = File(imageFromCamera!.path).readAsBytesSync();
       base64ImageFromCamera = base64Encode(imageBytes);
-      // imageBase64FromCamera = base64Decode(base64ImageFromCamera!);
       log(imageBase64FromCamera!);
       emit(CameraSuccess());
     } catch (e) {
@@ -64,8 +62,8 @@ class CameraCubit extends Cubit<CameraState> {
 
   Future<void> sendPhoto() async {
     emit(SendPhotoLoading());
-    var result = await cameraRepo.sendPhoto(
-        image: base64ImageFromCamera ?? base64ImageFromGallery!);
+    var imageToSend = base64ImageFromCamera ?? base64ImageFromGallery;
+    var result = await cameraRepo.sendPhoto(image: imageToSend!);
     result.fold(
         (failure) =>
             emit(SendPhotoFailure(errorMessage: failure.failure.errorMessage)),

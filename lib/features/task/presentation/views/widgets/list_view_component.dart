@@ -15,7 +15,7 @@ class ListViewComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin:  EdgeInsets.only(bottom: 16.h),
+      margin: EdgeInsets.only(bottom: 16.h),
       height: MediaQuery.sizeOf(context).height * 0.1.h,
       alignment: Alignment.center,
       decoration: const BoxDecoration(color: AppColor.white),

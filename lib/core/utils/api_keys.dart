@@ -1,10 +1,12 @@
 class EndPoint {
   static const String signUp = 'https://autistic-children.vercel.app/auth/';
   static const String login = 'https://autistic-children.vercel.app/auth/login';
-  static const String forget = 'https://autistic-children.vercel.app/auth/forget';
+  static const String forget =
+      'https://autistic-children.vercel.app/auth/forget';
   static const String reset = 'https://autistic-children.vercel.app/auth/reset';
 
-  static const String categories = 'https://autistic-children.vercel.app/blog/getTodos';
+  static const String categories =
+      'https://autistic-children.vercel.app/blog/getTodos';
   static const String addTask = 'https://autistic-children.vercel.app/blog/add';
   static String getTasks(id) {
     return 'https://autistic-children.vercel.app/blog/createdBy/$id';
@@ -22,7 +24,8 @@ class EndPoint {
     return 'https://autistic-children.vercel.app/user/changePassword/$id';
   }
 
-  static const String logOut = 'https://autistic-children.vercel.app/user/logout';
+  static const String logOut =
+      'https://autistic-children.vercel.app/user/logout';
   static String editProfile(id) {
     return 'https://autistic-children.vercel.app/user/editProfile/$id';
   }
@@ -43,7 +46,7 @@ class EndPoint {
     return 'https://autistic-children.vercel.app/user/getuserById/$id';
   }
 
-  static const String modelAi = 'https://gradprojectyolov8-aren.onrender.com/predict';
+  static const String modelAi = 'http://144.24.219.44:5050/predict';
 }
 
 class ApiKey {

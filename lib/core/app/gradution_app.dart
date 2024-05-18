@@ -9,7 +9,7 @@ import 'package:gradution_app/features/auth/data/repo/auth_repo_impl.dart';
 import 'package:gradution_app/features/auth/presentation/manager/auth_cubit/auth_cubit.dart';
 import 'package:gradution_app/features/camera/data/repo/camera_repo_impl.dart';
 import 'package:gradution_app/features/camera/presentation/manager/camera_cubit/camera_cubit.dart';
-import 'package:gradution_app/features/home/data/repo/home_repo_impl.dart';
+import 'package:gradution_app/features/home/data/repo/profile_repo_impl.dart';
 import 'package:gradution_app/features/home/presentation/manager/profile_cubit/profile_cubit.dart';
 import 'package:gradution_app/features/task/data/repo/task_repo_impl.dart';
 import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';

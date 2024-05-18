@@ -19,8 +19,8 @@ class TaskCustomDialog extends StatelessWidget {
         alignment: isArabic() ? Alignment.centerLeft : Alignment.bottomRight,
         child: Card(
           child: Container(
-            height: 150.w,
-            width: 190.h,
+            height: 155.h,
+            width: 190.w,
             padding: EdgeInsets.all(16.r),
             decoration: BoxDecoration(
                 color: AppColor.white,

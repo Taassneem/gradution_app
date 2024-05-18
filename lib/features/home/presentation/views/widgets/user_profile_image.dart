@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
 class UserProfileImage extends StatelessWidget {
   const UserProfileImage({
     super.key,
+    required this.image,
   });
-
+  final ImageProvider<Object> image;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -19,9 +19,9 @@ class UserProfileImage extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100.w),
             color: AppColor.purple,
-            image: const DecorationImage(
-              image: AssetImage(AppAssets.profile),
-              fit: BoxFit.contain,
+            image: DecorationImage(
+              image: image,
+              fit: BoxFit.cover,
             ),
           ),
         ),

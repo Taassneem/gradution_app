@@ -25,7 +25,7 @@ class _DaysListViewState extends State<DaysListView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding:  EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
         decoration: BoxDecoration(
             border: Border.all(color: AppColor.white, width: 1.5.w),
             borderRadius: BorderRadius.circular(10.w)),

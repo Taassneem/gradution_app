@@ -2079,6 +2079,8 @@ class S {
       args: [],
     );
   }
+
+  // skipped getter for the 'uploadPhoto ' key
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

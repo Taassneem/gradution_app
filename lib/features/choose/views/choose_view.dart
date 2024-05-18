@@ -7,7 +7,7 @@ class ChooseView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: ChooseViewBody(),
+      body: SingleChildScrollView(child: ChooseViewBody()),
     );
   }
 }
