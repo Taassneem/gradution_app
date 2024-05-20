@@ -20,7 +20,7 @@ class HomeView extends StatelessWidget {
                 BlocProvider.of<ProfileCubit>(context).getUserData();
                 GoRouter.of(context).push(AppRouter.profileView);
               },
-              icon: Image.asset(AppAssets.model, width: 60))
+              icon: Image.asset(AppAssets.profilePic, width: 60))
         ],
       ),
       body: const HomeViewBody(),

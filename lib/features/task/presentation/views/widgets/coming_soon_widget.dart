@@ -25,7 +25,7 @@ class ComingSoonWidget extends StatelessWidget {
         ),
         Column(
           children: [
-            Image.asset(AppAssets.comingSoon),
+            Image.asset(AppAssets.noTask),
             Text(
               S.of(context).thereAreNoTasksAddedYet,
               style: Theme.of(context).textTheme.titleMedium,

@@ -53,7 +53,8 @@ class TaskCubit extends Cubit<TaskState> {
 
   Future<void> fetchTasks() async {
     emit(FetchTasksLoading());
-    var result = await taskRepo.fetchTasks();
+    var result =
+        await taskRepo.fetchTasks(selectedDate: date ?? DateTime.now());
     result.fold(
         (failure) =>
             emit(FetchTasksFailure(errorMessage: failure.failure.errorMessage)),

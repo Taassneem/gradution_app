@@ -26,7 +26,8 @@ class SignUpForm extends StatelessWidget {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is SignUpSuccess) {
-          showToast(state.signUpModel.message!);
+          showToast(
+              state.signUpModel.message ?? S.of(context).signedUpSuccessfully);
           GoRouter.of(context).pushReplacement(AppRouter.signInView);
         } else if (state is SignUpFailure) {
           showToast(state.errorMessage);

@@ -28,7 +28,7 @@ class SignInForm extends StatelessWidget {
         if (state is SignInFailure) {
           showToast(state.errorMessage);
         } else if (state is SignInSuccess) {
-          showToast(state.signInModel.messge!);
+          showToast(state.signInModel.messge ?? S.of(context).signInWelcome);
           GoRouter.of(context).pushReplacement(AppRouter.chooseView);
         }
       },

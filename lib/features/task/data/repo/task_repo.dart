@@ -7,7 +7,8 @@ import 'package:gradution_app/features/task/data/models/task_model/task_model.da
 
 abstract class TaskRepo {
   Future<Either<ServerFailure, List<CategoryModel>>> fetchCategories();
-  Future<Either<ServerFailure, List<TaskModel>>> fetchTasks();
+  Future<Either<ServerFailure, List<TaskModel>>> fetchTasks(
+      {required DateTime selectedDate});
   Future<Either<ServerFailure, AddTaskModel>> addTask({
     required String title,
     String? image,

@@ -14,7 +14,9 @@ class TaskView extends StatelessWidget {
       backgroundColor: AppColor.pink,
       appBar: AppBar(
         backgroundColor: AppColor.pink,
-        leading: Image.asset(AppAssets.model),
+        leading: CircleAvatar(
+          radius: 50,
+          child: Image.asset(AppAssets.profilePic)),
         leadingWidth: 80,
         title: Text(
           S.of(context).welcome,

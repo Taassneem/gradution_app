@@ -9,6 +9,7 @@ import 'package:gradution_app/features/task/data/models/category_model/category_
 import 'package:gradution_app/features/task/data/models/add_task_model/add_task_model.dart';
 import 'package:gradution_app/features/task/data/models/delete_task_model.dart';
 import 'package:gradution_app/features/task/data/models/task_model/task_model.dart';
+import 'package:intl/intl.dart';
 
 import 'task_repo.dart';
 
@@ -70,14 +71,19 @@ class TaskRepoImpl extends TaskRepo {
   }
 
   @override
-  Future<Either<ServerFailure, List<TaskModel>>> fetchTasks() async {
+  Future<Either<ServerFailure, List<TaskModel>>> fetchTasks(
+      {required DateTime selectedDate}) async {
     try {
       final response = await api.get(EndPoint.getTasks(
           getIt.get<CacheHelper>().getData(key: ApiKey.loginId)));
       List<dynamic> tasks = response['blogs'];
       List<TaskModel> task =
           tasks.map((item) => TaskModel.fromJson(item)).toList();
-      return right(task);
+      List<TaskModel> filteredTasks = task.where((task) {
+        return DateFormat('yyyy-MM-dd').format(task.date!) ==
+            DateFormat('yyyy-MM-dd').format(selectedDate);
+      }).toList();
+      return right(filteredTasks);
     } on ServerFailure catch (e) {
       return left(e);
     }
