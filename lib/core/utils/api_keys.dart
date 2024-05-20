@@ -86,4 +86,5 @@ class CacheHelperKey {
   static const String signedUp = 'signedUp';
   static const String isArabic = 'isArabic';
   static const String isEnglish = 'isEnglish';
+  static const String changeLan = 'changeLan';
 }

@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
-import 'package:gradution_app/features/quiz/numbers/views/widget/name_speaker.dart';
+import 'package:gradution_app/features/quiz/presentation/views/widgets/back_to_home.dart';
 import 'package:gradution_app/features/quiz/numbers/views/widget/number_text_answer.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
@@ -24,7 +24,7 @@ class NumberQuizSixViewBody extends StatelessWidget {
       padding: EdgeInsets.all(18.0.r),
       child: Column(
         children: [
-          NameSpeaker(onPressed: () {}),
+          const BackToHome(),
           SizedBox(height: 32.h),
           TextAnswerNumber(number: S.of(context).six, question: true),
           SizedBox(height: MediaQuery.sizeOf(context).height * 0.08.h),
@@ -33,6 +33,7 @@ class NumberQuizSixViewBody extends StatelessWidget {
               onTap: () {
                 customShowDialog(context, widget: const NumberErrorWidget());
               }),
+          SizedBox(height: MediaQuery.sizeOf(context).height * 0.01.h),
           ImageAnswerNumber(
               number: AppAssets.six2,
               onTap: () {
@@ -42,6 +43,7 @@ class NumberQuizSixViewBody extends StatelessWidget {
                   },
                 ));
               }),
+          SizedBox(height: MediaQuery.sizeOf(context).height * 0.01.h),
           ImageAnswerNumber(
               number: AppAssets.four,
               onTap: () {

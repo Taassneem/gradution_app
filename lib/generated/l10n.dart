@@ -710,10 +710,10 @@ class S {
     );
   }
 
-  /// `The Ship`
+  /// `Ship`
   String get theShip {
     return Intl.message(
-      'The Ship',
+      'Ship',
       name: 'theShip',
       desc: '',
       args: [],
@@ -810,10 +810,10 @@ class S {
     );
   }
 
-  /// `The Eraser`
+  /// `Eraser`
   String get theEraser {
     return Intl.message(
-      'The Eraser',
+      'Eraser',
       name: 'theEraser',
       desc: '',
       args: [],
@@ -1270,20 +1270,20 @@ class S {
     );
   }
 
-  /// `How many animals are in the picture?`
+  /// `How many animals are in picture?`
   String get howManyAnimalsInPicture {
     return Intl.message(
-      'How many animals are in the picture?',
+      'How many animals are in picture?',
       name: 'howManyAnimalsInPicture',
       desc: '',
       args: [],
     );
   }
 
-  /// `What is the name of this number?`
+  /// `What is name of this number?`
   String get nameOfNumber {
     return Intl.message(
-      'What is the name of this number?',
+      'What is name of this number?',
       name: 'nameOfNumber',
       desc: '',
       args: [],
@@ -1300,50 +1300,50 @@ class S {
     );
   }
 
-  /// `Which of These is 'the camel'?`
+  /// `Which of These is 'Camel' ?`
   String get theCamel {
     return Intl.message(
-      'Which of These is \'the camel\'?',
+      'Which of These is \'Camel\' ?',
       name: 'theCamel',
       desc: '',
       args: [],
     );
   }
 
-  /// `Which of These is 'the Dog'?`
+  /// `Which of These is 'Dog' ?`
   String get theDog {
     return Intl.message(
-      'Which of These is \'the Dog\'?',
+      'Which of These is \'Dog\' ?',
       name: 'theDog',
       desc: '',
       args: [],
     );
   }
 
-  /// `Which of These is 'the Cat'?`
+  /// `Which of These is 'Cat' ?`
   String get theCat {
     return Intl.message(
-      'Which of These is \'the Cat\'?',
+      'Which of These is \'Cat\' ?',
       name: 'theCat',
       desc: '',
       args: [],
     );
   }
 
-  /// `Which of These is 'the Lion'?`
+  /// `Which of These is 'Lion' ?`
   String get theLion {
     return Intl.message(
-      'Which of These is \'the Lion\'?',
+      'Which of These is \'Lion\' ?',
       name: 'theLion',
       desc: '',
       args: [],
     );
   }
 
-  /// `Which of These is 'the Snake'?`
+  /// `Which of These is 'Snake' ?`
   String get theSnake {
     return Intl.message(
-      'Which of These is \'the Snake\'?',
+      'Which of These is \'Snake\' ?',
       name: 'theSnake',
       desc: '',
       args: [],
@@ -2081,6 +2081,26 @@ class S {
   }
 
   // skipped getter for the 'uploadPhoto ' key
+
+  /// `Do you want to use the Arabic language?`
+  String get doYouWantToUseTheArabicLanguage {
+    return Intl.message(
+      'Do you want to use the Arabic language?',
+      name: 'doYouWantToUseTheArabicLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change`
+  String get change {
+    return Intl.message(
+      'Change',
+      name: 'change',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

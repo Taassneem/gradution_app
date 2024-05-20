@@ -26,7 +26,7 @@ class SignUpForm extends StatelessWidget {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is SignUpSuccess) {
-          showToast(s.signedUpSuccessfully);
+          showToast(state.signUpModel.message!);
           GoRouter.of(context).pushReplacement(AppRouter.signInView);
         } else if (state is SignUpFailure) {
           showToast(state.errorMessage);
@@ -60,21 +60,19 @@ class SignUpForm extends StatelessWidget {
                             icon: Icons.mail_outline),
                         SizedBox(height: 16.h),
                         TextWithTextField(
-                          textFieldName: s.password,
-                          hintText: s.passwordValidate,
-                          controller: authCubit.signUpPassword,
-                          obscureText: true,
-                          isPassword: true,
-                        ),
+                            textFieldName: s.password,
+                            hintText: s.passwordValidate,
+                            controller: authCubit.signUpPassword,
+                            obscureText: true,
+                            isPassword: true),
                         SizedBox(height: 16.h),
                         TextWithTextField(
-                          textFieldName: s.confirmPassword,
-                          hintText: s.mustBeBoth,
-                          controller: authCubit.confirmPassword,
-                          obscureText: true,
-                          finalField: true,
-                          isPassword: true,
-                        ),
+                            textFieldName: s.confirmPassword,
+                            hintText: s.mustBeBoth,
+                            controller: authCubit.confirmPassword,
+                            obscureText: true,
+                            finalField: true,
+                            isPassword: true),
                         SizedBox(height: 20.h),
                         state is SignUpLoading
                             ? const Center(child: CircularProgressIndicator())

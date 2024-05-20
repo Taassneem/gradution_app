@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/func/is_arabic_func.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/home/presentation/manager/profile_cubit/profile_cubit.dart';
@@ -31,7 +32,9 @@ class ProfileViewInformations extends StatelessWidget {
               featureName: S.of(context).account,
               featureType: S.of(context).editProfile,
               leading: const Icon(Icons.person, color: AppColor.purple),
-              trailing: const Icon(Icons.keyboard_double_arrow_right_outlined),
+              trailing: isArabic()
+                  ? const Icon(Icons.keyboard_double_arrow_left_outlined)
+                  : const Icon(Icons.keyboard_double_arrow_right_outlined),
             ),
           ),
           CustomProfileFeature(

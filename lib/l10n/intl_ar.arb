@@ -199,5 +199,9 @@
     "photoUploadSuccessfully": "تم تحميل الصورة بنجاح",
     "fieldIsRequired": "هذا الحقل مطلوب",
     "delete": "حذف",
-    "editTask": "تعديل المهمة"
+    "editTask": "تعديل المهمة",
+    "theCurrentPassword": "كلمة المرور الحالية",
+    "typeYourCurrentPassword": "اكتب كلمة المرور الحالية",
+    "doYouWantToUseTheArabicLanguage": "هل تريد استخدام اللغة الانجليزية؟",
+    "change": "تغيير"
 }

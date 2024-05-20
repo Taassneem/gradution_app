@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
-import 'package:gradution_app/features/quiz/numbers/views/widget/name_speaker.dart';
+import 'package:gradution_app/features/quiz/presentation/views/widgets/back_to_home.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
 import 'number_answer_image.dart';
@@ -26,7 +26,7 @@ class NumberQuizTwoViewBody extends StatelessWidget {
         padding: EdgeInsets.all(22.0.r),
         child: Column(
           children: [
-            NameSpeaker(onPressed: () {}),
+            const BackToHome(),
             SizedBox(height: 32.h),
             NumberQuestion(
               question: S.of(context).meaningOfSeven,

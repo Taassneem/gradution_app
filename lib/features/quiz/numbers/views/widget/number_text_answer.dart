@@ -23,7 +23,7 @@ class TextAnswerNumber extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-          width: 155.w,
+          width: 150.w,
           height: question ? 60.h : 100.h,
           decoration: BoxDecoration(
               color: AppColor.babyBlue,

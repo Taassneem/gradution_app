@@ -43,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "cat": MessageLookupByLibrary.simpleMessage("القط"),
         "categories": MessageLookupByLibrary.simpleMessage("الفئات"),
         "cebola": MessageLookupByLibrary.simpleMessage("البصل"),
+        "change": MessageLookupByLibrary.simpleMessage("تغيير"),
         "changeEmail": MessageLookupByLibrary.simpleMessage("تغيير الايميل"),
         "changePassword":
             MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
@@ -80,6 +81,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "dailyTasks": MessageLookupByLibrary.simpleMessage("المهام اليومية"),
         "delete": MessageLookupByLibrary.simpleMessage("حذف"),
         "deleteAccount": MessageLookupByLibrary.simpleMessage("حذف الحساب"),
+        "doYouWantToUseTheArabicLanguage": MessageLookupByLibrary.simpleMessage(
+            "هل تريد استخدام اللغة الانجليزية؟"),
         "dog": MessageLookupByLibrary.simpleMessage("الكلب"),
         "done": MessageLookupByLibrary.simpleMessage("تم"),
         "door": MessageLookupByLibrary.simpleMessage("الباب"),
@@ -239,6 +242,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ten": MessageLookupByLibrary.simpleMessage("عشرة"),
         "theCamel": MessageLookupByLibrary.simpleMessage("أي من هذه هو الجمل؟"),
         "theCat": MessageLookupByLibrary.simpleMessage("أي من هذه هو القط؟"),
+        "theCurrentPassword":
+            MessageLookupByLibrary.simpleMessage("كلمة المرور الحالية"),
         "theDog": MessageLookupByLibrary.simpleMessage("أي من هذه هو الكلب؟"),
         "theEraser": MessageLookupByLibrary.simpleMessage("الممحاة"),
         "theLion": MessageLookupByLibrary.simpleMessage("أي من هذه هو الأسد؟"),
@@ -258,6 +263,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "tryAgain": MessageLookupByLibrary.simpleMessage("حاول مرة أخرى"),
         "tuesday": MessageLookupByLibrary.simpleMessage("الثلاثاء"),
         "turtle": MessageLookupByLibrary.simpleMessage("سلحفاة"),
+        "typeYourCurrentPassword":
+            MessageLookupByLibrary.simpleMessage("اكتب كلمة المرور الحالية"),
         "uploadPhoto": MessageLookupByLibrary.simpleMessage("حمل الصورة"),
         "userProfile": MessageLookupByLibrary.simpleMessage("ملف المستخدم"),
         "verification": MessageLookupByLibrary.simpleMessage("تَحَقّق"),

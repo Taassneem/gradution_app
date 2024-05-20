@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
-import 'package:gradution_app/features/quiz/numbers/views/widget/name_speaker.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
 import 'widgets/food_quiz_view_body_text.dart';
@@ -17,9 +16,6 @@ class FoodQuizViewFour extends StatelessWidget {
   Widget build(BuildContext context) {
     S s = S.of(context);
     return Scaffold(
-      appBar: AppBar(
-        leading: const NameSpeaker(),
-      ),
       body: FoodQuizViewTextBody(
         answerOne: s.grapes,
         onTapOne: () {

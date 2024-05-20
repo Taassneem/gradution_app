@@ -9,6 +9,7 @@ import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/core/utils/servive_locator.dart';
+import 'package:gradution_app/generated/l10n.dart';
 
 import 'custom_ok_elevated_button.dart';
 
@@ -21,13 +22,16 @@ class ChoosLanguageBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-          gradient: LinearGradient(colors: [
-        AppColor.purple,
-        AppColor.purple,
-        AppColor.screenColor,
-        AppColor.babyBlue,
-        AppColor.pink,
-      ], begin: Alignment.topLeft, end: Alignment.bottomRight)),
+          gradient: LinearGradient(
+        colors: [
+          AppColor.purple,
+          AppColor.purple,
+          AppColor.babyBlue,
+          AppColor.pink,
+        ],
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+      )),
       child: Center(
         child: Card(
           color: AppColor.screenColor,
@@ -36,56 +40,44 @@ class ChoosLanguageBody extends StatelessWidget {
             child: Material(
               color: AppColor.screenColor,
               child: SizedBox(
-                width: MediaQuery.sizeOf(context).width * 0.8.w,
+                width: MediaQuery.sizeOf(context).width * 0.7.w,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Row(children: [
                       Image.asset(AppAssets.translate),
+                      SizedBox(width: 8.w),
                       Text(
-                        ' Language/ اللغه',
-                        style: Theme.of(context).textTheme.titleSmall,
+                        S.of(context).language,
+                        style: Theme.of(context).textTheme.titleMedium,
                       )
                     ]),
-                    SizedBox(height: 8.h),
-                    CheckboxListTile(
-                        contentPadding: EdgeInsets.zero,
-                        title: Text(
-                          'English ',
-                          style: Theme.of(context).textTheme.titleSmall,
-                        ),
-                        value: BlocProvider.of<GlobalCubit>(context).isEnglish,
-                        onChanged: (value) {
-                          BlocProvider.of<GlobalCubit>(context).english();
-                          BlocProvider.of<GlobalCubit>(context).isEnglish =
-                              value!;
-                        }),
-                    Divider(
-                        color: AppColor.purple,
-                        thickness: 1.5,
-                        indent: 20.w,
-                        endIndent: 20.w),
-                    CheckboxListTile(
-                      contentPadding: EdgeInsets.zero,
-                      title: Text(
-                        'العربية',
-                        style: Theme.of(context).textTheme.titleSmall,
-                      ),
-                      value: BlocProvider.of<GlobalCubit>(context).isArabic,
-                      onChanged: (value) {
-                        BlocProvider.of<GlobalCubit>(context).arabic();
-                        BlocProvider.of<GlobalCubit>(context).isArabic = value!;
-                      },
-                    ),
+                    SizedBox(height: 16.h),
+                    Text(S.of(context).doYouWantToUseTheArabicLanguage,
+                        style: Theme.of(context).textTheme.titleSmall),
+                    SizedBox(height: 30.h),
                     CustomOkElevatedButton(
                       isPurple: true,
+                      text: S.of(context).change,
+                      onPressed: () {
+                        BlocProvider.of<GlobalCubit>(context).arabic();
+                        getIt.get<CacheHelper>().saveData(
+                            key: CacheHelperKey.languageChoosed, value: true);
+                        GoRouter.of(context)
+                            .pushReplacement(AppRouter.onBoardingView);
+                      },
+                    ),
+                    SizedBox(height: 8.h),
+                    CustomOkElevatedButton(
+                      isPurple: true,
+                      text: S.of(context).skip,
                       onPressed: () {
                         getIt.get<CacheHelper>().saveData(
                             key: CacheHelperKey.languageChoosed, value: true);
                         GoRouter.of(context)
                             .pushReplacement(AppRouter.onBoardingView);
                       },
-                    )
+                    ),
                   ],
                 ),
               ),

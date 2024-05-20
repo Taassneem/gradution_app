@@ -12,7 +12,6 @@ import 'package:gradution_app/features/home/data/models/edit_profile_pic_model/e
 import 'package:gradution_app/features/home/data/models/log_out_model.dart';
 import 'package:gradution_app/features/home/data/models/upload_profile_pic_model/upload_profile_pic_model.dart';
 import 'package:gradution_app/features/home/data/models/user_data_model/user_data_model.dart';
-import 'package:image_picker/image_picker.dart';
 
 import 'profile_repo.dart';
 
@@ -58,7 +57,7 @@ class HomeRepoImpl extends HomeRepo {
     required String email,
   }) async {
     try {
-      final response = await api.pacth(
+      final response = await api.patch(
           EndPoint.editProfile(
               getIt.get<CacheHelper>().getData(key: ApiKey.loginId)),
           data: {
@@ -116,7 +115,7 @@ class HomeRepoImpl extends HomeRepo {
 
   @override
   Future<Either<ServerFailure, UploadProfilePicModel>> uplaodProfilePic(
-      {required  image}) async {
+      {required dynamic image}) async {
     try {
       final response = await api.post(
         EndPoint.uploadProfilepic(

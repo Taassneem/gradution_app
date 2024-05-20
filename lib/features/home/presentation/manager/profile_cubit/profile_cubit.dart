@@ -90,7 +90,7 @@ class ProfileCubit extends Cubit<ProfileState> {
 
       if (retunedImage == null) return;
 
-      imageFromGallery = retunedImage;
+      imageFromGallery = XFile(retunedImage.path);
       emit(PickProfileFromGallerySuccess());
     } catch (e) {
       emit(PickProfileFromGalleryFailure(errorMessage: e.toString()));
@@ -106,7 +106,7 @@ class ProfileCubit extends Cubit<ProfileState> {
 
       if (retunedImage == null) return;
 
-      imageFromCamera = retunedImage;
+      imageFromCamera = XFile(retunedImage.path);
       emit(PickProfileFromCameraSuccess());
     } catch (e) {
       emit(PickProfileFromCameraFailure(errorMessage: e.toString()));

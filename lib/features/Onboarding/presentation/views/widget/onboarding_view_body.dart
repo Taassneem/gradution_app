@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gradution_app/core/func/is_arabic_func.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/features/Onboarding/data/models/on_boarding_model.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -20,31 +21,37 @@ class OnBoardingViewBody extends StatelessWidget {
       controller: controller,
       itemBuilder: (context, index) => Container(
         decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              OnBoardingModel.onBoardingView[index].imageBack,
-            ),
-            fit: BoxFit.fitWidth,
-            alignment: Alignment.topCenter,
-          ),
-        ),
+            image: DecorationImage(
+                image: AssetImage(
+                  OnBoardingModel.onBoardingView[index].imageBack,
+                ),
+                fit: BoxFit.fitWidth,
+                alignment: Alignment.topCenter)),
         child: Padding(
           padding: EdgeInsets.all(20.0.r),
           child: Column(
             children: [
-              SizedBox(height: index != 3 ? 27.h : 60.h),
+              SizedBox(height: index != 3 ? 60.h : 30.h),
               Image.asset(OnBoardingModel.onBoardingView[index].image),
               SizedBox(height: 40.h),
               Text(OnBoardingModel.onBoardingView[index].title,
                   style: Theme.of(context).textTheme.titleLarge),
               SizedBox(height: 24.h),
               SizedBox(
-                width: 300.w,
+                width: 350.w,
                 child: Text(OnBoardingModel.onBoardingView[index].subTitle,
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.titleMedium),
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleMedium!
+                        .copyWith(height: 1.2)),
               ),
-              SizedBox(height: index != 3 ? 40.h : 70.h),
+              SizedBox(
+                  height: index != 3
+                      ? 70.h
+                      : isArabic()
+                          ? 75.h
+                          : 95.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

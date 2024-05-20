@@ -4,7 +4,6 @@ import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/quiz/foodAndDrink/views/widgets/food_quiz_view_body_images.dart';
-import 'package:gradution_app/features/quiz/numbers/views/widget/name_speaker.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
 import 'widgets/middle_food_error_widget.dart';
@@ -16,9 +15,6 @@ class FoodQuizViewNine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          leading: const NameSpeaker(),
-        ),
         body: FoodQuizViewImageBody(
             answerOne: AppAssets.friuts,
             onTapOne: () {

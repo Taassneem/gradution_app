@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
+import 'package:gradution_app/features/quiz/presentation/views/widgets/back_to_home.dart';
 
 import 'things_text_answer.dart';
 
@@ -38,12 +39,7 @@ class ThingsQuizTextViewBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CircleAvatar(
-              radius: 30.r,
-              backgroundColor: AppColor.babyBlue,
-              child: IconButton(
-                  onPressed: () {}, icon: const Icon(Icons.volume_up_outlined)),
-            ),
+            const BackToHome(),
             SizedBox(height: 30.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

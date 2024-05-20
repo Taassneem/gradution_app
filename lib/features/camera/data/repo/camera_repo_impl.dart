@@ -21,11 +21,6 @@ class CameraRepoImpl extends CameraRepo {
         EndPoint.modelAi,
         data: {ApiKey.imageAi: image},
       );
-      log("Sending request with image data: $image");
-
-      // if (response == null || response.data == null) {
-      //   log('No response from server');
-      // }
       final photo = CameraModel.fromJson(response);
       log(photo.classNames.toString());
       return right(photo);

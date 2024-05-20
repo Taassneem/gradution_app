@@ -29,9 +29,11 @@ class Reminder extends StatelessWidget {
                 ),
                 const ReminderListView(),
                 SizedBox(height: 24.h),
-                CustomOkElevatedButton(onPressed: () {
-                  Navigator.pop(context);
-                })
+                CustomOkElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    text: S.of(context).ok)
               ],
             ),
           ),

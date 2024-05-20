@@ -22,13 +22,10 @@ class CalenderViewBody extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
-          child: Column(
-            children: [
-              MonthAndYear(monthName: monthName, today: today),
-              const CustomCalender(),
-            ],
-          ),
-        ),
+            child: Column(children: [
+          MonthAndYear(monthName: monthName, today: today),
+          const CustomCalender()
+        ])),
         SliverFillRemaining(
           child: Container(
             width: MediaQuery.sizeOf(context).width.w,

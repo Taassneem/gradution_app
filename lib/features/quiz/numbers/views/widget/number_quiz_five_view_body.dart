@@ -7,7 +7,7 @@ import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
-import 'name_speaker.dart';
+import '../../../presentation/views/widgets/back_to_home.dart';
 import 'number_error_widget.dart';
 import 'number_success_widget.dart';
 import 'number_text_answer.dart';
@@ -22,7 +22,7 @@ class NumberQuizFiveNiewBody extends StatelessWidget {
       padding: EdgeInsets.all(22.0.r),
       child: Column(
         children: [
-          NameSpeaker(onPressed: () {}),
+          const BackToHome(),
           SizedBox(height: 32.h),
           Text(s.nameOfNumber, style: Theme.of(context).textTheme.titleMedium),
           SizedBox(height: 18.h),

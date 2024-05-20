@@ -42,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "cat": MessageLookupByLibrary.simpleMessage("Cat"),
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
         "cebola": MessageLookupByLibrary.simpleMessage("Cebola"),
+        "change": MessageLookupByLibrary.simpleMessage("Change"),
         "changeEmail": MessageLookupByLibrary.simpleMessage("Change Email"),
         "changePassword":
             MessageLookupByLibrary.simpleMessage("Change Password"),
@@ -80,6 +81,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "dailyTasks": MessageLookupByLibrary.simpleMessage("Daily Tasks"),
         "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "deleteAccount": MessageLookupByLibrary.simpleMessage("Delete Account"),
+        "doYouWantToUseTheArabicLanguage": MessageLookupByLibrary.simpleMessage(
+            "Do you want to use the Arabic language?"),
         "dog": MessageLookupByLibrary.simpleMessage("Dog"),
         "done": MessageLookupByLibrary.simpleMessage("Done"),
         "door": MessageLookupByLibrary.simpleMessage("Door"),
@@ -118,7 +121,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "hour": MessageLookupByLibrary.simpleMessage("Hour"),
         "howManyAnimalsInPicture": MessageLookupByLibrary.simpleMessage(
-            "How many animals are in the picture?"),
+            "How many animals are in picture?"),
         "itsGreatToArrangeDailyTasksToHelpYourChild":
             MessageLookupByLibrary.simpleMessage(
                 "It\'s great to arrange daily tasks to help your child"),
@@ -146,7 +149,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Both password must match"),
         "nameHelpText": MessageLookupByLibrary.simpleMessage("Enter your name"),
         "nameOfNumber": MessageLookupByLibrary.simpleMessage(
-            "What is the name of this number?"),
+            "What is name of this number?"),
         "newPass": MessageLookupByLibrary.simpleMessage("Create new password"),
         "newPassSubTitle": MessageLookupByLibrary.simpleMessage(
             "Your new password must be different from previous used password"),
@@ -234,19 +237,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "tea": MessageLookupByLibrary.simpleMessage("Tea"),
         "ten": MessageLookupByLibrary.simpleMessage("Ten"),
         "theCamel": MessageLookupByLibrary.simpleMessage(
-            "Which of These is \'the camel\'?"),
-        "theCat": MessageLookupByLibrary.simpleMessage(
-            "Which of These is \'the Cat\'?"),
+            "Which of These is \'Camel\' ?"),
+        "theCat":
+            MessageLookupByLibrary.simpleMessage("Which of These is \'Cat\' ?"),
         "theCurrentPassword":
             MessageLookupByLibrary.simpleMessage("The Current Password"),
-        "theDog": MessageLookupByLibrary.simpleMessage(
-            "Which of These is \'the Dog\'?"),
-        "theEraser": MessageLookupByLibrary.simpleMessage("The Eraser"),
+        "theDog":
+            MessageLookupByLibrary.simpleMessage("Which of These is \'Dog\' ?"),
+        "theEraser": MessageLookupByLibrary.simpleMessage("Eraser"),
         "theLion": MessageLookupByLibrary.simpleMessage(
-            "Which of These is \'the Lion\'?"),
-        "theShip": MessageLookupByLibrary.simpleMessage("The Ship"),
+            "Which of These is \'Lion\' ?"),
+        "theShip": MessageLookupByLibrary.simpleMessage("Ship"),
         "theSnake": MessageLookupByLibrary.simpleMessage(
-            "Which of These is \'the Snake\'?"),
+            "Which of These is \'Snake\' ?"),
         "thereAreNoTasksAddedYet": MessageLookupByLibrary.simpleMessage(
             "There are no tasks added yet"),
         "thirtyMinutesBefore":

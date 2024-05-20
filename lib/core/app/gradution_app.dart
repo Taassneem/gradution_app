@@ -33,10 +33,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(
             create: (context) => ProfileCubit(getIt.get<HomeRepoImpl>())),
         BlocProvider(
-          create: (context) => GlobalCubit()
-            // ..getThemeData()
-            ..getLang(),
-        ),
+            create: (context) => GlobalCubit()
+              ..getLang()),
       ],
       child: BlocBuilder<GlobalCubit, GlobalState>(
         builder: (context, state) {

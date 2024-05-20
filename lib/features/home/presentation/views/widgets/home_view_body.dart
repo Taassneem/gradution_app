@@ -18,11 +18,8 @@ class HomeViewBody extends StatelessWidget {
       children: [
         SizedBox(height: 16.h),
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(AppAssets.topHome),
-          ],
-        ),
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [Image.asset(AppAssets.topHome)]),
         Container(
           width: 375.w,
           decoration: BoxDecoration(
@@ -36,13 +33,12 @@ class HomeViewBody extends StatelessWidget {
               child: Row(
                 children: [
                   ItemField(
-                    onTap: () {
-                      GoRouter.of(context).push(AppRouter.cameraView);
-                    },
-                    color: AppColor.purple,
-                    fieldName: S.of(context).camera,
-                    image: AppAssets.robotWithCamera,
-                  ),
+                      onTap: () {
+                        GoRouter.of(context).push(AppRouter.cameraView);
+                      },
+                      color: AppColor.purple,
+                      fieldName: S.of(context).camera,
+                      image: AppAssets.robotWithCamera),
                   SizedBox(width: 20.w),
                   Column(
                     children: [
@@ -57,14 +53,13 @@ class HomeViewBody extends StatelessWidget {
                       ),
                       SizedBox(height: 16.h),
                       ItemField(
-                        onTap: () {
-                          GoRouter.of(context).push(AppRouter.taskView);
-                        },
-                        color: AppColor.pink,
-                        fieldName: S.of(context).task,
-                        image: AppAssets.task,
-                        height: 180.h,
-                      )
+                          onTap: () {
+                            GoRouter.of(context).push(AppRouter.taskView);
+                          },
+                          color: AppColor.pink,
+                          fieldName: S.of(context).task,
+                          image: AppAssets.task,
+                          height: 180.h)
                     ],
                   )
                 ],

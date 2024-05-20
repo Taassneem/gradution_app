@@ -7,7 +7,6 @@ import 'package:gradution_app/features/home/data/models/edit_profile_pic_model/e
 import 'package:gradution_app/features/home/data/models/log_out_model.dart';
 import 'package:gradution_app/features/home/data/models/upload_profile_pic_model/upload_profile_pic_model.dart';
 import 'package:gradution_app/features/home/data/models/user_data_model/user_data_model.dart';
-import 'package:image_picker/image_picker.dart';
 
 abstract class HomeRepo {
   Future<Either<ServerFailure, ChangePasswordModel>> changePassword({
@@ -22,7 +21,7 @@ abstract class HomeRepo {
   Future<Either<ServerFailure, EditProfilePicModel>> editProfilePic(
       {required String image});
   Future<Either<ServerFailure, UploadProfilePicModel>> uplaodProfilePic(
-      {required  image});
+      {required dynamic image});
   Future<Either<ServerFailure, DeleteUserModel>> deleteUser();
   Future<Either<ServerFailure, UserDataModel>> getUserData();
 }

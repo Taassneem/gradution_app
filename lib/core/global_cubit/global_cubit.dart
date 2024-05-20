@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_app/core/database/cache/cache_helper.dart';
@@ -9,41 +11,15 @@ part 'global_state.dart';
 class GlobalCubit extends Cubit<GlobalState> {
   GlobalCubit() : super(GlobalInitial());
 
-  // bool darkTheme = false;
-  // void changeTheme() async {
-  //   emit(InitialTheme());
-  //   darkTheme = !darkTheme;
-  //   await getIt<CacheHelper>().saveData(key: 'isDarkTheme', value: darkTheme);
-  //   emit(ChangeTheme());
-  // }
-
-  // void getThemeData() async {
-  //   darkTheme = await getIt<CacheHelper>().getData(key: 'isDarkTheme');
-
-  //   emit(GetChangeTheme());
-  // }
-
-  // bool isArabic = false;
-
-  // void changeLang() async {
-  //   emit(ChangeLanguageLoading());
-
-  //   isArabic = !isArabic;
-
-  //   langCode = isArabic ? 'en' : 'ar';
-  //   await getIt<CacheHelper>()
-  //       .saveData(key: 'isArabic', value: isArabic ? 'ar' : 'en');
-
-  //   emit(ChangeLanguageSuccess());
-  // }
-
   String langCode = "en";
   bool isArabic = false;
   void arabic() {
     isArabic = !isArabic;
     langCode = 'ar';
+    log('Language code saved: isArabic $langCode');
+
     getIt<CacheHelper>()
-        .saveData(key: CacheHelperKey.isArabic, value: isArabic ? 'en' : 'ar');
+        .saveData(key: CacheHelperKey.isArabic, value: isArabic ? 'ar' : 'en');
     emit(ChangeLanguageArabic());
   }
 
@@ -51,8 +27,10 @@ class GlobalCubit extends Cubit<GlobalState> {
   void english() {
     isEnglish = !isEnglish;
     langCode = 'en';
+    log('Language code saved: isEnglish $langCode');
+
     getIt<CacheHelper>().saveData(
-        key: CacheHelperKey.isEnglish, value: isEnglish ? 'ar' : 'en');
+        key: CacheHelperKey.isEnglish, value: isEnglish ? 'en' : 'ar');
     emit(ChangeLanguageEnglish());
   }
 
@@ -61,6 +39,31 @@ class GlobalCubit extends Cubit<GlobalState> {
         getIt<CacheHelper>().getData(key: CacheHelperKey.isArabic);
     isArabic = langCodeFromCache == 'en';
     langCode = isArabic ? 'ar' : 'en';
+    log('Language code saved: isEnglish $langCode');
     emit(GetChangeLang());
   }
+
+  // bool changeLan = false;
+  // void changeLang() async {
+  //   emit(ChangeLanguageLoading());
+
+  //   changeLan = !changeLan;
+
+  //   langCode = changeLan ? 'en' : 'ar';
+  //   await getIt<CacheHelper>().saveData(
+  //       key: CacheHelperKey.changeLan, value: changeLan ? 'ar' : 'en');
+  //   log('Language code saved: changeLan $langCode');
+
+  //   emit(ChangeLanguageSuccess());
+  // }
+
+  // void getChangedLang() {
+  //   String? changLangCodeFromCache =
+  //       getIt<CacheHelper>().getData(key: CacheHelperKey.changeLan);
+  //   changeLan = changLangCodeFromCache == 'en';
+  //   langCode = changeLan ? 'en' : 'ar';
+  //   log('Language code saved: getChangedLang $langCode');
+
+  //   emit(GetChangeLang());
+  // }
 }

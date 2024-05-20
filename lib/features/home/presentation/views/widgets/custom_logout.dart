@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/func/custom_toast.dart';
+import 'package:gradution_app/core/func/is_arabic_func.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/home/presentation/manager/profile_cubit/profile_cubit.dart';
@@ -32,7 +33,7 @@ class CustomLogOut extends StatelessWidget {
             BlocProvider.of<ProfileCubit>(context).logOut();
           },
           child: Container(
-            width: 133.w,
+            width: isArabic() ? 161.w : 133.w,
             decoration: BoxDecoration(
                 color: AppColor.white,
                 borderRadius: BorderRadius.circular(10.w),

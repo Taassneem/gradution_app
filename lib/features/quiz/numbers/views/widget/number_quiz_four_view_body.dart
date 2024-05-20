@@ -7,7 +7,7 @@ import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/quiz/numbers/views/widget/hexagon_shape.dart';
-import 'package:gradution_app/features/quiz/numbers/views/widget/name_speaker.dart';
+import 'package:gradution_app/features/quiz/presentation/views/widgets/back_to_home.dart';
 import 'package:gradution_app/features/quiz/numbers/views/widget/number_error_widget.dart';
 import 'package:gradution_app/features/quiz/numbers/views/widget/number_success_widget.dart';
 import 'package:gradution_app/generated/l10n.dart';
@@ -21,7 +21,7 @@ class NumberQuizFourViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        NameSpeaker(onPressed: () {}),
+        const BackToHome(),
         SizedBox(height: MediaQuery.sizeOf(context).height * 0.08.h),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -66,7 +66,7 @@ class NumberQuizFourViewBody extends StatelessWidget {
               onTap: () {
                 customShowDialog(context, widget: NumberSuccessWidget(
                   onPressed: () {
-                    GoRouter.of(context).push(AppRouter.numberQuizViewNine);
+                    GoRouter.of(context).push(AppRouter.numberQuizViewFive);
                   },
                 ));
               },
