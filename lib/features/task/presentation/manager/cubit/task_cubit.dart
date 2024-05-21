@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_app/features/task/data/models/category_model/category_model.dart';
 import 'package:gradution_app/features/task/data/models/add_task_model/add_task_model.dart';
 import 'package:gradution_app/features/task/data/models/delete_task_model.dart';
+import 'package:gradution_app/features/task/data/models/edit_task_model/edit_task_model.dart';
 import 'package:gradution_app/features/task/data/models/task_model/task_model.dart';
 import 'package:gradution_app/features/task/data/repo/task_repo.dart';
 import 'package:image_picker/image_picker.dart';
@@ -14,7 +15,9 @@ class TaskCubit extends Cubit<TaskState> {
   TaskCubit(this.taskRepo) : super(TaskInitial());
   final TaskRepo taskRepo;
   GlobalKey<FormState> taskKey = GlobalKey();
+  GlobalKey<FormState> editTaskKey = GlobalKey();
   TextEditingController title = TextEditingController();
+  TextEditingController editTitle = TextEditingController();
   String? image;
   String? categoryTitle;
   String? categoryImage;
@@ -22,8 +25,16 @@ class TaskCubit extends Cubit<TaskState> {
   String? reminder;
   String? repeater;
   DateTime? date;
-  XFile? taskImageFromGallery;
   DateTime? time;
+  String? editImage;
+  String? editCategoryTitle;
+  String? editCategoryImage;
+  List<dynamic>? editDays;
+  String? editReminder;
+  String? editRepeater;
+  DateTime? editDate;
+  DateTime? editTime;
+  XFile? taskImageFromGallery;
 
   Future<void> fetchCategories() async {
     emit(CategoriesLoading());
@@ -53,8 +64,7 @@ class TaskCubit extends Cubit<TaskState> {
 
   Future<void> fetchTasks() async {
     emit(FetchTasksLoading());
-    var result =
-        await taskRepo.fetchTasks(selectedDate: date ?? DateTime.now());
+    var result = await taskRepo.fetchTasks();
     result.fold(
         (failure) =>
             emit(FetchTasksFailure(errorMessage: failure.failure.errorMessage)),
@@ -63,11 +73,18 @@ class TaskCubit extends Cubit<TaskState> {
 
   Future<void> editTask() async {
     emit(EditTaskLoading());
-    var result = await taskRepo.editTask();
+    var result = await taskRepo.editTask(
+      date: editDate ?? date!,
+      days: editDays ?? days!,
+      time: editTime ?? time!,
+      reminder: editReminder ?? reminder!,
+      repeater: editRepeater ?? repeater!,
+      title: editTitle.text,
+    );
     result.fold(
         (failure) =>
             emit(EditTaskFailure(errorMessage: failure.failure.errorMessage)),
-        (edit) => emit(EditTaskSuccess()));
+        (edit) => emit(EditTaskSuccess(editTaskModel: edit)));
   }
 
   Future<void> deleteTask() async {

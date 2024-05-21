@@ -1,17 +1,15 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
 class CustomTimeSelector extends StatefulWidget {
-  CustomTimeSelector({
+  const CustomTimeSelector({
     super.key,
     required this.time,
     this.isSelected = false,
   });
   final String time;
-  bool isSelected;
+  final bool isSelected;
 
   @override
   State<CustomTimeSelector> createState() => _CustomTimeSelectorState();
@@ -22,9 +20,7 @@ class _CustomTimeSelectorState extends State<CustomTimeSelector> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // setState(() {
-        //   widget.isSelected = true;
-        // });
+        
       },
       child: Container(
         width: 80.w,

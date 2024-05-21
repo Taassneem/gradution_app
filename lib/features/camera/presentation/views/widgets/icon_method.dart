@@ -18,7 +18,7 @@ class IconMethod extends StatelessWidget {
         onTap: onTap,
         child: Container(
           height: 50.h,
-          width: MediaQuery.sizeOf(context).width * 0.382.w,
+          width: MediaQuery.sizeOf(context).width * 0.4.w,
           decoration: BoxDecoration(
             color: AppColor.purple,
             borderRadius: rightIcon == true

@@ -24,7 +24,6 @@ class SelectTimeWidgets extends StatelessWidget {
                 onDateTimeChanged: (value) {
                   BlocProvider.of<TaskCubit>(context).time = value;
                 },
-                // backgroundColor: AppColor.pink,
                 mode: CupertinoDatePickerMode.time,
                 initialDateTime: DateTime.now(),
               ),

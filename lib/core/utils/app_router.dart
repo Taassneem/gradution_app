@@ -3,6 +3,7 @@ import 'package:gradution_app/features/Onboarding/presentation/views/on_boarding
 import 'package:gradution_app/features/auth/presentation/views/forget_password_view.dart';
 import 'package:gradution_app/features/auth/presentation/views/new_password_view.dart';
 import 'package:gradution_app/features/auth/presentation/views/password_changed_view.dart';
+import 'package:gradution_app/features/base/view/base_view.dart';
 import 'package:gradution_app/features/home/presentation/views/change_password_view.dart';
 import 'package:gradution_app/features/home/presentation/views/profile_view.dart';
 import 'package:gradution_app/features/auth/presentation/views/sign_in_view.dart';
@@ -59,6 +60,7 @@ import 'package:gradution_app/features/quiz/presentation/views/quiz_view.dart';
 import 'package:gradution_app/features/splash/presentation/views/splash_view.dart';
 import 'package:gradution_app/features/task/presentation/views/add_task_view.dart';
 import 'package:gradution_app/features/task/presentation/views/calender_view.dart';
+import 'package:gradution_app/features/task/presentation/views/edit_task_view.dart';
 import 'package:gradution_app/features/task/presentation/views/task_view.dart';
 import 'package:gradution_app/features/task/presentation/views/categories_view.dart';
 
@@ -72,6 +74,7 @@ class AppRouter {
   static const String userProfileView = '/userProfileView';
   static const String changePasswordView = '/changePasswordView';
   static const String homeView = '/homeView';
+  static const String baseView = '/baseView';
   static const String passwordChanged = '/passwordChanged';
   static const String onBoardingView = '/onBoardingView';
   static const String chooseView = '/chooseView';
@@ -81,6 +84,7 @@ class AppRouter {
   static const String taskView = '/taskView';
   static const String calendarView = '/calendarView';
   static const String addTaskView = '/addTaskView';
+  static const String editTaskView = '/editTaskView';
   static const String categoriesView = '/categoriesView';
   static const String photoInforamtion = '/photoInforamtion';
   static const String uploadPhotoView = '/uploadPhotoView';
@@ -146,6 +150,7 @@ class AppRouter {
         builder: (context, state) => const PasswordChanged()),
     GoRoute(path: chooseView, builder: (context, state) => const ChooseView()),
     GoRoute(path: homeView, builder: (context, state) => const HomeView()),
+    GoRoute(path: baseView, builder: (context, state) => const BaseView()),
     GoRoute(
         path: profileView, builder: (context, state) => const ProfileView()),
     GoRoute(
@@ -160,6 +165,8 @@ class AppRouter {
         path: uploadPhotoView,
         builder: (context, state) => const UploadPhotoView()),
     GoRoute(path: taskView, builder: (context, state) => const TaskView()),
+    GoRoute(
+        path: editTaskView, builder: (context, state) => const EditTaskView()),
     GoRoute(
         path: calendarView, builder: (context, state) => const CalenderView()),
     GoRoute(

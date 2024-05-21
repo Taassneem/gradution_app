@@ -118,10 +118,10 @@ class HomeRepoImpl extends HomeRepo {
       {required dynamic image}) async {
     try {
       final response = await api.post(
-        EndPoint.uploadProfilepic(
-            getIt.get<CacheHelper>().getData(key: ApiKey.loginId)),
+        'https://autistic-children.vercel.app/user/profilepic/664a05753c6bf85792a71738',
         data: {ApiKey.image: image},
         isFormData: true,
+        
       );
       final uploadProfilePic = UploadProfilePicModel.fromJson(response);
       return right(uploadProfilePic);

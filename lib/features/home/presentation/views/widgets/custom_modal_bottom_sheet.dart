@@ -13,7 +13,6 @@ class CustomModalBottomSheetProfilePic extends StatelessWidget {
     super.key,
   });
 
-
   @override
   Widget build(BuildContext context) {
     ProfileCubit profileCubit = BlocProvider.of<ProfileCubit>(context);

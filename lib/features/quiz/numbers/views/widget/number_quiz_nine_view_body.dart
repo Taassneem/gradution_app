@@ -43,7 +43,8 @@ class NumberQuizNineViewBody extends StatelessWidget {
                 onTap: () {
                   customShowDialog(context, widget: NumberSuccessWidget(
                     onPressed: () {
-                      GoRouter.of(context).push(AppRouter.numberQuizViewFinal);
+                      GoRouter.of(context)
+                          .pushReplacement(AppRouter.numberQuizViewFinal);
                     },
                   ));
                 }),

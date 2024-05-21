@@ -7,7 +7,7 @@ class CustomPageRouteSlide extends PageRouteBuilder {
     required this.direction,
     required this.child,
   }) : super(
-            transitionDuration: const Duration(seconds: 2),
+            transitionDuration: const Duration(seconds: 1),
             pageBuilder: (context, animation, secondaryAnimation) => child);
   @override
   Widget buildTransitions(BuildContext context, Animation<double> animation,

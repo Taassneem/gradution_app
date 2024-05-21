@@ -1,7 +1,5 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
-
 import 'dart:convert';
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:equatable/equatable.dart';
@@ -34,7 +32,6 @@ class CameraCubit extends Cubit<CameraState> {
       imageFromGallery = XFile(retunedImage.path);
       List<int> imageBytes = File(imageFromGallery!.path).readAsBytesSync();
       base64ImageFromGallery = base64Encode(imageBytes);
-      log(base64ImageFromGallery!);
       emit(CameraGallerySuccess());
     } catch (e) {
       emit(CameraGalleryFailure(errorMessage: e.toString()));
@@ -53,7 +50,6 @@ class CameraCubit extends Cubit<CameraState> {
       imageFromCamera = XFile(retunedImage.path);
       List<int> imageBytes = File(imageFromCamera!.path).readAsBytesSync();
       base64ImageFromCamera = base64Encode(imageBytes);
-      log(imageBase64FromCamera!);
       emit(CameraSuccess());
     } catch (e) {
       emit(CameraFailure(errorMessage: e.toString()));

@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class ImageForAi extends StatelessWidget {
         decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: FileImage(File(path)),
+              image: FileImage(File(base64Decode(path).toString())),
             ),
             borderRadius: BorderRadius.circular(20.w)));
   }

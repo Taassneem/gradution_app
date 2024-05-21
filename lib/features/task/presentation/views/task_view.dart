@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
@@ -14,10 +13,8 @@ class TaskView extends StatelessWidget {
       backgroundColor: AppColor.pink,
       appBar: AppBar(
         backgroundColor: AppColor.pink,
-        leading: CircleAvatar(
-          radius: 50,
-          child: Image.asset(AppAssets.profilePic)),
-        leadingWidth: 80,
+        centerTitle: true,
+        automaticallyImplyLeading: false,
         title: Text(
           S.of(context).welcome,
           style: Theme.of(context)

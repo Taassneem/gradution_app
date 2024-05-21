@@ -8,8 +8,8 @@ import 'package:gradution_app/core/utils/servive_locator.dart';
 import 'package:gradution_app/features/task/data/models/category_model/category_model.dart';
 import 'package:gradution_app/features/task/data/models/add_task_model/add_task_model.dart';
 import 'package:gradution_app/features/task/data/models/delete_task_model.dart';
+import 'package:gradution_app/features/task/data/models/edit_task_model/edit_task_model.dart';
 import 'package:gradution_app/features/task/data/models/task_model/task_model.dart';
-import 'package:intl/intl.dart';
 
 import 'task_repo.dart';
 
@@ -71,19 +71,15 @@ class TaskRepoImpl extends TaskRepo {
   }
 
   @override
-  Future<Either<ServerFailure, List<TaskModel>>> fetchTasks(
-      {required DateTime selectedDate}) async {
+  Future<Either<ServerFailure, List<TaskModel>>> fetchTasks() async {
     try {
       final response = await api.get(EndPoint.getTasks(
           getIt.get<CacheHelper>().getData(key: ApiKey.loginId)));
       List<dynamic> tasks = response['blogs'];
       List<TaskModel> task =
           tasks.map((item) => TaskModel.fromJson(item)).toList();
-      List<TaskModel> filteredTasks = task.where((task) {
-        return DateFormat('yyyy-MM-dd').format(task.date!) ==
-            DateFormat('yyyy-MM-dd').format(selectedDate);
-      }).toList();
-      return right(filteredTasks);
+
+      return right(task);
     } on ServerFailure catch (e) {
       return left(e);
     }
@@ -102,7 +98,36 @@ class TaskRepoImpl extends TaskRepo {
   }
 
   @override
-  Future<Either<ServerFailure, AddTaskModel>> editTask() {
-    throw UnimplementedError();
+  Future<Either<ServerFailure, EditTaskModel>> editTask({
+    required String title,
+    String? image,
+    String? categoryTitle,
+    String? categoryImage,
+    required List<dynamic> days,
+    required String reminder,
+    required String repeater,
+    required DateTime date,
+    required DateTime time,
+  }) async {
+    try {
+      final response = await api.post(
+        EndPoint.addTask,
+        isFormData: true,
+        data: {
+          ApiKey.image: image ?? categoryImage,
+          ApiKey.reminder: reminder,
+          ApiKey.repeater: repeater,
+          ApiKey.daysOfWeek: days,
+          ApiKey.title: title,
+          ApiKey.selectedActivity: categoryTitle,
+          ApiKey.date: date,
+          ApiKey.time: time,
+        },
+      );
+      final editTaskModel = EditTaskModel.fromJson(response);
+      return right(editTaskModel);
+    } on ServerFailure catch (e) {
+      return left(e);
+    }
   }
 }

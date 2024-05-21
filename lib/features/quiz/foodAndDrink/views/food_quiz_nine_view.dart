@@ -24,7 +24,8 @@ class FoodQuizViewNine extends StatelessWidget {
             onTapTwo: () {
               customShowDialog(context,
                   widget: MiddleFoodRightWidget(onPressed: () {
-                GoRouter.of(context).push(AppRouter.foodQuizViewFinal);
+                GoRouter.of(context)
+                    .pushReplacement(AppRouter.foodQuizViewFinal);
               }));
             },
             answerThree: AppAssets.burger,

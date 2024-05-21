@@ -26,7 +26,8 @@ class ThingsQuizTenView extends StatelessWidget {
         onTapTwo: () {
           customShowDialog(context, widget: MiddleThingsRight(
             onPressed: () {
-              GoRouter.of(context).push(AppRouter.otherThingsQuizViewFinal);
+              GoRouter.of(context)
+                  .pushReplacement(AppRouter.otherThingsQuizViewFinal);
             },
           ));
         },

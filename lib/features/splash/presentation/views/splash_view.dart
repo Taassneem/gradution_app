@@ -4,9 +4,9 @@ import 'package:gradution_app/core/database/cache/cache_helper.dart';
 import 'package:gradution_app/core/utils/api_keys.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/core/utils/servive_locator.dart';
+import 'package:gradution_app/features/base/view/base_view.dart';
 import 'package:gradution_app/features/splash/presentation/views/choose_lang.dart';
 import 'package:gradution_app/core/utils/widgets/custom_page_route_slide.dart';
-import 'package:gradution_app/features/home/presentation/views/home_view.dart';
 import 'widget/splash_view_body.dart';
 
 class SplashView extends StatefulWidget {
@@ -82,7 +82,7 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
               Navigator.push(
                   context,
                   CustomPageRouteSlide(
-                    child: const HomeView(),
+                    child: const BaseView(),
                     direction: AxisDirection.up,
                   ));
             } else {

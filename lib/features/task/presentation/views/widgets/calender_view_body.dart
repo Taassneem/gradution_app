@@ -23,7 +23,11 @@ class CalenderViewBody extends StatelessWidget {
       slivers: [
         SliverToBoxAdapter(
             child: Column(children: [
-          MonthAndYear(monthName: monthName, today: today),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 18.0.w) +
+                EdgeInsets.only(top: 15.h),
+            child: MonthAndYear(monthName: monthName, today: today),
+          ),
           const CustomCalender()
         ])),
         SliverFillRemaining(

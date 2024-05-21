@@ -6,26 +6,25 @@ class MonthAndYear extends StatelessWidget {
     super.key,
     required this.monthName,
     required this.today,
+    this.isEdit = false,
   });
 
   final String monthName;
   final DateTime today;
-
+  final bool isEdit;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding:
-          EdgeInsets.symmetric(horizontal: 18.0.w) + EdgeInsets.only(top: 15.h),
-      child: Row(
-        children: [
-          const Icon(Icons.calendar_month_outlined),
-          SizedBox(width: 15.w),
-          Text(
-            '$monthName ,${today.year}',
-            style: Theme.of(context).textTheme.titleMedium,
-          )
-        ],
-      ),
+    return Row(
+      children: [
+        isEdit
+            ? const SizedBox.shrink()
+            : const Icon(Icons.calendar_month_outlined),
+        SizedBox(width: 15.w),
+        Text(
+          '$monthName ,${today.year}',
+          style: Theme.of(context).textTheme.titleMedium,
+        )
+      ],
     );
   }
 }

@@ -69,7 +69,11 @@ final class FetchTasksFailure extends TaskState {
 
 final class EditTaskLoading extends TaskState {}
 
-final class EditTaskSuccess extends TaskState {}
+final class EditTaskSuccess extends TaskState {
+  final EditTaskModel editTaskModel;
+
+  const EditTaskSuccess({required this.editTaskModel});
+}
 
 final class EditTaskFailure extends TaskState {
   final String errorMessage;

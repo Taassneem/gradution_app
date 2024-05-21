@@ -7,8 +7,9 @@ import 'package:gradution_app/generated/l10n.dart';
 class TaskTitleTextField extends StatelessWidget {
   const TaskTitleTextField({
     super.key,
+    this.editTaskHintText,
   });
-
+  final String? editTaskHintText;
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -21,8 +22,8 @@ class TaskTitleTextField extends StatelessWidget {
           }
           return null;
         },
-        onSaved: (newValue) {},
-        decoration: const InputDecoration(
+        decoration: InputDecoration(
+          hintText: editTaskHintText,
           fillColor: AppColor.pink,
           filled: true,
           border: InputBorder.none,

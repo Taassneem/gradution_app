@@ -3,27 +3,17 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_tts/flutter_tts.dart';
 import 'package:gradution_app/core/func/is_arabic_func.dart';
-// import 'package:gradution_app/core/global_cubit/global_cubit.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
+import 'package:gradution_app/core/utils/flutter_tts.dart';
 import 'package:gradution_app/features/camera/presentation/manager/camera_cubit/camera_cubit.dart';
 
 import 'icon_method.dart';
 
 class AiContent extends StatelessWidget {
   AiContent({super.key});
-  final FlutterTts flutterTts = FlutterTts();
-  speak(String text) async {
-    try {
-      await flutterTts.setLanguage('en-US');
-      await flutterTts.setPitch(1);
-      await flutterTts.speak(text);
-    } catch (e) {
-      log("Error in TTS: $e");
-    }
-  }
+  final FlutterTtsMe flutterTtsMe = FlutterTtsMe();
 
   @override
   Widget build(BuildContext context) {
@@ -68,10 +58,13 @@ class AiContent extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       IconMethod(
-                        icon: Icons.volume_off,
-                        rightIcon: isArabic() ? true : false,
-                        onTap: () => speak(state.model.classNames!.join(', ')),
-                      ),
+                          icon: Icons.volume_up,
+                          rightIcon: isArabic() ? true : false,
+                          onTap: () {
+                            log('message');
+                            flutterTtsMe
+                                .speakText(state.model.classNames!.toString());
+                          }),
                       IconMethod(
                         icon: Icons.translate,
                         rightIcon: isArabic() ? false : true,

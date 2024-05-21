@@ -19,7 +19,7 @@ class QuizViewBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         GestureDetector(
-          onTap: () => GoRouter.of(context).push(AppRouter.homeView),
+          onTap: () => GoRouter.of(context).push(AppRouter.baseView),
           child: const Padding(
             padding: EdgeInsets.all(18.0),
             child: Icon(Icons.arrow_back),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gradution_app/core/func/is_arabic_func.dart';
 import 'package:gradution_app/generated/l10n.dart';
+
+import 'number_of_day.dart';
 
 class TodayNumber extends StatelessWidget {
   const TodayNumber({
@@ -17,26 +18,7 @@ class TodayNumber extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        RichText(
-          text: TextSpan(
-            children: [
-              TextSpan(
-                text: '${today.day} ',
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
-              isArabic()
-                  ? TextSpan(
-                      text: dayName,
-                      style: Theme.of(context).textTheme.titleSmall,
-                    )
-                  : TextSpan(
-                      text:
-                          '${dayName[0]}${dayName[1].toUpperCase()}${dayName[2].toUpperCase()}',
-                      style: Theme.of(context).textTheme.titleSmall,
-                    ),
-            ],
-          ),
-        ),
+        NumberOfDay(today: today, dayName: dayName),
         Text(
           S.of(context).today,
           style: Theme.of(context).textTheme.titleMedium,
