@@ -30,6 +30,8 @@ abstract class TaskRepo {
     required String repeater,
     required DateTime date,
     required DateTime time,
+    required String id,
   });
-  Future<Either<ServerFailure, DeleteTaskModel>> deleteTask();
+  Future<Either<ServerFailure, DeleteTaskModel>> deleteTask(
+      {required String id});
 }

@@ -10,8 +10,9 @@ import 'custom_divider.dart';
 class RepeaterListView extends StatefulWidget {
   const RepeaterListView({
     super.key,
+    this.isEditTask = false,
   });
-
+  final bool isEditTask;
   @override
   State<RepeaterListView> createState() => _RepeaterListViewState();
 }
@@ -23,7 +24,8 @@ class _RepeaterListViewState extends State<RepeaterListView> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(8.r),
-      padding: EdgeInsets.symmetric(horizontal: 8.w),
+      padding:
+          EdgeInsets.symmetric(horizontal: 8.w) + EdgeInsets.only(bottom: 10.h),
       decoration: BoxDecoration(
           border: Border.all(color: AppColor.white, width: 1.5.w),
           borderRadius: BorderRadius.circular(10.w)),
@@ -43,7 +45,11 @@ class _RepeaterListViewState extends State<RepeaterListView> {
                 setState(() {
                   selectedRepeater = value;
                 });
-                BlocProvider.of<TaskCubit>(context).repeater = repeater[index];
+                widget.isEditTask
+                    ? BlocProvider.of<TaskCubit>(context).editRepeater =
+                        repeater[index]
+                    : BlocProvider.of<TaskCubit>(context).repeater =
+                        repeater[index];
               },
               title: Text(repeater[index],
                   style: Theme.of(context).textTheme.titleSmall),

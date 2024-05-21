@@ -6,14 +6,10 @@ import 'package:gradution_app/core/utils/servive_locator.dart';
 class ApiInterceptors extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    options.headers[ApiKey.authorization] = getIt
-                .get<CacheHelper>()
-                .getData(key: ApiKey.loginToken) !=
-            null
-        ? 'Bearer ${getIt.get<CacheHelper>().getData(key: ApiKey.loginToken)}'
-        : null;
-    options.contentType =
-        'multipart/form-data; boundary=<calculated when request is sent>';
+    options.headers[ApiKey.authorization] =
+        getIt.get<CacheHelper>().getData(key: ApiKey.loginToken) != null
+            ? 'e_${getIt.get<CacheHelper>().getData(key: ApiKey.loginToken)}'
+            : null;
     options.headers[ApiKey.acceptLanguage] =
         getIt<CacheHelper>().getData(key: CacheHelperKey.isEnglish) != null
             ? '${getIt<CacheHelper>().getData(key: CacheHelperKey.isEnglish)}'

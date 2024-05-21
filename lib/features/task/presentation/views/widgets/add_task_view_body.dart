@@ -16,6 +16,7 @@ class AddTaskViewBody extends StatelessWidget {
     return BlocConsumer<TaskCubit, TaskState>(
       listener: (context, state) {
         if (state is AddTaskSuccess) {
+          showToast(state.model.message!, task: true);
           taskCubit.fetchTasks();
           GoRouter.of(context).pop(context);
         } else if (state is AddTaskFailure) {

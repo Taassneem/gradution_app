@@ -14,8 +14,8 @@ import 'package:gradution_app/generated/l10n.dart';
 import '../../../../splash/presentation/views/widget/custom_ok_elevated_button.dart';
 
 class AddPhoto extends StatelessWidget {
-  const AddPhoto({super.key});
-
+  const AddPhoto({super.key, this.isEditTask = false});
+  final bool isEditTask;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -61,10 +61,15 @@ class AddPhoto extends StatelessWidget {
                     if (state is UploadingPhotoSuccess) {
                       showSnackBar(context,
                           content: Text(S.of(context).photoUploadSuccessfully));
-                      BlocProvider.of<TaskCubit>(context).image =
-                          BlocProvider.of<TaskCubit>(context)
-                              .taskImageFromGallery!
-                              .path;
+                      isEditTask
+                          ? BlocProvider.of<TaskCubit>(context).editImage =
+                              BlocProvider.of<TaskCubit>(context)
+                                  .taskImageFromGallery!
+                                  .path
+                          : BlocProvider.of<TaskCubit>(context).image =
+                              BlocProvider.of<TaskCubit>(context)
+                                  .taskImageFromGallery!
+                                  .path;
                     } else if (state is UploadingPhotoFailure) {
                       log(state.errorMessage);
                     }

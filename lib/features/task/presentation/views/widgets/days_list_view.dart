@@ -14,8 +14,9 @@ import 'custom_divider.dart';
 class DaysListView extends StatefulWidget {
   const DaysListView({
     super.key,
+    this.isEditTask = false,
   });
-
+  final bool isEditTask;
   @override
   State<DaysListView> createState() => _DaysListViewState();
 }
@@ -32,7 +33,7 @@ class _DaysListViewState extends State<DaysListView> {
         child: Column(
           children: [
             SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.45.h,
+              height: MediaQuery.sizeOf(context).height * 0.47.h,
               child: ListView.separated(
                 itemCount: days.length,
                 separatorBuilder: (BuildContext context, int index) {
@@ -50,7 +51,11 @@ class _DaysListViewState extends State<DaysListView> {
                             selectedDays.add(days[i]);
                           }
                         }
-                        BlocProvider.of<TaskCubit>(context).days = selectedDays;
+                        widget.isEditTask
+                            ? BlocProvider.of<TaskCubit>(context).editDays =
+                                selectedDays
+                            : BlocProvider.of<TaskCubit>(context).days =
+                                selectedDays;
                       });
                       getIt.get<CacheHelper>().saveData(
                           key: CacheHelperKey.selectedDays, value: days[index]);
@@ -65,7 +70,9 @@ class _DaysListViewState extends State<DaysListView> {
             AllDaysWidget(
               selected: isSelected.every((element) => element),
               onChanged: (value) {
-                BlocProvider.of<TaskCubit>(context).days = days;
+                widget.isEditTask
+                    ? BlocProvider.of<TaskCubit>(context).editDays = days
+                    : BlocProvider.of<TaskCubit>(context).days = days;
                 setState(() {
                   for (int i = 0; i < isSelected.length; i++) {
                     isSelected[i] = value;

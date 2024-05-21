@@ -38,6 +38,9 @@ class ChooseViewBody extends StatelessWidget {
                     ChoosenType(
                       image: AppAssets.parent,
                       type: S.of(context).parent,
+                      onTap: () {
+                        GoRouter.of(context).push(AppRouter.taskView);
+                      },
                     ),
                   ],
                 ),

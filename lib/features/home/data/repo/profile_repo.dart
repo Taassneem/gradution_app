@@ -19,7 +19,7 @@ abstract class HomeRepo {
     required String email,
   });
   Future<Either<ServerFailure, EditProfilePicModel>> editProfilePic(
-      {required String image});
+      {required dynamic image});
   Future<Either<ServerFailure, UploadProfilePicModel>> uplaodProfilePic(
       {required dynamic image});
   Future<Either<ServerFailure, DeleteUserModel>> deleteUser();

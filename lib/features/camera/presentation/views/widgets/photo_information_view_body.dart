@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/func/custom_toast.dart';
-import 'package:gradution_app/core/func/is_arabic_func.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/features/camera/presentation/manager/camera_cubit/camera_cubit.dart';
 
@@ -20,11 +19,14 @@ class PhotoInforamtionViewBody extends StatelessWidget {
     return SafeArea(
       child: Column(
         children: [
-          SizedBox(height: 15.h),
-          const ArrowBack(),
           Align(
-              alignment: isArabic() ? Alignment.topLeft : Alignment.centerRight,
-              child: Image.asset(AppAssets.chatbot)),
+              child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const ArrowBack(),
+              Image.asset(AppAssets.chatbot),
+            ],
+          )),
           BlocBuilder<CameraCubit, CameraState>(
             builder: (context, state) {
               if (state is SendPhotoSuccess) {
@@ -36,7 +38,7 @@ class PhotoInforamtionViewBody extends StatelessWidget {
               }
             },
           ),
-          SizedBox(height: 24.h),
+          SizedBox(height: 16.h),
           AiContent(),
         ],
       ),

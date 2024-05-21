@@ -98,13 +98,13 @@ class HomeRepoImpl extends HomeRepo {
 
   @override
   Future<Either<ServerFailure, EditProfilePicModel>> editProfilePic(
-      {required String image}) async {
+      {required dynamic image}) async {
     try {
       final response = await api.post(
         EndPoint.editProfilePic(
             getIt.get<CacheHelper>().getData(key: ApiKey.loginId)),
-        isFormData: true,
         data: {ApiKey.image: image},
+        isFormData: true,
       );
       final editProfilePic = EditProfilePicModel.fromJson(response);
       return right(editProfilePic);
@@ -118,10 +118,10 @@ class HomeRepoImpl extends HomeRepo {
       {required dynamic image}) async {
     try {
       final response = await api.post(
-        'https://autistic-children.vercel.app/user/profilepic/664a05753c6bf85792a71738',
+        EndPoint.uploadProfilepic(
+            getIt.get<CacheHelper>().getData(key: ApiKey.loginId)),
         data: {ApiKey.image: image},
         isFormData: true,
-        
       );
       final uploadProfilePic = UploadProfilePicModel.fromJson(response);
       return right(uploadProfilePic);

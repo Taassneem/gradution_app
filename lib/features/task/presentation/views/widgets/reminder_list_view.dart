@@ -10,8 +10,9 @@ import 'custom_divider.dart';
 class ReminderListView extends StatefulWidget {
   const ReminderListView({
     super.key,
+    this.isEditTask = false,
   });
-
+  final bool isEditTask;
   @override
   State<ReminderListView> createState() => _ReminderListViewState();
 }
@@ -23,7 +24,8 @@ class _ReminderListViewState extends State<ReminderListView> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(8.r),
-      padding: EdgeInsets.symmetric(horizontal: 8.w),
+      padding:
+          EdgeInsets.symmetric(horizontal: 8.w) + EdgeInsets.only(bottom: 8.h),
       decoration: BoxDecoration(
         border: Border.all(color: AppColor.white, width: 1.5.w),
         borderRadius: BorderRadius.circular(10.w),
@@ -44,7 +46,11 @@ class _ReminderListViewState extends State<ReminderListView> {
                 setState(() {
                   selectedReminder = value;
                 });
-                BlocProvider.of<TaskCubit>(context).reminder = reminder[index];
+                widget.isEditTask
+                    ? BlocProvider.of<TaskCubit>(context).editReminder =
+                        reminder[index]
+                    : BlocProvider.of<TaskCubit>(context).reminder =
+                        reminder[index];
               },
               title: Text(
                 reminder[index],

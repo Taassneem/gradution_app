@@ -153,6 +153,7 @@ class AppAssets {
   static const String profilePic = '${basePath}profilePic.png';
   static const String noTask = '${basePath}noTask.png';
   static const String bottomBar = '${basePath}bottomBar.png';
+  static const String parents = '${basePath}parents.png';
   // static const String cat = '${basePath}cat.svg';
   // static const String cateBird = '${basePath}cateBird.svg';
   // static const String cuteCat = '${basePath}cuteCat.svg';

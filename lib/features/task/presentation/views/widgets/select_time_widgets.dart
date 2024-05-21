@@ -3,16 +3,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
 
+import 'package:timezone/data/latest.dart' as tz;
+import 'package:timezone/timezone.dart' as tz;
+
 class SelectTimeWidgets extends StatelessWidget {
-  SelectTimeWidgets({
+  const SelectTimeWidgets({
     super.key,
   });
 
-  final TextEditingController hour = TextEditingController();
-  final TextEditingController minute = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
+    tz.initializeTimeZones();
+    final egyptTimezone = tz.getLocation('Africa/Cairo');
     return Padding(
       padding: EdgeInsets.all(16.0.r),
       child: SizedBox(
@@ -22,7 +24,8 @@ class SelectTimeWidgets extends StatelessWidget {
             Expanded(
               child: CupertinoDatePicker(
                 onDateTimeChanged: (value) {
-                  BlocProvider.of<TaskCubit>(context).time = value;
+                  final egyptTime = tz.TZDateTime.from(value, egyptTimezone);
+                  BlocProvider.of<TaskCubit>(context).time = egyptTime;
                 },
                 mode: CupertinoDatePickerMode.time,
                 initialDateTime: DateTime.now(),

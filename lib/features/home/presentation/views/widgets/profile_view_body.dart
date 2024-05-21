@@ -81,7 +81,11 @@ class ProfileViewBody extends StatelessWidget {
                     )
                   ]));
         } else if (state is GetUserDataFailure) {
-          return showToast(state.errorMessage);
+          return Card(
+              child: Center(
+            child: Text(state.errorMessage,
+                style: Theme.of(context).textTheme.titleSmall),
+          ));
         } else {
           return Column(children: [
             const CustomTextShimmer(),

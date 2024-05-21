@@ -2101,6 +2101,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Swith Account`
+  String get swithAccount {
+    return Intl.message(
+      'Swith Account',
+      name: 'swithAccount',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

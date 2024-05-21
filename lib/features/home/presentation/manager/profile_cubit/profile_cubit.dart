@@ -116,9 +116,7 @@ class ProfileCubit extends Cubit<ProfileState> {
   Future<void> uploadProfilepic() async {
     emit(UploadProfilePicLoading());
     final result = await homeRepo.uplaodProfilePic(
-        image: await upLoadImageToApi(imageFromCamera?? imageFromGallery!));
-    // final result =
-    // await homeRepo.uplaodProfilePic(image: imageFromGallery!.path);
+        image: await upLoadImageToApi(imageFromCamera ?? imageFromGallery!));
     result.fold(
         (failure) => emit(UploadProfilePicFailure(
             errorMessage: failure.failure.errorMessage)),
@@ -128,7 +126,8 @@ class ProfileCubit extends Cubit<ProfileState> {
 
   Future<void> editProfilePic() async {
     emit(EditProfilePicLoading());
-    final result = await homeRepo.editProfilePic(image: editImage!);
+    final result = await homeRepo.editProfilePic(
+        image: await upLoadImageToApi(imageFromCamera ?? imageFromGallery!));
     result.fold(
         (failure) => emit(
             EditProfilePicFailure(errorMessage: failure.failure.errorMessage)),

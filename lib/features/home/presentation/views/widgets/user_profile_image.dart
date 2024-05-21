@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 
+import 'custom_modal_bottom_sheet.dart';
+
 class UserProfileImage extends StatelessWidget {
   const UserProfileImage({
     super.key,
@@ -10,10 +12,21 @@ class UserProfileImage extends StatelessWidget {
   final ImageProvider<Object> image;
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      clipBehavior: Clip.none,
-      children: [
-        Container(
+    return GestureDetector(
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (context) {
+              return const CustomModalBottomSheetProfilePic(editPhoto: true);
+            });
+      },
+      child: Badge(
+        alignment: Alignment.bottomLeft,
+        backgroundColor: AppColor.purple,
+        label: const Icon(Icons.border_color_outlined),
+        largeSize: 30,
+        padding: const EdgeInsets.all(5),
+        child: Container(
           width: 130.w,
           height: 120.h,
           decoration: BoxDecoration(
@@ -25,19 +38,7 @@ class UserProfileImage extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(
-          bottom: -10.h,
-          child: Container(
-            width: 40.w,
-            height: 40.h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20.w),
-              color: AppColor.purple,
-            ),
-            child: const Icon(Icons.border_color_outlined),
-          ),
-        )
-      ],
+      ),
     );
   }
 }

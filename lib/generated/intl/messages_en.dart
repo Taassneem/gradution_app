@@ -231,6 +231,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sum": MessageLookupByLibrary.simpleMessage("6 + 5 ="),
         "sunday": MessageLookupByLibrary.simpleMessage("Sunday"),
         "sunny": MessageLookupByLibrary.simpleMessage("Sunny"),
+        "swithAccount": MessageLookupByLibrary.simpleMessage("Swith Account"),
         "takePhoto": MessageLookupByLibrary.simpleMessage("Take Photo"),
         "task": MessageLookupByLibrary.simpleMessage("Task"),
         "taskTitle": MessageLookupByLibrary.simpleMessage("Task Title"),

@@ -35,7 +35,7 @@ class TaskCubit extends Cubit<TaskState> {
   DateTime? editDate;
   DateTime? editTime;
   XFile? taskImageFromGallery;
-
+  TaskModel? taskModel;
   Future<void> fetchCategories() async {
     emit(CategoriesLoading());
     var result = await taskRepo.fetchCategories();
@@ -71,25 +71,25 @@ class TaskCubit extends Cubit<TaskState> {
         (tasks) => emit(FetchTasksSuccess(tasks: tasks)));
   }
 
-  Future<void> editTask() async {
+  Future<void> editTask({required String id}) async {
     emit(EditTaskLoading());
     var result = await taskRepo.editTask(
-      date: editDate ?? date!,
-      days: editDays ?? days!,
-      time: editTime ?? time!,
-      reminder: editReminder ?? reminder!,
-      repeater: editRepeater ?? repeater!,
-      title: editTitle.text,
-    );
+        date: editDate ?? DateTime.now(),
+        days: editDays ?? [''],
+        time: editTime ?? DateTime.now(),
+        reminder: editReminder ?? '',
+        repeater: editRepeater ?? '',
+        title: editTitle.text,
+        id: id);
     result.fold(
         (failure) =>
             emit(EditTaskFailure(errorMessage: failure.failure.errorMessage)),
         (edit) => emit(EditTaskSuccess(editTaskModel: edit)));
   }
 
-  Future<void> deleteTask() async {
+  Future<void> deleteTask({required String id}) async {
     emit(DeleteTaskLoading());
-    var result = await taskRepo.deleteTask();
+    var result = await taskRepo.deleteTask(id: id);
     result.fold(
         (failure) =>
             emit(DeleteTaskFailure(errorMessage: failure.failure.errorMessage)),

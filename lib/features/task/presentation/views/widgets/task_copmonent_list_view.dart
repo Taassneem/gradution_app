@@ -1,11 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
-import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/task/data/models/task_model/task_model.dart';
+import 'package:gradution_app/features/task/presentation/views/edit_task_view.dart';
+import 'package:gradution_app/features/task/task_child/views/task_child_view.dart';
 import 'package:intl/intl.dart';
 
 import 'task_custom_dialog.dart';
@@ -14,23 +14,34 @@ class TaskListViewComponent extends StatelessWidget {
   const TaskListViewComponent({
     super.key,
     required this.taskModel,
+    this.isChild = false,
   });
   final TaskModel taskModel;
+  final bool isChild;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.editTaskView);
+        isChild
+            ? Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (_) => TaskChildView(taskModel: taskModel)))
+            : Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (_) => EditTaskView(taskModel: taskModel)));
       },
       child: Column(
         children: [
           Row(
             children: [
               Text(
-                // DateFormat('HH:mm').format(
-                //     DateFormat("EEE MMM dd yyyy HH:mm:ss 'GMT'Z")
-                //         .parse(taskModel.time!)),
-                taskModel.time!,
+                DateFormat('h:mm a').format(
+                    DateFormat("EEE MMM dd yyyy HH:mm:ss 'GMT'Z")
+                        .parse(taskModel.time!)
+                        .toUtc()
+                        .add(const Duration(hours: 5))),
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               SizedBox(width: 10.w),
@@ -83,7 +94,7 @@ class TaskListViewComponent extends StatelessWidget {
                 GestureDetector(
                     onTap: () {
                       customShowDialog(context,
-                          widget: const TaskCustomDialog());
+                          widget: TaskCustomDialog(taskModel: taskModel));
                     },
                     child: const Icon(Icons.menu))
               ],

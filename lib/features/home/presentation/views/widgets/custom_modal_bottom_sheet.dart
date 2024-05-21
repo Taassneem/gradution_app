@@ -11,8 +11,9 @@ import 'package:gradution_app/generated/l10n.dart';
 class CustomModalBottomSheetProfilePic extends StatelessWidget {
   const CustomModalBottomSheetProfilePic({
     super.key,
+    this.editPhoto = false,
   });
-
+  final bool editPhoto;
   @override
   Widget build(BuildContext context) {
     ProfileCubit profileCubit = BlocProvider.of<ProfileCubit>(context);
@@ -27,7 +28,10 @@ class CustomModalBottomSheetProfilePic extends StatelessWidget {
               BlocConsumer<ProfileCubit, ProfileState>(
                 listener: (context, state) {
                   if (state is PickProfileFromCameraSuccess) {
-                    profileCubit.uploadProfilepic();
+                    editPhoto
+                        ? profileCubit.editProfilePic()
+                        : profileCubit.uploadProfilepic();
+                    profileCubit.getUserData();
                     GoRouter.of(context).pop();
                   } else if (state is PickProfileFromCameraFailure) {
                     showToast(state.errorMessage);
@@ -46,7 +50,10 @@ class CustomModalBottomSheetProfilePic extends StatelessWidget {
               BlocConsumer<ProfileCubit, ProfileState>(
                 listener: (context, state) {
                   if (state is PickProfileFromGallerySuccess) {
-                    profileCubit.uploadProfilepic();
+                    editPhoto
+                        ? profileCubit.editProfilePic()
+                        : profileCubit.uploadProfilepic();
+                    profileCubit.getUserData();
                     GoRouter.of(context).pop();
                   } else if (state is PickProfileFromGalleryFailure) {
                     showToast(state.errorMessage);

@@ -8,6 +8,7 @@ import 'package:gradution_app/core/utils/api_keys.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
+import 'package:gradution_app/core/utils/local_notification.dart';
 import 'package:gradution_app/core/utils/servive_locator.dart';
 import 'package:gradution_app/core/utils/widgets/custom_elevated_button.dart';
 import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
@@ -41,11 +42,11 @@ class AddTaskComponent extends StatelessWidget {
           Text(S.of(context).taskTitle,
               style: Theme.of(context).textTheme.titleMedium),
           SizedBox(height: 16.h),
-          const TaskTitleTextField(),
+          TaskTitleTextField(controller: taskCubit.title),
           SizedBox(height: 16.h),
           Text(S.of(context).time,
               style: Theme.of(context).textTheme.titleMedium),
-          SelectTimeWidgets(),
+          const SelectTimeWidgets(),
           AddTaskFeature(
               title: S.of(context).selectDays,
               image: AppAssets.calendarClock,
@@ -92,6 +93,22 @@ class AddTaskComponent extends StatelessWidget {
                 taskCubit.taskKey.currentState!.save();
                 taskCubit.addTask();
                 taskCubit.title.clear();
+                DateTime selectedDate = taskCubit.date!;
+                DateTime selectedTime = taskCubit.time!;
+                DateTime combinedDateTime = DateTime(
+                  selectedDate.year,
+                  selectedDate.month,
+                  selectedDate.day,
+                  selectedTime.hour,
+                  selectedTime.minute,
+                );
+                LocalNotificationService.showSchduledNotification(
+                    notificationTitle: taskCubit.title.text,
+                    notificationDesc: taskCubit.categoryTitle!,
+                    month: combinedDateTime.month,
+                    day: combinedDateTime.day,
+                    hour: combinedDateTime.hour,
+                    min: combinedDateTime.minute);
               }
             },
           )

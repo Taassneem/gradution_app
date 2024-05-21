@@ -60,9 +60,9 @@ import 'package:gradution_app/features/quiz/presentation/views/quiz_view.dart';
 import 'package:gradution_app/features/splash/presentation/views/splash_view.dart';
 import 'package:gradution_app/features/task/presentation/views/add_task_view.dart';
 import 'package:gradution_app/features/task/presentation/views/calender_view.dart';
-import 'package:gradution_app/features/task/presentation/views/edit_task_view.dart';
 import 'package:gradution_app/features/task/presentation/views/task_view.dart';
 import 'package:gradution_app/features/task/presentation/views/categories_view.dart';
+import 'package:gradution_app/features/task/task_child/views/tasks_child_view.dart';
 
 class AppRouter {
   static const String signInView = '/signInView';
@@ -82,9 +82,9 @@ class AppRouter {
   static const String quizView = '/quizView';
   static const String cameraView = '/cameraView';
   static const String taskView = '/taskView';
+  static const String taskChildView = '/taskChildView';
   static const String calendarView = '/calendarView';
   static const String addTaskView = '/addTaskView';
-  static const String editTaskView = '/editTaskView';
   static const String categoriesView = '/categoriesView';
   static const String photoInforamtion = '/photoInforamtion';
   static const String uploadPhotoView = '/uploadPhotoView';
@@ -165,8 +165,7 @@ class AppRouter {
         path: uploadPhotoView,
         builder: (context, state) => const UploadPhotoView()),
     GoRoute(path: taskView, builder: (context, state) => const TaskView()),
-    GoRoute(
-        path: editTaskView, builder: (context, state) => const EditTaskView()),
+    GoRoute(path: taskChildView, builder: (context, state) => const TasksChildView()),
     GoRoute(
         path: calendarView, builder: (context, state) => const CalenderView()),
     GoRoute(

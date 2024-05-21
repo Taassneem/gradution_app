@@ -18,12 +18,12 @@ class IconMethod extends StatelessWidget {
         onTap: onTap,
         child: Container(
           height: 50.h,
-          width: MediaQuery.sizeOf(context).width * 0.4.w,
+          width: MediaQuery.sizeOf(context).width * 0.38.w,
           decoration: BoxDecoration(
             color: AppColor.purple,
             borderRadius: rightIcon == true
-                ? BorderRadius.only(bottomRight: Radius.circular(30.w))
-                : BorderRadius.only(bottomLeft: Radius.circular(30.w)),
+                ? const BorderRadius.only(bottomRight: Radius.circular(30))
+                : const BorderRadius.only(bottomLeft: Radius.circular(30)),
           ),
           child: Icon(icon),
         ));

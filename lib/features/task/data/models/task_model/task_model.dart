@@ -10,9 +10,10 @@ class TaskModel extends Equatable {
   final String? time;
   final DateTime? date;
   final String? selectedActivity;
-
+  final String id;
   const TaskModel(
       {required this.image,
+      required this.id,
       required this.title,
       required this.days,
       required this.reminder,
@@ -32,7 +33,8 @@ class TaskModel extends Equatable {
       time: json['time'],
       date:
           json['date'] == null ? null : DateTime.parse(json['date'] as String),
-      selectedActivity: json['selectedActivity']);
+      selectedActivity: json['selectedActivity'],
+      id: json['_id']);
 
   @override
   List<Object?> get props => throw UnimplementedError();

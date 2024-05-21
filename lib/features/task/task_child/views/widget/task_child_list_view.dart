@@ -3,12 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/widgets/custom_shimmer.dart';
 import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
+import 'package:gradution_app/features/task/presentation/views/widgets/coming_soon_widget.dart';
+import 'package:gradution_app/features/task/presentation/views/widgets/task_copmonent_list_view.dart';
 
-import 'coming_soon_widget.dart';
-import 'task_copmonent_list_view.dart';
-
-class TasksListView extends StatelessWidget {
-  const TasksListView({
+class TasksChildListView extends StatelessWidget {
+  const TasksChildListView({
     super.key,
   });
 
@@ -28,6 +27,7 @@ class TasksListView extends StatelessWidget {
                         itemCount: state.tasks.length,
                         itemBuilder: (BuildContext context, int index) {
                           return TaskListViewComponent(
+                            isChild: true,
                             taskModel: state.tasks[index],
                           );
                         },

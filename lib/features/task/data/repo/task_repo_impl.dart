@@ -86,10 +86,10 @@ class TaskRepoImpl extends TaskRepo {
   }
 
   @override
-  Future<Either<ServerFailure, DeleteTaskModel>> deleteTask() async {
+  Future<Either<ServerFailure, DeleteTaskModel>> deleteTask(
+      {required String id}) async {
     try {
-      final response = await api.delete(EndPoint.deteleTask(
-          getIt.get<CacheHelper>().getData(key: ApiKey.taskId)));
+      final response = await api.delete(EndPoint.deteleTask(id));
       DeleteTaskModel model = DeleteTaskModel.fromJson(response);
       return right(model);
     } on ServerFailure catch (e) {
@@ -98,20 +98,20 @@ class TaskRepoImpl extends TaskRepo {
   }
 
   @override
-  Future<Either<ServerFailure, EditTaskModel>> editTask({
-    required String title,
-    String? image,
-    String? categoryTitle,
-    String? categoryImage,
-    required List<dynamic> days,
-    required String reminder,
-    required String repeater,
-    required DateTime date,
-    required DateTime time,
-  }) async {
+  Future<Either<ServerFailure, EditTaskModel>> editTask(
+      {required String title,
+      String? image,
+      String? categoryTitle,
+      String? categoryImage,
+      required List<dynamic> days,
+      required String reminder,
+      required String repeater,
+      required DateTime date,
+      required DateTime time,
+      required String id}) async {
     try {
       final response = await api.post(
-        EndPoint.addTask,
+        EndPoint.editTasks(id),
         isFormData: true,
         data: {
           ApiKey.image: image ?? categoryImage,

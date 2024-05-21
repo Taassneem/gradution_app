@@ -204,5 +204,6 @@
     "typeYourCurrentPassword": "Type your current password",
     "uploadPhoto ": "Upload a photo ",
     "doYouWantToUseTheArabicLanguage": "Do you want to use the Arabic language?",
-    "change": "Change"
+    "change": "Change",
+    "swithAccount": "Swith Account"
 }
