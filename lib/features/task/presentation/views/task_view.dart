@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
-import 'package:gradution_app/generated/l10n.dart';
 
 import 'widgets/task_view_body.dart';
 
@@ -9,21 +8,9 @@ class TaskView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: AppColor.pink,
-      appBar: AppBar(
-        backgroundColor: AppColor.pink,
-        centerTitle: true,
-        automaticallyImplyLeading: false,
-        title: Text(
-          S.of(context).welcome,
-          style: Theme.of(context)
-              .textTheme
-              .titleMedium!
-              .copyWith(color: AppColor.white),
-        ),
-      ),
-      body: const TaskViewBody(),
+      body: TaskViewBody(),
     );
   }
 }

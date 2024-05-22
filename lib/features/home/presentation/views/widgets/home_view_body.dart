@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
-import 'package:gradution_app/core/func/custom_toast.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
-import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/core/utils/widgets/custom_page_route_slide.dart';
 import 'package:gradution_app/features/camera/presentation/views/camera_view.dart';
-import 'package:gradution_app/features/home/presentation/manager/profile_cubit/profile_cubit.dart';
 import 'package:gradution_app/features/quiz/presentation/views/quiz_view.dart';
 import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
 import 'package:gradution_app/features/task/task_child/views/tasks_child_view.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
 import 'item_field.dart';
+import 'profile_pic.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -24,36 +21,10 @@ class HomeViewBody extends StatelessWidget {
     return SafeArea(
         child: Column(
       children: [
-        Row(
+        const Row(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            const Spacer(),
-            GestureDetector(
-              onTap: () {
-                BlocProvider.of<ProfileCubit>(context).getUserData();
-                GoRouter.of(context).push(AppRouter.profileView);
-              },
-              child: BlocBuilder<ProfileCubit, ProfileState>(
-                builder: (context, state) {
-                  if (state is GetUserDataSuccess) {
-                    return Container(
-                      width: 60.w,
-                      height: 60.h,
-                      margin: EdgeInsets.symmetric(horizontal: 18.r),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50.r),
-                          image: DecorationImage(
-                              image: NetworkImage(state
-                                  .userDataModel.user!.profilePic!.secureUrl!),
-                              fit: BoxFit.cover)),
-                    );
-                  } else if (state is GetUserDataFailure) {
-                    return showToast(state.errorMessage);
-                  } else {
-                    return Image.asset(AppAssets.profilePic, width: 60);
-                  }
-                },
-              ),
-            )
+            ProfilePic(),
           ],
         ),
         Row(

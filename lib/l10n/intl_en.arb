@@ -205,5 +205,7 @@
     "uploadPhoto ": "Upload a photo ",
     "doYouWantToUseTheArabicLanguage": "Do you want to use the Arabic language?",
     "change": "Change",
-    "swithAccount": "Swith Account"
+    "swithAccount": "Swith Account",
+    "english": "English",
+    "arabic": "Arabic"
 }

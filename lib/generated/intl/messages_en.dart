@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "am": MessageLookupByLibrary.simpleMessage("AM"),
         "animals": MessageLookupByLibrary.simpleMessage("Animals"),
         "appName": MessageLookupByLibrary.simpleMessage("Autism children"),
+        "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
         "back": MessageLookupByLibrary.simpleMessage("Back"),
         "backToLogin": MessageLookupByLibrary.simpleMessage("Back to login"),
         "bear": MessageLookupByLibrary.simpleMessage("Bear"),
@@ -95,6 +96,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "emailValidate":
             MessageLookupByLibrary.simpleMessage("Field is required"),
         "emu": MessageLookupByLibrary.simpleMessage("Emu"),
+        "english": MessageLookupByLibrary.simpleMessage("English"),
         "errorMessage": MessageLookupByLibrary.simpleMessage(
             "The Answer is Wrong ,Please Try Again"),
         "father": MessageLookupByLibrary.simpleMessage("Father"),
