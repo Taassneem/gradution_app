@@ -10,6 +10,7 @@ import 'package:gradution_app/core/utils/widgets/custom_page_route_slide.dart';
 import 'package:gradution_app/features/camera/presentation/views/camera_view.dart';
 import 'package:gradution_app/features/home/presentation/manager/profile_cubit/profile_cubit.dart';
 import 'package:gradution_app/features/quiz/presentation/views/quiz_view.dart';
+import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
 import 'package:gradution_app/features/task/task_child/views/tasks_child_view.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
@@ -102,6 +103,7 @@ class HomeViewBody extends StatelessWidget {
                       SizedBox(height: 16.h),
                       ItemField(
                           onTap: () {
+                            BlocProvider.of<TaskCubit>(context).fetchTasks();
                             Navigator.push(
                                 context,
                                 CustomPageRouteSlide(

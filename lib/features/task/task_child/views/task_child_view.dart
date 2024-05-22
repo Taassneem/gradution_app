@@ -10,7 +10,7 @@ class TaskChildView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColor.pink,
+      backgroundColor: AppColor.screenColor,
       body: TaskChildViewBody(taskModel: taskModel),
     );
   }

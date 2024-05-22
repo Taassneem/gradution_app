@@ -20,20 +20,26 @@ class TasksChildViewBody extends StatelessWidget {
     return SafeArea(
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: const Icon(Icons.arrow_back)),
-              Row(
-                children: [
-                  Text(DateFormat('dd EEE MMM, yyyy').format(DateTime.now()))
-                ],
-              )
-            ],
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 18.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(Icons.arrow_back)),
+                Row(
+                  children: [
+                    Text(
+                      DateFormat(' MMM, yyyy').format(DateTime.now()),
+                      style: Theme.of(context).textTheme.titleSmall,
+                    )
+                  ],
+                )
+              ],
+            ),
           ),
           const CustomCalender(isWeekCalender: true),
           Expanded(
