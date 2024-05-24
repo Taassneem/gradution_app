@@ -26,6 +26,9 @@ class SignUpForm extends StatelessWidget {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is SignUpSuccess) {
+          getIt
+              .get<CacheHelper>()
+              .saveData(key: CacheHelperKey.signedUp, value: true);
           showToast(
               state.signUpModel.message ?? S.of(context).signedUpSuccessfully);
           GoRouter.of(context).pushReplacement(AppRouter.signInView);
@@ -83,9 +86,7 @@ class SignUpForm extends StatelessWidget {
                                   if (authCubit.signUnKey.currentState!
                                       .validate()) {
                                     authCubit.signUp();
-                                    getIt.get<CacheHelper>().saveData(
-                                        key: CacheHelperKey.signedUp,
-                                        value: true);
+                                    
                                   }
                                 })
                       ]),

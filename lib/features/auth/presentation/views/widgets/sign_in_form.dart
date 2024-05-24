@@ -28,6 +28,9 @@ class SignInForm extends StatelessWidget {
         if (state is SignInFailure) {
           showToast(state.errorMessage);
         } else if (state is SignInSuccess) {
+          getIt
+              .get<CacheHelper>()
+              .saveData(key: CacheHelperKey.signedIn, value: true);
           showToast(state.signInModel.messge ?? S.of(context).signInWelcome);
           GoRouter.of(context).pushReplacement(AppRouter.chooseView);
         }
@@ -74,8 +77,6 @@ class SignInForm extends StatelessWidget {
                               if (authCubit.signInKey.currentState!
                                   .validate()) {
                                 authCubit.signIn();
-                                getIt.get<CacheHelper>().saveData(
-                                    key: CacheHelperKey.signedIn, value: true);
                               }
                             }),
                         Center(

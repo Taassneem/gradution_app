@@ -46,9 +46,6 @@ class TaskRepoImpl extends TaskRepo {
         },
       );
       addTaskModel = AddTaskModel.fromJson(response);
-      getIt
-          .get<CacheHelper>()
-          .saveData(key: ApiKey.taskId, value: addTaskModel!.added!.id);
       return Right(addTaskModel!);
     } on ServerFailure catch (e) {
       return left(e);

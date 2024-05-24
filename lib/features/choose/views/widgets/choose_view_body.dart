@@ -32,7 +32,7 @@ class ChooseViewBody extends StatelessWidget {
                       type: S.of(context).child,
                       onTap: () {
                         GoRouter.of(context)
-                            .pushReplacement(AppRouter.homeView);
+                            .pushReplacement(AppRouter.baseView);
                       },
                     ),
                     ChoosenType(

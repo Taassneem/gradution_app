@@ -20,7 +20,7 @@ class CustomWelcomeText extends StatelessWidget {
         ),
         SizedBox(height: 5.h),
         SizedBox(
-          width: 250.w,
+          width: 300.w,
           child: Text(
             welcomeSubTitle,
             textAlign: TextAlign.center,

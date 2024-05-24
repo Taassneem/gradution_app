@@ -82,6 +82,7 @@ class HomeViewBody extends StatelessWidget {
                                   direction: AxisDirection.left,
                                 ));
                           },
+                          heightImage: 100,
                           color: AppColor.pink,
                           fieldName: S.of(context).task,
                           image: AppAssets.task,

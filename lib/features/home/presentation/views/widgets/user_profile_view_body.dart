@@ -3,18 +3,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/func/custom_toast.dart';
-import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/core/utils/widgets/custom_elevated_button.dart';
-import 'package:gradution_app/core/utils/widgets/custom_text_field_shimmer.dart';
 import 'package:gradution_app/features/auth/data/models/sign_up_model/sign_up_model.dart';
 import 'package:gradution_app/features/auth/presentation/views/widgets/text_with_text_field.dart';
 import 'package:gradution_app/features/home/presentation/manager/profile_cubit/profile_cubit.dart';
 import 'package:gradution_app/generated/l10n.dart';
-import 'package:shimmer/shimmer.dart';
 
 import 'change_password_button.dart';
 import 'delete_account_button.dart';
+import 'edit_profile_shimmer.dart';
 import 'user_profile_image.dart';
 
 class UserProfileViewBody extends StatelessWidget {
@@ -96,38 +94,6 @@ class UserProfileViewBody extends StatelessWidget {
           );
         },
       ),
-    );
-  }
-}
-
-class EditProfileShimmer extends StatelessWidget {
-  const EditProfileShimmer({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          width: 130.w,
-          height: 120.h,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(100.w),
-          ),
-          child: Shimmer.fromColors(
-              baseColor: Colors.grey.shade200,
-              highlightColor: Colors.grey.shade300,
-              child: Container(
-                decoration: BoxDecoration(
-                    color: AppColor.grey,
-                    borderRadius: BorderRadius.circular(10.w)),
-              )),
-        ),
-        CustomTextFieldShimmer(textFieldName: S.of(context).fullName),
-        SizedBox(height: 24.h),
-        CustomTextFieldShimmer(textFieldName: S.of(context).email)
-      ],
     );
   }
 }

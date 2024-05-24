@@ -10,6 +10,7 @@ import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/home/presentation/manager/profile_cubit/profile_cubit.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
+import 'drop_down_type_menu.dart';
 import 'drop_dwon_button_language.dart';
 import 'profile_feature.dart';
 
@@ -60,9 +61,7 @@ class ProfileViewInformations extends StatelessWidget {
             more: true,
             featureTypeTwo: S.of(context).swithAccount,
             leadingTwo: Image.asset(AppAssets.parents),
-            trailingTwo: isArabic()
-                ? const Icon(Icons.keyboard_double_arrow_left_outlined)
-                : const Icon(Icons.keyboard_double_arrow_right_outlined),
+            trailingTwo: const CustomTypeDropDownButton(),
           ),
         ],
       ),

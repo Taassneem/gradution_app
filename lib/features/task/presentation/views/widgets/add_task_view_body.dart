@@ -18,6 +18,7 @@ class AddTaskViewBody extends StatelessWidget {
         if (state is AddTaskSuccess) {
           showToast(state.model.message!, task: true);
           taskCubit.fetchTasks();
+          taskCubit.title.clear();
           GoRouter.of(context).pop(context);
         } else if (state is AddTaskFailure) {
           showToast(state.errorMessage, task: true);

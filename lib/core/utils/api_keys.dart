@@ -1,49 +1,53 @@
 class EndPoint {
-  static const String signUp = 'https://autistic-children.vercel.app/auth/';
-  static const String login = 'https://autistic-children.vercel.app/auth/login';
+  static const String signUp =
+      'https://graduation-project-pearl.vercel.app/auth/';
+  static const String login =
+      'https://graduation-project-pearl.vercel.app/auth/login';
   static const String forget =
-      'https://autistic-children.vercel.app/auth/forget';
-  static const String reset = 'https://autistic-children.vercel.app/auth/reset';
+      'https://graduation-project-pearl.vercel.app/auth/forget';
+  static const String reset =
+      'https://graduation-project-pearl.vercel.app/auth/reset';
 
   static const String categories =
-      'https://autistic-children.vercel.app/blog/getTodos';
-  static const String addTask = 'https://autistic-children.vercel.app/blog/add';
+      'https://graduation-project-pearl.vercel.app/blog/getTodos';
+  static const String addTask =
+      'https://graduation-project-pearl.vercel.app/blog/add';
   static String getTasks(id) {
-    return 'https://autistic-children.vercel.app/blog/createdBy/$id';
+    return 'https://graduation-project-pearl.vercel.app/blog/createdBy/$id';
   }
 
   static String editTasks(id) {
-    return 'https://autistic-children.vercel.app/blog/updateBlog/$id';
+    return 'https://graduation-project-pearl.vercel.app/blog/updateBlog/$id';
   }
 
   static String deteleTask(id) {
-    return 'https://autistic-children.vercel.app/blog/deleteBlog/$id';
+    return 'https://graduation-project-pearl.vercel.app/blog/deleteBlog/$id';
   }
 
   static String changePassword(id) {
-    return 'https://autistic-children.vercel.app/user/changePassword/$id';
+    return 'https://graduation-project-pearl.vercel.app/user/changePassword/$id';
   }
 
   static const String logOut =
-      'https://autistic-children.vercel.app/user/logout';
+      'https://graduation-project-pearl.vercel.app/user/logout';
   static String editProfile(id) {
-    return 'https://autistic-children.vercel.app/user/editProfile/$id';
+    return 'https://graduation-project-pearl.vercel.app/user/editProfile/$id';
   }
 
   static String editProfilePic(id) {
-    return 'https://autistic-children.vercel.app/user/updateprofilepic/$id';
+    return 'https://graduation-project-pearl.vercel.app/user/updateprofilepic/$id';
   }
 
   static String uploadProfilepic(id) {
-    return 'https://autistic-children.vercel.app/user/profilepic/$id';
+    return 'https://graduation-project-pearl.vercel.app/user/profilepic/$id';
   }
 
   static String deleteUser(id) {
-    return 'https://autistic-children.vercel.app/user/deleteUser/$id';
+    return 'https://graduation-project-pearl.vercel.app/user/deleteUser/$id';
   }
 
   static String getuserById(id) {
-    return 'https://autistic-children.vercel.app/user/getuserById/$id';
+    return 'https://graduation-project-pearl.vercel.app/user/getuserById/$id';
   }
 
   static const String modelAi = 'http://144.24.219.44:5050/predict';
@@ -63,7 +67,7 @@ class ApiKey {
   static const String authorization = 'Authorization';
   static const String acceptLanguage = 'Accept-Language';
   static const String confirmPassword = 'confirmPassword';
-  static const String confirmPasswordReset = 'confirmpassword';
+  static const String confirmPasswordReset = 'confirmPassword';
   static const String oldPassword = 'oldPassword';
   static const String userId = 'userId';
   static const String title = 'title';

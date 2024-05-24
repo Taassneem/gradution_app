@@ -10,7 +10,7 @@ class TaskView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: AppColor.pink,
-      body: TaskViewBody(),
+      body: SafeArea(child: TaskViewBody()),
     );
   }
 }

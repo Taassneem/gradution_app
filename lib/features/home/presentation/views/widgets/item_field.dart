@@ -8,13 +8,14 @@ class ItemField extends StatelessWidget {
     required this.color,
     required this.fieldName,
     required this.image,
-    this.onTap,
+    this.onTap, this.heightImage,
   });
   final double? height;
   final Color? color;
   final String fieldName;
   final String image;
   final Function()? onTap;
+  final double? heightImage;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -27,7 +28,7 @@ class ItemField extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(image),
+            Image.asset(image, height: heightImage),
             SizedBox(height: 15.h),
             Text(
               fieldName,

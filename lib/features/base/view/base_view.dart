@@ -39,7 +39,7 @@ class _BaseViewState extends State<BaseView> {
         height: 70.h,
         iconSize: 34,
         splashSpeedInMilliseconds: 300,
-        activeColor: AppColor.pink,
+        activeColor: AppColor.purple,
         leftCornerRadius: 32,
         rightCornerRadius: 32,
         gapLocation: GapLocation.center,

@@ -11,8 +11,8 @@ import 'core/utils/servive_locator.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupSreviceLocator();
-  Bloc.observer = SimpleBLocObserver();
   await getIt<CacheHelper>().init();
+  Bloc.observer = SimpleBLocObserver();
   FlutterTtsMe.configureTts(setSpeechRate: 0.6, setVolume: 0.8);
   await LocalNotificationService.init();
 

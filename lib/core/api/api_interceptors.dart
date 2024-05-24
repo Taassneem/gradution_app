@@ -11,8 +11,8 @@ class ApiInterceptors extends Interceptor {
             ? 'e_${getIt.get<CacheHelper>().getData(key: ApiKey.loginToken)}'
             : null;
     options.headers[ApiKey.acceptLanguage] =
-        getIt<CacheHelper>().getData(key: CacheHelperKey.isEnglish) != null
-            ? '${getIt<CacheHelper>().getData(key: CacheHelperKey.isEnglish)}'
+        getIt<CacheHelper>().getData(key: CacheHelperKey.isArabic) != null
+            ? '${getIt<CacheHelper>().getData(key: CacheHelperKey.isArabic)}'
             : 'en';
     super.onRequest(options, handler);
   }

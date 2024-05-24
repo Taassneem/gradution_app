@@ -14,7 +14,9 @@ class UserProfileView extends StatelessWidget {
             style: Theme.of(context).textTheme.titleMedium),
         centerTitle: true,
       ),
-      body: const SingleChildScrollView(child: UserProfileViewBody()),
+      body: const SingleChildScrollView(
+        child: UserProfileViewBody(),
+      ),
     );
   }
 }

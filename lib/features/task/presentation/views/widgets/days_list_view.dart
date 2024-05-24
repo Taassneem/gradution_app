@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/common/common_lists.dart';
-import 'package:gradution_app/core/database/cache/cache_helper.dart';
-import 'package:gradution_app/core/utils/api_keys.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
-import 'package:gradution_app/core/utils/servive_locator.dart';
 import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
 
 import 'all_days_widget.dart';
@@ -57,8 +54,6 @@ class _DaysListViewState extends State<DaysListView> {
                             : BlocProvider.of<TaskCubit>(context).days =
                                 selectedDays;
                       });
-                      getIt.get<CacheHelper>().saveData(
-                          key: CacheHelperKey.selectedDays, value: days[index]);
                     },
                     activeColor: AppColor.divider,
                     title: Text(days[index],
