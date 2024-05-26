@@ -1680,6 +1680,16 @@ class S {
     );
   }
 
+  /// `Add Task Successfully`
+  String get addTaskSuccessfully {
+    return Intl.message(
+      'Add Task Successfully',
+      name: 'addTaskSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Today`
   String get today {
     return Intl.message(
@@ -2127,6 +2137,26 @@ class S {
     return Intl.message(
       'Arabic',
       name: 'arabic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Category Selected`
+  String get categorySelected {
+    return Intl.message(
+      'Category Selected',
+      name: 'categorySelected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Category`
+  String get category {
+    return Intl.message(
+      'Category',
+      name: 'category',
       desc: '',
       args: [],
     );

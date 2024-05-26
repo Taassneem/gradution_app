@@ -165,7 +165,9 @@ class AppRouter {
         path: uploadPhotoView,
         builder: (context, state) => const UploadPhotoView()),
     GoRoute(path: taskView, builder: (context, state) => const TaskView()),
-    GoRoute(path: taskChildView, builder: (context, state) => const TasksChildView()),
+    GoRoute(
+        path: taskChildView,
+        builder: (context, state) => const TasksChildView()),
     GoRoute(
         path: calendarView, builder: (context, state) => const CalenderView()),
     GoRoute(

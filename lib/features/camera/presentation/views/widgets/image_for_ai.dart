@@ -12,7 +12,7 @@ class ImageForAi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: MediaQuery.sizeOf(context).height * 0.46.h,
+        height: MediaQuery.sizeOf(context).height * 0.4.h,
         width: MediaQuery.sizeOf(context).width * 0.8.w,
         decoration: BoxDecoration(
             image: DecorationImage(

@@ -10,8 +10,9 @@ import 'days_list_view.dart';
 class SelectDayWidget extends StatelessWidget {
   const SelectDayWidget({
     super.key,
+    this.isEditTask = false,
   });
-
+  final bool isEditTask;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -29,7 +30,7 @@ class SelectDayWidget extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleMedium),
                   trailing: Image.asset(AppAssets.calendarClock),
                 ),
-                const DaysListView(),
+                DaysListView(isEditTask: isEditTask),
                 SizedBox(height: 24.h),
                 CustomOkElevatedButton(
                     onPressed: () {

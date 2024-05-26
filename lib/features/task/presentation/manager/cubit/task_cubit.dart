@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_app/features/task/data/models/category_model/category_model.dart';
@@ -8,7 +9,7 @@ import 'package:gradution_app/features/task/data/models/edit_task_model/edit_tas
 import 'package:gradution_app/features/task/data/models/task_model/task_model.dart';
 import 'package:gradution_app/features/task/data/repo/task_repo.dart';
 import 'package:image_picker/image_picker.dart';
-
+import 'package:timezone/timezone.dart' as tz;
 part 'task_state.dart';
 
 class TaskCubit extends Cubit<TaskState> {
@@ -25,7 +26,7 @@ class TaskCubit extends Cubit<TaskState> {
   String? reminder;
   String? repeater;
   DateTime? date;
-  DateTime? time;
+  tz.TZDateTime? time;
   String? editImage;
   String? editCategoryTitle;
   String? editCategoryImage;
@@ -52,10 +53,10 @@ class TaskCubit extends Cubit<TaskState> {
         days: days ?? [''],
         reminder: reminder ?? '',
         repeater: repeater ?? '',
-        image: image ?? categoryImage,
+        categoryImage: categoryImage ?? '',
         title: title.text,
         date: date ?? DateTime.now(),
-        time: time ?? DateTime.now());
+        time: time?.toLocal() ?? DateTime.now());
     result.fold(
         (failure) =>
             emit(AddTaskFailure(errorMessage: failure.failure.errorMessage)),
@@ -74,11 +75,11 @@ class TaskCubit extends Cubit<TaskState> {
   Future<void> editTask({required String id}) async {
     emit(EditTaskLoading());
     var result = await taskRepo.editTask(
-        date: editDate ?? DateTime.now(),
-        days: editDays ?? [''],
-        time: editTime ?? DateTime.now(),
-        reminder: editReminder ?? '',
-        repeater: editRepeater ?? '',
+        date: editDate ?? taskModel!.date!,
+        days: editDays ?? taskModel!.days!,
+        time: time ?? DateTime.parse(taskModel!.time!),
+        reminder: editReminder ?? taskModel!.reminder!,
+        repeater: editRepeater ?? taskModel!.repeater!,
         title: editTitle.text,
         id: id);
     result.fold(
@@ -101,6 +102,14 @@ class TaskCubit extends Cubit<TaskState> {
   void selectedDay(selectedDay, focusedDay) {
     today = selectedDay;
     emit(TaskDaySelected(today));
+  }
+
+  void setTime(tz.TZDateTime newTime) {
+    time = newTime;
+    if (kDebugMode) {
+      print("Converted Time: $time");
+    }
+    emit(TaskTimeUpdated(newTime)); // Emit state if needed
   }
 
   pickImageWithGallery() async {

@@ -8,8 +8,8 @@ import '../../../../splash/presentation/views/widget/custom_ok_elevated_button.d
 import 'repeater_list_view.dart';
 
 class Repeater extends StatelessWidget {
-  const Repeater({super.key});
-
+  const Repeater({super.key, this.isEditTask = false});
+  final bool isEditTask;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -27,7 +27,7 @@ class Repeater extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleMedium),
                   trailing: Image.asset(AppAssets.repeater),
                 ),
-                const RepeaterListView(),
+                RepeaterListView(isEditTask: isEditTask),
                 SizedBox(height: 24.h),
                 CustomOkElevatedButton(
                     onPressed: () {

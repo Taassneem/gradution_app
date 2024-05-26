@@ -162,6 +162,7 @@
     "dailyTasks": "Daily Tasks",
     "itsGreatToArrangeDailyTasksToHelpYourChild": "It's great to arrange daily tasks to help your child",
     "addTask": "Add Task",
+    "addTaskSuccessfully": "Add Task Successfully",
     "today": "Today",
     "thereAreNoTasksAddedYet": "There are no tasks added yet",
     "createNewTask": "Create New Task",
@@ -207,5 +208,7 @@
     "change": "Change",
     "swithAccount": "Swith Account",
     "english": "English",
-    "arabic": "Arabic"
+    "arabic": "Arabic",
+    "categorySelected": "Category Selected",
+    "category":"Category"
 }

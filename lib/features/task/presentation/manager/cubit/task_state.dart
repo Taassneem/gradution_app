@@ -25,6 +25,12 @@ final class CategoriesFailure extends TaskState {
 
 final class AddTaskLoading extends TaskState {}
 
+final class TaskTimeUpdated extends TaskState {
+  final tz.TZDateTime time;
+
+  const TaskTimeUpdated(this.time);
+}
+
 final class AddTaskSuccess extends TaskState {
   final AddTaskModel model;
 

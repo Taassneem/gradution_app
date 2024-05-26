@@ -27,6 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "add": MessageLookupByLibrary.simpleMessage("add"),
         "addPhoto": MessageLookupByLibrary.simpleMessage("Add Photo"),
         "addTask": MessageLookupByLibrary.simpleMessage("Add Task"),
+        "addTaskSuccessfully":
+            MessageLookupByLibrary.simpleMessage("Add Task Successfully"),
         "allDays": MessageLookupByLibrary.simpleMessage("All Days"),
         "am": MessageLookupByLibrary.simpleMessage("AM"),
         "animals": MessageLookupByLibrary.simpleMessage("Animals"),
@@ -42,6 +44,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "carrot": MessageLookupByLibrary.simpleMessage("Carrot"),
         "cat": MessageLookupByLibrary.simpleMessage("Cat"),
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
+        "category": MessageLookupByLibrary.simpleMessage("Category"),
+        "categorySelected":
+            MessageLookupByLibrary.simpleMessage("Category Selected"),
         "cebola": MessageLookupByLibrary.simpleMessage("Cebola"),
         "change": MessageLookupByLibrary.simpleMessage("Change"),
         "changeEmail": MessageLookupByLibrary.simpleMessage("Change Email"),

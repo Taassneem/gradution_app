@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/database/cache/cache_helper.dart';
 import 'package:gradution_app/core/utils/api_keys.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/core/utils/servive_locator.dart';
 import 'package:gradution_app/features/base/view/base_view.dart';
+import 'package:gradution_app/features/home/presentation/manager/profile_cubit/profile_cubit.dart';
 import 'package:gradution_app/features/splash/presentation/views/choose_lang.dart';
 import 'package:gradution_app/core/utils/widgets/custom_page_route_slide.dart';
 import 'widget/splash_view_body.dart';
@@ -74,17 +76,33 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
           bool signedIn =
               getIt.get<CacheHelper>().getData(key: CacheHelperKey.signedIn) ??
                   false;
-          bool signedOut =
+          bool signedUp =
               getIt.get<CacheHelper>().getData(key: CacheHelperKey.signedUp) ??
                   false;
           if (onBoardingVisited == true) {
-            if (signedIn == true || signedOut == true) {
-              Navigator.push(
-                  context,
-                  CustomPageRouteSlide(
-                    child: const BaseView(),
-                    direction: AxisDirection.up,
-                  ));
+            if (signedIn == true || signedUp == true) {
+              bool parentChoosen = getIt
+                      .get<CacheHelper>()
+                      .getData(key: CacheHelperKey.parentChoosen) ??
+                  false;
+              bool childChoosen = getIt
+                      .get<CacheHelper>()
+                      .getData(key: CacheHelperKey.childChoosen) ??
+                  false;
+              if (childChoosen == true) {
+                BlocProvider.of<ProfileCubit>(context).getUserData();
+                Navigator.push(
+                    context,
+                    CustomPageRouteSlide(
+                      child: const BaseView(),
+                      direction: AxisDirection.up,
+                    ));
+              } else if (parentChoosen == true) {
+                BlocProvider.of<ProfileCubit>(context).getUserData();
+                GoRouter.of(context).pushReplacement(AppRouter.taskView);
+              } else {
+                GoRouter.of(context).push(AppRouter.chooseView);
+              }
             } else {
               GoRouter.of(context).pushReplacement(AppRouter.signInView);
             }

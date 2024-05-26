@@ -11,9 +11,8 @@ abstract class TaskRepo {
   Future<Either<ServerFailure, List<TaskModel>>> fetchTasks();
   Future<Either<ServerFailure, AddTaskModel>> addTask({
     required String title,
-    String? image,
     String? categoryTitle,
-    String? categoryImage,
+    required String categoryImage,
     required List<dynamic> days,
     required String reminder,
     required String repeater,
@@ -22,7 +21,6 @@ abstract class TaskRepo {
   });
   Future<Either<ServerFailure, EditTaskModel>> editTask({
     required String title,
-    String? image,
     String? categoryTitle,
     String? categoryImage,
     required List<dynamic> days,

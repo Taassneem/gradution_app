@@ -32,7 +32,7 @@ class CategoriesViewBody extends StatelessWidget {
                   return ListView.builder(
                     itemCount: state.categoryModel.length,
                     itemBuilder: (BuildContext context, int index) {
-                      return ListViewComponent(
+                      return CategoryListViewComponent(
                         categoryModel: state.categoryModel[index],
                       );
                     },

@@ -32,7 +32,7 @@ class AiContent extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.only(left: 24.r, top: 24.r),
                   alignment: Alignment.topRight,
-                  height: MediaQuery.sizeOf(context).height * 0.406.h,
+                  height: MediaQuery.sizeOf(context).height * 0.35.h,
                   decoration: BoxDecoration(
                     color: AppColor.white,
                     borderRadius: BorderRadius.circular(30.w),
@@ -52,7 +52,7 @@ class AiContent extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  bottom: -30,
+                  bottom: -75,
                   right: 1.w,
                   left: 1.w,
                   child: Row(

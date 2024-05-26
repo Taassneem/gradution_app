@@ -2,12 +2,14 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gradution_app/core/func/custom_toast.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/features/task/data/models/category_model/category_model.dart';
 import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
+import 'package:gradution_app/generated/l10n.dart';
 
-class ListViewComponent extends StatelessWidget {
-  const ListViewComponent({
+class CategoryListViewComponent extends StatelessWidget {
+  const CategoryListViewComponent({
     super.key,
     required this.categoryModel,
   });
@@ -25,9 +27,12 @@ class ListViewComponent extends StatelessWidget {
               categoryModel.title;
           BlocProvider.of<TaskCubit>(context).categoryImage =
               categoryModel.image;
+          BlocProvider.of<TaskCubit>(context).editCategoryTitle =
+              categoryModel.title;
+          BlocProvider.of<TaskCubit>(context).editCategoryImage =
+              categoryModel.image;
           Navigator.pop(context);
-          ScaffoldMessenger.of(context)
-              .showSnackBar(const SnackBar(content: Text('Category Selected')));
+          showToast(S.of(context).categorySelected, task: true);
         },
         leading: AspectRatio(
           aspectRatio: 2.3.r,

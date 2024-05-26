@@ -8,6 +8,8 @@ import 'package:gradution_app/features/task/data/models/task_model/task_model.da
 import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
+import '../edit_task_view.dart';
+
 class TaskCustomDialog extends StatelessWidget {
   const TaskCustomDialog({super.key, required this.taskModel});
   final TaskModel taskModel;
@@ -30,6 +32,13 @@ class TaskCustomDialog extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ListTile(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) =>
+                                EditTaskView(taskModel: taskModel)));
+                  },
                   tileColor: AppColor.screenColor,
                   leading: const Icon(Icons.edit_outlined),
                   title: Text(S.of(context).editTask),

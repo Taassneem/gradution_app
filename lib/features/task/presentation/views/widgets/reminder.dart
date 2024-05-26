@@ -8,8 +8,8 @@ import '../../../../splash/presentation/views/widget/custom_ok_elevated_button.d
 import 'reminder_list_view.dart';
 
 class Reminder extends StatelessWidget {
-  const Reminder({super.key});
-
+  const Reminder({super.key, this.isEditTask = false});
+  final bool isEditTask;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -27,7 +27,7 @@ class Reminder extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleMedium),
                   trailing: Image.asset(AppAssets.reminder),
                 ),
-                const ReminderListView(),
+                ReminderListView(isEditTask: isEditTask),
                 SizedBox(height: 24.h),
                 CustomOkElevatedButton(
                     onPressed: () {

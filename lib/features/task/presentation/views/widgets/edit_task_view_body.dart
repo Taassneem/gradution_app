@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/func/custom_toast.dart';
-import 'package:gradution_app/core/utils/app_assets.dart';
+import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/core/utils/widgets/custom_elevated_button.dart';
 import 'package:gradution_app/features/task/data/models/task_model/task_model.dart';
 import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
@@ -12,8 +13,6 @@ import 'package:intl/intl.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/generated/l10n.dart';
 
-import 'add_photo.dart';
-import 'custom_divider.dart';
 import 'edit_task_feature.dart';
 import 'reminder.dart';
 import 'repeater.dart';
@@ -22,13 +21,10 @@ import 'select_time_widgets.dart';
 import 'task_title_text_field.dart';
 
 class EditTaskViewBody extends StatelessWidget {
-  EditTaskViewBody({
+  const EditTaskViewBody({
     super.key,
     required this.taskModel,
   });
-  final DateTime today = DateTime.now();
-  final String dayName = DateFormat('EEEE').format(DateTime.now());
-  final String monthName = DateFormat('MMMM').format(DateTime.now());
   final TaskModel taskModel;
   @override
   Widget build(BuildContext context) {
@@ -42,8 +38,6 @@ class EditTaskViewBody extends StatelessWidget {
             Navigator.pop(context);
           } else if (state is EditTaskFailure) {
             showToast(state.errorMessage);
-          } else {
-            const Text('Task failed');
           }
         },
         builder: (context, state) {
@@ -103,50 +97,31 @@ class EditTaskViewBody extends StatelessWidget {
                           hintText: taskModel.days.toString(),
                           onTap: () {
                             customShowDialog(context,
-                                widget: const SelectDayWidget());
+                                widget: const SelectDayWidget(
+                                  isEditTask: true,
+                                ));
                           }),
-                      const CustomDivider(isTaskView: true),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 18.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(S.of(context).addPhoto,
-                                style: Theme.of(context).textTheme.titleMedium),
-                            GestureDetector(
-                              onTap: () {
-                                customShowDialog(context,
-                                    widget: const AddPhoto());
-                              },
-                              child: Container(
-                                  width: 175.w,
-                                  height: 95.h,
-                                  decoration: BoxDecoration(
-                                      color: AppColor.pink,
-                                      borderRadius: BorderRadius.circular(5)),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Image.asset(AppAssets.quiz, height: 80.h),
-                                      const Icon(Icons.border_color_outlined)
-                                    ],
-                                  )),
-                            )
-                          ],
-                        ),
+                      EditTaskFeature(
+                        featureName: S.of(context).category,
+                        hintText: taskModel.selectedActivity,
+                        onTap: () {
+                          taskCubit.fetchCategories();
+                          GoRouter.of(context).push(AppRouter.categoriesView);
+                        },
                       ),
                       EditTaskFeature(
                           featureName: S.of(context).reminder,
                           hintText: taskModel.reminder,
                           onTap: () {
-                            customShowDialog(context, widget: const Reminder());
+                            customShowDialog(context,
+                                widget: const Reminder(isEditTask: true));
                           }),
                       EditTaskFeature(
                           featureName: S.of(context).repeater,
                           hintText: taskModel.repeater,
                           onTap: () {
-                            customShowDialog(context, widget: const Repeater());
+                            customShowDialog(context,
+                                widget: const Repeater(isEditTask: true));
                           }),
                       SizedBox(height: 24.h),
                       CustomElevatedButton(

@@ -5,7 +5,8 @@ import 'package:gradution_app/generated/l10n.dart';
 class TaskTitleTextField extends StatelessWidget {
   const TaskTitleTextField({
     super.key,
-    this.editTaskHintText, this.controller,
+    this.editTaskHintText,
+    this.controller,
   });
   final String? editTaskHintText;
   final TextEditingController? controller;

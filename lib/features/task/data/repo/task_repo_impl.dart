@@ -21,9 +21,8 @@ class TaskRepoImpl extends TaskRepo {
   @override
   Future<Either<ServerFailure, AddTaskModel>> addTask({
     required String title,
-    String? image,
     String? categoryTitle,
-    String? categoryImage,
+    required String categoryImage,
     required List<dynamic> days,
     required String reminder,
     required String repeater,
@@ -35,7 +34,7 @@ class TaskRepoImpl extends TaskRepo {
         EndPoint.addTask,
         isFormData: true,
         data: {
-          ApiKey.image: image ?? categoryImage,
+          ApiKey.image: categoryImage,
           ApiKey.reminder: reminder,
           ApiKey.repeater: repeater,
           ApiKey.daysOfWeek: days,
@@ -97,7 +96,6 @@ class TaskRepoImpl extends TaskRepo {
   @override
   Future<Either<ServerFailure, EditTaskModel>> editTask(
       {required String title,
-      String? image,
       String? categoryTitle,
       String? categoryImage,
       required List<dynamic> days,
@@ -111,7 +109,7 @@ class TaskRepoImpl extends TaskRepo {
         EndPoint.editTasks(id),
         isFormData: true,
         data: {
-          ApiKey.image: image ?? categoryImage,
+          ApiKey.image: categoryImage,
           ApiKey.reminder: reminder,
           ApiKey.repeater: repeater,
           ApiKey.daysOfWeek: days,

@@ -6,7 +6,7 @@ import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
-import 'package:gradution_app/core/utils/local_notification.dart';
+// import 'package:gradution_app/core/utils/local_notification.dart';
 import 'package:gradution_app/core/utils/widgets/custom_elevated_button.dart';
 import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
 import 'package:gradution_app/generated/l10n.dart';
@@ -49,7 +49,6 @@ class AddTaskComponent extends StatelessWidget {
               onTap: () {
                 customShowDialog(context, widget: const SelectDayWidget());
               }),
-          
           AddTaskFeature(
               title: S.of(context).repeater,
               image: AppAssets.repeater,
@@ -79,22 +78,22 @@ class AddTaskComponent extends StatelessWidget {
               if (taskCubit.taskKey.currentState!.validate()) {
                 taskCubit.taskKey.currentState!.save();
                 taskCubit.addTask();
-                DateTime selectedDate = taskCubit.date!;
-                DateTime selectedTime = taskCubit.time!;
-                DateTime combinedDateTime = DateTime(
-                  selectedDate.year,
-                  selectedDate.month,
-                  selectedDate.day,
-                  selectedTime.hour,
-                  selectedTime.minute,
-                );
-                LocalNotificationService.showSchduledNotification(
-                    notificationTitle: taskCubit.title.text,
-                    notificationDesc: taskCubit.categoryTitle!,
-                    month: combinedDateTime.month,
-                    day: combinedDateTime.day,
-                    hour: combinedDateTime.hour,
-                    min: combinedDateTime.minute);
+                // DateTime selectedDate = taskCubit.date!;
+                // DateTime selectedTime = taskCubit.time!;
+                // DateTime combinedDateTime = DateTime(
+                //   selectedDate.year,
+                //   selectedDate.month,
+                //   selectedDate.day,
+                //   selectedTime.hour,
+                //   selectedTime.minute,
+                // );
+                // LocalNotificationService.showSchduledNotification(
+                //     notificationTitle: taskCubit.title.text,
+                //     notificationDesc: taskCubit.categoryTitle!,
+                //     month: combinedDateTime.month,
+                //     day: combinedDateTime.day,
+                //     hour: combinedDateTime.hour,
+                //     min: combinedDateTime.minute);
               }
             },
           )

@@ -8,7 +8,8 @@ class ItemField extends StatelessWidget {
     required this.color,
     required this.fieldName,
     required this.image,
-    this.onTap, this.heightImage,
+    this.onTap,
+    this.heightImage,
   });
   final double? height;
   final Color? color;

@@ -20,7 +20,7 @@ class TasksChildListView extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               SizedBox(
-                height: MediaQuery.sizeOf(context).height * 0.449.h,
+                height: MediaQuery.sizeOf(context).height * 0.71.h,
                 child: state.tasks.isEmpty
                     ? const ComingSoonWidget()
                     : ListView.builder(

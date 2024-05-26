@@ -15,17 +15,17 @@ class CustomLangDropDownButton extends StatefulWidget {
 }
 
 class _CustomLangDropDownButtonState extends State<CustomLangDropDownButton> {
-  String firstValue = S.current.english;
+  String langValue = 'english';
 
   @override
   Widget build(BuildContext context) {
     return DropdownButton<String>(
       dropdownColor: AppColor.purple,
       style: Theme.of(context).textTheme.titleSmall,
-      value: firstValue,
+      value: langValue,
       onChanged: (String? value) {
         setState(() {
-          firstValue = value!;
+          langValue = value!;
         });
       },
       icon: const Icon(Icons.keyboard_double_arrow_down_rounded),
@@ -35,13 +35,13 @@ class _CustomLangDropDownButtonState extends State<CustomLangDropDownButton> {
             onTap: () {
               BlocProvider.of<GlobalCubit>(context).english();
             },
-            value: S.of(context).english,
+            value: 'english',
             child: Text(S.of(context).english)),
         DropdownMenuItem(
             onTap: () {
               BlocProvider.of<GlobalCubit>(context).arabic();
             },
-            value: S.of(context).arabic,
+            value:'arabic',
             child: Text(S.of(context).arabic)),
       ],
     );

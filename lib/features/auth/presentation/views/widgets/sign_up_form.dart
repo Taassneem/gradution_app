@@ -86,7 +86,6 @@ class SignUpForm extends StatelessWidget {
                                   if (authCubit.signUnKey.currentState!
                                       .validate()) {
                                     authCubit.signUp();
-                                    
                                   }
                                 })
                       ]),

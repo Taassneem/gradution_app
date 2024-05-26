@@ -17,17 +17,17 @@ class CustomTypeDropDownButton extends StatefulWidget {
 }
 
 class _CustomTypeDropDownButtonState extends State<CustomTypeDropDownButton> {
-  String firstValue = S.current.child;
+  String typeValue = 'child';
 
   @override
   Widget build(BuildContext context) {
     return DropdownButton<String>(
       dropdownColor: AppColor.purple,
       style: Theme.of(context).textTheme.titleSmall,
-      value: firstValue,
+      value: typeValue,
       onChanged: (String? value) {
         setState(() {
-          firstValue = value!;
+          typeValue = value!;
         });
       },
       icon: const Icon(Icons.keyboard_double_arrow_down_rounded),
@@ -38,14 +38,14 @@ class _CustomTypeDropDownButtonState extends State<CustomTypeDropDownButton> {
               BlocProvider.of<ProfileCubit>(context).getUserData();
               GoRouter.of(context).pushReplacement(AppRouter.baseView);
             },
-            value: S.of(context).child,
+            value: 'child',
             child: Text(S.of(context).child)),
         DropdownMenuItem(
             onTap: () {
               BlocProvider.of<ProfileCubit>(context).getUserData();
               GoRouter.of(context).pushReplacement(AppRouter.taskView);
             },
-            value: S.of(context).parent,
+            value: 'parent',
             child: Text(S.of(context).parent)),
       ],
     );

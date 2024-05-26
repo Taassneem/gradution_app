@@ -11,7 +11,9 @@ class EditTaskView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.pink,
-      body: SafeArea(child: EditTaskViewBody(taskModel: taskModel)),
+      body: SafeArea(
+        child: EditTaskViewBody(taskModel: taskModel),
+      ),
     );
   }
 }

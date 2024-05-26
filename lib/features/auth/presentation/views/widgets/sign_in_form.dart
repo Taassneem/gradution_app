@@ -31,7 +31,7 @@ class SignInForm extends StatelessWidget {
           getIt
               .get<CacheHelper>()
               .saveData(key: CacheHelperKey.signedIn, value: true);
-          showToast(state.signInModel.messge ?? S.of(context).signInWelcome);
+          showToast(state.signInModel.message!);
           GoRouter.of(context).pushReplacement(AppRouter.chooseView);
         }
       },

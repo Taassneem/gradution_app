@@ -27,6 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "add": MessageLookupByLibrary.simpleMessage("إضافة"),
         "addPhoto": MessageLookupByLibrary.simpleMessage("إضافة صورة"),
         "addTask": MessageLookupByLibrary.simpleMessage("إضافة مهمة"),
+        "addTaskSuccessfully":
+            MessageLookupByLibrary.simpleMessage("تمت اضافه المهمه بنجاح"),
         "allDays": MessageLookupByLibrary.simpleMessage("كل الأيام"),
         "am": MessageLookupByLibrary.simpleMessage("AM"),
         "animals": MessageLookupByLibrary.simpleMessage("الحيوانات"),

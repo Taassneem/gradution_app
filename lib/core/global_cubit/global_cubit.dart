@@ -39,7 +39,7 @@ class GlobalCubit extends Cubit<GlobalState> {
         getIt<CacheHelper>().getData(key: CacheHelperKey.isArabic);
     isArabic = langCodeFromCache == 'en';
     langCode = isArabic ? 'ar' : 'en';
-    log('Language code saved: isEnglish $langCode');
+    log('Language code saved: $langCode');
     emit(GetChangeLang());
   }
 

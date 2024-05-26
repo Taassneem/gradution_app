@@ -1,12 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/func/custom_show_dialog.dart';
+import 'package:gradution_app/core/func/is_arabic_func.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/features/task/data/models/task_model/task_model.dart';
+import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
 import 'package:gradution_app/features/task/presentation/views/edit_task_view.dart';
 import 'package:gradution_app/features/task/task_child/views/task_child_view.dart';
-import 'package:intl/intl.dart';
 
 import 'task_custom_dialog.dart';
 
@@ -20,39 +22,57 @@ class TaskListViewComponent extends StatelessWidget {
   final bool isChild;
   @override
   Widget build(BuildContext context) {
+    TaskCubit taskCubit = BlocProvider.of<TaskCubit>(context);
     return GestureDetector(
       onTap: () {
         isChild
             ? Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (_) => TaskChildView(taskModel: taskModel)))
+                    builder: (_) => BlocProvider.value(
+                        value: context.read<TaskCubit>(),
+                        child: TaskChildView(taskModel: taskCubit.taskModel!))))
             : Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (_) => EditTaskView(taskModel: taskModel)));
+                    builder: (_) => BlocProvider.value(
+                        value: context.read<TaskCubit>(),
+                        child: EditTaskView(
+                            taskModel: context.read<TaskCubit>().taskModel!))));
       },
       child: Column(
         children: [
-          Row(
-            children: [
-              Text(
-                DateFormat('h:mm a').format(
-                    DateFormat("EEE MMM dd yyyy HH:mm:ss 'GMT'Z")
-                        .parse(taskModel.time!)
-                        .toUtc()
-                        .add(const Duration(hours: 5))),
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
-              SizedBox(width: 10.w),
-              CircleAvatar(
-                backgroundColor: AppColor.pink,
-                radius: 10.r,
-              ),
-            ],
-          ),
+          isArabic()
+              ? Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: AppColor.pink,
+                      radius: 10.r,
+                    ),
+                    SizedBox(width: 10.w),
+                    Text(
+                      taskModel.time!,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                  ],
+                )
+              : Row(
+                  children: [
+                    Text(
+                      taskModel.time!,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                    SizedBox(width: 10.w),
+                    CircleAvatar(
+                      backgroundColor: AppColor.pink,
+                      radius: 10.r,
+                    ),
+                  ],
+                ),
           Padding(
-            padding: EdgeInsets.only(left: 28.0.w),
+            padding: isArabic()
+                ?  EdgeInsets.only(right: 28.w)
+                : EdgeInsets.only(left: 28.0.w),
             child: Row(
               children: [
                 Container(

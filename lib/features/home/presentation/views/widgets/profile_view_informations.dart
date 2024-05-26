@@ -33,7 +33,6 @@ class ProfileViewInformations extends StatelessWidget {
             child: CustomProfileFeature(
               featureName: S.of(context).account,
               featureType: S.of(context).editProfile,
-              featureTypeTwo: '',
               leading: const Icon(Icons.person, color: AppColor.purple),
               trailing: isArabic()
                   ? const Icon(Icons.keyboard_double_arrow_left_outlined)
@@ -43,7 +42,6 @@ class ProfileViewInformations extends StatelessWidget {
           CustomProfileFeature(
             featureName: S.of(context).notification,
             featureType: S.of(context).notification,
-            featureTypeTwo: '',
             leading: const Icon(Icons.notifications, color: AppColor.purple),
             trailing: CupertinoSwitch(
               value: false,
@@ -58,11 +56,11 @@ class ProfileViewInformations extends StatelessWidget {
               color: AppColor.blue,
             ),
             trailing: const CustomLangDropDownButton(),
-            more: true,
-            featureTypeTwo: S.of(context).swithAccount,
-            leadingTwo: Image.asset(AppAssets.parents),
-            trailingTwo: const CustomTypeDropDownButton(),
           ),
+          ListTileAction(
+              featureType: S.of(context).swithAccount,
+              leading: Image.asset(AppAssets.parents),
+              trailing: const CustomTypeDropDownButton())
         ],
       ),
     );

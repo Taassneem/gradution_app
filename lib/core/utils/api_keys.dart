@@ -1,53 +1,53 @@
 class EndPoint {
   static const String signUp =
-      'https://graduation-project-pearl.vercel.app/auth/';
+      'https://graduation-project-34w2.onrender.com/auth/';
   static const String login =
-      'https://graduation-project-pearl.vercel.app/auth/login';
+      'https://graduation-project-34w2.onrender.com/auth/login';
   static const String forget =
-      'https://graduation-project-pearl.vercel.app/auth/forget';
+      'https://graduation-project-34w2.onrender.com/auth/forget';
   static const String reset =
-      'https://graduation-project-pearl.vercel.app/auth/reset';
+      'https://graduation-project-34w2.onrender.com/auth/reset';
 
   static const String categories =
-      'https://graduation-project-pearl.vercel.app/blog/getTodos';
+      'https://graduation-project-34w2.onrender.com/blog/getTodos';
   static const String addTask =
-      'https://graduation-project-pearl.vercel.app/blog/add';
+      'https://graduation-project-34w2.onrender.com/blog/add';
   static String getTasks(id) {
-    return 'https://graduation-project-pearl.vercel.app/blog/createdBy/$id';
+    return 'https://graduation-project-34w2.onrender.com/blog/createdBy/$id';
   }
 
   static String editTasks(id) {
-    return 'https://graduation-project-pearl.vercel.app/blog/updateBlog/$id';
+    return 'https://graduation-project-34w2.onrender.com/blog/updateBlog/$id';
   }
 
   static String deteleTask(id) {
-    return 'https://graduation-project-pearl.vercel.app/blog/deleteBlog/$id';
+    return 'https://graduation-project-34w2.onrender.com/blog/deleteBlog/$id';
   }
 
   static String changePassword(id) {
-    return 'https://graduation-project-pearl.vercel.app/user/changePassword/$id';
+    return 'https://graduation-project-34w2.onrender.com/user/changePassword/$id';
   }
 
   static const String logOut =
-      'https://graduation-project-pearl.vercel.app/user/logout';
+      'https://graduation-project-34w2.onrender.com/user/logout';
   static String editProfile(id) {
-    return 'https://graduation-project-pearl.vercel.app/user/editProfile/$id';
+    return 'https://graduation-project-34w2.onrender.com/user/editProfile/$id';
   }
 
   static String editProfilePic(id) {
-    return 'https://graduation-project-pearl.vercel.app/user/updateprofilepic/$id';
+    return 'https://graduation-project-34w2.onrender.com/user/updateprofilepic/$id';
   }
 
   static String uploadProfilepic(id) {
-    return 'https://graduation-project-pearl.vercel.app/user/profilepic/$id';
+    return 'https://graduation-project-34w2.onrender.com/user/profilepic/$id';
   }
 
   static String deleteUser(id) {
-    return 'https://graduation-project-pearl.vercel.app/user/deleteUser/$id';
+    return 'https://graduation-project-34w2.onrender.com/user/deleteUser/$id';
   }
 
   static String getuserById(id) {
-    return 'https://graduation-project-pearl.vercel.app/user/getuserById/$id';
+    return 'https://graduation-project-34w2.onrender.com/user/getuserById/$id';
   }
 
   static const String modelAi = 'http://144.24.219.44:5050/predict';
@@ -91,4 +91,6 @@ class CacheHelperKey {
   static const String isArabic = 'isArabic';
   static const String isEnglish = 'isEnglish';
   static const String changeLan = 'changeLan';
+  static const String childChoosen = 'childChoosen';
+  static const String parentChoosen = 'parentChoosen';
 }

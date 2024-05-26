@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
-import 'package:gradution_app/features/task/presentation/views/widgets/custom_divider.dart';
 
 class CustomProfileFeature extends StatelessWidget {
   const CustomProfileFeature({
@@ -10,19 +9,11 @@ class CustomProfileFeature extends StatelessWidget {
     required this.featureType,
     this.leading,
     this.trailing,
-    this.more = false,
-    required this.featureTypeTwo,
-    this.leadingTwo,
-    this.trailingTwo,
   });
   final String featureName;
   final String featureType;
   final Widget? leading;
   final Widget? trailing;
-  final String featureTypeTwo;
-  final Widget? leadingTwo;
-  final Widget? trailingTwo;
-  final bool more;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -30,37 +21,40 @@ class CustomProfileFeature extends StatelessWidget {
       children: [
         Text(featureName, style: Theme.of(context).textTheme.titleMedium),
         SizedBox(height: 8.h),
+        ListTileAction(
+            featureType: featureType, leading: leading, trailing: trailing),
+      ],
+    );
+  }
+}
+
+class ListTileAction extends StatelessWidget {
+  const ListTileAction({
+    super.key,
+    required this.featureType,
+    required this.leading,
+    required this.trailing,
+  });
+
+  final String featureType;
+  final Widget? leading;
+  final Widget? trailing;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
         Container(
           decoration: BoxDecoration(
               color: AppColor.white,
               borderRadius: BorderRadius.circular(10.w),
               border: Border.all(color: AppColor.purple, width: 2.w)),
-          child: more
-              ? Column(
-                  children: [
-                    ListTile(
-                      title: Text(featureType,
-                          style: Theme.of(context).textTheme.titleSmall),
-                      leading: leading,
-                      trailing: trailing,
-                    ),
-                    SizedBox(
-                        width: 250.w,
-                        child: const CustomDivider(isTaskView: true)),
-                    ListTile(
-                      title: Text(featureTypeTwo,
-                          style: Theme.of(context).textTheme.titleSmall),
-                      leading: leadingTwo,
-                      trailing: trailingTwo,
-                    ),
-                  ],
-                )
-              : ListTile(
-                  title: Text(featureType,
-                      style: Theme.of(context).textTheme.titleSmall),
-                  leading: leading,
-                  trailing: trailing,
-                ),
+          child: ListTile(
+            title: Text(featureType,
+                style: Theme.of(context).textTheme.titleSmall),
+            leading: leading,
+            trailing: SizedBox(width: 80.w, child: trailing),
+          ),
         ),
         SizedBox(height: 24.h),
       ],

@@ -19,9 +19,7 @@ class _CustomTimeSelectorState extends State<CustomTimeSelector> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        
-      },
+      onTap: () {},
       child: Container(
         width: 80.w,
         height: 40.h,
