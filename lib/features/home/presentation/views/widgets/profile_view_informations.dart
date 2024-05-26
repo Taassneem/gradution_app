@@ -14,11 +14,18 @@ import 'drop_down_type_menu.dart';
 import 'drop_dwon_button_language.dart';
 import 'profile_feature.dart';
 
-class ProfileViewInformations extends StatelessWidget {
+class ProfileViewInformations extends StatefulWidget {
   const ProfileViewInformations({
     super.key,
   });
 
+  @override
+  State<ProfileViewInformations> createState() =>
+      _ProfileViewInformationsState();
+}
+
+class _ProfileViewInformationsState extends State<ProfileViewInformations> {
+  bool notivication = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -44,8 +51,12 @@ class ProfileViewInformations extends StatelessWidget {
             featureType: S.of(context).notification,
             leading: const Icon(Icons.notifications, color: AppColor.purple),
             trailing: CupertinoSwitch(
-              value: false,
-              onChanged: (value) {},
+              value: notivication,
+              onChanged: (value) {
+                setState(() {
+                  notivication != value;
+                });
+              },
             ),
           ),
           CustomProfileFeature(

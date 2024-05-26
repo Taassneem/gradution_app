@@ -5,12 +5,13 @@ class FlutterTtsMe {
 
   static Future<void> configureTts(
       {required double setSpeechRate, required double setVolume}) async {
-    await flutterTts.setLanguage('en-US');
     await flutterTts.setSpeechRate(setSpeechRate);
     await flutterTts.setVolume(setVolume);
   }
 
-  void speakText(String text) async {
+  void speakText(String text, String lang) async {
+    await flutterTts.setLanguage(lang);
+
     await flutterTts.speak(text);
   }
 

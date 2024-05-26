@@ -45,15 +45,17 @@ class ListTileAction extends StatelessWidget {
     return Column(
       children: [
         Container(
+          padding: EdgeInsets.all(8.r),
           decoration: BoxDecoration(
               color: AppColor.white,
               borderRadius: BorderRadius.circular(10.w),
               border: Border.all(color: AppColor.purple, width: 2.w)),
           child: ListTile(
+            contentPadding: EdgeInsets.zero,
             title: Text(featureType,
                 style: Theme.of(context).textTheme.titleSmall),
             leading: leading,
-            trailing: SizedBox(width: 80.w, child: trailing),
+            trailing: trailing,
           ),
         ),
         SizedBox(height: 24.h),

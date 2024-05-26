@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gradution_app/core/func/custom_toast.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/features/home/presentation/manager/profile_cubit/profile_cubit.dart';
@@ -13,9 +12,7 @@ import 'profile_view_informations.dart';
 import 'user_name_and_email.dart';
 
 class ProfileViewBody extends StatelessWidget {
-  const ProfileViewBody({
-    super.key,
-  });
+  const ProfileViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +43,7 @@ class ProfileViewBody extends StatelessWidget {
                             fit: BoxFit.cover)),
                   );
                 } else if (state is GetUserDataFailure) {
-                  return showToast(state.errorMessage);
+                  return Text(state.errorMessage);
                 } else {
                   return Badge(
                       label: const Icon(Icons.add, color: AppColor.lightGrey),
@@ -69,7 +66,8 @@ class ProfileViewBody extends StatelessWidget {
             )),
         const UserNameAndEmail(),
         const ProfileViewInformations(),
-        const CustomLogOut()
+        const CustomLogOut(),
+        SizedBox(height: 24.h)
       ]),
     );
   }

@@ -33,6 +33,7 @@ class EditTaskFeature extends StatelessWidget {
                     readOnly: true,
                     decoration: InputDecoration(
                         hintText: hintText,
+                        contentPadding: const EdgeInsets.all(5),
                         border: InputBorder.none,
                         suffixIcon: const Icon(Icons.border_color_outlined)),
                   ),

@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gradution_app/core/global_cubit/global_cubit.dart';
 import 'package:gradution_app/features/task/data/models/category_model/category_model.dart';
 import 'package:gradution_app/features/task/data/models/add_task_model/add_task_model.dart';
 import 'package:gradution_app/features/task/data/models/delete_task_model.dart';
@@ -36,7 +37,7 @@ class TaskCubit extends Cubit<TaskState> {
   DateTime? editDate;
   DateTime? editTime;
   XFile? taskImageFromGallery;
-  TaskModel? taskModel;
+  GlobalCubit? global;
   Future<void> fetchCategories() async {
     emit(CategoriesLoading());
     var result = await taskRepo.fetchCategories();
@@ -55,7 +56,7 @@ class TaskCubit extends Cubit<TaskState> {
         repeater: repeater ?? '',
         categoryImage: categoryImage ?? '',
         title: title.text,
-        date: date ?? DateTime.now(),
+        date: today,
         time: time?.toLocal() ?? DateTime.now());
     result.fold(
         (failure) =>
@@ -69,23 +70,37 @@ class TaskCubit extends Cubit<TaskState> {
     result.fold(
         (failure) =>
             emit(FetchTasksFailure(errorMessage: failure.failure.errorMessage)),
-        (tasks) => emit(FetchTasksSuccess(tasks: tasks)));
+        (tasks) {
+      emit(FetchTasksSuccess(tasks: tasks));
+    });
+  }
+
+  List<TaskModel>? taskList;
+  List<TaskModel> filterTasksList = [];
+  Future<void> filterTasks() async {
+    filterTasksList.clear();
+    for (var i = 0; i < taskList!.length; i++) {
+      if (taskList![i].date == today) {
+        filterTasksList.add(taskList![i]);
+      }
+    }
   }
 
   Future<void> editTask({required String id}) async {
     emit(EditTaskLoading());
     var result = await taskRepo.editTask(
-        date: editDate ?? taskModel!.date!,
-        days: editDays ?? taskModel!.days!,
-        time: time ?? DateTime.parse(taskModel!.time!),
-        reminder: editReminder ?? taskModel!.reminder!,
-        repeater: editRepeater ?? taskModel!.repeater!,
+        days: editDays ?? [''],
+        time: editTime?.toLocal() ?? DateTime.parse(global!.taskModel!.time!),
+        reminder: editReminder ?? global!.taskModel!.reminder!,
+        repeater: editRepeater ?? global!.taskModel!.repeater!,
         title: editTitle.text,
         id: id);
     result.fold(
         (failure) =>
             emit(EditTaskFailure(errorMessage: failure.failure.errorMessage)),
-        (edit) => emit(EditTaskSuccess(editTaskModel: edit)));
+        (edit) {
+      emit(EditTaskSuccess(editTaskModel: edit));
+    });
   }
 
   Future<void> deleteTask({required String id}) async {
@@ -106,10 +121,12 @@ class TaskCubit extends Cubit<TaskState> {
 
   void setTime(tz.TZDateTime newTime) {
     time = newTime;
+    editTime = newTime;
     if (kDebugMode) {
       print("Converted Time: $time");
+      print("Converted Time: $editTime");
     }
-    emit(TaskTimeUpdated(newTime)); // Emit state if needed
+    emit(TaskTimeUpdated(newTime));
   }
 
   pickImageWithGallery() async {

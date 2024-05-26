@@ -26,7 +26,6 @@ abstract class TaskRepo {
     required List<dynamic> days,
     required String reminder,
     required String repeater,
-    required DateTime date,
     required DateTime time,
     required String id,
   });

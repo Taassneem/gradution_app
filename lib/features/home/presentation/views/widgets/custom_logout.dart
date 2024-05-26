@@ -33,12 +33,14 @@ class CustomLogOut extends StatelessWidget {
             BlocProvider.of<ProfileCubit>(context).logOut();
           },
           child: Container(
-            width: isArabic() ? 161.w : 133.w,
+            padding: EdgeInsets.all(5.r),
+            width: isArabic() ? 160.w : 133.w,
             decoration: BoxDecoration(
                 color: AppColor.white,
                 borderRadius: BorderRadius.circular(10.w),
                 border: Border.all(color: AppColor.error)),
             child: ListTile(
+              contentPadding: EdgeInsets.zero,
               title: Text(S.of(context).logout,
                   style: Theme.of(context)
                       .textTheme

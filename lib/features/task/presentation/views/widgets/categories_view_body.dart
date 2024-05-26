@@ -12,8 +12,9 @@ import 'list_view_component.dart';
 class CategoriesViewBody extends StatelessWidget {
   const CategoriesViewBody({
     super.key,
+    this.isEditTask = false,
   });
-
+  final bool isEditTask;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -33,6 +34,7 @@ class CategoriesViewBody extends StatelessWidget {
                     itemCount: state.categoryModel.length,
                     itemBuilder: (BuildContext context, int index) {
                       return CategoryListViewComponent(
+                        isEditTask: isEditTask,
                         categoryModel: state.categoryModel[index],
                       );
                     },

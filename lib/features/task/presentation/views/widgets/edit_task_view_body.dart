@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/func/custom_toast.dart';
-import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/core/utils/widgets/custom_elevated_button.dart';
 import 'package:gradution_app/features/task/data/models/task_model/task_model.dart';
 import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
+import 'package:gradution_app/features/task/presentation/views/categories_view.dart';
 import 'package:intl/intl.dart';
 
 import 'package:gradution_app/core/utils/app_color.dart';
@@ -33,7 +32,7 @@ class EditTaskViewBody extends StatelessWidget {
       child: BlocConsumer<TaskCubit, TaskState>(
         listener: (context, state) {
           if (state is EditTaskSuccess) {
-            showToast(state.editTaskModel.message!);
+            showToast(state.editTaskModel.message!, task: true);
             taskCubit.fetchTasks();
             Navigator.pop(context);
           } else if (state is EditTaskFailure) {
@@ -106,7 +105,12 @@ class EditTaskViewBody extends StatelessWidget {
                         hintText: taskModel.selectedActivity,
                         onTap: () {
                           taskCubit.fetchCategories();
-                          GoRouter.of(context).push(AppRouter.categoriesView);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => const CategoriesView(
+                                        isEditTask: true,
+                                      )));
                         },
                       ),
                       EditTaskFeature(

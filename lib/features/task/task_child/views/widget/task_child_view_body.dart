@@ -5,6 +5,7 @@ import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/features/task/data/models/task_model/task_model.dart';
 import 'package:intl/intl.dart';
 
+import 'package:timezone/timezone.dart' as tz;
 import 'icon_for_task_speak.dart';
 
 class TaskChildViewBody extends StatelessWidget {
@@ -17,6 +18,17 @@ class TaskChildViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    DateTime parsedTime = DateFormat.jm('en_US')
+        .parse(taskModel.time!)
+        .add(const Duration(hours: 1));
+    DateTime utcTime =
+        DateTime.utc(0, 1, 1, parsedTime.hour, parsedTime.minute);
+
+    final egyptTimezone = tz.getLocation('Africa/Cairo');
+    tz.TZDateTime egyptTime = tz.TZDateTime.from(utcTime, egyptTimezone);
+
+    DateFormat outputFormat = DateFormat('h:mm a');
+    String formattedTime = outputFormat.format(egyptTime);
     return SafeArea(
       child: Column(
         children: [
@@ -72,11 +84,7 @@ class TaskChildViewBody extends StatelessWidget {
               children: [
                 Row(children: [
                   Text(
-                    DateFormat('h:mm a').format(
-                        DateFormat("EEE MMM dd yyyy HH:mm:ss 'GMT'Z")
-                            .parse(taskModel.time!)
-                            .toUtc()
-                            .add(const Duration(hours: 5))),
+                    formattedTime,
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                 ]),

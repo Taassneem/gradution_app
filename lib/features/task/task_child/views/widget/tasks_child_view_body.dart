@@ -14,7 +14,6 @@ class TasksChildViewBody extends StatelessWidget {
 
   final DateTime today = DateTime.now();
   final String dayName = DateFormat('EEEE').format(DateTime.now());
-  final String monthName = DateFormat('MMMM').format(DateTime.now());
   @override
   Widget build(BuildContext context) {
     return SafeArea(

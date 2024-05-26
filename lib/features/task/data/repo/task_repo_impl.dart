@@ -101,7 +101,6 @@ class TaskRepoImpl extends TaskRepo {
       required List<dynamic> days,
       required String reminder,
       required String repeater,
-      required DateTime date,
       required DateTime time,
       required String id}) async {
     try {
@@ -115,7 +114,6 @@ class TaskRepoImpl extends TaskRepo {
           ApiKey.daysOfWeek: days,
           ApiKey.title: title,
           ApiKey.selectedActivity: categoryTitle,
-          ApiKey.date: date,
           ApiKey.time: time,
         },
       );

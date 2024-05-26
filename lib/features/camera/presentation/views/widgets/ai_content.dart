@@ -4,17 +4,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/func/is_arabic_func.dart';
-import 'package:gradution_app/core/global_cubit/global_cubit.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/flutter_tts.dart';
+import 'package:gradution_app/core/utils/translator.dart';
 import 'package:gradution_app/features/camera/presentation/manager/camera_cubit/camera_cubit.dart';
 
 import 'icon_method.dart';
 
-class AiContent extends StatelessWidget {
-  AiContent({super.key});
+class AiContent extends StatefulWidget {
+  const AiContent({super.key});
+
+  @override
+  State<AiContent> createState() => _AiContentState();
+}
+
+class _AiContentState extends State<AiContent> {
   final FlutterTtsMe flutterTtsMe = FlutterTtsMe();
+
+  final Translator googleTranslator = Translator();
+  String translatedText = "";
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +39,10 @@ class AiContent extends StatelessWidget {
             if (state is SendPhotoSuccess) {
               return Stack(clipBehavior: Clip.none, children: [
                 Container(
-                  padding: EdgeInsets.only(left: 24.r, top: 24.r),
+                  padding: isArabic()
+                      ? EdgeInsets.only(right: 24.r, top: 24.r)
+                      : EdgeInsets.only(left: 24.r, top: 24.r),
                   alignment: Alignment.topRight,
-                  height: MediaQuery.sizeOf(context).height * 0.35.h,
                   decoration: BoxDecoration(
                     color: AppColor.white,
                     borderRadius: BorderRadius.circular(30.w),
@@ -42,19 +52,44 @@ class AiContent extends StatelessWidget {
                     itemBuilder: (BuildContext context, int index) {
                       return Row(
                         children: [
-                          isArabic()
-                              ? const SizedBox.shrink()
-                              : Text('${index + 1}.'),
-                          Text(state.model.classNames![index]),
+                          Text('${index + 1}. '),
+                          Text(
+                            state.model.classNames![index],
+                            style: Theme.of(context).textTheme.titleMedium,
+                          ),
                         ],
                       );
                     },
                   ),
                 ),
+                if (translatedText.isNotEmpty)
+                  Positioned(
+                    bottom: 60, // Adjust as needed
+                    left: 16,
+                    right: 16,
+                    child: Container(
+                      padding: const EdgeInsets.all(16.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12.0),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.black26,
+                            blurRadius: 10,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: Text(
+                        translatedText,
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                    ),
+                  ),
                 Positioned(
-                  bottom: -75,
-                  right: 1.w,
-                  left: 1.w,
+                  bottom: 1,
+                  left: 1,
+                  right: 1,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -63,21 +98,43 @@ class AiContent extends StatelessWidget {
                           rightIcon: isArabic() ? true : false,
                           onTap: () {
                             log('message');
-                            flutterTtsMe
-                                .speakText(state.model.classNames!.toString());
+                            isArabic()
+                                ? flutterTtsMe.speakText(
+                                    state.model.classNames!.toString(), 'ar-SA')
+                                : flutterTtsMe.speakText(
+                                    state.model.classNames!.toString(),
+                                    'en-US');
                           }),
                       IconMethod(
                         icon: Icons.translate,
-                        rightIcon: isArabic() ? false : true,
-                        onTap: () {
-                          isArabic()
-                              ? BlocProvider.of<GlobalCubit>(context).english()
-                              : BlocProvider.of<GlobalCubit>(context).arabic();
-                        },
+                        rightIcon: !isArabic(),
+                        onTap: isArabic()
+                            ? () async {
+                                String translation =
+                                    await googleTranslator.translate(
+                                  text: state.model.classNames!.toString(),
+                                  langTo: 'en',
+                                  langFrom: 'ar',
+                                );
+                                setState(() {
+                                  translatedText = translation;
+                                });
+                              }
+                            : () async {
+                                String translation =
+                                    await googleTranslator.translate(
+                                  text: state.model.classNames!.toString(),
+                                  langTo: 'ar',
+                                  langFrom: 'en',
+                                );
+                                setState(() {
+                                  translatedText = translation;
+                                });
+                              },
                       ),
                     ],
                   ),
-                )
+                ),
               ]);
             } else if (state is SendPhotoFailure) {
               return Center(

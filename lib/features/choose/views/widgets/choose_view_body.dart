@@ -36,6 +36,7 @@ class ChooseViewBody extends StatelessWidget {
                       image: AppAssets.child,
                       type: S.of(context).child,
                       onTap: () {
+                        BlocProvider.of<ProfileCubit>(context).getUserData();
                         getIt.get<CacheHelper>().saveData(
                             key: CacheHelperKey.childChoosen, value: true);
                         GoRouter.of(context)

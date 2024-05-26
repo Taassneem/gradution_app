@@ -39,14 +39,16 @@ class _CustomTypeDropDownButtonState extends State<CustomTypeDropDownButton> {
               GoRouter.of(context).pushReplacement(AppRouter.baseView);
             },
             value: 'child',
-            child: Text(S.of(context).child)),
+            child: Text(S.of(context).child,
+                style: Theme.of(context).textTheme.titleSmall)),
         DropdownMenuItem(
             onTap: () {
               BlocProvider.of<ProfileCubit>(context).getUserData();
               GoRouter.of(context).pushReplacement(AppRouter.taskView);
             },
             value: 'parent',
-            child: Text(S.of(context).parent)),
+            child: Text(S.of(context).parent,
+                style: Theme.of(context).textTheme.titleSmall)),
       ],
     );
   }

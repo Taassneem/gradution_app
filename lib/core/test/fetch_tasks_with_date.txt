@@ -1,0 +1,56 @@
+
+  Future<void> fetchTasks() async {
+    emit(FetchTasksLoading());
+    var result = await taskRepo.fetchTasks();
+    result.fold(
+        (failure) =>
+            emit(FetchTasksFailure(errorMessage: failure.failure.errorMessage)),
+        (tasks) async {
+      taskList = tasks;
+      await filterTasks();
+      emit(FetchTasksSuccess(tasks: tasks));
+    });
+  }
+
+  List<TaskModel>? taskList;
+  List<TaskModel> filterTasksList = [];
+  Future<void> filterTasks() async {
+    filterTasksList.clear();
+    for (var i = 0; i < taskList!.length; i++) {
+      if (taskList![i].date == today) {
+        filterTasksList.add(taskList![i]);
+      }
+    }
+  }
+ListView.builder(
+                        itemCount: BlocProvider.of<TaskCubit>(context)
+                            .filterTasksList
+                            .length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return TaskListViewComponent(
+                            isChild: true,
+                            time: taskCubit.filterTasksList[index].time!,
+                            title: taskCubit.filterTasksList[index].title!,
+                            image: taskCubit.filterTasksList[index].image!.url!,
+                            taskModel: state.tasks[index],
+                          );
+                        },
+                      ),
+                      
+class TaskListViewComponent extends StatelessWidget {
+  const TaskListViewComponent({
+    super.key,
+    required this.taskModel,
+    this.isChild = false, required this.time, required this.image, required this.title,
+  });
+  final TaskModel taskModel;
+  final bool isChild;
+  final String time;
+  final String image;
+  final String title;}
+  customCalender{
+     onDaySelected: BlocProvider.of<TaskCubit>(context).selectedDay,
+          selectedDayPredicate: (day) {
+            return isSameDay(day, BlocProvider.of<TaskCubit>(context).today);
+          },
+  }

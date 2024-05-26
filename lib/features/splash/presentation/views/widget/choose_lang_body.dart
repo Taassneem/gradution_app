@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/database/cache/cache_helper.dart';
+import 'package:gradution_app/core/func/is_arabic_func.dart';
 import 'package:gradution_app/core/global_cubit/global_cubit.dart';
 import 'package:gradution_app/core/utils/api_keys.dart';
 import 'package:gradution_app/core/utils/app_assets.dart';
@@ -60,7 +61,11 @@ class ChoosLanguageBody extends StatelessWidget {
                       isPurple: true,
                       text: S.of(context).change,
                       onPressed: () {
-                        BlocProvider.of<GlobalCubit>(context).arabic();
+                        isArabic()
+                            ? BlocProvider.of<GlobalCubit>(context)
+                                .toggleLanguage('en')
+                            : BlocProvider.of<GlobalCubit>(context)
+                                .toggleLanguage('ar');
                         getIt.get<CacheHelper>().saveData(
                             key: CacheHelperKey.languageChoosed, value: true);
                         GoRouter.of(context)

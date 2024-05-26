@@ -93,4 +93,5 @@ class CacheHelperKey {
   static const String changeLan = 'changeLan';
   static const String childChoosen = 'childChoosen';
   static const String parentChoosen = 'parentChoosen';
+  static const String languageCode = 'languageCode';
 }

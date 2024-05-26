@@ -28,7 +28,7 @@ class SelectTimeWidgets extends StatelessWidget {
                 onDateTimeChanged: (value) {
                   final egyptTime = tz.TZDateTime.from(value, egyptTimezone);
                   BlocProvider.of<TaskCubit>(context).setTime(egyptTime);
-                  log("Selected Time: $value"); // Debug print statement
+                  log("Selected Time: $value");
                   log("Egypt Time: $egyptTime");
                 },
                 mode: CupertinoDatePickerMode.time,

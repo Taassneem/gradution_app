@@ -39,7 +39,7 @@ class PhotoInforamtionViewBody extends StatelessWidget {
             },
           ),
           SizedBox(height: 16.h),
-          AiContent(),
+         const AiContent(),
         ],
       ),
     );

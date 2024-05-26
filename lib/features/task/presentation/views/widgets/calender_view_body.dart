@@ -35,7 +35,8 @@ class CalenderViewBody extends StatelessWidget {
             width: MediaQuery.sizeOf(context).width.w,
             decoration: const BoxDecoration(color: AppColor.screenColor),
             child: Padding(
-              padding: EdgeInsets.all(18.0.r),
+              padding: EdgeInsets.symmetric(horizontal: 18.0.r) +
+                  EdgeInsets.only(top: 15.h),
               child: Column(
                 children: [
                   TodayNumber(today: today, dayName: dayName),

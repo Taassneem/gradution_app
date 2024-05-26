@@ -50,6 +50,7 @@ final class TaskDaySelected extends TaskState {
 }
 
 final class UploadingPhotoLoading extends TaskState {}
+final class DatePicker extends TaskState {}
 
 final class UploadingPhotoSuccess extends TaskState {}
 

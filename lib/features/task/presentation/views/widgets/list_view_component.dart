@@ -12,8 +12,10 @@ class CategoryListViewComponent extends StatelessWidget {
   const CategoryListViewComponent({
     super.key,
     required this.categoryModel,
+    this.isEditTask = false,
   });
   final CategoryModel categoryModel;
+  final bool isEditTask;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,16 +25,21 @@ class CategoryListViewComponent extends StatelessWidget {
       decoration: const BoxDecoration(color: AppColor.white),
       child: ListTile(
         onTap: () {
-          BlocProvider.of<TaskCubit>(context).categoryTitle =
-              categoryModel.title;
-          BlocProvider.of<TaskCubit>(context).categoryImage =
-              categoryModel.image;
-          BlocProvider.of<TaskCubit>(context).editCategoryTitle =
-              categoryModel.title;
-          BlocProvider.of<TaskCubit>(context).editCategoryImage =
-              categoryModel.image;
-          Navigator.pop(context);
-          showToast(S.of(context).categorySelected, task: true);
+          if (isEditTask == true) {
+            BlocProvider.of<TaskCubit>(context).editCategoryTitle =
+                categoryModel.title;
+            BlocProvider.of<TaskCubit>(context).editCategoryImage =
+                categoryModel.image;
+            Navigator.pop(context);
+            showToast(S.of(context).categorySelected, task: true);
+          } else {
+            BlocProvider.of<TaskCubit>(context).categoryTitle =
+                categoryModel.title;
+            BlocProvider.of<TaskCubit>(context).categoryImage =
+                categoryModel.image;
+            Navigator.pop(context);
+            showToast(S.of(context).categorySelected, task: true);
+          }
         },
         leading: AspectRatio(
           aspectRatio: 2.3.r,

@@ -18,7 +18,7 @@ class TaskCustomDialog extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(18.0.r),
       child: Align(
-        alignment: isArabic() ? Alignment.centerLeft : Alignment.bottomRight,
+        alignment: isArabic() ? Alignment.bottomLeft : Alignment.bottomRight,
         child: Card(
           child: Container(
             height: 155.h,

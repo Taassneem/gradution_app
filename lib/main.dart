@@ -14,7 +14,7 @@ void main() async {
   setupSreviceLocator();
   await getIt<CacheHelper>().init();
   Bloc.observer = SimpleBLocObserver();
-  FlutterTtsMe.configureTts(setSpeechRate: 0.6, setVolume: 0.8);
+  FlutterTtsMe.configureTts(setSpeechRate: 0.5, setVolume: 0.8);
   await LocalNotificationService.init();
   tz.initializeTimeZones();
   runApp(const MyApp());

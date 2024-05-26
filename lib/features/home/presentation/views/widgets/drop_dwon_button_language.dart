@@ -33,16 +33,20 @@ class _CustomLangDropDownButtonState extends State<CustomLangDropDownButton> {
       items: [
         DropdownMenuItem(
             onTap: () {
-              BlocProvider.of<GlobalCubit>(context).english();
+              BlocProvider.of<GlobalCubit>(context).toggleLanguage('en');
+              BlocProvider.of<GlobalCubit>(context).getLang();
             },
             value: 'english',
-            child: Text(S.of(context).english)),
+            child: Text(S.of(context).english,
+                style: Theme.of(context).textTheme.titleSmall)),
         DropdownMenuItem(
             onTap: () {
-              BlocProvider.of<GlobalCubit>(context).arabic();
+              BlocProvider.of<GlobalCubit>(context).toggleLanguage('ar');
+              BlocProvider.of<GlobalCubit>(context).getLang();
             },
-            value:'arabic',
-            child: Text(S.of(context).arabic)),
+            value: 'arabic',
+            child: Text(S.of(context).arabic,
+                style: Theme.of(context).textTheme.titleSmall)),
       ],
     );
   }

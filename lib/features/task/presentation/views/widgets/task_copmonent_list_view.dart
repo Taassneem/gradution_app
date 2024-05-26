@@ -9,7 +9,9 @@ import 'package:gradution_app/features/task/data/models/task_model/task_model.da
 import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
 import 'package:gradution_app/features/task/presentation/views/edit_task_view.dart';
 import 'package:gradution_app/features/task/task_child/views/task_child_view.dart';
+import 'package:intl/intl.dart';
 
+import 'package:timezone/timezone.dart' as tz;
 import 'task_custom_dialog.dart';
 
 class TaskListViewComponent extends StatelessWidget {
@@ -20,9 +22,21 @@ class TaskListViewComponent extends StatelessWidget {
   });
   final TaskModel taskModel;
   final bool isChild;
+
   @override
   Widget build(BuildContext context) {
-    TaskCubit taskCubit = BlocProvider.of<TaskCubit>(context);
+    DateTime parsedTime = DateFormat.jm('en_US')
+        .parse(taskModel.time!)
+        .add(const Duration(hours: 1));
+    DateTime utcTime =
+        DateTime.utc(0, 1, 1, parsedTime.hour, parsedTime.minute);
+
+    final egyptTimezone = tz.getLocation('Africa/Cairo');
+    tz.TZDateTime egyptTime = tz.TZDateTime.from(utcTime, egyptTimezone);
+
+    DateFormat outputFormat = DateFormat('h:mm a');
+    String formattedTime = outputFormat.format(egyptTime);
+
     return GestureDetector(
       onTap: () {
         isChild
@@ -31,14 +45,15 @@ class TaskListViewComponent extends StatelessWidget {
                 MaterialPageRoute(
                     builder: (_) => BlocProvider.value(
                         value: context.read<TaskCubit>(),
-                        child: TaskChildView(taskModel: taskCubit.taskModel!))))
+                        child: TaskChildView(taskModel: taskModel))),
+              )
             : Navigator.push(
                 context,
                 MaterialPageRoute(
                     builder: (_) => BlocProvider.value(
                         value: context.read<TaskCubit>(),
-                        child: EditTaskView(
-                            taskModel: context.read<TaskCubit>().taskModel!))));
+                        child: EditTaskView(taskModel: taskModel))),
+              );
       },
       child: Column(
         children: [
@@ -59,7 +74,7 @@ class TaskListViewComponent extends StatelessWidget {
               : Row(
                   children: [
                     Text(
-                      taskModel.time!,
+                      formattedTime,
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
                     SizedBox(width: 10.w),
@@ -71,7 +86,7 @@ class TaskListViewComponent extends StatelessWidget {
                 ),
           Padding(
             padding: isArabic()
-                ?  EdgeInsets.only(right: 28.w)
+                ? EdgeInsets.only(right: 28.w)
                 : EdgeInsets.only(left: 28.0.w),
             child: Row(
               children: [
@@ -92,6 +107,7 @@ class TaskListViewComponent extends StatelessWidget {
                         color: AppColor.pink,
                         borderRadius: BorderRadius.circular(10)),
                     child: ListTile(
+                      contentPadding: EdgeInsets.zero,
                       leading: AspectRatio(
                         aspectRatio: 2.r,
                         child: CachedNetworkImage(
