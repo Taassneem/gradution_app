@@ -44,6 +44,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "carrot": MessageLookupByLibrary.simpleMessage("جزر"),
         "cat": MessageLookupByLibrary.simpleMessage("القط"),
         "categories": MessageLookupByLibrary.simpleMessage("الفئات"),
+        "categorySelected":
+            MessageLookupByLibrary.simpleMessage("تم تحديد الفئه"),
         "cebola": MessageLookupByLibrary.simpleMessage("البصل"),
         "change": MessageLookupByLibrary.simpleMessage("تغيير"),
         "changeEmail": MessageLookupByLibrary.simpleMessage("تغيير الايميل"),

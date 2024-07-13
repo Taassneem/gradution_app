@@ -13,6 +13,7 @@ class GlobalCubit extends Cubit<GlobalState> {
   GlobalCubit() : super(GlobalInitial());
   TaskModel? taskModel;
   String langCode = "en";
+  String childOrParent = "child";
 
   void toggleLanguage(String language) {
     langCode = language;
@@ -31,6 +32,25 @@ class GlobalCubit extends Cubit<GlobalState> {
     }
     log('Language code retrieved: $langCode');
     emit(GetChangeLang(langCode));
+  }
+
+  void toggleAdmin(String admin) {
+    childOrParent = admin;
+    log('Admin code saved: $childOrParent');
+
+    getIt<CacheHelper>()
+        .saveData(key: CacheHelperKey.adminCode, value: childOrParent);
+    emit(ChangeAdmin(admincode: childOrParent));
+  }
+
+  void getAdmin() {
+    String? childOrParentFromCache =
+        getIt<CacheHelper>().getData(key: CacheHelperKey.adminCode);
+    if (childOrParentFromCache != null) {
+      childOrParent = childOrParentFromCache;
+    }
+    log('Language code retrieved: $childOrParent');
+    emit(GetChangeAdmin(childOrParent));
   }
 
   // String langCode = "en";

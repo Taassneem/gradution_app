@@ -26,7 +26,7 @@ class AnimalQuizEightView extends StatelessWidget {
         onTapTwo: () {
           customShowDialog(context, widget: MiddleAnimalRight(
             onPressed: () {
-              GoRouter.of(context).push(AppRouter.animalQuizViewNine);
+              GoRouter.of(context).pushReplacement(AppRouter.animalQuizViewNine);
             },
           ));
         },

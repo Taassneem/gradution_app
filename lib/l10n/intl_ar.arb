@@ -22,6 +22,7 @@
     "fullName": "الاسم الكامل",
     "nameHelpText": "أدخل اسمك",
     "confirmPassword": "تأكيد كلمة المرور",
+    "categorySelected":"تم تحديد الفئه",
     "mustBeBoth": "يجب أن تتطابق كلمتا المرور",
     "passwordValidate": "٨+ أحرف، ١ حرف كبير",
     "emailValidate": "هذاالجزء لا يمكن تخطى",

@@ -21,18 +21,27 @@ final class ChangeLanguage extends GlobalState {
   const ChangeLanguage({required this.languagecode});
 }
 
-final class ChangeLanguageEnglish extends GlobalState {}
-
-final class ChangeTheme extends GlobalState {}
-
-final class GetChangeTheme extends GlobalState {}
-
-final class GetLang extends GlobalState {}
-
 final class GetChangeLang extends GlobalState {
   final String languagecode;
 
   const GetChangeLang(this.languagecode);
 }
+final class ChangeAdmin extends GlobalState {
+  final String admincode;
+
+  const ChangeAdmin({required this.admincode});
+}
+
+final class GetChangeAdmin extends GlobalState {
+  final String admincode;
+
+  const GetChangeAdmin(this.admincode);
+}
+
+final class ChangeLanguageEnglish extends GlobalState {}
+
+final class ChangeTheme extends GlobalState {}
+
+final class GetChangeTheme extends GlobalState {}
 
 final class InitialTheme extends GlobalState {}

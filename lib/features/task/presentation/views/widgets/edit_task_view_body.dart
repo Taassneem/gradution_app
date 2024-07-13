@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/func/custom_toast.dart';
+import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/core/utils/widgets/custom_elevated_button.dart';
 import 'package:gradution_app/features/task/data/models/task_model/task_model.dart';
 import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
-import 'package:gradution_app/features/task/presentation/views/categories_view.dart';
 import 'package:intl/intl.dart';
 
 import 'package:gradution_app/core/utils/app_color.dart';
@@ -15,6 +16,7 @@ import 'package:gradution_app/generated/l10n.dart';
 import 'edit_task_feature.dart';
 import 'reminder.dart';
 import 'repeater.dart';
+
 import 'select_day_widget.dart';
 import 'select_time_widgets.dart';
 import 'task_title_text_field.dart';
@@ -105,12 +107,7 @@ class EditTaskViewBody extends StatelessWidget {
                         hintText: taskModel.selectedActivity,
                         onTap: () {
                           taskCubit.fetchCategories();
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (_) => const CategoriesView(
-                                        isEditTask: true,
-                                      )));
+                          GoRouter.of(context).push(AppRouter.categoriesView);
                         },
                       ),
                       EditTaskFeature(

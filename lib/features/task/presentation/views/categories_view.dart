@@ -4,8 +4,8 @@ import 'package:gradution_app/core/utils/app_color.dart';
 import 'widgets/categories_view_body.dart';
 
 class CategoriesView extends StatelessWidget {
-  const CategoriesView({super.key, this.isEditTask = false});
-  final bool isEditTask;
+  const CategoriesView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

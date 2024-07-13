@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gradution_app/core/global_cubit/global_cubit.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/features/home/presentation/manager/profile_cubit/profile_cubit.dart';
@@ -37,6 +38,8 @@ class _CustomTypeDropDownButtonState extends State<CustomTypeDropDownButton> {
             onTap: () {
               BlocProvider.of<ProfileCubit>(context).getUserData();
               GoRouter.of(context).pushReplacement(AppRouter.baseView);
+              BlocProvider.of<GlobalCubit>(context).toggleAdmin('child');
+              BlocProvider.of<GlobalCubit>(context).getAdmin();
             },
             value: 'child',
             child: Text(S.of(context).child,
@@ -45,6 +48,8 @@ class _CustomTypeDropDownButtonState extends State<CustomTypeDropDownButton> {
             onTap: () {
               BlocProvider.of<ProfileCubit>(context).getUserData();
               GoRouter.of(context).pushReplacement(AppRouter.taskView);
+              BlocProvider.of<GlobalCubit>(context).toggleAdmin('parent');
+              BlocProvider.of<GlobalCubit>(context).getAdmin();
             },
             value: 'parent',
             child: Text(S.of(context).parent,

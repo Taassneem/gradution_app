@@ -4,14 +4,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradution_app/core/func/custom_show_dialog.dart';
 import 'package:gradution_app/core/func/is_arabic_func.dart';
+import 'package:gradution_app/core/utils/app_assets.dart';
 import 'package:gradution_app/core/utils/app_color.dart';
 import 'package:gradution_app/features/task/data/models/task_model/task_model.dart';
 import 'package:gradution_app/features/task/presentation/manager/cubit/task_cubit.dart';
 import 'package:gradution_app/features/task/presentation/views/edit_task_view.dart';
 import 'package:gradution_app/features/task/task_child/views/task_child_view.dart';
-import 'package:intl/intl.dart';
 
-import 'package:timezone/timezone.dart' as tz;
 import 'task_custom_dialog.dart';
 
 class TaskListViewComponent extends StatelessWidget {
@@ -25,17 +24,15 @@ class TaskListViewComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DateTime parsedTime = DateFormat.jm('en_US')
-        .parse(taskModel.time!)
-        .add(const Duration(hours: 1));
-    DateTime utcTime =
-        DateTime.utc(0, 1, 1, parsedTime.hour, parsedTime.minute);
+    // DateTime parsedTime = DateFormat.jm('en_US').parse(taskModel.time!);
+    // DateTime utcTime =
+    //     DateTime.utc(0, 1, 1, parsedTime.hour, parsedTime.minute);
 
-    final egyptTimezone = tz.getLocation('Africa/Cairo');
-    tz.TZDateTime egyptTime = tz.TZDateTime.from(utcTime, egyptTimezone);
+    // final egyptTimezone = tz.getLocation('Africa/Cairo');
+    // tz.TZDateTime egyptTime = tz.TZDateTime.from(utcTime, egyptTimezone);
 
-    DateFormat outputFormat = DateFormat('h:mm a');
-    String formattedTime = outputFormat.format(egyptTime);
+    // DateFormat outputFormat = DateFormat('h:mm a');
+    // String formattedTime = outputFormat.format(egyptTime);
 
     return GestureDetector(
       onTap: () {
@@ -57,33 +54,33 @@ class TaskListViewComponent extends StatelessWidget {
       },
       child: Column(
         children: [
-          isArabic()
-              ? Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: AppColor.pink,
-                      radius: 10.r,
-                    ),
-                    SizedBox(width: 10.w),
-                    Text(
-                      taskModel.time!,
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
-                  ],
-                )
-              : Row(
-                  children: [
-                    Text(
-                      formattedTime,
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
-                    SizedBox(width: 10.w),
-                    CircleAvatar(
-                      backgroundColor: AppColor.pink,
-                      radius: 10.r,
-                    ),
-                  ],
-                ),
+          // isArabic()?
+          Row(
+            children: [
+              CircleAvatar(
+                backgroundColor: AppColor.pink,
+                radius: 10.r,
+              ),
+              SizedBox(width: 10.w),
+              Text(
+                taskModel.time!,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ],
+          ),
+          // : Row(
+          //     children: [
+          //       Text(
+          //         formattedTime,
+          //         style: Theme.of(context).textTheme.titleMedium,
+          //       ),
+          //       SizedBox(width: 10.w),
+          //       CircleAvatar(
+          //         backgroundColor: AppColor.pink,
+          //         radius: 10.r,
+          //       ),
+          //     ],
+          //   ),
           Padding(
             padding: isArabic()
                 ? EdgeInsets.only(right: 28.w)
@@ -93,9 +90,7 @@ class TaskListViewComponent extends StatelessWidget {
                 Container(
                   width: 2.w,
                   height: 88.h,
-                  decoration: const BoxDecoration(
-                    color: AppColor.pink,
-                  ),
+                  decoration: const BoxDecoration(color: AppColor.pink),
                 ),
                 SizedBox(width: 30.w),
                 Expanded(
@@ -110,14 +105,16 @@ class TaskListViewComponent extends StatelessWidget {
                       contentPadding: EdgeInsets.zero,
                       leading: AspectRatio(
                         aspectRatio: 2.r,
-                        child: CachedNetworkImage(
-                          imageUrl: taskModel.image!.url!,
-                          placeholder: (context, url) => const Center(
-                              child: CircularProgressIndicator(
-                                  color: AppColor.black)),
-                          errorWidget: (context, url, error) =>
-                              const Icon(Icons.error),
-                        ),
+                        child: taskModel.image != null
+                            ? CachedNetworkImage(
+                                imageUrl: taskModel.image!.url!,
+                                placeholder: (context, url) => const Center(
+                                    child: CircularProgressIndicator(
+                                        color: AppColor.black)),
+                                errorWidget: (context, url, error) =>
+                                    const Icon(Icons.error),
+                              )
+                            : Image.asset(AppAssets.quiz),
                       ),
                       title: Text(
                         taskModel.title!,

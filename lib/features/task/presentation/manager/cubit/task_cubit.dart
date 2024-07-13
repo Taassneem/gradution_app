@@ -38,6 +38,7 @@ class TaskCubit extends Cubit<TaskState> {
   DateTime? editTime;
   XFile? taskImageFromGallery;
   GlobalCubit? global;
+
   Future<void> fetchCategories() async {
     emit(CategoriesLoading());
     var result = await taskRepo.fetchCategories();
@@ -75,17 +76,6 @@ class TaskCubit extends Cubit<TaskState> {
     });
   }
 
-  List<TaskModel>? taskList;
-  List<TaskModel> filterTasksList = [];
-  Future<void> filterTasks() async {
-    filterTasksList.clear();
-    for (var i = 0; i < taskList!.length; i++) {
-      if (taskList![i].date == today) {
-        filterTasksList.add(taskList![i]);
-      }
-    }
-  }
-
   Future<void> editTask({required String id}) async {
     emit(EditTaskLoading());
     var result = await taskRepo.editTask(
@@ -112,6 +102,17 @@ class TaskCubit extends Cubit<TaskState> {
         (delete) => emit(DeleteTaskSuccess(deleteTaskModel: delete)));
   }
 
+  List<TaskModel>? taskList;
+  List<TaskModel> filterTasksList = [];
+  Future<void> filterTasks() async {
+    filterTasksList.clear();
+    for (var i = 0; i < taskList!.length; i++) {
+      if (taskList![i].date == today) {
+        filterTasksList.add(taskList![i]);
+      }
+    }
+  }
+
   DateTime today = DateTime.now();
 
   void selectedDay(selectedDay, focusedDay) {
@@ -129,20 +130,4 @@ class TaskCubit extends Cubit<TaskState> {
     emit(TaskTimeUpdated(newTime));
   }
 
-  pickImageWithGallery() async {
-    try {
-      emit(UploadingPhotoLoading());
-
-      final retunedImage =
-          await ImagePicker().pickImage(source: ImageSource.gallery);
-
-      if (retunedImage == null) return;
-
-      taskImageFromGallery = XFile(retunedImage.path);
-
-      emit(UploadingPhotoSuccess());
-    } catch (e) {
-      emit(UploadingPhotoFailure(errorMessage: e.toString()));
-    }
-  }
 }

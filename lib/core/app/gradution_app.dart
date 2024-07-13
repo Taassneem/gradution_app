@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => TaskCubit(getIt.get<TaskRepoImpl>())),
         BlocProvider(
             create: (context) => ProfileCubit(getIt.get<HomeRepoImpl>())),
-        BlocProvider(create: (context) => GlobalCubit()..getLang()),
+        BlocProvider(create: (context) => GlobalCubit()..getLang()..getAdmin()),
       ],
       child: BlocBuilder<GlobalCubit, GlobalState>(
         builder: (context, state) {

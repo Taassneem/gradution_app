@@ -1,7 +1,10 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gradution_app/core/database/cache/cache_helper.dart';
+import 'package:gradution_app/core/global_cubit/global_cubit.dart';
 import 'package:gradution_app/core/utils/api_keys.dart';
 import 'package:gradution_app/core/utils/app_router.dart';
 import 'package:gradution_app/core/utils/servive_locator.dart';
@@ -90,13 +93,18 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
                       .getData(key: CacheHelperKey.childChoosen) ??
                   false;
               if (childChoosen == true) {
-                BlocProvider.of<ProfileCubit>(context).getUserData();
-                Navigator.push(
-                    context,
-                    CustomPageRouteSlide(
-                      child: const BaseView(),
-                      direction: AxisDirection.up,
-                    ));
+                if (BlocProvider.of<GlobalCubit>(context).childOrParent ==
+                    'child') {
+                  BlocProvider.of<ProfileCubit>(context).getUserData();
+                  Navigator.push(
+                      context,
+                      CustomPageRouteSlide(
+                        child: const BaseView(),
+                        direction: AxisDirection.up,
+                      ));
+                } else {
+                  GoRouter.of(context).push(AppRouter.taskView);
+                }
               } else if (parentChoosen == true) {
                 BlocProvider.of<ProfileCubit>(context).getUserData();
                 GoRouter.of(context).pushReplacement(AppRouter.taskView);
